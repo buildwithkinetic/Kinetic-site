@@ -5,6 +5,7 @@ import { motion, type Variants } from 'framer-motion'
 import Reveal from '@/components/Reveal'
 import dynamic from 'next/dynamic'
 const HeroCanvas = dynamic(() => import('@/components/HeroCanvas'), { ssr: false })
+import { events } from '@/lib/analytics'
 
 /* ─── Shared primitives ─────────────────────────────────────────────── */
 const btnPrimary: React.CSSProperties = {
@@ -270,6 +271,7 @@ export default function HomepageClient() {
           <motion.div variants={fadeUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
             <Link
               href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+              onClick={() => events.bookCallClick('hero')}
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '10px',
                 padding: '18px 36px',
@@ -826,6 +828,7 @@ export default function HomepageClient() {
               <Link
                 href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
                 className="cta-btn-pulse"
+                onClick={() => events.bookCallClick('cta_section')}
                 style={{ ...btnPrimary, padding: '18px 36px', fontSize: '16px' }}
                 onMouseEnter={e => {
                   e.currentTarget.style.opacity = '0.9'

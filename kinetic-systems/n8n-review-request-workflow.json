@@ -1,0 +1,261 @@
+{
+  "name": "Kinetic — Review Request Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "kinetic-review-request",
+        "responseMode": "onReceived",
+        "method": "POST"
+      },
+      "id": "webhook_trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300],
+      "webhookId": "kinetic-review-webhook"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "days"
+      },
+      "id": "wait_3_days",
+      "name": "Wait 3 Days",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [300, 300]
+    },
+    {
+      "parameters": {
+        "sendParametersAsQuery": false,
+        "contentType": "application/json",
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_RESEND_API_KEY"
+            }
+          ]
+        },
+        "body": "{\n  \"from\": \"Ayush Gupta <growth@buildwithkinetic.org>\",\n  \"to\": \"{{$json.email}}\",\n  \"subject\": \"Quick favour, {{$json.name}} — how did we do?\",\n  \"html\": \"<p>Hi {{$json.name}},</p>\\n<p>Thank you for completing your {{$json.service_completed}} project with Kinetic. I'm really proud of what we built together for {{$json.business_name}}.</p>\\n<p>If you've had a moment to use the system, I'd genuinely appreciate it if you could leave a quick Google review. It helps other businesses like yours discover us, and it means the world to me personally.</p>\\n<p>Here's the link: <a href=\\\"{{$json.google_review_url}}\\\">Leave a review on Google</a></p>\\n<p>No pressure at all — if you have any questions about the system or want to discuss next steps, just reply to this email.</p>\\n<p>Cheers,<br>Ayush<br>Kinetic</p>\"\n}"
+      },
+      "id": "send_first_review_email",
+      "name": "Send First Review Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "amount": 4,
+        "unit": "days"
+      },
+      "id": "wait_4_days",
+      "name": "Wait 4 More Days",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json.review_received}}",
+              "operation": "equals",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "check_review_received",
+      "name": "Review Received?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "sendParametersAsQuery": false,
+        "contentType": "application/json",
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_RESEND_API_KEY"
+            }
+          ]
+        },
+        "body": "{\n  \"from\": \"Ayush Gupta <growth@buildwithkinetic.org>\",\n  \"to\": \"{{$json.email}}\",\n  \"subject\": \"Still here if you need anything\",\n  \"html\": \"<p>Hi {{$json.name}},</p>\\n<p>Just checking in — if you have a moment and haven't already, a Google review for {{$json.business_name}} would be amazing. No pressure though!</p>\\n<p><a href=\\\"{{$json.google_review_url}}\\\">Leave a review</a></p>\\n<p>If something isn't working as expected or you have questions, I'm just an email away.</p>\\n<p>Thanks,<br>Ayush</p>\"\n}"
+      },
+      "id": "send_followup_email",
+      "name": "Send Follow-up Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [700, 500]
+    },
+    {
+      "parameters": {
+        "sendParametersAsQuery": false,
+        "contentType": "application/json",
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_RESEND_API_KEY"
+            }
+          ]
+        },
+        "body": "{\n  \"from\": \"Ayush Gupta <growth@buildwithkinetic.org>\",\n  \"to\": \"{{$json.email}}\",\n  \"subject\": \"Thank you, {{$json.name}} 🙌\",\n  \"html\": \"<p>Hi {{$json.name}},</p>\\n<p>Thank you so much for leaving a review for {{$json.business_name}}. It genuinely means a lot, and it helps other businesses find Kinetic.</p>\\n<p>If you ever need anything else — more features, optimization, or just want to chat about growth — you know where to find me.</p>\\n<p>Cheers,<br>Ayush</p>\"\n}"
+      },
+      "id": "send_thankyou_email",
+      "name": "Send Thank You Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1100, 200]
+    },
+    {
+      "parameters": {
+        "sendParametersAsQuery": false,
+        "contentType": "application/json",
+        "method": "POST",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/YOUR_SHEET_ID/values/Reviews!A:H/append?valueInputOption=USER_ENTERED",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_GOOGLE_SHEETS_TOKEN"
+            }
+          ]
+        },
+        "body": "{\n  \"values\": [\n    [\"{{$json.name}}\", \"{{$json.email}}\", \"{{$json.completion_date}}\", \"{{$json.review_received}}\", \"{{$json.business_name}}\", \"{{now.toFormat('yyyy-MM-dd HH:mm:ss')}}\", \"{{$json.service_completed}}\", \"\"]\n  ]\n}"
+      },
+      "id": "log_to_google_sheets",
+      "name": "Log to Google Sheets",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1100, 400]
+    }
+  ],
+  "connections": {
+    "webhook_trigger": {
+      "main": [
+        [
+          {
+            "node": "wait_3_days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "wait_3_days": {
+      "main": [
+        [
+          {
+            "node": "send_first_review_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_first_review_email": {
+      "main": [
+        [
+          {
+            "node": "wait_4_days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "wait_4_days": {
+      "main": [
+        [
+          {
+            "node": "check_review_received",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "check_review_received": {
+      "main": [
+        [
+          {
+            "node": "send_thankyou_email",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "log_to_google_sheets",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "send_followup_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_followup_email": {
+      "main": [
+        [
+          {
+            "node": "log_to_google_sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_thankyou_email": {
+      "main": [
+        [
+          {
+            "node": "log_to_google_sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [
+    "review",
+    "automation",
+    "email",
+    "kinetic"
+  ]
+}

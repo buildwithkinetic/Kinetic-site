@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { CheckCircle, Loader2, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { events } from '@/lib/analytics'
 
 const checklist = [
   "SEO gaps stopping you from ranking on Google",
@@ -25,6 +26,7 @@ export default function FreeAuditClient() {
   const [businessType, setBusinessType] = useState("")
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  events.auditFormSubmit()
     e.preventDefault()
     setLoading(true)
     setError("")

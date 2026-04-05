@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/book/", "/booking-confirmed/"],
+        disallow: ["/api/", "/book/", "/booking-confirmed/", "/dashboard/"],
       },
     ],
     sitemap: "https://buildwithkinetic.org/sitemap.xml",
