@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
     } = body
 
     const type: 'booking' | 'discovery' | 'audit' = submissionType || 'booking'
-    const ayushEmail = process.env.AYUSH_EMAIL || 'hello@buildwithkinetic.org'
+    const ayushEmail = process.env.KINETIC_EMAIL || 'ayushguptayush21@gmail.com'
     const name = clientName || businessName || 'there'
     const email = clientEmail
 

@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     }
 
     const { error } = await resend.emails.send({
-      from: 'Kinetic <onboarding@resend.dev>', // change to your domain once verified
+      from: 'Kinetic <bookings@buildwithkinetic.org>',
       to: [email],
       subject: "We've received your message — Kinetic",
       html: `
