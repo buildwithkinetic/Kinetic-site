@@ -1,0 +1,51 @@
+# Kinetic
+
+> Kinetic builds automated growth systems for small businesses and startups. Not just websites — full systems: lead capture, CRM, automation, and analytics, installed and running before handover.
+
+## What Kinetic Does
+
+Kinetic is a one-person digital growth engineering studio run by Ayush Gupta, based in Kolkata, India. Kinetic serves clients globally.
+
+The positioning: "Most agencies build you a website and disappear. Most platforms give you a tool and leave you to figure it out. Kinetic does neither — we build the system, install it in your business, and make sure it runs."
+
+Tagline: "The System Behind Your Growth."
+
+## The 5 Growth Offers
+
+Kinetic sells exactly five productised services:
+
+1. **The Visibility Fix** — ₹25,000 · Live in 2 weeks. Local SEO website + Google Business Profile setup. Guarantee: first-page Google ranking in 30 days or we keep working free.
+2. **The Lead Capture System** *(Most Popular)* — ₹40,000 · Live in 2–3 weeks. Automated lead capture: contact forms, WhatsApp triggers, email sequences, CRM pipeline. Guarantee: any lead missed due to system failure in 90 days is fixed free.
+3. **The Repeat Revenue Engine** — ₹30,000 · Live in 2 weeks. Post-sale automation: review requests, re-engagement flows, loyalty sequences. Guarantee: Google review count increase in 60 days or rebuild free.
+4. **The Full Growth System** *(Best Value)* — ₹75,000 · Live in 4 weeks. Complete growth stack: website + SEO + CRM + automation + analytics. 90-day performance guarantee.
+5. **The Quick Win Audit** — ₹8,000 · Done in 1 week. Deep-dive audit of your current digital presence. 100% refund if not valuable.
+
+## Technology Stack
+
+- Framework: Next.js 14 App Router (TypeScript)
+- Styling: Tailwind CSS
+- Animation: Framer Motion
+- Database: Supabase
+- Automation: n8n
+- Hosting: Vercel
+
+## Confirmed Work
+
+**Sheknowmics** — India's first AI-native women's health platform. Built end to end by Kinetic: cycle intelligence, home diagnostics, AI risk prediction, doctor consultations. 1,200+ waitlist users.
+
+## Key Links
+
+- Website: https://buildwithkinetic.org
+- Free audit: https://buildwithkinetic.org/free-website-audit
+- Services: https://buildwithkinetic.org/growth-offers
+- Case study: https://buildwithkinetic.org/work/sheknowmics
+- Contact: https://buildwithkinetic.org/contact
+- LinkedIn: https://www.linkedin.com/in/21-ayushgupta
+- Instagram: https://www.instagram.com/buildwithkinetic
+
+## Contact
+
+- Founder: Ayush Gupta
+- Email: ayushguptayush21@gmail.com
+- Location: Kolkata, West Bengal, India
+- Serves: Clients globally

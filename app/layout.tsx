@@ -1,147 +1,91 @@
-// Environment variables used: NEXT_PUBLIC_GTM_ID
-import type { Metadata } from 'next'
-import Script from 'next/script'
-import { Inter, JetBrains_Mono, Sora } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  preload: true,
-  fallback: ['system-ui', 'sans-serif'],
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  display: 'swap',
-  preload: true,
-  fallback: ['Courier New', 'monospace'],
-})
-
-const sora = Sora({
-  subsets: ['latin'],
-  variable: '--font-sora',
-  weight: ['400', '600', '700'],
-  display: 'swap',
-  preload: true,
-  fallback: ['system-ui', 'sans-serif'],
-})
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Kinetic',
-  description:
-    'Kinetic builds digital growth systems for small businesses and startups — websites, CRMs, automations, and acquisition layers, installed end to end.',
-  url: 'https://buildwithkinetic.org',
-  telephone: '+918697451427',
-  email: 'admin@buildwithkinetic.org',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '3B Biswambher Mullick Lane',
-    addressLocality: 'Kolkata',
-    addressRegion: 'West Bengal',
-    postalCode: '700005',
-    addressCountry: 'IN',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 22.5726,
-    longitude: 88.3639,
-  },
-  openingHours: 'Mo-Su 00:00-23:59',
-  areaServed: 'India',
-  founder: {
-    '@type': 'Person',
-    name: 'Ayush Gupta',
-    jobTitle: 'Founder & Growth Engineer',
-    url: 'https://linkedin.com/in/21-ayushgupta',
-  },
-}
+import type { Metadata } from "next"
+import "./globals.css"
+import CustomCursor from "@/components/CustomCursor"
+import ScrollProgress from "@/components/ScrollProgress"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://buildwithkinetic.org"),
   title: {
-    template: '%s | Kinetic',
-    default: 'Digital Growth Agency India — Websites, CRM & Lead Automation | Kinetic',
+    template: "%s | Kinetic",
+    default: "Kinetic | The System Behind Your Growth",
   },
   description:
-    'Kinetic builds complete digital growth systems for small businesses in India — website, CRM, automations, and acquisition, installed end to end. Book a free audit.',
+    "Kinetic builds websites, runs SEO, deploys CRM systems, automates workflows, and builds AI agents — then hands it over running. Growth systems for small businesses.",
   keywords: [
-    'digital growth agency India',
-    'website development company Kolkata',
-    'CRM automation India',
-    'lead generation system',
-    'digital marketing Kolkata',
+    "growth systems for small businesses",
+    "website development agency",
+    "lead generation website design",
+    "web app development agency",
+    "startup website development",
+    "small business website development",
+    "digital growth systems",
+    "CRM dashboard development",
+    "business automation systems",
+    "AI agents for business",
+    "SEO agency India",
   ],
-  authors: [{ name: 'Ayush Gupta' }],
-  icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
-  },
-  openGraph: {
-    title: 'Digital Growth Agency India — Websites, CRM & Lead Automation | Kinetic',
-    description:
-      'Kinetic builds complete digital growth systems for small businesses in India — website, CRM, automations, and acquisition, installed end to end.',
-    type: 'website',
-    url: 'https://buildwithkinetic.org',
-    siteName: 'Kinetic',
-  },
+  authors: [{ name: "Kinetic", url: "https://buildwithkinetic.org" }],
+  creator: "Kinetic",
+  publisher: "Kinetic",
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://buildwithkinetic.org",
+    siteName: "Kinetic",
+    title: "Kinetic | The System Behind Your Growth",
+    description:
+      "Automated growth systems for small businesses and startups — websites, SEO, CRM, automation, and AI agents. Built and handed over running.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kinetic | The System Behind Your Growth",
+    description:
+      "Websites, SEO, CRM, automation, full stack apps, and AI agents — built for growth, handed over running.",
+    creator: "@buildwithkinetic",
+  },
+  verification: {
+    google: "8kwBF9qJeR_0rOQYtenKoBkqNFPM0pCqq3h2h1k5q3M",
   },
   alternates: {
-    canonical: 'https://buildwithkinetic.org',
+    canonical: "https://buildwithkinetic.org",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.svg",
   },
 }
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${sora.variable}`}
-    >
-      <head>
-        {GTM_ID && (
-          <Script
-            id="gtm-script"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`,
-            }}
-          />
-        )}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-      </head>
-      <body className="font-sans antialiased bg-background text-foreground">
-        {GTM_ID && (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            />
-          </noscript>
-        )}
+    <html lang="en">
+      <body
+        className="antialiased"
+        style={{ fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" }}
+      >
+        <ScrollProgress />
+        <CustomCursor />
         {children}
-        <Analytics />
       </body>
     </html>
   )

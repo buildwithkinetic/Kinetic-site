@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Dark background — matches dark premium theme -->
+  <rect width="32" height="32" rx="7" fill="#080A0F"/>
+
+  <!-- Bold K — drawn as clean geometric paths for pixel-perfect rendering at any size -->
+  <!-- Left vertical bar of K -->
+  <rect x="7" y="7" width="3.5" height="18" rx="1" fill="#F8FAFC"/>
+  <!-- Upper-right diagonal arm of K -->
+  <path d="M10.5 16 L21 7.5 Q22 7 22.5 7.5 L22.5 9.5 Q22.5 10.2 21.5 10.8 L13 16.5Z" fill="#F8FAFC"/>
+  <!-- Lower-right diagonal leg of K -->
+  <path d="M10.5 16 L21 24.5 Q22 25 22.5 24.5 L22.5 22.5 Q22.5 21.8 21.5 21.2 L13 15.5Z" fill="#F8FAFC"/>
+
+  <!-- Orange accent dot — brand mark (KINETIC.) -->
+  <circle cx="24.5" cy="24.5" r="2.5" fill="#F97316"/>
+</svg>
