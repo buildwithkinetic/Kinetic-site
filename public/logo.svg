@@ -1,0 +1,24 @@
+<svg width="100%" viewBox="0 0 680 290" xmlns="http://www.w3.org/2000/svg">
+
+  <rect width="680" height="280" fill="#091221" rx="12" style="fill:rgb(9, 18, 33);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Dramatic stacked bars - taller, more presence -->
+  <g transform="translate(148, 88)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <rect x="0" y="48" width="12" height="28" fill="#27e9b5" rx="2" style="fill:rgb(39, 233, 181);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="20" y="28" width="12" height="48" fill="#27e9b5" rx="2" style="fill:rgb(39, 233, 181);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="40" y="4" width="12" height="72" fill="#27e9b5" rx="2" style="fill:rgb(39, 233, 181);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  </g>
+
+  <!-- Wordmark: brandy display font feel via wide tracking + weight contrast -->
+  <g transform="translate(216, 152)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <text font-family="'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif" font-size="64" font-weight="300" fill="#ffffff" opacity="0.65" letter-spacing="2" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.65;font-family:&quot;Palatino Linotype&quot;, Palatino, &quot;Book Antiqua&quot;, Georgia, serif;font-size:64px;font-weight:300;text-anchor:start;dominant-baseline:auto">KIN</text>
+    <text x="118" font-family="'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif" font-size="64" font-weight="900" fill="#ffffff" letter-spacing="2" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Palatino Linotype&quot;, Palatino, &quot;Book Antiqua&quot;, Georgia, serif;font-size:64px;font-weight:900;text-anchor:start;dominant-baseline:auto">ETIC</text>
+  </g>
+
+  <!-- Subtle divider line -->
+  <line x1="216" y1="162" x2="216" y2="100" stroke="#27e9b5" stroke-width="1.5" opacity="0.3" style="fill:rgb(0, 0, 0);stroke:rgb(39, 233, 181);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.3;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Tagline -->
+  <text x="340" y="208" font-family="'Inter', Arial, sans-serif" font-size="10" fill="#27e9b5" opacity="0.6" letter-spacing="5" text-anchor="middle" font-weight="500" style="fill:rgb(39, 233, 181);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:Inter, Arial, sans-serif;font-size:10px;font-weight:500;text-anchor:middle;dominant-baseline:auto">THE SYSTEM BEHIND YOUR GROWTH</text>
+
+</svg>
