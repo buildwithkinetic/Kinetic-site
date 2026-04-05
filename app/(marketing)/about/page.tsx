@@ -1,19 +1,34 @@
 import type { Metadata } from "next"
 import AboutPageClient from "@/components/marketing/AboutPageClient"
-import { JsonLd, organizationSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
+import { JsonLd, organizationSchema, personSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "About | Kinetic",
+  title: "About Kinetic — Built by Ayush Gupta, Growth Engineer | Kolkata",
   description:
-    "Kinetic is a digital growth engineering studio. We build websites, web apps, and automation systems that help businesses generate leads and grow revenue.",
+    "Ayush Gupta is a solo growth engineer based in Kolkata. Kinetic builds automated growth systems for small businesses — websites, SEO, CRM, lead capture, and automation — installed and running before handover.",
+  keywords: [
+    "Ayush Gupta growth engineer Kolkata",
+    "Kinetic growth systems founder",
+    "digital growth engineer India",
+    "solo founder growth agency Kolkata",
+    "automated growth systems India",
+  ],
   alternates: {
     canonical: "https://buildwithkinetic.org/about",
   },
   openGraph: {
-    title: "About | Kinetic",
+    title: "About Kinetic — Built by Ayush Gupta, Growth Engineer | Kolkata",
     description:
-      "Kinetic builds conversion-focused digital systems for startups, service businesses, and founders who want to grow.",
+      "Solo growth engineer. Kinetic builds the full system — websites, SEO, CRM, automation — and hands it over running.",
     url: "https://buildwithkinetic.org/about",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Kinetic — Built by Ayush Gupta, Growth Engineer",
+    description:
+      "Solo growth engineer based in Kolkata. Kinetic installs automated growth systems in small businesses.",
+    creator: "@buildwithkinetic",
   },
 }
 
@@ -21,6 +36,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd schema={organizationSchema()} />
+      <JsonLd schema={personSchema()} />
       <JsonLd
         schema={breadcrumbSchema([
           { name: "Home", url: "https://buildwithkinetic.org" },

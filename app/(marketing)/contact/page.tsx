@@ -1,21 +1,48 @@
 import type { Metadata } from "next"
 import ContactPageClient from "@/components/marketing/ContactPageClient"
+import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Contact | Kinetic",
+  title: "Book a Free Strategy Call | Kinetic — Growth Systems Kolkata",
   description:
-    "Book a free 30-minute strategy call with the Kinetic team. Tell us about your business and we'll design the growth system that fits. Response within 24 hours.",
+    "Book a free 30-minute strategy call with Ayush Gupta, founder of Kinetic. Tell me about your business and I'll show you exactly how to generate more leads. Response within 24 hours. Based in Kolkata.",
+  keywords: [
+    "book free strategy call Kinetic",
+    "growth systems consultation Kolkata",
+    "free website audit India",
+    "digital marketing consultation Kolkata",
+    "contact Kinetic growth engineer",
+  ],
   alternates: {
     canonical: "https://buildwithkinetic.org/contact",
   },
   openGraph: {
-    title: "Contact | Kinetic",
+    title: "Book a Free Strategy Call | Kinetic",
     description:
-      "Book a free strategy call. Tell us about your business and we'll show you exactly how to generate more leads from your website.",
+      "30-minute call, no pitch, no retainer. Tell me about your business and I'll show you the growth system that fits.",
     url: "https://buildwithkinetic.org/contact",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Free Strategy Call | Kinetic",
+    description:
+      "30-minute call with Ayush. No pitch, no retainer. Book in under 60 seconds.",
+    creator: "@buildwithkinetic",
   },
 }
 
 export default function ContactPage() {
-  return <ContactPageClient />
+  return (
+    <>
+      <JsonLd schema={localBusinessSchema()} />
+      <JsonLd
+        schema={breadcrumbSchema([
+          { name: "Home", url: "https://buildwithkinetic.org" },
+          { name: "Contact", url: "https://buildwithkinetic.org/contact" },
+        ])}
+      />
+      <ContactPageClient />
+    </>
+  )
 }

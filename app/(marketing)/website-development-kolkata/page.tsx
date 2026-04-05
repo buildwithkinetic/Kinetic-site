@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { JsonLd, localBusinessSchema, serviceSchema, faqSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
   title: "Website Development in Kolkata — Kinetic",
@@ -7,15 +8,44 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://buildwithkinetic.org/website-development-kolkata",
   },
+  keywords: [
+    "website development Kolkata",
+    "website developer Kolkata",
+    "Next.js website development Kolkata",
+    "custom website development Kolkata",
+    "business website Kolkata",
+    "lead generation website Kolkata",
+    "affordable website development India",
+    "conversion focused website Kolkata",
+  ],
   openGraph: {
     title: "Website Development in Kolkata — Kinetic",
     description: "Custom website development for Kolkata businesses. Fast, conversion-focused, built on Next.js. Book a free discovery call with Kinetic.",
     url: "https://buildwithkinetic.org/website-development-kolkata",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Website Development in Kolkata — Kinetic",
+    description: "Custom website development for Kolkata businesses. Fast, conversion-focused, built on Next.js.",
+    creator: "@buildwithkinetic",
   },
 }
 
+const wdkFAQs = [
+  { question: "How much does website development cost in Kolkata?", answer: "A professional business website from Kinetic starts from \u20b925,000. Full-stack web applications start from \u20b975,000. Book a free call for a specific quote." },
+  { question: "How long does it take to build a website in Kolkata?", answer: "Most business websites take 2\u20134 weeks from kickoff to launch." },
+  { question: "Will my website show up on Google?", answer: "Yes. Kinetic sets up Google Search Console, submits your sitemap, and requests indexing for all key pages as part of every delivery." },
+  { question: "Do I own the website after it's built?", answer: "Completely. You get the full codebase, all credentials, and can host it wherever you choose. No lock-in." },
+]
+
 export default function Page() {
   return (
+    <>
+      <JsonLd schema={localBusinessSchema()} />
+      <JsonLd schema={serviceSchema({ name: "Website Development Kolkata", description: "Custom, conversion-focused website development for businesses in Kolkata. Built on Next.js, SEO-ready, and handed over running.", url: "https://buildwithkinetic.org/website-development-kolkata", serviceType: "Website Development" })} />
+      <JsonLd schema={faqSchema(wdkFAQs)} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "https://buildwithkinetic.org" }, { name: "Website Development Kolkata", url: "https://buildwithkinetic.org/website-development-kolkata" }])} />
     <main className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
       <div className="max-w-3xl mx-auto px-6">
         <article className="prose prose-invert max-w-none">
@@ -112,5 +142,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+    </>
   )
 }

@@ -12,17 +12,23 @@ export const metadata: Metadata = {
   description:
     "Kinetic builds websites, runs SEO, deploys CRM systems, automates workflows, and builds AI agents — then hands it over running. Growth systems for small businesses.",
   keywords: [
-    "growth systems for small businesses",
-    "website development agency",
-    "lead generation website design",
-    "web app development agency",
-    "startup website development",
+    "growth systems for small businesses India",
+    "website development Kolkata",
+    "digital marketing agency Kolkata",
+    "SEO agency Kolkata",
+    "lead generation system India",
+    "automated growth systems small business",
+    "website development agency India",
+    "CRM setup small business India",
+    "business automation Kolkata",
+    "web app development agency India",
+    "startup website development India",
     "small business website development",
-    "digital growth systems",
-    "CRM dashboard development",
-    "business automation systems",
-    "AI agents for business",
-    "SEO agency India",
+    "conversion focused website India",
+    "AI agents for business India",
+    "Google Business Profile optimisation Kolkata",
+    "automated lead capture system",
+    "Kinetic growth engineer Kolkata",
   ],
   authors: [{ name: "Kinetic", url: "https://buildwithkinetic.org" }],
   creator: "Kinetic",
@@ -40,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: "https://buildwithkinetic.org",
     siteName: "Kinetic",
     title: "Kinetic | The System Behind Your Growth",
@@ -78,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <body
         className="antialiased"
         style={{ fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" }}

@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { JsonLd, localBusinessSchema, serviceSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
   title: "Business Automation Agency in Kolkata — Kinetic",
   description: "Automate the repetitive work in your Kolkata business. Kinetic builds automation systems and AI agents that save time, reduce errors, and let you focus on growth.",
   alternates: {
-    canonical: "https://buildwithkinetic.org/automation-systems-kolkata",
+    canonical: "https://buildwithkinetic.org/automation-kolkata",
   },
   openGraph: {
     title: "Business Automation Agency in Kolkata — Kinetic",
@@ -16,6 +17,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+    <>
+      <JsonLd schema={localBusinessSchema()} />
+      <JsonLd schema={serviceSchema({ name: "Business Automation Agency in Kolkata", description: "Automate the repetitive work in your Kolkata business. Kinetic builds automation systems and AI agents that save time, reduce errors, and let you focu", url: "https://buildwithkinetic.org/automation-kolkata", serviceType: "Business Automation" })} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "https://buildwithkinetic.org" }, { name: "Business Automation Agency in Kolkata", url: "https://buildwithkinetic.org/automation-kolkata" }])} />
     <main className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
       <div className="max-w-3xl mx-auto px-6">
         <article className="prose prose-invert max-w-none">
@@ -151,5 +156,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+    </>
   )
 }

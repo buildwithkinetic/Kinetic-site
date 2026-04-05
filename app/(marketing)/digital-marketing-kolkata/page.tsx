@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { JsonLd, localBusinessSchema, serviceSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
   title: "Digital Marketing in Kolkata — Kinetic",
@@ -11,11 +12,32 @@ export const metadata: Metadata = {
     title: "Digital Marketing in Kolkata — Kinetic",
     description: "SEO, lead generation, CRM and automation for Kolkata businesses. Kinetic builds the full digital growth system — not just a campaign.",
     url: "https://buildwithkinetic.org/digital-marketing-kolkata",
+    locale: "en_IN",
+  },
+  keywords: [
+    "digital marketing agency Kolkata",
+    "digital marketing Kolkata",
+    "online marketing Kolkata",
+    "lead generation Kolkata",
+    "growth marketing agency India",
+    "digital marketing consultant Kolkata",
+    "performance marketing Kolkata",
+    "social media marketing Kolkata",
+  ],
+  twitter: {
+    card: "summary_large_image",
+    title: "Digital Marketing Agency in Kolkata",
+    description: "SEO, lead generation, CRM, and automation for Kolkata businesses. Kinetic builds the full digital growth system — not ju",
+    creator: "@buildwithkinetic",
   },
 }
 
 export default function Page() {
   return (
+    <>
+      <JsonLd schema={localBusinessSchema()} />
+      <JsonLd schema={serviceSchema({ name: "Digital Marketing Agency in Kolkata", description: "SEO, lead generation, CRM, and automation for Kolkata businesses. Kinetic builds the full digital growth system — not just a campaign.", url: "https://buildwithkinetic.org/digital-marketing-kolkata", serviceType: "Digital Marketing" })} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "https://buildwithkinetic.org" }, { name: "Digital Marketing Agency in Kolkata", url: "https://buildwithkinetic.org/digital-marketing-kolkata" }])} />
     <main className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
       <div className="max-w-3xl mx-auto px-6">
         <article className="prose prose-invert max-w-none">
@@ -135,5 +157,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+    </>
   )
 }

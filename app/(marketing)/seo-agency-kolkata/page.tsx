@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { JsonLd, localBusinessSchema, serviceSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
   title: "SEO Agency in Kolkata — Kinetic",
@@ -11,11 +12,33 @@ export const metadata: Metadata = {
     title: "SEO Agency in Kolkata — Kinetic",
     description: "Technical SEO, local SEO and content strategy for Kolkata businesses. Kinetic builds SEO systems that compound — not traffic spikes that fade.",
     url: "https://buildwithkinetic.org/seo-agency-kolkata",
+    locale: "en_IN",
+  },
+  keywords: [
+    "SEO agency Kolkata",
+    "SEO services Kolkata",
+    "local SEO Kolkata",
+    "technical SEO Kolkata",
+    "Google ranking Kolkata",
+    "search engine optimisation Kolkata",
+    "SEO consultant Kolkata India",
+    "best SEO agency Kolkata",
+    "small business SEO India",
+  ],
+  twitter: {
+    card: "summary_large_image",
+    title: "SEO Agency in Kolkata",
+    description: "Technical SEO, local SEO, and content strategy for Kolkata businesses. Kinetic builds SEO systems that compound — not tr",
+    creator: "@buildwithkinetic",
   },
 }
 
 export default function Page() {
   return (
+    <>
+      <JsonLd schema={localBusinessSchema()} />
+      <JsonLd schema={serviceSchema({ name: "SEO Agency in Kolkata", description: "Technical SEO, local SEO, and content strategy for Kolkata businesses. Kinetic builds SEO systems that compound — not traffic spikes that fade.", url: "https://buildwithkinetic.org/seo-agency-kolkata", serviceType: "SEO" })} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: "https://buildwithkinetic.org" }, { name: "SEO Agency in Kolkata", url: "https://buildwithkinetic.org/seo-agency-kolkata" }])} />
     <main className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
       <div className="max-w-3xl mx-auto px-6">
         <article className="prose prose-invert max-w-none">
@@ -160,5 +183,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+    </>
   )
 }
