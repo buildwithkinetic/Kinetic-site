@@ -27,9 +27,8 @@ import { ayushNewSubmissionHtml } from '@/lib/emails/ayush-new-submission'
   );
 */
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const body = await req.json()
     const {
