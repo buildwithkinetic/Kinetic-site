@@ -45,7 +45,7 @@ export default function LeadAuditCTA() {
         </ul>
 
         <Link
-          href="/work-with-us/quick-win-audit#quiz"
+          href="/free-website-audit"
           className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#0F0E0C] text-[#F5F0E8] font-bold rounded-full text-sm hover:bg-[#3B82F6] transition-colors duration-300"
         >
           Check My Health Score — Free <ArrowRight size={15} />

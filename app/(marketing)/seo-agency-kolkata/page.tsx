@@ -165,8 +165,8 @@ export default function Page() {
       <hr className="border-white/10 my-8" />
       <h2 className="text-2xl font-bold text-white mt-10 mb-4">Ready to Build an SEO Foundation That Actually Works?</h2>
       <p className="text-white/70 mb-4 leading-relaxed">Book a free 30-minute discovery call. We'll audit your current SEO status — what's indexed, what's blocking you, what your competitors are ranking for — and give you a clear picture of what's possible.</p>
-      <p className="text-white/70 mb-4 leading-relaxed"><a href="/work-with-us/custom-build" className="text-[#C8B8A2] hover:underline">Book a Discovery Call</a></p>
-      <p className="text-white/70 mb-4 leading-relaxed">Or start with the <a href="/work-with-us/quick-win-audit#quiz" className="text-[#C8B8A2] hover:underline">free Digital Health Score quiz</a> — it includes an SEO audit section that checks your indexing, GBP status, and page speed.</p>
+      <p className="text-white/70 mb-4 leading-relaxed"><a href="/book-call" className="text-[#C8B8A2] hover:underline">Book a Discovery Call</a></p>
+      <p className="text-white/70 mb-4 leading-relaxed">Or start with the <a href="/free-website-audit" className="text-[#C8B8A2] hover:underline">free Digital Health Score quiz</a> — it includes an SEO audit section that checks your indexing, GBP status, and page speed.</p>
       <hr className="border-white/10 my-8" />
       <p className="text-white/70 mb-4 leading-relaxed">*Kinetic — SEO, Website Development, CRM, Automation & AI Agents. Based in Kolkata. Building digital systems that compound.*</p>
         </article>
@@ -175,7 +175,7 @@ export default function Page() {
           <p className="text-white font-semibold text-lg mb-2">Ready to get started?</p>
           <p className="text-white/60 mb-4">Book a free 30-minute discovery call with Kinetic.</p>
           <Link
-            href="/book"
+            href="/book-call"
             className="inline-block px-6 py-3 bg-[#C8B8A2] text-black font-semibold rounded-lg hover:bg-[#B8A892] transition-colors"
           >
             Book a Free Call →

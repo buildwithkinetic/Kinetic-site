@@ -260,7 +260,7 @@ function BookPageContent() {
                 </h1>
                 <p className="text-[#6B6560] text-lg max-w-xl mx-auto">
                   Select the offer that fits your situation. Not sure?{" "}
-                  <Link href="/work-with-us/quick-win-audit#quiz" className="text-[#3B82F6] underline underline-offset-2 hover:no-underline">
+                  <Link href="/free-website-audit" className="text-[#3B82F6] underline underline-offset-2 hover:no-underline">
                     Start with the Quick Win Audit.
                   </Link>
                 </p>
@@ -358,7 +358,7 @@ function BookPageContent() {
                     <span className="text-xs px-3 py-1.5 bg-white/10 text-white/70 rounded-full">Written brief in 48 hrs</span>
                   </div>
                   <Link
-                    href="/work-with-us/custom-build#discovery-form"
+                    href="/book-call"
                     className="inline-block px-5 py-2.5 bg-[#3B82F6] text-white font-bold rounded-xl text-sm hover:bg-[#F0E8D8] transition-colors"
                   >
                     Go to Custom Build page →
@@ -370,7 +370,7 @@ function BookPageContent() {
               <div className="text-center">
                 {selectedOffer?.id === "custom-build" ? (
                   <Link
-                    href="/work-with-us/custom-build#discovery-form"
+                    href="/book-call"
                     className="inline-flex items-center gap-2 px-10 py-4 border-2 border-[#0F0F0E] text-[#0F0F0E] font-bold rounded-full text-lg hover:bg-[#0F0F0E] hover:text-white transition-colors duration-200 shadow-lg shadow-[#3B82F6]/20"
                   >
                     <img src="/icons/meet.svg" alt="" width={17} height={17} style={{ borderRadius: '3px', flexShrink: 0 }} />
@@ -387,7 +387,7 @@ function BookPageContent() {
                 )}
                 <p className="text-sm text-[#9E9890] mt-4">
                   Not sure which offer fits?{" "}
-                  <Link href="/work-with-us/quick-win-audit#quiz" className="text-[#3B82F6] hover:underline">
+                  <Link href="/free-website-audit" className="text-[#3B82F6] hover:underline">
                     Take the 3-minute quiz →
                   </Link>
                 </p>

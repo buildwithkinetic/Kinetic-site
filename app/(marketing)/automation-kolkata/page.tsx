@@ -138,8 +138,8 @@ export default function Page() {
       <hr className="border-white/10 my-8" />
       <h2 className="text-2xl font-bold text-white mt-10 mb-4">Ready to Stop Doing Things Manually?</h2>
       <p className="text-white/70 mb-4 leading-relaxed">Book a free 30-minute call. We'll map your current manual processes, identify the 2–3 highest-impact automations, and give you a clear scope and cost.</p>
-      <p className="text-white/70 mb-4 leading-relaxed"><a href="/work-with-us/custom-build" className="text-[#C8B8A2] hover:underline">Book a Discovery Call</a></p>
-      <p className="text-white/70 mb-4 leading-relaxed">Or start with our <a href="/work-with-us/quick-win-audit#quiz" className="text-[#C8B8A2] hover:underline">free Digital Health Score quiz</a> — it includes an automation audit section that checks where your biggest manual time sinks are.</p>
+      <p className="text-white/70 mb-4 leading-relaxed"><a href="/book-call" className="text-[#C8B8A2] hover:underline">Book a Discovery Call</a></p>
+      <p className="text-white/70 mb-4 leading-relaxed">Or start with our <a href="/free-website-audit" className="text-[#C8B8A2] hover:underline">free Digital Health Score quiz</a> — it includes an automation audit section that checks where your biggest manual time sinks are.</p>
       <hr className="border-white/10 my-8" />
       <p className="text-white/70 mb-4 leading-relaxed">*Kinetic — Business Automation, AI Agents & Workflow Systems for Kolkata businesses. We build the infrastructure that runs while you work.*</p>
         </article>
@@ -148,7 +148,7 @@ export default function Page() {
           <p className="text-white font-semibold text-lg mb-2">Ready to get started?</p>
           <p className="text-white/60 mb-4">Book a free 30-minute discovery call with Kinetic.</p>
           <Link
-            href="/book"
+            href="/book-call"
             className="inline-block px-6 py-3 bg-[#C8B8A2] text-black font-semibold rounded-lg hover:bg-[#B8A892] transition-colors"
           >
             Book a Free Call →

@@ -124,8 +124,8 @@ export default function Page() {
       <hr className="border-white/10 my-8" />
       <h2 className="text-2xl font-bold text-white mt-10 mb-4">Ready to Build Your Website?</h2>
       <p className="text-white/70 mb-4 leading-relaxed">Book a free 30-minute discovery call. We'll look at your current setup, talk through what you need, and give you a clear picture of what's possible — with no obligation.</p>
-      <p className="text-white/70 mb-4 leading-relaxed"><a href="/work-with-us/custom-build" className="text-[#C8B8A2] hover:underline">Book a Discovery Call</a></p>
-      <p className="text-white/70 mb-4 leading-relaxed">Or if you want to start by checking the health of your current digital presence, take our <a href="/work-with-us/quick-win-audit#quiz" className="text-[#C8B8A2] hover:underline">free Digital Health Score quiz</a> — 12 questions, instant results.</p>
+      <p className="text-white/70 mb-4 leading-relaxed"><a href="/book-call" className="text-[#C8B8A2] hover:underline">Book a Discovery Call</a></p>
+      <p className="text-white/70 mb-4 leading-relaxed">Or if you want to start by checking the health of your current digital presence, take our <a href="/free-website-audit" className="text-[#C8B8A2] hover:underline">free Digital Health Score quiz</a> — 12 questions, instant results.</p>
       <hr className="border-white/10 my-8" />
       <p className="text-white/70 mb-4 leading-relaxed">*Kinetic — Website Development, SEO, CRM, Automation & AI Agents. Based in Kolkata. Serving businesses across India and globally.*</p>
         </article>
@@ -134,7 +134,7 @@ export default function Page() {
           <p className="text-white font-semibold text-lg mb-2">Ready to get started?</p>
           <p className="text-white/60 mb-4">Book a free 30-minute discovery call with Kinetic.</p>
           <Link
-            href="/book"
+            href="/book-call"
             className="inline-block px-6 py-3 bg-[#C8B8A2] text-black font-semibold rounded-lg hover:bg-[#B8A892] transition-colors"
           >
             Book a Free Call →

@@ -41,6 +41,33 @@ const nextConfig = {
         destination: '/services',
         permanent: true,
       },
+      // ── /work-with-us sub-routes that don't exist as pages ───────────────────
+      {
+        source: '/work-with-us/quick-win-audit',
+        destination: '/free-website-audit',
+        permanent: true,
+      },
+      {
+        source: '/work-with-us/quick-win-audit/:path*',
+        destination: '/free-website-audit',
+        permanent: true,
+      },
+      {
+        source: '/work-with-us/custom-build',
+        destination: '/book-call',
+        permanent: true,
+      },
+      {
+        source: '/work-with-us/custom-build/:path*',
+        destination: '/book-call',
+        permanent: true,
+      },
+      // ── /book → /book-call ───────────────────────────────────────────────────
+      {
+        source: '/book',
+        destination: '/book-call',
+        permanent: true,
+      },
       // ── Legacy paths ─────────────────────────────────────────────────────────
       {
         source: '/portfolio',

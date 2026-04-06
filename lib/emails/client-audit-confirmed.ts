@@ -108,7 +108,7 @@ export function clientAuditConfirmedHtml(p: ClientAuditConfirmedProps): string {
       <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
         <tr>
           <td align="center">
-            <a href="https://buildwithkinetic.org/work-with-us/quick-win-audit" style="display:inline-block;background:#E8E0D0;color:#FFFFFF;font-size:15px;font-weight:700;padding:14px 32px;border-radius:100px;text-decoration:none;">See the Quick Win Audit →</a>
+            <a href="https://buildwithkinetic.org/free-website-audit" style="display:inline-block;background:#E8E0D0;color:#FFFFFF;font-size:15px;font-weight:700;padding:14px 32px;border-radius:100px;text-decoration:none;">See the Quick Win Audit →</a>
           </td>
         </tr>
       </table>

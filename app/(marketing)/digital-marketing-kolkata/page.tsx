@@ -139,8 +139,8 @@ export default function Page() {
       <hr className="border-white/10 my-8" />
       <h2 className="text-2xl font-bold text-white mt-10 mb-4">Start With a Free Discovery Call</h2>
       <p className="text-white/70 mb-4 leading-relaxed">30 minutes. We look at your current digital presence, identify the biggest gaps, and tell you exactly what we'd do and in what order.</p>
-      <p className="text-white/70 mb-4 leading-relaxed"><a href="/work-with-us/custom-build" className="text-[#C8B8A2] hover:underline">Book a Discovery Call</a></p>
-      <p className="text-white/70 mb-4 leading-relaxed">Not ready for a call? Take our <a href="/work-with-us/quick-win-audit#quiz" className="text-[#C8B8A2] hover:underline">free Digital Health Score quiz</a> first — 12 questions, instant results, no email required.</p>
+      <p className="text-white/70 mb-4 leading-relaxed"><a href="/book-call" className="text-[#C8B8A2] hover:underline">Book a Discovery Call</a></p>
+      <p className="text-white/70 mb-4 leading-relaxed">Not ready for a call? Take our <a href="/free-website-audit" className="text-[#C8B8A2] hover:underline">free Digital Health Score quiz</a> first — 12 questions, instant results, no email required.</p>
       <hr className="border-white/10 my-8" />
       <p className="text-white/70 mb-4 leading-relaxed">*Kinetic — Digital Growth Studio. Based in Kolkata. Website Development, SEO, Lead Generation, CRM, Automation & AI Agents.*</p>
         </article>
@@ -149,7 +149,7 @@ export default function Page() {
           <p className="text-white font-semibold text-lg mb-2">Ready to get started?</p>
           <p className="text-white/60 mb-4">Book a free 30-minute discovery call with Kinetic.</p>
           <Link
-            href="/book"
+            href="/book-call"
             className="inline-block px-6 py-3 bg-[#C8B8A2] text-black font-semibold rounded-lg hover:bg-[#B8A892] transition-colors"
           >
             Book a Free Call →

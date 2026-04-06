@@ -41,7 +41,7 @@ export default function StickyAuditBanner() {
 
           <div className="flex items-center gap-3 flex-shrink-0">
             <Link
-              href="/work-with-us/quick-win-audit#quiz"
+              href="/free-website-audit"
               className="inline-flex items-center gap-2 px-5 py-2 bg-[#0F0E0C] text-[#F5F0E8] font-bold rounded-full text-xs hover:bg-[#3B82F6] transition-colors duration-300"
             >
               Check Score <ArrowRight size={12} />

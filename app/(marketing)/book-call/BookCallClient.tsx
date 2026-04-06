@@ -38,17 +38,15 @@ export default function BookCallClient() {
     setError("")
 
     try {
-      const res = await fetch("/api/audit-submission", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name,
           email,
           phone,
-          business_type: businessType,
-          website: "",
-          notes: `Goal: ${goal}`,
-          source: "book-call-gate",
+          company: businessType,
+          message: `Strategy Call Request\nGoal: ${goal}\nBusiness type: ${businessType}`,
         }),
       })
       const data = await res.json()

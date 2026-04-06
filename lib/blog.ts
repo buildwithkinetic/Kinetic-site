@@ -765,7 +765,7 @@ Kinetic's free Digital Health Score quiz does exactly this in 2 minutes — inst
 
 That's fixable. It usually takes less time than you think.
 
-[Check your Digital Health Score — free, 2 minutes →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — free, 2 minutes →](/free-website-audit)
 `,
   }
   ,
@@ -870,9 +870,9 @@ Projects range from a simple lead qualification agent (straightforward, lower in
 
 If you're not sure whether your business has a good AI agent use case, the discovery call is the fastest way to find out. Most businesses have at least one obvious high-ROI application that takes 2-4 weeks to build.
 
-[Book a free discovery call to discuss your AI agent use case →](/work-with-us/custom-build)
+[Book a free discovery call to discuss your AI agent use case →](/book-call)
 
-[Check your Digital Health Score — free, 2 minutes →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — free, 2 minutes →](/free-website-audit)
 `,
   }
   ,
@@ -1038,7 +1038,7 @@ It's designed for local businesses that want to appear on Google within 30 days 
 
 Or, book a free 30-minute discovery call and Kinetic will map out exactly where your visibility gaps are and what to fix first — before you commit to anything.
 
-[Check your Digital Health Score — free, takes 2 minutes →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — free, takes 2 minutes →](/free-website-audit)
 `,
   }
   ,
@@ -1157,7 +1157,7 @@ If you're currently running leads through WhatsApp and want to know what a prope
 
 Or explore the [Lead Generation & CRM service](/services/lead-generation) and [Automation Systems](/services/automation) — the complete stack: lead capture, CRM pipeline, and automated follow-ups, all integrated.
 
-[Check your Digital Health Score — free, 2 minutes →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — free, 2 minutes →](/free-website-audit)
 `,
   }
   ,
@@ -1300,7 +1300,7 @@ If you're not sure where the problem is, book a free 30-minute discovery call. K
 
 Or start right now, for free:
 
-[Check your Digital Health Score — 2 minutes, instant results →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — 2 minutes, instant results →](/free-website-audit)
 `,
   }
   ,
@@ -1414,9 +1414,9 @@ Most business websites fail at least 3 of these 5 checks. Fixing them doesn't re
 
 If you want a full assessment in 2 minutes, the Digital Health Score quiz covers all of the above and gives you a score out of 100 with specific recommendations.
 
-[Book a free discovery call to review your website →](/work-with-us/custom-build)
+[Book a free discovery call to review your website →](/book-call)
 
-[Check your Digital Health Score — free, 2 minutes →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — free, 2 minutes →](/free-website-audit)
 `,
   }
   ,
@@ -1517,9 +1517,9 @@ The result is a site that doesn't need to be "fixed for SEO" after launch, becau
 
 If you want to understand specifically where your current site stands — technically and from a content perspective — the Digital Health Score quiz gives you a structured assessment in 2 minutes.
 
-[Book a free discovery call to discuss your SEO situation →](/work-with-us/custom-build)
+[Book a free discovery call to discuss your SEO situation →](/book-call)
 
-[Check your Digital Health Score — free, 2 minutes →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — free, 2 minutes →](/free-website-audit)
 `,
   }
   ,
@@ -1636,9 +1636,9 @@ It's built on open infrastructure — n8n for automations, Supabase for the data
 
 If you want to understand specifically what your current lead capture situation looks like and where you're losing leads, the Digital Health Score quiz assesses your capture infrastructure as one of its 10 dimensions.
 
-[Book a free discovery call to discuss your lead system →](/work-with-us/custom-build)
+[Book a free discovery call to discuss your lead system →](/book-call)
 
-[Check your Digital Health Score — free, 2 minutes →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — free, 2 minutes →](/free-website-audit)
 `,
   }
   ,
@@ -1767,9 +1767,9 @@ The starting question isn't "how do we automate everything?" — it's "what woul
 
 If you're not sure where to start, the discovery call is the fastest way to answer that question for your specific business.
 
-[Book a free discovery call to map your automation priorities →](/work-with-us/custom-build)
+[Book a free discovery call to map your automation priorities →](/book-call)
 
-[Check your Digital Health Score — free, 2 minutes →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — free, 2 minutes →](/free-website-audit)
 `,
   }
   ,
@@ -1872,9 +1872,9 @@ Kinetic's process is different: the discovery call produces a written brief with
 
 If you're currently in a situation where off-the-shelf tools are creating meaningful friction in your core workflow, the discovery call is the right first step.
 
-[Book a free discovery call to scope your web app →](/work-with-us/custom-build)
+[Book a free discovery call to scope your web app →](/book-call)
 
-[Check your Digital Health Score — free, 2 minutes →](/work-with-us/quick-win-audit#quiz)
+[Check your Digital Health Score — free, 2 minutes →](/free-website-audit)
 `,
   }
 ]

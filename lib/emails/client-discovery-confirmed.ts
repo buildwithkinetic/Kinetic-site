@@ -99,7 +99,7 @@ export function clientDiscoveryConfirmedHtml(p: ClientDiscoveryConfirmedProps): 
       <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
         <tr>
           <td align="center">
-            <a href="https://buildwithkinetic.org/work-with-us/custom-build" style="display:inline-block;background:#E8E0D0;color:#FFFFFF;font-size:15px;font-weight:700;padding:14px 32px;border-radius:100px;text-decoration:none;">View Custom Build offer →</a>
+            <a href="https://buildwithkinetic.org/book-call" style="display:inline-block;background:#E8E0D0;color:#FFFFFF;font-size:15px;font-weight:700;padding:14px 32px;border-radius:100px;text-decoration:none;">View Custom Build offer →</a>
           </td>
         </tr>
       </table>

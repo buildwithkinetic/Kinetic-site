@@ -79,7 +79,7 @@ export function IndustryPageTemplate({ data }: { data: IndustryPageData }) {
                 </Link>
               </div>
               <Link
-                href="/work-with-us/quick-win-audit#quiz"
+                href="/free-website-audit"
                 className="px-5 py-2.5 bg-[#3B82F6] text-white font-semibold rounded-full text-sm hover:bg-[#6366F1] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]/50"
               >
                 Get a Free Audit
@@ -107,7 +107,7 @@ export function IndustryPageTemplate({ data }: { data: IndustryPageData }) {
           headline={data.subheadline}
           accentWord={data.industryName}
           description={data.heroDescription}
-          primaryCta={{ label: "Check My Digital Health Score — Free", href: "/work-with-us/quick-win-audit#quiz" }}
+          primaryCta={{ label: "Check My Digital Health Score — Free", href: "/free-website-audit" }}
           secondaryCta={{ label: "See All Services", href: "/website-development" }}
         />
 
@@ -211,7 +211,7 @@ export function IndustryPageTemplate({ data }: { data: IndustryPageData }) {
           <PageContainer>
             <p className="text-sm text-white/50 leading-relaxed">
               Want to see why your website isn&apos;t converting?{" "}
-              <Link href="/work-with-us/quick-win-audit#quiz" className="text-[#3B82F6] hover:underline font-semibold">
+              <Link href="/free-website-audit" className="text-[#3B82F6] hover:underline font-semibold">
                 Get a free website growth audit →
               </Link>
             </p>
@@ -261,7 +261,7 @@ export function IndustryPageTemplate({ data }: { data: IndustryPageData }) {
               <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">{data.ctaHeadline}</h2>
               <p className="text-white/50 text-xl mb-10 max-w-2xl mx-auto">{data.ctaSubtext}</p>
               <Link
-                href="/work-with-us/quick-win-audit#quiz"
+                href="/free-website-audit"
                 className="inline-flex items-center gap-2 px-10 py-5 bg-[#3B82F6] text-white font-bold rounded-full text-xl hover:bg-[#6366F1] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]/50"
               >
                 Get a Free Growth Audit →
