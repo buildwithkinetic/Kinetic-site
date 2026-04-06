@@ -6,6 +6,8 @@ import Reveal from '@/components/Reveal'
 import dynamic from 'next/dynamic'
 const HeroCanvas = dynamic(() => import('@/components/HeroCanvas'), { ssr: false })
 import { events } from '@/lib/analytics'
+import { Footer } from '@/components/marketing/Footer'
+import { StickyCtaBanner } from '@/components/marketing/StickyCtaBanner'
 
 /* ─── Shared primitives ─────────────────────────────────────────────── */
 const btnPrimary: React.CSSProperties = {
@@ -177,8 +179,40 @@ const components = [
   },
 ]
 
+const faqs = [
+  {
+    q: 'How is Kinetic different from a regular web agency?',
+    a: "Most agencies build a website and hand over the login details. Kinetic builds the complete growth system — website, CRM, automation, and SEO — and installs it running in your business before handover.",
+  },
+  {
+    q: 'How long does it take to go live?',
+    a: 'Most systems are live in 2–3 weeks. The Quick Win Audit is delivered in 1 week. The Full Growth System takes up to 4 weeks given its scope.',
+  },
+  {
+    q: 'What if I already have a website?',
+    a: "We audit it, identify exactly what's leaking leads, and either rebuild it or layer the growth system on top — whichever makes more sense for your business.",
+  },
+  {
+    q: 'Is there a guarantee?',
+    a: 'Yes. Every offer has a specific performance guarantee. The Visibility Fix: first-page Google ranking in 30 days or I keep working free. Lead Capture System: zero missed leads in 90 days or I fix it free. Full Growth System: 90-day performance guarantee.',
+  },
+  {
+    q: 'Do you work with businesses outside Kolkata?',
+    a: 'Yes — the entire process is remote. Strategy call, build, and handover all happen online. Kinetic works with founders and small businesses across India.',
+  },
+]
+
 /* ═══════════════════════════════════════════════════════════════════════ */
 export default function HomepageClient() {
+  const [showMobileCta, setShowMobileCta] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  useEffect(() => {
+    const onScroll = () => setShowMobileCta(window.scrollY > 600)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <div style={{ background: '#0A0A0A', minHeight: '100vh', overflowX: 'hidden' }}>
 
@@ -786,7 +820,67 @@ export default function HomepageClient() {
         </div>
       </section>
 
-      {/* ══ 7. FINAL CTA ════════════════════════════════════════════════ */}
+      {/* ══ 7. FAQ ══════════════════════════════════════════════════════ */}
+      <section style={{ padding: '140px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
+          <Reveal>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '24px' }}>
+              FAQ
+            </p>
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(34px, 4.5vw, 56px)',
+              fontWeight: 400, lineHeight: 1.08, letterSpacing: '-2px',
+              color: '#FFFFFF', margin: '0 0 64px',
+            }}>
+              Questions people ask<br/>
+              <span style={{ color: 'rgba(255,255,255,0.3)' }}>before they book a call.</span>
+            </h2>
+          </Reveal>
+
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+            {faqs.map((faq, i) => (
+              <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  style={{
+                    width: '100%', textAlign: 'left',
+                    padding: '28px 0',
+                    background: 'none', border: 'none', cursor: 'pointer',
+                    display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px',
+                  }}
+                >
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(16px, 2vw, 18px)', fontWeight: 500, color: '#FFFFFF', lineHeight: 1.4 }}>
+                    {faq.q}
+                  </span>
+                  <span style={{
+                    flexShrink: 0, width: '24px', height: '24px',
+                    borderRadius: '50%',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: 'rgba(255,255,255,0.5)',
+                    fontSize: '16px', lineHeight: 1,
+                    transition: 'transform 0.25s, border-color 0.25s',
+                    transform: openFaq === i ? 'rotate(45deg)' : 'none',
+                    borderColor: openFaq === i ? 'rgba(59,130,246,0.5)' : 'rgba(255,255,255,0.15)',
+                  }}>+</span>
+                </button>
+                {openFaq === i && (
+                  <p style={{
+                    fontFamily: 'var(--font-body)', fontSize: '16px',
+                    color: 'rgba(255,255,255,0.45)', lineHeight: 1.75,
+                    margin: '0 0 28px', paddingRight: '48px',
+                  }}>
+                    {faq.a}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ 8. FINAL CTA ════════════════════════════════════════════════ */}
       <section style={{
         padding: '160px 24px',
         position: 'relative', overflow: 'hidden',
@@ -869,7 +963,7 @@ export default function HomepageClient() {
             </p>
             <p style={{ marginTop: '16px', fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.3)' }}>
               Or{' '}
-              <Link href="/work-with-us#free-audit" style={{
+              <Link href="/free-website-audit" style={{
                 color: 'rgba(255,255,255,0.5)',
                 textDecoration: 'underline', textUnderlineOffset: '3px',
                 transition: 'color 0.2s',
@@ -883,6 +977,47 @@ export default function HomepageClient() {
         </div>
       </section>
 
-</div>
+      {/* ── Footer ─────────────────────────────────────────────────────── */}
+      <Footer />
+
+      {/* ── Sticky CTA Banner (desktop) ─────────────────────────────── */}
+      <StickyCtaBanner />
+
+      {/* ── Floating Mobile CTA ─────────────────────────────────────── */}
+      {showMobileCta && (
+        <a
+          href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+          onClick={() => events.bookCallClick('mobile_floating')}
+          style={{
+            position: 'fixed', bottom: '24px', left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 998,
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            padding: '14px 28px',
+            background: '#3B82F6',
+            color: '#fff',
+            borderRadius: '100px',
+            fontSize: '15px', fontWeight: 600,
+            textDecoration: 'none',
+            boxShadow: '0 8px 32px rgba(59,130,246,0.55)',
+            whiteSpace: 'nowrap',
+          }}
+          className="mobile-floating-cta"
+        >
+          <MeetIcon />
+          Book a Free Call
+        </a>
+      )}
+      <style>{`
+        @media (min-width: 768px) {
+          .mobile-floating-cta { display: none !important; }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; box-shadow: 0 0 10px #3B82F6; }
+          50% { opacity: 0.6; box-shadow: 0 0 20px #3B82F6; }
+        }
+      `}</style>
+
+    </div>
   )
 }
