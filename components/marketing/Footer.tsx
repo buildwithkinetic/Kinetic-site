@@ -112,10 +112,10 @@ export function Footer() {
           }}>
             © {new Date().getFullYear()} Kinetic. All rights reserved.
           </p>
-          <a href="mailto:hello@buildwithkinetic.org" style={{
+          <a href="mailto:admin@buildwithkinetic.org" style={{
             fontFamily: 'var(--font-body)', fontSize: '12px',
             color: 'var(--t4)', textDecoration: 'none',
-          }}>hello@buildwithkinetic.org</a>
+          }}>admin@buildwithkinetic.org</a>
         </div>
       </div>
 

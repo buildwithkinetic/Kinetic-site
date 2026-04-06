@@ -200,7 +200,7 @@ stats.forEach(stat => sections.push(new Paragraph({ text: stat, size: 22, spacin
 sections.push(new Paragraph({ text: '', spacing: { after: 300 } }));
 sections.push(createSubtext('Key Brand Information'));
 sections.push(new Paragraph({
-  text: 'Founder: Ayush Gupta (Solo operator — no team)\nLocation: Kolkata, India\nPositioning: "The System Behind Your Growth"\nPrimary Service: Automated growth systems for small businesses & startups in India\nMain Offering: 5 specific growth packages (visibility fix, lead capture, repeat revenue, full system, audit)\nMain Case Study: Sheknowmics (women\'s health platform)\nEmail for Submissions: ayushguptayush21@gmail.com',
+  text: 'Founder: Ayush Gupta (Solo operator — no team)\nLocation: Kolkata, India\nPositioning: "The System Behind Your Growth"\nPrimary Service: Automated growth systems for small businesses & startups in India\nMain Offering: 5 specific growth packages (visibility fix, lead capture, repeat revenue, full system, audit)\nMain Case Study: Sheknowmics (women\'s health platform)\nEmail for Submissions: admin@buildwithkinetic.org',
   size: 22,
   spacing: { after: 300 },
 }));
@@ -294,7 +294,7 @@ sections.push(new Paragraph({ text: '', pageBreakBefore: true }));
 sections.push(createHeading('7. ENVIRONMENT VARIABLES', 1));
 sections.push(createSubtext('Required .env.local'));
 sections.push(new Paragraph({
-  text: 'NEXT_PUBLIC_SUPABASE_URL=<supabase-project-url>\nNEXT_PUBLIC_SUPABASE_ANON_KEY=<anon-key>\nSUPABASE_SERVICE_ROLE_KEY=<service-role-key>\nNEXT_PUBLIC_APP_URL=https://buildwithkinetic.org\nRESEND_API_KEY=<resend-email-api-key>\nAYUSH_EMAIL=ayushguptayush21@gmail.com\nGOOGLE_ANALYTICS_ID=<gtag-id>\nNEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=<google-verification-code>',
+  text: 'NEXT_PUBLIC_SUPABASE_URL=<supabase-project-url>\nNEXT_PUBLIC_SUPABASE_ANON_KEY=<anon-key>\nSUPABASE_SERVICE_ROLE_KEY=<service-role-key>\nNEXT_PUBLIC_APP_URL=https://buildwithkinetic.org\nRESEND_API_KEY=<resend-email-api-key>\nAYUSH_EMAIL=admin@buildwithkinetic.org\nGOOGLE_ANALYTICS_ID=<gtag-id>\nNEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=<google-verification-code>',
   size: 20,
   spacing: { after: 300 },
   family: 'Courier New',

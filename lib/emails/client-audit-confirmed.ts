@@ -118,7 +118,7 @@ export function clientAuditConfirmedHtml(p: ClientAuditConfirmedProps): string {
       <p style="margin:0 0 4px 0;font-size:14px;color:#0F0E0C;">Talk soon,</p>
       <p style="margin:0;font-size:15px;font-weight:800;color:#0F0E0C;">Ayush — Kinetic</p>
       <p style="margin:4px 0 0 0;font-size:13px;color:#9E9890;">
-        <a href="mailto:hello@buildwithkinetic.org" style="color:#E8E0D0;text-decoration:none;">hello@buildwithkinetic.org</a>
+        <a href="mailto:admin@buildwithkinetic.org" style="color:#E8E0D0;text-decoration:none;">admin@buildwithkinetic.org</a>
       </p>
 
     </td>

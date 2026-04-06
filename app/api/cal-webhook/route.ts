@@ -74,7 +74,7 @@ export async function POST(request: Request) {
 
     // ── Notify Ayush ───────────────────────────────────────────────────────────
     const resendKey = process.env.RESEND_API_KEY
-    const ayushEmail = process.env.KINETIC_EMAIL || "ayushguptayush21@gmail.com"
+    const ayushEmail = process.env.KINETIC_EMAIL || "admin@buildwithkinetic.org"
 
     if (resendKey) {
       const resend = new Resend(resendKey)

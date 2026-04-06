@@ -217,10 +217,10 @@ function BookingConfirmedContent() {
               Reply to your confirmation email, or reach out directly:
             </p>
             <a
-              href="mailto:hello@buildwithkinetic.org"
+              href="mailto:admin@buildwithkinetic.org"
               className="text-[#3B82F6] font-mono text-sm hover:underline"
             >
-              hello@buildwithkinetic.org
+              admin@buildwithkinetic.org
             </a>
           </div>
 

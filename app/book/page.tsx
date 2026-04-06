@@ -189,13 +189,13 @@ function BookPageContent() {
         )
       } else {
         setSubmitError(
-          `Something went wrong sending your confirmation email. Please email us directly at hello@buildwithkinetic.org`
+          `Something went wrong sending your confirmation email. Please email us directly at admin@buildwithkinetic.org`
         )
         setSubmitting(false)
       }
     } catch {
       setSubmitError(
-        `Something went wrong sending your confirmation email. Please email us directly at hello@buildwithkinetic.org`
+        `Something went wrong sending your confirmation email. Please email us directly at admin@buildwithkinetic.org`
       )
       setSubmitting(false)
     }

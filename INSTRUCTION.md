@@ -8,7 +8,7 @@
 - **Name:** Ayush Gupta
 - **Role:** Founder & sole operator of Kinetic
 - **Location:** Kolkata, India
-- **Email:** ayushguptayush21@gmail.com
+- **Email:** admin@buildwithkinetic.org
 - **LinkedIn:** https://www.linkedin.com/in/21-ayushgupta
 - **Website:** https://buildwithkinetic.org
 
