@@ -309,7 +309,7 @@ export default function ResultsPageClient() {
               Book a 30-minute call. I'll show you exactly what a system built for
               your business would look like.
             </p>
-            <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+            <Link href="/book-call"
               style={btnPrimary}
               onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)'; e.currentTarget.style.boxShadow = '0 10px 36px rgba(59,130,246,0.35)' }}
               onMouseLeave={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)' }}

@@ -21,8 +21,8 @@ const nav = [
   {
     label: 'Get Started',
     links: [
-      { label: 'Book a Strategy Call', href: 'https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic' },
-      { label: 'Free Business Audit', href: '/work-with-us#free-audit' },
+      { label: 'Book a Strategy Call', href: '/book-call' },
+      { label: 'Free Website Audit', href: '/free-website-audit' },
       { label: 'View System Tiers', href: '/work-with-us#tiers' },
     ],
   },
@@ -65,8 +65,8 @@ export function Footer() {
               color: 'var(--t4)', lineHeight: 1.6,
               maxWidth: '280px', margin: '0 0 20px',
             }}>
-              Digital Growth Systems for small businesses and startups.
-              Built and installed — not just designed and delivered.
+              B2B growth systems for founders — websites, web apps, AI agents, and automation.
+              Built and installed, not just designed and delivered.
             </p>
             <p style={{
               fontFamily: 'var(--font-body)', fontSize: '12px',

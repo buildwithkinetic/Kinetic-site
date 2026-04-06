@@ -303,7 +303,7 @@ export default function SheknowmicsPageClient() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+              <Link href="/book-call"
                 style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "14px 32px", background: "linear-gradient(135deg, #3B82F6, #8B5CF6)", borderRadius: "100px", color: "#FFFFFF", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "15px", textDecoration: "none", transition: "all 0.25s ease", border: "none" }}>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M15 9.5V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2.5l4 3V6.5l-4 3Z"/>

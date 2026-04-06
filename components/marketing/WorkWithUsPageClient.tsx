@@ -317,7 +317,7 @@ export default function WorkWithUsPageClient() {
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'var(--t4)', lineHeight: 1.4, margin: 0 }}>{tier.guarantee}</p>
                   </div>
 
-                  <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic" style={{
+                  <Link href="/book-call" style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
                     padding: '12px',
                     background: 'transparent',
@@ -380,7 +380,7 @@ export default function WorkWithUsPageClient() {
                 Let Kinetic audit your entire online presence and identify exactly
                 where you are losing leads, what is broken, and what needs to be fixed.
               </p>
-              <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic" style={{
+              <Link href="/book-call" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 padding: '16px 36px',
                 background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
@@ -433,7 +433,7 @@ export default function WorkWithUsPageClient() {
               Book a 30-minute strategy call. I'll ask the right questions,
               understand your business, and recommend the exact system that fits.
             </p>
-            <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+            <Link href="/book-call"
               style={btnPrimary}
               onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)'; e.currentTarget.style.boxShadow = '0 10px 36px rgba(59,130,246,0.35)' }}
               onMouseLeave={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)' }}

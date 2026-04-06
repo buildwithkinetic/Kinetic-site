@@ -38,7 +38,7 @@ export function StickyCtaBanner() {
       </div>
       <div className="flex items-center gap-3 shrink-0">
         <Link
-          href="/work-with-us/quick-win-audit#quiz"
+          href="/free-website-audit"
           className="px-4 py-1.5 bg-[#0F0E0C] text-[#F5F0E8] font-bold rounded-full text-sm hover:bg-[#3B82F6] transition-colors duration-300 whitespace-nowrap"
         >
           Free Health Score

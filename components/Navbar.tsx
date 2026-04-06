@@ -92,7 +92,7 @@ export default function Navbar() {
 
         {/* CTA button */}
         <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ display: 'inline-block' }} className="nav-cta">
-          <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic" onClick={() => events.bookCallClick('navbar')} style={{
+          <Link href="/book-call" onClick={() => events.bookCallClick('navbar')} style={{
             display: 'inline-flex', alignItems: 'center',
             padding: '9px 18px',
             background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', color: '#FFFFFF',
@@ -149,7 +149,7 @@ export default function Navbar() {
                 }}>{l.label}</Link>
               </motion.div>
             ))}
-            <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic" onClick={() => { setMobileOpen(false); events.bookCallClick('navbar_mobile'); }} style={{
+            <Link href="/book-call" onClick={() => { setMobileOpen(false); events.bookCallClick('navbar_mobile'); }} style={{
               display: 'inline-flex', marginTop: '16px', padding: '12px 24px',
               background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', color: '#FFFFFF',
               borderRadius: '100px', fontSize: '14px', fontWeight: 600,

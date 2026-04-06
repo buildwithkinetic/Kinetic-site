@@ -166,7 +166,7 @@ export default async function BlogPostPage({ params }: Props) {
               <p className="text-[#6B6560] text-sm">We&apos;ll review your site and show you exactly what&apos;s costing you leads.</p>
             </div>
             <Link
-              href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+              href="/book-call"
               className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#0F0E0C] text-[#F5F0E8] font-bold rounded-full hover:bg-[#3B82F6] transition-colors duration-300"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -6,7 +6,6 @@ import Reveal from '@/components/Reveal'
 import dynamic from 'next/dynamic'
 const HeroCanvas = dynamic(() => import('@/components/HeroCanvas'), { ssr: false })
 import { events } from '@/lib/analytics'
-import { Footer } from '@/components/marketing/Footer'
 import { StickyCtaBanner } from '@/components/marketing/StickyCtaBanner'
 
 /* ─── Shared primitives ─────────────────────────────────────────────── */
@@ -147,10 +146,33 @@ const components = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        <path d="M7 8h2m2 0h2"/>
+      </svg>
+    ),
+    title: 'Web App / SaaS',
+    desc: 'Full-stack applications — dashboards, portals, SaaS products — built and deployed fast.',
+    color: '#06B6D4',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12"/>
+        <path d="M12 6v6l4 2"/>
+        <path d="M2 12C2 6.48 6.48 2 12 2"/>
+      </svg>
+    ),
+    title: 'AI Agents',
+    desc: 'Intelligent agents that handle lead qualification, support, and follow-up — autonomously.',
+    color: '#10B981',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
         <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
       </svg>
     ),
-    title: 'SEO & Visibility',
+    title: 'SEO & Acquisition',
     desc: 'Google finds you before competitors. Organic leads, compounding over time.',
     color: '#4F7CF5',
   },
@@ -298,13 +320,13 @@ export default function HomepageClient() {
             fontWeight: 300,
             letterSpacing: '0.1px',
           }}>
-            We install a complete client acquisition system — website, CRM, and automation — that captures and converts leads while you sleep.
+            We build complete B2B growth systems — websites, web apps, AI agents, and automation — that generate revenue and run your pipeline while you focus on the work.
           </motion.p>
 
           {/* Single primary CTA */}
           <motion.div variants={fadeUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
             <Link
-              href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+              href="/book-call"
               onClick={() => events.bookCallClick('hero')}
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '10px',
@@ -396,9 +418,9 @@ export default function HomepageClient() {
           gap: '0', flexWrap: 'wrap',
         }}>
           {[
-            '50+ systems built',
+            'Websites · Web Apps · AI Agents',
             'Delivered in 2–4 weeks',
-            'Used by founders across India',
+            'B2B solutions for founders across India',
           ].map((item, i) => (
             <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0' }}>
               <span style={{
@@ -414,7 +436,7 @@ export default function HomepageClient() {
       </div>
 
       {/* ══ 2. PROBLEM ══════════════════════════════════════════════════ */}
-      <section style={{ padding: '140px 24px' }}>
+      <section style={{ padding: '140px 24px' }} className="homepage-section-lg">
         <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
 
           <Reveal>
@@ -442,6 +464,7 @@ export default function HomepageClient() {
             viewport={{ once: true, margin: '-80px' }}
             variants={staggerSlow}
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2px' }}
+            className="problem-grid"
           >
             {problems.map((p, i) => (
               <motion.div key={p.n} variants={cardFadeUp}>
@@ -650,10 +673,10 @@ export default function HomepageClient() {
               fontWeight: 400, lineHeight: 1.08, letterSpacing: '-2px',
               color: '#FFFFFF', margin: '0 0 16px',
             }}>
-              Parts of the system.
+              What we build.
             </h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '17px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.65, maxWidth: '460px', margin: '0 0 72px' }}>
-              Not a menu of services. One integrated system with four layers &mdash; all working together.
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '17px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.65, maxWidth: '520px', margin: '0 0 72px' }}>
+              Not a menu of services. Six integrated capabilities &mdash; websites, web apps, AI agents, SEO, CRM, and automation &mdash; assembled into one system that fits your business.
             </p>
           </Reveal>
 
@@ -663,6 +686,7 @@ export default function HomepageClient() {
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '20px', overflow: 'hidden' }}
+            className="components-grid"
           >
             {components.map((c) => (
               <motion.div
@@ -920,7 +944,7 @@ export default function HomepageClient() {
             </p>
             <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link
-                href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+                href="/book-call"
                 className="cta-btn-pulse"
                 onClick={() => events.bookCallClick('cta_section')}
                 style={{ ...btnPrimary, padding: '18px 36px', fontSize: '16px' }}
@@ -977,16 +1001,13 @@ export default function HomepageClient() {
         </div>
       </section>
 
-      {/* ── Footer ─────────────────────────────────────────────────────── */}
-      <Footer />
-
       {/* ── Sticky CTA Banner (desktop) ─────────────────────────────── */}
       <StickyCtaBanner />
 
       {/* ── Floating Mobile CTA ─────────────────────────────────────── */}
       {showMobileCta && (
         <a
-          href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+          href="/book-call"
           onClick={() => events.bookCallClick('mobile_floating')}
           style={{
             position: 'fixed', bottom: '24px', left: '50%',
@@ -1015,6 +1036,44 @@ export default function HomepageClient() {
         @keyframes pulse {
           0%, 100% { opacity: 1; box-shadow: 0 0 10px #3B82F6; }
           50% { opacity: 0.6; box-shadow: 0 0 20px #3B82F6; }
+        }
+
+        /* ── Mobile responsiveness ─────────────────────────────── */
+        @media (max-width: 640px) {
+          /* Reduce section padding on mobile */
+          .homepage-section-lg { padding-top: 80px !important; padding-bottom: 80px !important; }
+
+          /* Hero: tighten spacing */
+          .hero-sub { max-width: 100% !important; margin-bottom: 40px !important; }
+          .hero-stats { gap: 24px !important; margin-top: 48px !important; }
+          .hero-stats > div { min-width: 80px !important; }
+
+          /* Problem cards: single column */
+          .problem-grid { grid-template-columns: 1fr !important; }
+
+          /* Flow bar: scroll horizontally */
+          .flow-bar { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+
+          /* System component cards: 1 col on mobile */
+          .components-grid { grid-template-columns: 1fr !important; }
+          .components-grid > div { padding: 28px 24px !important; }
+
+          /* How it works steps: reduce gap */
+          .steps-item { grid-template-columns: 48px 1fr !important; gap: 20px !important; padding: 32px 0 !important; }
+
+          /* Service cards padding */
+          .service-card { padding: 28px 20px !important; }
+
+          /* CTA section button group: stack vertically */
+          .cta-btn-group { flex-direction: column !important; align-items: stretch !important; }
+          .cta-btn-group > * { text-align: center !important; justify-content: center !important; }
+
+          /* FAQ accordion */
+          .faq-question { font-size: 16px !important; }
+        }
+
+        @media (max-width: 480px) {
+          .goal-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
 

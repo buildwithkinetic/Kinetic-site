@@ -25,7 +25,7 @@ export default function DiscoveryButton({ size = 'md', className = '', fullWidth
 
   return (
     <Link
-      href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+      href="/book-call"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`discovery-btn ${className}`}

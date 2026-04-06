@@ -71,6 +71,24 @@ const offers = [
     guarantee: "If you don't find the audit valuable, I'll refund it in full — no questions asked.",
     badge: null, color: '#C026D3',
   },
+  {
+    num: '06', name: 'Web App / SaaS Build',
+    problem: 'Your idea needs a real product — not just a landing page.',
+    what: 'End-to-end web application development: architecture, backend, frontend, and deployment. Built with modern stack (Next.js, Supabase, or your chosen tools) — ready for real users on day one.',
+    outcomes: ['Production-ready web app in 4–8 weeks', 'Auth, database, API, and UI — all handled', 'Clean codebase you own and can scale independently'],
+    timeline: 'Live in 4–8 weeks',
+    guarantee: 'I deliver a working, deployed application with full handover documentation — or I keep building.',
+    badge: 'New', color: '#06B6D4',
+  },
+  {
+    num: '07', name: 'AI Agent System',
+    problem: 'Repetitive tasks are eating your time — and costing you money.',
+    what: 'Custom AI agents and automation workflows: lead qualification bots, AI-powered follow-up sequences, internal tools, and intelligent process automation — built on n8n, OpenAI, and your existing stack.',
+    outcomes: ['Leads qualified and followed up with automatically — 24/7', 'Hours of manual work eliminated every week', 'AI that understands your business context, not just generic responses'],
+    timeline: 'Live in 2–3 weeks',
+    guarantee: 'If the agent fails to perform its core function within 60 days, I rebuild it free.',
+    badge: 'New', color: '#10B981',
+  },
 ]
 
 export default function ServicesPageClient() {
@@ -80,7 +98,7 @@ export default function ServicesPageClient() {
       {/* HERO */}
       <section style={{ padding: '160px 24px 80px', maxWidth: '900px', margin: '0 auto' }}>
         <Reveal>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--t4)', marginBottom: '20px' }}>5 Growth Offers</p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--t4)', marginBottom: '20px' }}>7 Growth Offers</p>
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(36px, 6vw, 72px)',
@@ -90,8 +108,8 @@ export default function ServicesPageClient() {
             Pick Your Problem.<br/>
             <span style={{ backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>I Fix It.</span>
           </h1>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '18px', color: 'var(--t3)', lineHeight: 1.6, maxWidth: '540px', margin: 0 }}>
-            5 specific offers. Clear outcomes. Built and installed in your business before handover.
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '18px', color: 'var(--t3)', lineHeight: 1.6, maxWidth: '600px', margin: 0 }}>
+            Websites, web apps, AI agents, and automation. Clear outcomes. Built and installed before handover.
           </p>
         </Reveal>
       </section>
@@ -104,6 +122,7 @@ export default function ServicesPageClient() {
               <motion.div
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.2 }}
+                className="offer-card"
                 style={{
                   padding: '40px',
                   background: '#111111',
@@ -168,7 +187,7 @@ export default function ServicesPageClient() {
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'var(--t4)', lineHeight: 1.4, margin: 0 }}>{offer.guarantee}</p>
                   </div>
 
-                  <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+                  <Link href="/book-call"
                     style={{ ...btnPrimary, background: `linear-gradient(135deg, ${offer.color}, ${offer.color === '#3B82F6' ? '#8B5CF6' : offer.color})` }}
                     onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)'; e.currentTarget.style.boxShadow = `0 8px 28px ${offer.color}35` }}
                     onMouseLeave={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}
@@ -210,7 +229,7 @@ export default function ServicesPageClient() {
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '17px', color: 'var(--t3)', lineHeight: 1.6, margin: '0 0 36px' }}>
               I personally review every submission and deliver a written diagnosis within 24 hours — free, no strings attached.
             </p>
-            <Link href="/work-with-us#free-audit"
+            <Link href="/free-website-audit"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 padding: '16px 36px',
@@ -235,6 +254,11 @@ export default function ServicesPageClient() {
         </div>
       </section>
 
+      <style>{`
+        @media (max-width: 640px) {
+          .offer-card { padding: 28px 20px !important; }
+        }
+      `}</style>
     </div>
   )
 }

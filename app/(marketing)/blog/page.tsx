@@ -129,7 +129,7 @@ export default function BlogPage() {
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 400, letterSpacing: "-1px", marginBottom: "16px", color: "var(--t1)" }}>Put these insights to work.</h2>
             <p className="text-[#6B6560] mb-8">Get a free website audit and growth strategy from Kinetic.</p>
             <Link
-              href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic"
+              href="/book-call"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#0F0E0C] text-[#F5F0E8] font-bold rounded-full text-lg hover:bg-[#3B82F6] transition-colors duration-300"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

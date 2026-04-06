@@ -73,7 +73,7 @@ export function IndustryPageTemplate({ data }: { data: IndustryPageData }) {
                   Blog
                   <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#3B82F6] group-hover:w-full transition-all duration-300" />
                 </Link>
-                <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic" className="text-sm font-medium text-white/50 hover:text-white transition-colors relative group">
+                <Link href="/book-call" className="text-sm font-medium text-white/50 hover:text-white transition-colors relative group">
                   Contact
                   <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#3B82F6] group-hover:w-full transition-all duration-300" />
                 </Link>

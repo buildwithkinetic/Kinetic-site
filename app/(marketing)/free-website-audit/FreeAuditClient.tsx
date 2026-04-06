@@ -74,19 +74,7 @@ export default function FreeAuditClient() {
 
   return (
     <>
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F5F0E8]/90 backdrop-blur-xl border-b border-black/[0.06]">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-black tracking-tight text-[#0F0E0C]">
-            KINETIC<span className="text-[#3B82F6]">.</span>
-          </Link>
-          <Link href="https://cal.com/ayush-gupta-xpzedb/free-business-audit-kinetic" className="text-sm text-[#6B6560] hover:text-[#0F0E0C] transition-colors">
-            Book a call instead →
-          </Link>
-        </div>
-      </nav>
-
-      <main className="min-h-screen bg-[#F5F0E8] pt-28 pb-20 px-6">
+      <main className="min-h-screen bg-[#F5F0E8] pt-24 pb-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start">
 
