@@ -61,14 +61,15 @@ export async function POST(request: Request) {
       }
 
       // Log to submissions table
-      await supabase.from("submissions").insert({
+      const { error: submissionError } = await supabase.from("submissions").insert({
         type: "booking",
         client_name: name,
         client_email: email,
         offer_name: title || "Strategy Call",
         notes: description || null,
         submitted_at: new Date().toISOString(),
-      }).catch((e: unknown) => console.error("submissions log error:", e))
+      })
+      if (submissionError) console.error("submissions log error:", submissionError.message)
     }
 
     // ── Notify Ayush ───────────────────────────────────────────────────────────

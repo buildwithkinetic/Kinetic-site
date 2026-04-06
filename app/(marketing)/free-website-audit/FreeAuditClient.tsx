@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import type { FormEvent, ChangeEvent } from "react"
 import { motion } from "framer-motion"
 import { CheckCircle, Loader2, ArrowRight } from "lucide-react"
 import Link from "next/link"
@@ -128,7 +129,7 @@ export default function FreeAuditClient() {
                   key="step1"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  onSubmit={(e) => { e.preventDefault(); setStep(2) }}
+                  onSubmit={(e: FormEvent<HTMLFormElement>) => { e.preventDefault(); setStep(2) }}
                   className="space-y-5"
                 >
                   <div>
@@ -143,7 +144,7 @@ export default function FreeAuditClient() {
                       type="text"
                       required
                       value={name}
-                      onChange={e => setName(e.target.value)}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
                       placeholder="e.g. Priya Sharma"
                       className="w-full px-4 py-3 border border-black/10 rounded-xl text-sm text-[#0F0E0C] bg-[#F5F0E8]/40 focus:outline-none focus:border-[#3B82F6]/50 transition-colors placeholder:text-[#9E9890]"
                     />
@@ -155,7 +156,7 @@ export default function FreeAuditClient() {
                       type="email"
                       required
                       value={email}
-                      onChange={e => setEmail(e.target.value)}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                       placeholder="you@yourbusiness.com"
                       className="w-full px-4 py-3 border border-black/10 rounded-xl text-sm text-[#0F0E0C] bg-[#F5F0E8]/40 focus:outline-none focus:border-[#3B82F6]/50 transition-colors placeholder:text-[#9E9890]"
                     />
@@ -167,7 +168,7 @@ export default function FreeAuditClient() {
                       type="url"
                       required
                       value={url}
-                      onChange={e => setUrl(e.target.value)}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
                       placeholder="https://yourbusiness.com"
                       className="w-full px-4 py-3 border border-black/10 rounded-xl text-sm text-[#0F0E0C] bg-[#F5F0E8]/40 focus:outline-none focus:border-[#3B82F6]/50 transition-colors placeholder:text-[#9E9890]"
                     />
@@ -203,7 +204,7 @@ export default function FreeAuditClient() {
                     <input
                       type="tel"
                       value={phone}
-                      onChange={e => setPhone(e.target.value)}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
                       placeholder="+91 98765 43210"
                       className="w-full px-4 py-3 border border-black/10 rounded-xl text-sm text-[#0F0E0C] bg-[#F5F0E8]/40 focus:outline-none focus:border-[#3B82F6]/50 transition-colors placeholder:text-[#9E9890]"
                     />
@@ -214,7 +215,7 @@ export default function FreeAuditClient() {
                     <input
                       type="text"
                       value={businessType}
-                      onChange={e => setBusinessType(e.target.value)}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) => setBusinessType(e.target.value)}
                       placeholder="e.g. Gym, clinic, SaaS startup, café..."
                       className="w-full px-4 py-3 border border-black/10 rounded-xl text-sm text-[#0F0E0C] bg-[#F5F0E8]/40 focus:outline-none focus:border-[#3B82F6]/50 transition-colors placeholder:text-[#9E9890]"
                     />

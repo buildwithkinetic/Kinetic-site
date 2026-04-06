@@ -63,9 +63,12 @@ function renderContent(markdown: string): string {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const postData = getBlogPost(slug)
 
-  if (!post) notFound()
+  if (!postData) notFound()
+
+  // TypeScript doesn't recognise notFound() as never-returning, so we narrow here
+  const post = postData!
 
   const relatedPosts = getRecentPosts(4).filter((p) => p.slug !== post.slug).slice(0, 3)
 

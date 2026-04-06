@@ -3,16 +3,14 @@ const nextConfig = {
   serverExternalPackages: [],
   async redirects() {
     return [
+      // ── Old /growth-offers structure → actual existing pages ────────────────
+      // /growth-offers itself doesn't exist — send to /services (the 5 offers page)
       {
-        source: '/services',
-        destination: '/growth-offers',
+        source: '/growth-offers',
+        destination: '/services',
         permanent: true,
       },
-      {
-        source: '/free-website-audit',
-        destination: '/growth-offers/quick-win-audit#quiz',
-        permanent: false,
-      },
+      // /growth-offers sub-pages → correct service pages
       {
         source: '/growth-offers/visibility-fix',
         destination: '/services/seo',
@@ -35,13 +33,24 @@ const nextConfig = {
       },
       {
         source: '/growth-offers/quick-win-audit',
-        destination: '/growth-offers',
-        permanent: false,
+        destination: '/free-website-audit',
+        permanent: true,
       },
       {
         source: '/growth-offers/custom-build',
-        destination: '/growth-offers',
-        permanent: false,
+        destination: '/services',
+        permanent: true,
+      },
+      // ── Legacy paths ─────────────────────────────────────────────────────────
+      {
+        source: '/portfolio',
+        destination: '/work/sheknowmics',
+        permanent: true,
+      },
+      {
+        source: '/pricing',
+        destination: '/services',
+        permanent: true,
       },
     ]
   },

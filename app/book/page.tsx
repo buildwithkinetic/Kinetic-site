@@ -203,9 +203,9 @@ function BookPageContent() {
 
   // ── Field change ─────────────────────────────────────────────────────────────
   const handleChange = (field: keyof FormData, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
+    setFormData((prev: FormData) => ({ ...prev, [field]: value }))
     if (errors[field as keyof FormErrors]) {
-      setErrors((prev) => ({ ...prev, [field]: undefined }))
+      setErrors((prev: FormErrors) => ({ ...prev, [field]: undefined }))
     }
   }
 
