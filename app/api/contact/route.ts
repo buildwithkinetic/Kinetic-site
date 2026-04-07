@@ -14,22 +14,11 @@ export async function POST(request: Request) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     )
 
-    const { data: profile, error: profileError } = await supabase
-      .from('profiles')
-      .select('id')
-      .limit(1)
-      .single()
-
-    if (profileError || !profile) {
-      return NextResponse.json({ error: 'No admin profile found' }, { status: 500 })
-    }
-
     const nameParts = name.trim().split(' ')
     const firstName = nameParts[0]
     const lastName = nameParts.slice(1).join(' ') || null
 
     const { error: insertError } = await supabase.from('leads').insert({
-      profile_id: profile.id,
       first_name: firstName,
       last_name: lastName,
       email,
