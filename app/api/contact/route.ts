@@ -29,7 +29,10 @@ export async function POST(request: Request) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     )
 
-    const { error: insertError } = await supabase.from('leads').insert({
+    // Try full enriched insert first
+    let insertError = null
+
+    const fullInsert = await supabase.from('leads').insert({
       name: name.trim(),
       email,
       phone: phone || null,
@@ -47,15 +50,30 @@ export async function POST(request: Request) {
       utm_campaign: utm_campaign || null,
     })
 
+    insertError = fullInsert.error
+
+    // If enriched insert fails (columns not yet migrated), fall back to core columns only
     if (insertError) {
-      console.error('Insert error:', insertError)
-      return NextResponse.json({ error: insertError.message }, { status: 500 })
+      console.warn('Full insert failed, trying core insert. Error:', insertError.message)
+
+      const coreInsert = await supabase.from('leads').insert({
+        name: name.trim(),
+        email,
+      })
+
+      if (coreInsert.error) {
+        console.error('Core insert also failed:', coreInsert.error.message)
+        return NextResponse.json({ error: coreInsert.error.message }, { status: 500 })
+      }
+
+      // Core insert succeeded — proceed (email still fires)
+      console.log('Core insert succeeded. Run migration 002 to capture enriched fields.')
     }
 
-    // Fire welcome email (non-blocking)
+    // Fire welcome email (non-blocking — never block the response on this)
     try {
       const firstName = name.trim().split(' ')[0]
-      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://buildwithkinetic.org'
       await fetch(`${baseUrl}/api/send-welcome`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
