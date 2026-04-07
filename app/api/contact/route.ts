@@ -18,15 +18,19 @@ export async function POST(request: Request) {
     const firstName = nameParts[0]
     const lastName = nameParts.slice(1).join(' ') || null
 
+    const notesValue = [
+      company ? `Company: ${company}` : null,
+      message || null,
+    ].filter(Boolean).join('\n') || null
+
     const { error: insertError } = await supabase.from('leads').insert({
       first_name: firstName,
       last_name: lastName,
       email,
       phone: phone || null,
-      company: company || null,
       source: 'website',
       status: 'new',
-      notes: message || null,
+      notes: notesValue,
     })
 
     if (insertError) {
