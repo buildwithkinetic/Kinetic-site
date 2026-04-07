@@ -4,8 +4,7 @@ import { useEffect, useState, useCallback, useRef } from "react"
 // ── Types ────────────────────────────────────────────────────────────────────
 interface Lead {
   id: string
-  first_name: string
-  last_name: string | null
+  name: string
   email: string
   phone: string | null
   company: string | null
@@ -118,7 +117,7 @@ function SparkChart({ leads }: { leads: Lead[] }) {
 function exportCsv(leads: Lead[]) {
   const headers = ["Name", "Email", "Phone", "Company", "Source", "Status", "Notes", "Date"]
   const rows = leads.map((l) => [
-    `${l.first_name} ${l.last_name || ""}`.trim(),
+    l.name,
     l.email,
     l.phone || "",
     l.company || "",
@@ -340,8 +339,7 @@ export default function DashboardPage() {
     const q = search.toLowerCase()
     const matchesSearch =
       !q ||
-      l.first_name.toLowerCase().includes(q) ||
-      (l.last_name || "").toLowerCase().includes(q) ||
+      l.name.toLowerCase().includes(q) ||
       l.email.toLowerCase().includes(q) ||
       (l.company || "").toLowerCase().includes(q)
     const matchesStatus = statusFilter === "all" || l.status === statusFilter
@@ -601,7 +599,7 @@ export default function DashboardPage() {
                         onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent" }}
                       >
                         <td style={{ padding: "13px 16px", fontSize: "13px", color: "#F5F0E8", fontWeight: 500, whiteSpace: "nowrap" }}>
-                          {lead.first_name} {lead.last_name || ""}
+                          {lead.name}
                         </td>
                         <td style={{ padding: "13px 16px" }}>
                           <a href={`mailto:${lead.email}`} style={{ fontSize: "12px", color: "#3B82F6", textDecoration: "none" }}>{lead.email}</a>

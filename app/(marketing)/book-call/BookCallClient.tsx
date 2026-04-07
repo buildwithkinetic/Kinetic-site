@@ -20,6 +20,28 @@ const goals = [
   "Something else",
 ]
 
+const budgets = [
+  "Under ₹25,000",
+  "₹25,000 – ₹50,000",
+  "₹50,000 – ₹1,00,000",
+  "Above ₹1,00,000",
+  "Not sure yet",
+]
+
+const inputStyle: React.CSSProperties = {
+  width: "100%",
+  padding: "13px 16px",
+  background: "rgba(255,255,255,0.05)",
+  border: "1px solid rgba(255,255,255,0.1)",
+  borderRadius: "10px",
+  color: "#FFFFFF",
+  fontSize: "15px",
+  fontFamily: "var(--font-body)",
+  outline: "none",
+  transition: "border-color 0.2s",
+  boxSizing: "border-box" as const,
+}
+
 export default function BookCallClient() {
   const [step, setStep] = useState<Step>(1)
   const [loading, setLoading] = useState(false)
@@ -29,8 +51,9 @@ export default function BookCallClient() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
-  const [businessType, setBusinessType] = useState("")
   const [goal, setGoal] = useState("")
+  const [budget, setBudget] = useState("")
+  const [businessType, setBusinessType] = useState("")
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -46,7 +69,10 @@ export default function BookCallClient() {
           email,
           phone,
           company: businessType,
-          message: `Strategy Call Request\nGoal: ${goal}\nBusiness type: ${businessType}`,
+          service_interest: goal,
+          budget_range: budget,
+          source: "book-call",
+          message: `Strategy Call Request\nGoal: ${goal}\nBudget: ${budget}\nBusiness: ${businessType}`,
         }),
       })
       const data = await res.json()
@@ -61,6 +87,43 @@ export default function BookCallClient() {
     setLoading(false)
   }
 
+  if (submitted) {
+    return (
+      <main style={{ background: "#0A0A0A", minHeight: "100vh", color: "#FFFFFF" }} className="flex items-center justify-center px-6">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center max-w-md">
+          <CheckCircle size={56} color="#3B82F6" style={{ margin: "0 auto 24px" }} />
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "28px", color: "#FFFFFF", marginBottom: "12px" }}>
+            You&apos;re on the list.
+          </h2>
+          <p style={{ fontFamily: "var(--font-body)", color: "rgba(255,255,255,0.45)", fontSize: "16px", lineHeight: 1.6, marginBottom: "8px" }}>
+            Thanks <span style={{ color: "#FFFFFF", fontWeight: 500 }}>{name}</span>. I&apos;ll review your details and reach out within 24 hours to confirm a time.
+          </p>
+          <p style={{ fontFamily: "var(--font-body)", color: "rgba(255,255,255,0.25)", fontSize: "13px", marginBottom: "32px" }}>
+            Or book directly below if you&apos;d prefer.
+          </p>
+          <a
+            href={CAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex", alignItems: "center", gap: "8px",
+              background: "#3B82F6", color: "#FFFFFF",
+              fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "15px",
+              padding: "13px 24px", borderRadius: "10px", textDecoration: "none",
+              marginBottom: "20px",
+            }}
+          >
+            <Calendar size={16} /> Pick a time on Cal.com
+          </a>
+          <br />
+          <Link href="/" style={{ fontFamily: "var(--font-body)", color: "rgba(255,255,255,0.3)", fontSize: "13px", textDecoration: "none" }}>
+            ← Back to home
+          </Link>
+        </motion.div>
+      </main>
+    )
+  }
+
   return (
     <main
       style={{ background: "#0A0A0A", minHeight: "100vh", color: "#FFFFFF" }}
@@ -68,326 +131,204 @@ export default function BookCallClient() {
     >
       <div style={{ maxWidth: "480px", width: "100%" }}>
 
-        {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "48px" }}>
-          <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "13px", letterSpacing: "2.5px", textTransform: "uppercase", color: "#FFFFFF" }}>KINETIC</span>
-          <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#3B82F6", boxShadow: "0 0 8px rgba(59,130,246,0.8)", display: "inline-block" }} />
-        </Link>
-
+        {/* Step 1 — Contact details */}
         <AnimatePresence mode="wait">
-
-          {/* ── STEP 1: Basic info ─────────────────────────────────────── */}
-          {!submitted && step === 1 && (
+          {step === 1 && (
             <motion.form
               key="step1"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              onSubmit={(e: FormEvent<HTMLFormElement>) => { e.preventDefault(); setStep(2) }}
-              style={{ display: "flex", flexDirection: "column", gap: "0" }}
+              onSubmit={(e: FormEvent<HTMLFormElement>) => { e.preventDefault(); if (goal) setStep(2) }}
+              style={{ display: "flex", flexDirection: "column", gap: "24px" }}
             >
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "16px" }}>
-                Step 1 of 2 · Quick details
-              </p>
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px, 5vw, 48px)", fontWeight: 400, letterSpacing: "-2px", lineHeight: 1.08, color: "#FFFFFF", margin: "0 0 32px" }}>
-                Before we meet,<br />
-                <span style={{ backgroundImage: "linear-gradient(135deg, #3B82F6, #8B5CF6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  tell me about you.
-                </span>
-              </h1>
+              <div>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "2.5px", textTransform: "uppercase", color: "rgba(255,255,255,0.28)", marginBottom: "16px" }}>
+                  Step 1 of 2 · Your info
+                </p>
+                <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 4vw, 36px)", fontWeight: 700, color: "#FFFFFF", margin: "0 0 8px", letterSpacing: "-1px", lineHeight: 1.1 }}>
+                  Book a strategy call.
+                </h1>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "15px", color: "rgba(255,255,255,0.38)", margin: 0 }}>
+                  Free, 30 minutes. I&apos;ll map out exactly what your business needs.
+                </p>
+              </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "28px" }}>
-                <div>
-                  <label style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "8px" }}>
-                    Your name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={name}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
-                    placeholder="e.g. Priya Sharma"
-                    style={{
-                      width: "100%", padding: "14px 16px",
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      borderRadius: "12px",
-                      fontFamily: "var(--font-body)", fontSize: "15px", color: "#FFFFFF",
-                      outline: "none", boxSizing: "border-box",
-                      transition: "border-color 0.2s",
-                    }}
-                    onFocus={(e: React.FocusEvent<HTMLInputElement>) => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)" }}
-                    onBlur={(e: React.FocusEvent<HTMLInputElement>) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)" }}
-                  />
-                </div>
+              <div>
+                <label style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "8px" }}>Your name *</label>
+                <input
+                  type="text" required value={name}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+                  placeholder="e.g. Rahul Sharma"
+                  style={inputStyle}
+                  onFocus={e => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)" }}
+                  onBlur={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)" }}
+                />
+              </div>
 
-                <div>
-                  <label style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "8px" }}>
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                    placeholder="you@yourbusiness.com"
-                    style={{
-                      width: "100%", padding: "14px 16px",
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      borderRadius: "12px",
-                      fontFamily: "var(--font-body)", fontSize: "15px", color: "#FFFFFF",
-                      outline: "none", boxSizing: "border-box",
-                      transition: "border-color 0.2s",
-                    }}
-                    onFocus={(e: React.FocusEvent<HTMLInputElement>) => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)" }}
-                    onBlur={(e: React.FocusEvent<HTMLInputElement>) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)" }}
-                  />
-                </div>
+              <div>
+                <label style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "8px" }}>Email *</label>
+                <input
+                  type="email" required value={email}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                  placeholder="you@yourbusiness.com"
+                  style={inputStyle}
+                  onFocus={e => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)" }}
+                  onBlur={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)" }}
+                />
+              </div>
 
-                <div>
-                  <label style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "8px" }}>
-                    WhatsApp / Phone
-                  </label>
-                  <input
-                    type="tel"
-                    value={phone}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
-                    placeholder="+91 98765 43210"
-                    style={{
-                      width: "100%", padding: "14px 16px",
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      borderRadius: "12px",
-                      fontFamily: "var(--font-body)", fontSize: "15px", color: "#FFFFFF",
-                      outline: "none", boxSizing: "border-box",
-                      transition: "border-color 0.2s",
-                    }}
-                    onFocus={(e: React.FocusEvent<HTMLInputElement>) => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)" }}
-                    onBlur={(e: React.FocusEvent<HTMLInputElement>) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)" }}
-                  />
+              <div>
+                <label style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "8px" }}>WhatsApp number *</label>
+                <input
+                  type="tel" required value={phone}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
+                  placeholder="+91 98765 43210"
+                  style={inputStyle}
+                  onFocus={e => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)" }}
+                  onBlur={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)" }}
+                />
+              </div>
+
+              {/* Goal chips */}
+              <div>
+                <label style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "12px" }}>What do you need help with? *</label>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+                  {goals.map(g => (
+                    <button
+                      key={g} type="button"
+                      onClick={() => setGoal(g)}
+                      style={{
+                        padding: "12px 14px",
+                        borderRadius: "10px",
+                        border: goal === g ? "1.5px solid #3B82F6" : "1.5px solid rgba(255,255,255,0.1)",
+                        background: goal === g ? "rgba(59,130,246,0.12)" : "rgba(255,255,255,0.03)",
+                        color: goal === g ? "#FFFFFF" : "rgba(255,255,255,0.45)",
+                        fontFamily: "var(--font-body)",
+                        fontSize: "13px",
+                        fontWeight: goal === g ? 500 : 400,
+                        cursor: "pointer",
+                        textAlign: "left" as const,
+                        transition: "all 0.15s",
+                      }}
+                    >
+                      {g}
+                    </button>
+                  ))}
                 </div>
               </div>
 
               <button
                 type="submit"
+                disabled={!goal}
                 style={{
-                  display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  padding: "16px 32px",
-                  background: "linear-gradient(135deg, #3B82F6, #8B5CF6)",
-                  color: "#FFFFFF", borderRadius: "100px",
-                  fontSize: "15px", fontWeight: 600,
-                  border: "none", cursor: "pointer",
-                  fontFamily: "var(--font-body)",
-                  transition: "opacity 0.2s, transform 0.2s",
+                  width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
+                  background: goal ? "#3B82F6" : "rgba(255,255,255,0.08)",
+                  color: goal ? "#FFFFFF" : "rgba(255,255,255,0.25)",
+                  fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "15px",
+                  padding: "14px", borderRadius: "10px", border: "none",
+                  cursor: goal ? "pointer" : "not-allowed",
+                  transition: "all 0.2s",
                 }}
-                onMouseEnter={(e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.opacity = "0.88"; e.currentTarget.style.transform = "translateY(-2px)" }}
-                onMouseLeave={(e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "none" }}
               >
                 Continue <ArrowRight size={16} />
               </button>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "12px", color: "rgba(255,255,255,0.25)", marginTop: "16px", textAlign: "center" }}>
-                No spam. No credit card. Your info stays private.
-              </p>
             </motion.form>
           )}
 
-          {/* ── STEP 2: Goal ───────────────────────────────────────────── */}
-          {!submitted && step === 2 && (
+          {/* Step 2 — Budget + business context */}
+          {step === 2 && (
             <motion.form
               key="step2"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               onSubmit={handleSubmit}
-              style={{ display: "flex", flexDirection: "column", gap: "0" }}
+              style={{ display: "flex", flexDirection: "column", gap: "24px" }}
             >
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "16px" }}>
-                Step 2 of 2 · Your goal
-              </p>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 400, letterSpacing: "-1.5px", lineHeight: 1.1, color: "#FFFFFF", margin: "0 0 8px" }}>
-                What&apos;s the main thing<br />you want to fix?
-              </h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "14px", color: "rgba(255,255,255,0.35)", margin: "0 0 28px" }}>
-                Pick one — this helps me make the call more useful.
-              </p>
+              <div>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "2.5px", textTransform: "uppercase", color: "rgba(255,255,255,0.28)", marginBottom: "16px" }}>
+                  Step 2 of 2 · Budget & context
+                </p>
+                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(22px, 3vw, 28px)", fontWeight: 700, color: "#FFFFFF", margin: "0 0 8px", letterSpacing: "-0.5px" }}>
+                  What&apos;s your budget range?
+                </h2>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "14px", color: "rgba(255,255,255,0.38)", margin: 0 }}>
+                  Helps me recommend the right system for your stage.
+                </p>
+              </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px" }}>
-                {goals.map(g => (
+              {/* Budget chips */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                {budgets.map(b => (
                   <button
-                    key={g}
-                    type="button"
-                    onClick={() => setGoal(g)}
+                    key={b} type="button"
+                    onClick={() => setBudget(b)}
                     style={{
-                      padding: "14px 16px",
-                      background: goal === g ? "rgba(59,130,246,0.15)" : "rgba(255,255,255,0.04)",
-                      border: goal === g ? "1px solid rgba(59,130,246,0.5)" : "1px solid rgba(255,255,255,0.08)",
-                      borderRadius: "12px",
-                      fontFamily: "var(--font-body)", fontSize: "13px",
-                      color: goal === g ? "#FFFFFF" : "rgba(255,255,255,0.45)",
-                      cursor: "pointer", textAlign: "left",
+                      padding: "13px 16px",
+                      borderRadius: "10px",
+                      border: budget === b ? "1.5px solid #3B82F6" : "1.5px solid rgba(255,255,255,0.1)",
+                      background: budget === b ? "rgba(59,130,246,0.12)" : "rgba(255,255,255,0.03)",
+                      color: budget === b ? "#FFFFFF" : "rgba(255,255,255,0.45)",
+                      fontFamily: "var(--font-body)",
+                      fontSize: "14px",
+                      fontWeight: budget === b ? 500 : 400,
+                      cursor: "pointer",
+                      textAlign: "left" as const,
                       transition: "all 0.15s",
                     }}
                   >
-                    {g}
+                    {b}
                   </button>
                 ))}
               </div>
 
-              <div style={{ marginBottom: "24px" }}>
-                <label style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "8px" }}>
-                  Type of business
+              {/* Business type */}
+              <div>
+                <label style={{ display: "block", fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "8px" }}>
+                  Type of business <span style={{ color: "rgba(255,255,255,0.2)" }}>(optional)</span>
                 </label>
                 <input
-                  type="text"
-                  value={businessType}
+                  type="text" value={businessType}
                   onChange={(e: ChangeEvent<HTMLInputElement>) => setBusinessType(e.target.value)}
-                  placeholder="e.g. Gym, clinic, SaaS startup, café..."
-                  style={{
-                    width: "100%", padding: "14px 16px",
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    borderRadius: "12px",
-                    fontFamily: "var(--font-body)", fontSize: "15px", color: "#FFFFFF",
-                    outline: "none", boxSizing: "border-box",
-                    transition: "border-color 0.2s",
-                  }}
-                  onFocus={(e: React.FocusEvent<HTMLInputElement>) => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)" }}
-                  onBlur={(e: React.FocusEvent<HTMLInputElement>) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)" }}
+                  placeholder="e.g. Gym, clinic, SaaS startup, e-commerce..."
+                  style={inputStyle}
+                  onFocus={e => { e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)" }}
+                  onBlur={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)" }}
                 />
               </div>
 
               {error && (
-                <p style={{ fontFamily: "var(--font-body)", fontSize: "13px", color: "#EF4444", marginBottom: "16px" }}>{error}</p>
+                <p style={{ fontFamily: "var(--font-body)", color: "#f87171", fontSize: "14px", margin: 0 }}>{error}</p>
               )}
 
               <button
                 type="submit"
-                disabled={loading}
+                disabled={loading || !budget}
                 style={{
-                  display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  padding: "16px 32px",
-                  background: "linear-gradient(135deg, #3B82F6, #8B5CF6)",
-                  color: "#FFFFFF", borderRadius: "100px",
-                  fontSize: "15px", fontWeight: 600,
-                  border: "none", cursor: loading ? "not-allowed" : "pointer",
-                  fontFamily: "var(--font-body)",
-                  opacity: loading ? 0.6 : 1,
-                  transition: "opacity 0.2s, transform 0.2s",
+                  width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
+                  background: budget && !loading ? "#3B82F6" : "rgba(255,255,255,0.08)",
+                  color: budget && !loading ? "#FFFFFF" : "rgba(255,255,255,0.25)",
+                  fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "15px",
+                  padding: "14px", borderRadius: "10px", border: "none",
+                  cursor: loading || !budget ? "not-allowed" : "pointer",
+                  transition: "all 0.2s",
                 }}
               >
-                {loading ? <><Loader2 size={16} style={{ animation: "spin 1s linear infinite" }} /> Saving...</> : <>Save & Continue <ArrowRight size={16} /></>}
+                {loading ? <><Loader2 size={16} className="animate-spin" /> Booking...</> : <>Book My Strategy Call <ArrowRight size={16} /></>}
               </button>
 
               <button
                 type="button"
                 onClick={() => setStep(1)}
-                style={{
-                  background: "none", border: "none", cursor: "pointer",
-                  fontFamily: "var(--font-body)", fontSize: "13px",
-                  color: "rgba(255,255,255,0.3)", marginTop: "16px",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.color = "rgba(255,255,255,0.6)" }}
-                onMouseLeave={(e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.color = "rgba(255,255,255,0.3)" }}
+                style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-body)", fontSize: "13px", color: "rgba(255,255,255,0.25)", textAlign: "center" }}
               >
                 ← Back
               </button>
             </motion.form>
           )}
-
-          {/* ── SUCCESS: Book the slot ──────────────────────────────────── */}
-          {submitted && (
-            <motion.div
-              key="success"
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              style={{ textAlign: "center" }}
-            >
-              <div style={{
-                width: "64px", height: "64px", borderRadius: "50%",
-                background: "rgba(59,130,246,0.12)",
-                border: "1px solid rgba(59,130,246,0.3)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                margin: "0 auto 24px",
-              }}>
-                <CheckCircle size={28} color="#3B82F6" />
-              </div>
-
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 400, letterSpacing: "-1.5px", color: "#FFFFFF", margin: "0 0 12px" }}>
-                Details saved.
-              </h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "16px", color: "rgba(255,255,255,0.45)", lineHeight: 1.6, margin: "0 0 40px" }}>
-                Now pick a time that works for you, <span style={{ color: "#FFFFFF" }}>{name}</span>. The call is 30 minutes — no pitch, just a clear plan.
-              </p>
-
-              <a
-                href={CAL_URL}
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  display: "inline-flex", alignItems: "center", gap: "10px",
-                  padding: "18px 36px",
-                  background: "#3B82F6",
-                  color: "#FFFFFF", borderRadius: "100px",
-                  fontSize: "16px", fontWeight: 600,
-                  textDecoration: "none", fontFamily: "var(--font-body)",
-                  transition: "transform 0.2s, box-shadow 0.2s",
-                  boxShadow: "0 0 0 rgba(59,130,246,0)",
-                }}
-                onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
-                  e.currentTarget.style.transform = "translateY(-3px)"
-                  e.currentTarget.style.boxShadow = "0 16px 48px rgba(59,130,246,0.45)"
-                }}
-                onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
-                  e.currentTarget.style.transform = "none"
-                  e.currentTarget.style.boxShadow = "0 0 0 rgba(59,130,246,0)"
-                }}
-              >
-                <Calendar size={18} />
-                Pick Your Time Slot
-                <ArrowRight size={16} />
-              </a>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "12px", color: "rgba(255,255,255,0.2)", marginTop: "20px" }}>
-                Opens in a new tab · No payment required
-              </p>
-
-              <div style={{
-                marginTop: "48px", padding: "24px",
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.07)",
-                borderRadius: "16px",
-                textAlign: "left",
-              }}>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", marginBottom: "16px" }}>
-                  What to expect
-                </p>
-                {[
-                  "30-minute video or voice call",
-                  "I review your business before the call",
-                  "You get a clear diagnosis — not a sales pitch",
-                  "If we're not a fit, you leave with a free action plan",
-                ].map(item => (
-                  <div key={item} style={{ display: "flex", gap: "10px", marginBottom: "10px", alignItems: "flex-start" }}>
-                    <span style={{ color: "#3B82F6", flexShrink: 0, marginTop: "2px" }}>✓</span>
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: "14px", color: "rgba(255,255,255,0.5)" }}>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
         </AnimatePresence>
       </div>
-
-      <style>{`
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-      `}</style>
     </main>
   )
 }
