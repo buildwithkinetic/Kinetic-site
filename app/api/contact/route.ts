@@ -59,7 +59,7 @@ export async function POST(request: Request) {
       await fetch(`${baseUrl}/api/send-welcome`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: firstName, email }),
+        body: JSON.stringify({ name: firstName, email, source: source || 'website' }),
       })
     } catch (emailErr) {
       console.error('Welcome email failed (non-blocking):', emailErr)
