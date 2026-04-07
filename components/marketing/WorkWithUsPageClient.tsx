@@ -100,6 +100,26 @@ const tiers = [
     badge: null,
     color: '#A855F7',
   },
+  {
+    num: 'Tier 5',
+    name: 'Full-Stack AI System',
+    tagline: "Everything. AI-powered. Revenue on autopilot.",
+    priceLabel: 'Starting from',
+    price: '₹1,00,000',
+    timeline: 'Live in 6–10 weeks',
+    what: 'The complete Kinetic stack — web app or SaaS product, AI agents for lead qualification and follow-up, full CRM automation, analytics, and growth infrastructure — built as one integrated, revenue-generating system.',
+    includes: [
+      'Everything in Tier 3',
+      'Custom web app or SaaS product (Next.js + Supabase)',
+      'AI agents for lead qualification, follow-up & support',
+      'Intelligent automation workflows (n8n + OpenAI)',
+      'Full API integrations & custom data pipelines',
+      'Dedicated build support for 90 days post-launch',
+    ],
+    guarantee: "90-day performance guarantee — if the system doesn't generate measurable revenue growth, I keep working until it does.",
+    badge: 'New',
+    color: '#10B981',
+  },
 ]
 
 export default function WorkWithUsPageClient() {

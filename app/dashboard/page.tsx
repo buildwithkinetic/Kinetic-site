@@ -293,6 +293,7 @@ export default function DashboardPage() {
   const [error, setError] = useState<string | null>(null)
   const [accessGranted, setAccessGranted] = useState(false)
   const [tokenInput, setTokenInput] = useState("")
+  const [tokenError, setTokenError] = useState("")
   const [activeTab, setActiveTab] = useState<"leads" | "audits" | "insights">("leads")
   const [search, setSearch] = useState("")
   const [statusFilter, setStatusFilter] = useState("all")
@@ -372,18 +373,29 @@ export default function DashboardPage() {
             type="password"
             placeholder="Enter access token"
             value={tokenInput}
-            onChange={(e) => setTokenInput(e.target.value)}
-            onKeyDown={(e) => { if (e.key === "Enter" && tokenInput === DASHBOARD_TOKEN) setAccessGranted(true) }}
-            style={{ width: "100%", padding: "12px 16px", background: "#0F0E0C", border: "1px solid #2A2926", borderRadius: "8px", color: "#F5F0E8", fontSize: "14px", marginBottom: "12px", outline: "none", boxSizing: "border-box" }}
+            onChange={(e) => { setTokenInput(e.target.value); setTokenError("") }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                if (tokenInput === DASHBOARD_TOKEN) { setAccessGranted(true) }
+                else { setTokenError("Incorrect token. Try again.") }
+              }
+            }}
+            style={{ width: "100%", padding: "12px 16px", background: "#0F0E0C", border: `1px solid ${tokenError ? "#ef4444" : "#2A2926"}`, borderRadius: "8px", color: "#F5F0E8", fontSize: "14px", marginBottom: "8px", outline: "none", boxSizing: "border-box" }}
             autoFocus
           />
+          {tokenError && (
+            <div style={{ color: "#f87171", fontSize: "12px", marginBottom: "8px" }}>{tokenError}</div>
+          )}
           <button
-            onClick={() => { if (tokenInput === DASHBOARD_TOKEN) setAccessGranted(true) }}
-            style={{ width: "100%", padding: "13px", background: "#C8440A", color: "#fff", border: "none", borderRadius: "8px", fontSize: "14px", fontWeight: 600, cursor: "pointer" }}
+            onClick={() => {
+              if (tokenInput === DASHBOARD_TOKEN) { setAccessGranted(true) }
+              else { setTokenError("Incorrect token. Try again.") }
+            }}
+            style={{ width: "100%", padding: "13px", background: "#3B82F6", color: "#fff", border: "none", borderRadius: "8px", fontSize: "14px", fontWeight: 600, cursor: "pointer", marginTop: "4px" }}
           >
             Access Dashboard
           </button>
-          <div style={{ color: "#3A3530", fontSize: "11px", marginTop: "16px" }}>Or add <code style={{ color: "#9E9890" }}>?token=kinetic2025</code> to the URL</div>
+          <div style={{ color: "#6B6560", fontSize: "11px", marginTop: "14px" }}>Hint: check your URL bar for <code style={{ color: "#9E9890" }}>?token=...</code> or ask Ayush.</div>
         </div>
       </div>
     )

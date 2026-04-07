@@ -102,7 +102,7 @@ export default function ServicesPageClient() {
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(36px, 6vw, 72px)',
-            fontWeight: 400, lineHeight: 1.05, letterSpacing: '-2px',
+            fontWeight: 600, lineHeight: 1.05, letterSpacing: '-2px',
             color: 'var(--t1)', margin: '0 0 24px',
           }}>
             Pick Your Problem.<br/>
@@ -218,7 +218,7 @@ export default function ServicesPageClient() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(28px, 4vw, 48px)',
-              fontWeight: 400, lineHeight: 1.1, letterSpacing: '-1.5px',
+              fontWeight: 600, lineHeight: 1.1, letterSpacing: '-1.5px',
               color: 'var(--t1)', margin: '0 0 20px',
             }}>
               Start with the Free Audit.<br/>

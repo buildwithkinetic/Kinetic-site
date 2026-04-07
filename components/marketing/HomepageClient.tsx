@@ -285,31 +285,31 @@ export default function HomepageClient() {
             </span>
           </motion.div>
 
-          {/* Headline — clean, confident, no gradient */}
+          {/* Headline — automation / revenue authority */}
           <motion.h1 variants={fadeUp} style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(52px, 8vw, 96px)',
-            fontWeight: 400,
+            fontSize: 'clamp(48px, 7.5vw, 92px)',
+            fontWeight: 700,
             lineHeight: 1.04,
-            letterSpacing: '-3px',
+            letterSpacing: '-3.5px',
             color: '#FFFFFF',
-            margin: '0 0 8px',
+            margin: '0 0 6px',
           }}>
-            Turn your website into
+            Automate your growth.
           </motion.h1>
           <motion.h1 variants={fadeUp} style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(52px, 8vw, 96px)',
-            fontWeight: 400,
+            fontSize: 'clamp(48px, 7.5vw, 92px)',
+            fontWeight: 700,
             lineHeight: 1.04,
-            letterSpacing: '-3px',
-            color: 'rgba(255,255,255,0.92)',
+            letterSpacing: '-3.5px',
+            color: 'rgba(255,255,255,0.28)',
             margin: '0 0 52px',
           }}>
-            your best salesperson.
+            Scale your revenue.
           </motion.h1>
 
-          {/* Sub — one clean sentence */}
+          {/* Sub — clean, outcome-focused, first-person */}
           <motion.p variants={fadeUp} style={{
             fontFamily: 'var(--font-body)',
             fontSize: 'clamp(17px, 2vw, 20px)',
@@ -317,10 +317,10 @@ export default function HomepageClient() {
             lineHeight: 1.7,
             maxWidth: '520px',
             margin: '0 auto 64px',
-            fontWeight: 300,
-            letterSpacing: '0.1px',
+            fontWeight: 400,
+            letterSpacing: '-0.2px',
           }}>
-            We build complete B2B growth systems — websites, web apps, AI agents, and automation — that generate revenue and run your pipeline while you focus on the work.
+            I build complete B2B growth systems — websites, web apps, AI agents, and automation — that run your pipeline and generate measurable revenue while you focus on your work.
           </motion.p>
 
           {/* Single primary CTA */}
@@ -446,7 +446,7 @@ export default function HomepageClient() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(38px, 5.5vw, 72px)',
-              fontWeight: 400, lineHeight: 1.06, letterSpacing: '-2.5px',
+              fontWeight: 600, lineHeight: 1.06, letterSpacing: '-2.5px',
               color: '#FFFFFF', margin: '0 0 20px',
             }}>
               Most businesses<br/>
@@ -508,7 +508,7 @@ export default function HomepageClient() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(36px, 5vw, 66px)',
-              fontWeight: 400, lineHeight: 1.06, letterSpacing: '-2px',
+              fontWeight: 600, lineHeight: 1.06, letterSpacing: '-2px',
               color: '#FFFFFF', margin: '0 0 72px',
             }}>
               The System Behind<br/>
@@ -609,7 +609,7 @@ export default function HomepageClient() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(36px, 5vw, 60px)',
-              fontWeight: 400, lineHeight: 1.08, letterSpacing: '-2px',
+              fontWeight: 600, lineHeight: 1.08, letterSpacing: '-2px',
               color: '#FFFFFF', margin: '0 0 80px',
             }}>
               Four steps to a<br/>
@@ -659,79 +659,89 @@ export default function HomepageClient() {
         </div>
       </section>
 
-      {/* ══ 5. SYSTEM COMPONENTS ════════════════════════════════════════ */}
-      <section style={{ padding: '140px 24px', background: 'rgba(255,255,255,0.015)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
+      {/* ══ 5. WHAT WE BUILD ════════════════════════════════════════════ */}
+      <section style={{ padding: '140px 24px' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
+          {/* Section header */}
           <Reveal>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '24px' }}>
-              What&apos;s inside
-            </p>
-            <h2 style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(36px, 5vw, 60px)',
-              fontWeight: 400, lineHeight: 1.08, letterSpacing: '-2px',
-              color: '#FFFFFF', margin: '0 0 16px',
-            }}>
-              What we build.
-            </h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '17px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.65, maxWidth: '520px', margin: '0 0 72px' }}>
-              Not a menu of services. Six integrated capabilities &mdash; websites, web apps, AI agents, SEO, CRM, and automation &mdash; assembled into one system that fits your business.
-            </p>
+            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px', marginBottom: '64px' }}>
+              <div>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '16px' }}>
+                  What we build
+                </p>
+                <h2 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(36px, 5vw, 58px)',
+                  fontWeight: 700, lineHeight: 1.06, letterSpacing: '-2.5px',
+                  color: '#FFFFFF', margin: 0,
+                }}>
+                  Six capabilities.<br />One integrated system.
+                </h2>
+              </div>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', color: 'rgba(255,255,255,0.32)', lineHeight: 1.65, maxWidth: '360px', margin: 0 }}>
+                Not a menu of services — six integrated capabilities assembled into one system that fits your business.
+              </p>
+            </div>
           </Reveal>
 
+          {/* 3×2 capability grid */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '20px', overflow: 'hidden' }}
             className="components-grid"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2px' }}
           >
-            {components.map((c) => (
+            {components.map((c, i) => (
               <motion.div
                 key={c.title}
                 variants={fadeUp}
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 style={{
-                  padding: '40px 36px',
-                  background: '#0A0A0A',
-                  cursor: 'default', height: '100%',
-                  border: '1px solid transparent',
-                  transition: 'background 0.25s, border-color 0.25s',
+                  padding: '40px',
+                  background: '#0D0D0D',
+                  border: '1px solid rgba(255,255,255,0.06)',
+                  borderRadius: i === 0 ? '20px 0 0 0' : i === 2 ? '0 20px 0 0' : i === 3 ? '0 0 0 20px' : i === 5 ? '0 0 20px 0' : '0',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'background 0.3s, border-color 0.3s',
+                  cursor: 'default',
                 }}
                 onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.background = c.color + '0A'
-                  ;(e.currentTarget as HTMLElement).style.borderColor = c.color + '20'
+                  const el = e.currentTarget as HTMLElement
+                  el.style.background = `${c.color}08`
+                  el.style.borderColor = `${c.color}28`
                 }}
                 onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.background = '#0A0A0A'
-                  ;(e.currentTarget as HTMLElement).style.borderColor = 'transparent'
+                  const el = e.currentTarget as HTMLElement
+                  el.style.background = '#0D0D0D'
+                  el.style.borderColor = 'rgba(255,255,255,0.06)'
                 }}
               >
+                {/* Subtle top-edge accent */}
                 <div style={{
-                  width: '48px', height: '48px', borderRadius: '14px',
-                  background: c.color + '15',
-                  border: `1px solid ${c.color}25`,
+                  position: 'absolute', top: 0, left: '40px', right: '40px', height: '1px',
+                  background: `linear-gradient(90deg, transparent, ${c.color}40, transparent)`,
+                }} />
+
+                {/* Icon */}
+                <div style={{
+                  width: '44px', height: '44px', borderRadius: '12px',
+                  background: `${c.color}12`,
+                  border: `1px solid ${c.color}22`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: c.color, marginBottom: '24px',
-                  transition: 'box-shadow 0.25s, background 0.25s',
-                }}
-                className={`icon-${c.title.toLowerCase().replace(/[^a-z]/g, '')}`}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = `0 0 20px ${c.color}30`
-                  ;(e.currentTarget as HTMLElement).style.background = c.color + '25'
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = 'none'
-                  ;(e.currentTarget as HTMLElement).style.background = c.color + '15'
-                }}
-                >
+                  color: c.color, marginBottom: '20px',
+                }}>
                   {c.icon}
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '17px', fontWeight: 600, color: '#FFFFFF', margin: '0 0 10px' }}>{c.title}</h3>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.65, margin: 0 }}>{c.desc}</p>
+
+                <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '16px', fontWeight: 600, color: '#FFFFFF', margin: '0 0 10px', letterSpacing: '-0.3px' }}>
+                  {c.title}
+                </h3>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.32)', lineHeight: 1.65, margin: 0 }}>
+                  {c.desc}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -749,7 +759,7 @@ export default function HomepageClient() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(34px, 4.5vw, 56px)',
-              fontWeight: 400, lineHeight: 1.1, letterSpacing: '-2px',
+              fontWeight: 600, lineHeight: 1.1, letterSpacing: '-2px',
               color: '#FFFFFF', margin: '0 0 64px',
             }}>
               Systems that<br/>
@@ -854,7 +864,7 @@ export default function HomepageClient() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(34px, 4.5vw, 56px)',
-              fontWeight: 400, lineHeight: 1.08, letterSpacing: '-2px',
+              fontWeight: 600, lineHeight: 1.08, letterSpacing: '-2px',
               color: '#FFFFFF', margin: '0 0 64px',
             }}>
               Questions people ask<br/>
@@ -1039,6 +1049,14 @@ export default function HomepageClient() {
         }
 
         /* ── Mobile responsiveness ─────────────────────────────── */
+        @media (min-width: 641px) and (max-width: 1023px) {
+          .components-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .components-grid > div { border-radius: 0 !important; }
+          .components-grid > div:first-child { border-radius: 16px 0 0 0 !important; }
+          .components-grid > div:nth-child(2) { border-radius: 0 16px 0 0 !important; }
+          .components-grid > div:nth-child(5) { border-radius: 0 0 0 16px !important; }
+          .components-grid > div:last-child { border-radius: 0 0 16px 0 !important; }
+        }
         @media (max-width: 640px) {
           /* Reduce section padding on mobile */
           .homepage-section-lg { padding-top: 80px !important; padding-bottom: 80px !important; }
@@ -1054,9 +1072,11 @@ export default function HomepageClient() {
           /* Flow bar: scroll horizontally */
           .flow-bar { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
 
-          /* System component cards: 1 col on mobile */
-          .components-grid { grid-template-columns: 1fr !important; }
-          .components-grid > div { padding: 28px 24px !important; }
+          /* System component cards: 1 col on mobile, 2 col on tablet */
+          .components-grid { grid-template-columns: 1fr !important; gap: 2px !important; }
+          .components-grid > div { padding: 28px 24px !important; border-radius: 0 !important; }
+          .components-grid > div:first-child { border-radius: 16px 16px 0 0 !important; }
+          .components-grid > div:last-child { border-radius: 0 0 16px 16px !important; }
 
           /* How it works steps: reduce gap */
           .steps-item { grid-template-columns: 48px 1fr !important; gap: 20px !important; padding: 32px 0 !important; }
