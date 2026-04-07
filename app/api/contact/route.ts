@@ -3,7 +3,22 @@ import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
   try {
-    const { name, email, phone, company, message } = await request.json()
+    const {
+      name,
+      email,
+      phone,
+      company,
+      website,
+      industry,
+      city,
+      service_interest,
+      budget_range,
+      message,
+      source,
+      utm_source,
+      utm_medium,
+      utm_campaign,
+    } = await request.json()
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required' }, { status: 400 })
@@ -18,19 +33,23 @@ export async function POST(request: Request) {
     const firstName = nameParts[0]
     const lastName = nameParts.slice(1).join(' ') || null
 
-    const notesValue = [
-      company ? `Company: ${company}` : null,
-      message || null,
-    ].filter(Boolean).join('\n') || null
-
     const { error: insertError } = await supabase.from('leads').insert({
       first_name: firstName,
       last_name: lastName,
       email,
       phone: phone || null,
-      source: 'website',
+      company: company || null,
+      website: website || null,
+      industry: industry || null,
+      city: city || null,
+      service_interest: service_interest || null,
+      budget_range: budget_range || null,
+      source: source || 'website',
       status: 'new',
-      notes: notesValue,
+      notes: message || null,
+      utm_source: utm_source || null,
+      utm_medium: utm_medium || null,
+      utm_campaign: utm_campaign || null,
     })
 
     if (insertError) {
