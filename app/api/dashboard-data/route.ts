@@ -25,7 +25,7 @@ export async function GET(request: Request) {
       supabase
         .from("leads")
         .select(
-          "id, first_name, last_name, email, phone, company, website, industry, city, service_interest, budget_range, source, status, lead_score, notes, utm_source, utm_medium, utm_campaign, created_at, updated_at"
+          "id, name, email, phone, company, website, industry, city, service_interest, budget_range, source, status, lead_score, notes, utm_source, utm_medium, utm_campaign, created_at, updated_at"
         )
         .order("created_at", { ascending: false })
         .limit(200),

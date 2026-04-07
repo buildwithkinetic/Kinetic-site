@@ -29,13 +29,8 @@ export async function POST(request: Request) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     )
 
-    const nameParts = name.trim().split(' ')
-    const firstName = nameParts[0]
-    const lastName = nameParts.slice(1).join(' ') || null
-
     const { error: insertError } = await supabase.from('leads').insert({
-      first_name: firstName,
-      last_name: lastName,
+      name: name.trim(),
       email,
       phone: phone || null,
       company: company || null,
@@ -57,8 +52,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: insertError.message }, { status: 500 })
     }
 
-    // Fire welcome email (non-blocking — don't fail if email fails)
+    // Fire welcome email (non-blocking)
     try {
+      const firstName = name.trim().split(' ')[0]
       const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
       await fetch(`${baseUrl}/api/send-welcome`, {
         method: 'POST',
