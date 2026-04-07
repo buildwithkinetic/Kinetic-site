@@ -5,7 +5,7 @@ import { JsonLd, organizationSchema, personSchema, breadcrumbSchema } from "@/co
 export const metadata: Metadata = {
   title: "About Kinetic — Built by Ayush Gupta, Growth Engineer | Kolkata",
   description:
-    "Ayush Gupta is a solo growth engineer based in Kolkata. Kinetic builds automated growth systems for small businesses — websites, SEO, CRM, lead capture, and automation — installed and running before handover.",
+    "Ayush Gupta is a solo growth engineer based in Kolkata. Kinetic builds automated growth systems for businesses — websites, SEO, CRM, lead capture, and automation — installed and running before handover.",
   keywords: [
     "Ayush Gupta growth engineer Kolkata",
     "Kinetic growth systems founder",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Kinetic — Built by Ayush Gupta, Growth Engineer",
     description:
-      "Solo growth engineer based in Kolkata. Kinetic installs automated growth systems in small businesses.",
+      "Solo growth engineer based in Kolkata. Kinetic installs automated growth systems in businesses.",
     creator: "@buildwithkinetic",
   },
 }

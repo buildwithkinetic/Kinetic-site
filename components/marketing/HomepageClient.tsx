@@ -320,7 +320,7 @@ export default function HomepageClient() {
             fontWeight: 400,
             letterSpacing: '-0.2px',
           }}>
-            I build complete B2B growth systems — websites, web apps, AI agents, and automation — that run your pipeline and generate measurable revenue while you focus on your work.
+            We build automated growth systems for businesses — websites, web apps, AI agents, and automation — that run your pipeline and generate measurable revenue while you focus on your work.
           </motion.p>
 
           {/* Single primary CTA */}

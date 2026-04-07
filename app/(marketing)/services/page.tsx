@@ -4,11 +4,11 @@ import ServicesPageClient from "@/components/marketing/ServicesPageClient"
 import { JsonLd, breadcrumbSchema, faqSchema, localBusinessSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Growth Offers — Websites, CRM & Automation for Small Businesses | Kinetic",
+  title: "Growth Offers — Websites, CRM & Automation for Businesses | Kinetic",
   description:
     "5 outcome-driven growth offers for small businesses in India: The Visibility Fix (\u20b925k), Lead Capture System (\u20b940k), Repeat Revenue Engine (\u20b930k), Full Growth System (\u20b975k), Quick Win Audit (\u20b98k). All built and installed for you.",
   keywords: [
-    "growth offers small business India",
+    "growth offers for businesses India",
     "website development packages India",
     "SEO packages Kolkata",
     "lead generation system price India",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: "https://buildwithkinetic.org/services",
   },
   openGraph: {
-    title: "Growth Offers — Websites, CRM & Automation for Small Businesses | Kinetic",
+    title: "Growth Offers — Websites, CRM & Automation for Businesses | Kinetic",
     description:
       "5 specific, outcome-driven offers starting at \u20b98,000 — built and installed for your business. No retainers. No ambiguity.",
     url: "https://buildwithkinetic.org/services",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "5 Growth Offers for Small Businesses | Kinetic",
+    title: "5 Growth Offers for Businesses | Kinetic",
     description:
       "Visibility Fix, Lead Capture System, Repeat Revenue Engine, Full Growth System, Quick Win Audit. Starting at \u20b98,000.",
     creator: "@buildwithkinetic",
