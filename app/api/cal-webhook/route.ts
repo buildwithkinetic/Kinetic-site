@@ -31,13 +31,12 @@ export async function POST(request: Request) {
     const attendee = attendees?.find((a: { email: string; name: string }) => !a.email?.includes("buildwithkinetic")) || attendees?.[0]
     const name = attendee?.name || "Unknown"
     const email = attendee?.email || ""
-    const nameParts = name.trim().split(" ")
-    const firstName = nameParts[0]
-    const lastName = nameParts.slice(1).join(" ") || null
 
     if (!email) {
       return NextResponse.json({ received: true, action: "skipped", reason: "no email" })
     }
+
+    const bookingNote = `Cal.com booking: ${title || "Strategy Call"} | Scheduled: ${startTime ? new Date(startTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) : "TBC"} | Meeting UID: ${uid || ""}${description ? " | Notes: " + description : ""}`
 
     // ── Log to Supabase ────────────────────────────────────────────────────────
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -46,30 +45,19 @@ export async function POST(request: Request) {
     if (supabaseUrl && serviceKey) {
       const supabase = createClient(supabaseUrl, serviceKey)
 
-      // Insert into leads table
+      // Insert into leads table — use name column (single field, matches actual schema)
       const { error: leadError } = await supabase.from("leads").insert({
-        first_name: firstName,
-        last_name: lastName,
+        name,
         email,
         source: "cal-booking",
         status: "new",
-        notes: `Cal.com booking: ${title || "Strategy Call"} | Scheduled: ${startTime ? new Date(startTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) : "TBC"} | Meeting UID: ${uid || ""}${description ? " | Notes: " + description : ""}`,
+        service_interest: title || "Strategy Call",
+        notes: bookingNote,
       })
 
       if (leadError) {
         console.error("leads insert error:", leadError.message)
       }
-
-      // Log to submissions table
-      const { error: submissionError } = await supabase.from("submissions").insert({
-        type: "booking",
-        client_name: name,
-        client_email: email,
-        offer_name: title || "Strategy Call",
-        notes: description || null,
-        submitted_at: new Date().toISOString(),
-      })
-      if (submissionError) console.error("submissions log error:", submissionError.message)
     }
 
     // ── Notify Ayush ───────────────────────────────────────────────────────────

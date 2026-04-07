@@ -24,15 +24,36 @@ interface AuditSubmission {
   submitted_at: string
 }
 
+interface Deal {
+  id: string
+  lead_id: string
+  offer_name: string
+  value: number | null
+  stage: string
+  probability: number
+  expected_close_date: string | null
+  lost_reason: string | null
+  notes: string | null
+  created_at: string
+}
+
 interface DashboardData {
   leads: Lead[]
   audits: AuditSubmission[]
+  deals: Deal[]
   stats: {
     totalLeads: number
     newLeads: number
     auditSubmissions: number
     bySource: Record<string, number>
     byStatus: Record<string, number>
+    byService: Record<string, number>
+    pipeline: {
+      totalDeals: number
+      pipelineValue: number
+      wonValue: number
+      byStage: Record<string, number>
+    }
   }
 }
 
