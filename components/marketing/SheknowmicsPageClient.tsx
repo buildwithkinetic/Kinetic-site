@@ -80,14 +80,13 @@ export default function SheknowmicsPageClient() {
 
       {/* Stats */}
       <section className="py-12 px-6 border-y border-white/[0.07]">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-            className="contents"
-          >
+        <motion.div
+          className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+        >
             {[
               { value: 1200, suffix: '+', label: 'Waitlist Users', sub: 'Organic, zero paid ads' },
               { value: 72, suffix: '', label: 'User Satisfaction (NPS)', sub: 'Pilot cohort' },
@@ -105,8 +104,7 @@ export default function SheknowmicsPageClient() {
                 <div className="text-xs text-[rgba(255,255,255,0.45)] mt-0.5">{stat.sub}</div>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* The Brief */}
@@ -315,10 +313,7 @@ export default function SheknowmicsPageClient() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-white/[0.07] text-center">
-        <p className="text-xs font-mono text-[rgba(255,255,255,0.45)]">© 2026 KINETIC // BUILDWITHKINETIC.ORG</p>
-      </footer>
     </>
   )
 }
+

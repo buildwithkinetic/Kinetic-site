@@ -317,25 +317,8 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
           </PageContainer>
         </PageSection>
 
-        {/* ── Footer ────────────────────────────────────────────────────── */}
-        <footer className="py-10 border-t border-white/[0.07]">
-          <PageContainer>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <Link href="/" className="text-lg font-black tracking-tight text-white">
-                KINETIC<span className="text-[#3B82F6]">.</span>
-              </Link>
-              <nav className="flex flex-wrap gap-6 text-sm text-white/50">
-                <Link href="/website-development" className="hover:text-[#3B82F6] transition-colors">Website Development</Link>
-                <Link href="/web-app-development" className="hover:text-[#3B82F6] transition-colors">Web Apps</Link>
-                <Link href="/blog" className="hover:text-[#3B82F6] transition-colors">Blog</Link>
-                <Link href="/contact" className="hover:text-[#3B82F6] transition-colors">Contact</Link>
-              </nav>
-              <p className="text-xs font-mono text-white/50">© 2026 KINETIC // BUILDWITHKINETIC.ORG</p>
-            </div>
-          </PageContainer>
-        </footer>
-
       </main>
     </>
   )
 }
+
