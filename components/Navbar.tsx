@@ -1,15 +1,23 @@
 'use client'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { events } from '@/lib/analytics'
 
 const links = [
+  { label: 'Services', href: '/services' },
   { label: 'The System', href: '/lead-generation-system' },
   { label: 'Results', href: '/results' },
-  { label: 'Work With Us', href: '/work-with-us' },
   { label: 'About', href: '/about' },
+]
+
+const serviceLinks = [
+  { label: 'Website Development', href: '/website-development-kolkata' },
+  { label: 'SEO Agency', href: '/seo-agency-kolkata' },
+  { label: 'Lead Generation', href: '/lead-generation-system' },
+  { label: 'CRM & Automation', href: '/automation-kolkata' },
+  { label: 'Web App Development', href: '/web-app-development' },
 ]
 
 export default function Navbar() {
@@ -74,13 +82,13 @@ export default function Navbar() {
               background: path === l.href ? 'rgba(59,130,246,0.15)' : 'transparent',
               transition: 'all 0.2s ease',
             }}
-            onMouseEnter={e => {
+            onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
               if (path !== l.href) {
                 e.currentTarget.style.color = '#FFFFFF'
                 e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
               }
             }}
-            onMouseLeave={e => {
+            onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
               if (path !== l.href) {
                 e.currentTarget.style.color = 'rgba(255,255,255,0.5)'
                 e.currentTarget.style.background = 'transparent'
@@ -101,8 +109,8 @@ export default function Navbar() {
             transition: 'opacity 0.2s ease',
             letterSpacing: '-0.1px',
           }}
-          onMouseEnter={e => { e.currentTarget.style.opacity = '0.9' }}
-          onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
+          onMouseEnter={(e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.opacity = '0.9' }}
+          onMouseLeave={(e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.opacity = '1' }}
           >Book a Strategy Call</Link>
         </motion.div>
 
@@ -145,8 +153,18 @@ export default function Navbar() {
                   display: 'block', fontSize: '22px',
                   fontFamily: 'var(--font-display)', color: '#FFFFFF',
                   textDecoration: 'none', padding: '14px 0',
-                  borderBottom: '1px solid rgba(255,255,255,0.06)',
+                  borderBottom: l.label === 'About' ? 'none' : '1px solid rgba(255,255,255,0.06)',
                 }}>{l.label}</Link>
+                {l.label === 'Services' && (
+                  <div style={{ padding: '8px 0 8px 16px', display: 'grid', gap: '12px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                    {serviceLinks.map(sl => (
+                      <Link key={sl.href} href={sl.href} onClick={() => setMobileOpen(false)} style={{
+                        color: 'rgba(255,255,255,0.4)', fontSize: '14px', textDecoration: 'none',
+                        fontFamily: 'var(--font-body)',
+                      }}>{sl.label}</Link>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             ))}
             <Link href="/book-call" onClick={() => { setMobileOpen(false); events.bookCallClick('navbar_mobile'); }} style={{

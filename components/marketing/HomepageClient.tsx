@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { motion, type Variants } from 'framer-motion'
 import Reveal from '@/components/Reveal'
@@ -295,7 +295,7 @@ export default function HomepageClient() {
             color: '#FFFFFF',
             margin: '0 0 6px',
           }}>
-            Automate your growth.
+            Scale your revenue.
           </motion.h1>
           <motion.h1 variants={fadeUp} style={{
             fontFamily: 'var(--font-display)',
@@ -306,7 +306,7 @@ export default function HomepageClient() {
             color: 'rgba(255,255,255,0.28)',
             margin: '0 0 52px',
           }}>
-            Scale your revenue.
+            Not your workload.
           </motion.h1>
 
           {/* Sub — clean, outcome-focused, first-person */}
@@ -320,41 +320,76 @@ export default function HomepageClient() {
             fontWeight: 400,
             letterSpacing: '-0.2px',
           }}>
-            We build automated growth systems for businesses — websites, web apps, AI agents, and automation — that run your pipeline and generate measurable revenue while you focus on your work.
+            Stop chasing enquiries. We install a 'Growth Infrastructure' into your business&mdash;handling everything from first-click to closed-deal&mdash;so you can focus on scale while the system runs the pipeline.
           </motion.p>
 
           {/* Single primary CTA */}
           <motion.div variants={fadeUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-            <Link
-              href="/book-call"
-              onClick={() => events.bookCallClick('hero')}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '10px',
-                padding: '18px 36px',
-                background: '#3B82F6',
-                color: '#fff', borderRadius: '100px',
-                fontSize: '16px', fontWeight: 600,
-                textDecoration: 'none', fontFamily: 'var(--font-body)',
-                border: 'none', cursor: 'pointer',
-                transition: 'transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1), background 0.2s',
-                boxShadow: '0 0 0 rgba(59,130,246,0)',
-                letterSpacing: '-0.2px',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-4px) scale(1.04)'
-                e.currentTarget.style.boxShadow = '0 20px 60px rgba(59,130,246,0.5), 0 0 0 1px rgba(59,130,246,0.4)'
-                e.currentTarget.style.background = '#2563EB'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = 'none'
-                e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)'
-                e.currentTarget.style.background = '#3B82F6'
-              }}
-            >
-              <MeetIcon />
-              Book a Free Strategy Call
-              <Arrow />
-            </Link>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <Link
+                href="/book-call"
+                onClick={() => events.bookCallClick('hero')}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '10px',
+                  padding: '18px 36px',
+                  background: '#3B82F6',
+                  color: '#fff', borderRadius: '100px',
+                  fontSize: '16px', fontWeight: 600,
+                  textDecoration: 'none', fontFamily: 'var(--font-body)',
+                  border: 'none', cursor: 'pointer',
+                  transition: 'transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1), background 0.2s',
+                  boxShadow: '0 0 0 rgba(59,130,246,0)',
+                  letterSpacing: '-0.2px',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = 'translateY(-4px) scale(1.04)'
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(59,130,246,0.5), 0 0 0 1px rgba(59,130,246,0.4)'
+                  e.currentTarget.style.background = '#2563EB'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = 'none'
+                  e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)'
+                  e.currentTarget.style.background = '#3B82F6'
+                }}
+              >
+                <MeetIcon />
+                Book a Free Strategy Call
+                <Arrow />
+              </Link>
+
+              <button
+                onClick={() => {
+                  const el = document.getElementById('system-details')
+                  if (el) el.scrollIntoView({ behavior: 'smooth' })
+                }}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '8px',
+                  padding: '18px 32px',
+                  background: 'rgba(255,255,255,0.05)',
+                  color: 'rgba(255,255,255,0.7)', borderRadius: '100px',
+                  fontSize: '15px', fontWeight: 500,
+                  textDecoration: 'none', fontFamily: 'var(--font-body)',
+                  border: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  letterSpacing: '-0.1px',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
+                  e.currentTarget.style.color = '#fff'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
+                  e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
+                }}
+              >
+                See how it works
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ opacity: 0.6 }}>
+                  <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+              </button>
+            </div>
 
             {/* Trust line */}
             <p style={{
@@ -498,7 +533,7 @@ export default function HomepageClient() {
       </section>
 
       {/* ══ 3. THE SYSTEM ════════════════════════════════════════════════ */}
-      <section style={{ padding: '140px 24px', background: 'rgba(255,255,255,0.015)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+      <section id="system-details" style={{ padding: '140px 24px', background: 'rgba(255,255,255,0.015)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
 
           <Reveal>
@@ -748,6 +783,72 @@ export default function HomepageClient() {
         </div>
       </section>
 
+      {/* ══ LEAD MAGNET ══════════════════════════════════════════════════ */}
+      <section style={{ padding: '80px 24px', position: 'relative' }}>
+        <div style={{
+          maxWidth: '1040px', margin: '0 auto',
+          background: 'linear-gradient(135deg, rgba(59,130,246,0.05), rgba(139,92,246,0.05))',
+          border: '1px solid rgba(255,255,255,0.08)',
+          borderRadius: '32px', padding: '80px 48px',
+          textAlign: 'center', position: 'relative', overflow: 'hidden',
+        }}>
+          {/* Subtle glow */}
+          <div style={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(59,130,246,0.1), transparent 70%)',
+            filter: 'blur(60px)', pointerEvents: 'none',
+          }} />
+
+          <Reveal>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: '#3B82F6', marginBottom: '24px', fontWeight: 600 }}>
+              Low friction entry
+            </p>
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(32px, 5.5vw, 56px)',
+              fontWeight: 600, lineHeight: 1.1, letterSpacing: '-2px',
+              color: '#FFFFFF', margin: '0 0 24px',
+            }}>
+              Not ready for a call?<br/>
+              <span style={{ color: 'rgba(255,255,255,0.3)' }}>Get a free audit first.</span>
+            </h2>
+            <p style={{
+              fontFamily: 'var(--font-body)', fontSize: '18px', color: 'rgba(255,255,255,0.4)',
+              lineHeight: 1.6, maxWidth: '580px', margin: '0 auto 48px',
+            }}>
+              We&apos;ll audit your current website, SEO, and lead funnel.
+              You&apos;ll get a PDF report with exactly where you&apos;re leaking revenue — delivered in 24 hours.
+            </p>
+            <Link
+              href="/free-website-audit"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '10px',
+                padding: '16px 32px',
+                background: 'rgba(255,255,255,0.1)',
+                color: '#fff', borderRadius: '100px',
+                fontSize: '15px', fontWeight: 600,
+                textDecoration: 'none', fontFamily: 'var(--font-body)',
+                border: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.15)'
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'
+                e.currentTarget.style.transform = 'translateY(-2px)'
+              }}
+              onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
+                e.currentTarget.style.transform = 'none'
+              }}
+            >
+              Get My Free Audit Report
+              <Arrow />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ══ 6. PROOF ════════════════════════════════════════════════════ */}
       <section style={{ padding: '140px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
@@ -930,83 +1031,85 @@ export default function HomepageClient() {
 
         <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <Reveal>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '28px' }}>
-              Get started
-            </p>
-            <h2 style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(42px, 7vw, 88px)',
-              fontWeight: 400, lineHeight: 1.02, letterSpacing: '-3.5px',
-              color: '#FFFFFF', margin: '0 0 28px',
-            }}>
-              Ready to fix your<br/>
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                growth system?
-              </span>
-            </h2>
-            <p style={{
-              fontFamily: 'var(--font-body)', fontSize: '18px',
-              color: 'rgba(255,255,255,0.38)', lineHeight: 1.7,
-              margin: '0 auto 56px', maxWidth: '500px',
-            }}>
-              30 minutes. I&apos;ll map out exactly what a system built for
-              your business would look like &mdash; no pitch, no pressure.
-            </p>
-            <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link
-                href="/book-call"
-                className="cta-btn-pulse"
-                onClick={() => events.bookCallClick('cta_section')}
-                style={{ ...btnPrimary, padding: '18px 36px', fontSize: '16px' }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.opacity = '0.9'
-                  e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)'
-                  e.currentTarget.style.boxShadow = '0 20px 56px rgba(59,130,246,0.45)'
-                  e.currentTarget.classList.add('cta-btn-hover')
+            <>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '28px' }}>
+                Get started
+              </p>
+              <h2 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(42px, 7vw, 88px)',
+                fontWeight: 400, lineHeight: 1.02, letterSpacing: '-3.5px',
+                color: '#FFFFFF', margin: '0 0 28px',
+              }}>
+                Ready to fix your<br/>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  growth system?
+                </span>
+              </h2>
+              <p style={{
+                fontFamily: 'var(--font-body)', fontSize: '18px',
+                color: 'rgba(255,255,255,0.38)', lineHeight: 1.7,
+                margin: '0 auto 56px', maxWidth: '500px',
+              }}>
+                30 minutes. I&apos;ll map out exactly what a system built for
+                your business would look like &mdash; no pitch, no pressure.
+              </p>
+              <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link
+                  href="/book-call"
+                  className="cta-btn-pulse"
+                  onClick={() => events.bookCallClick('cta_section')}
+                  style={{ ...btnPrimary, padding: '18px 36px', fontSize: '16px' }}
+                  onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
+                    e.currentTarget.style.opacity = '0.9'
+                    e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)'
+                    e.currentTarget.style.boxShadow = '0 20px 56px rgba(59,130,246,0.45)'
+                    e.currentTarget.classList.add('cta-btn-hover')
+                  }}
+                  onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
+                    e.currentTarget.style.opacity = '1'
+                    e.currentTarget.style.transform = 'none'
+                    e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)'
+                    e.currentTarget.classList.remove('cta-btn-hover')
+                  }}
+                >
+                  <MeetIcon />
+                  Book a Strategy Call
+                  <Arrow />
+                </Link>
+                <Link
+                  href="/work-with-us"
+                  style={{ ...btnGhost, padding: '18px 36px', fontSize: '16px' }}
+                  onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
+                    e.currentTarget.style.borderColor = 'rgba(59,130,246,0.35)'
+                    e.currentTarget.style.color = 'rgba(255,255,255,0.8)'
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                  }}
+                  onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
+                    e.currentTarget.style.color = 'rgba(255,255,255,0.55)'
+                    e.currentTarget.style.transform = 'none'
+                  }}
+                >
+                  View System Tiers
+                </Link>
+              </div>
+              <p style={{ marginTop: '28px', fontFamily: 'var(--font-body)', fontSize: '12px', color: 'rgba(255,255,255,0.18)', letterSpacing: '0.5px' }}>
+                No pressure. No hard sell. If we&apos;re not a fit, you still walk away with a clear growth plan.
+              </p>
+              <p style={{ marginTop: '16px', fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.3)' }}>
+                Or{' '}
+                <Link href="/free-website-audit" style={{
+                  color: 'rgba(255,255,255,0.5)',
+                  textDecoration: 'underline', textUnderlineOffset: '3px',
+                  transition: 'color 0.2s',
                 }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.opacity = '1'
-                  e.currentTarget.style.transform = 'none'
-                  e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)'
-                  e.currentTarget.classList.remove('cta-btn-hover')
-                }}
-              >
-                <MeetIcon />
-                Book a Strategy Call
-                <Arrow />
-              </Link>
-              <Link
-                href="/work-with-us"
-                style={{ ...btnGhost, padding: '18px 36px', fontSize: '16px' }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(59,130,246,0.35)'
-                  e.currentTarget.style.color = 'rgba(255,255,255,0.8)'
-                  e.currentTarget.style.transform = 'translateY(-2px)'
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
-                  e.currentTarget.style.color = 'rgba(255,255,255,0.55)'
-                  e.currentTarget.style.transform = 'none'
-                }}
-              >
-                View System Tiers
-              </Link>
-            </div>
-            <p style={{ marginTop: '28px', fontFamily: 'var(--font-body)', fontSize: '12px', color: 'rgba(255,255,255,0.18)', letterSpacing: '0.5px' }}>
-              No pressure. No hard sell. If we&apos;re not a fit, you still walk away with a clear growth plan.
-            </p>
-            <p style={{ marginTop: '16px', fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.3)' }}>
-              Or{' '}
-              <Link href="/free-website-audit" style={{
-                color: 'rgba(255,255,255,0.5)',
-                textDecoration: 'underline', textUnderlineOffset: '3px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.8)' }}
-              onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)' }}
-              >get a free audit of your current setup</Link>
-              {' '}— no commitment, delivered in 24 hours.
-            </p>
+                onMouseEnter={(e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.color = 'rgba(255,255,255,0.8)' }}
+                onMouseLeave={(e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)' }}
+                >get a free audit of your current setup</Link>
+                {' '}— no commitment, delivered in 24 hours.
+              </p>
+            </>
           </Reveal>
         </div>
       </section>

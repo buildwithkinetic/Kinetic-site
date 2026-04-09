@@ -33,10 +33,11 @@ CREATE TRIGGER leads_updated_at
 
 -- ============================================================
 -- 2. Lead notes — one lead can have many interaction records
+--    lead_id is BIGINT to match leads.id type
 -- ============================================================
 CREATE TABLE IF NOT EXISTS lead_notes (
-  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  lead_id     UUID NOT NULL REFERENCES leads(id) ON DELETE CASCADE,
+  id          BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  lead_id     BIGINT NOT NULL REFERENCES leads(id) ON DELETE CASCADE,
   type        TEXT NOT NULL DEFAULT 'note',  -- 'note' | 'call' | 'email' | 'meeting' | 'whatsapp'
   content     TEXT NOT NULL,
   created_at  TIMESTAMPTZ DEFAULT NOW()
@@ -46,10 +47,11 @@ CREATE INDEX IF NOT EXISTS lead_notes_lead_id_idx ON lead_notes(lead_id);
 
 -- ============================================================
 -- 3. Deals — track the sales pipeline per lead
+--    lead_id is BIGINT to match leads.id type
 -- ============================================================
 CREATE TABLE IF NOT EXISTS deals (
-  id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  lead_id             UUID NOT NULL REFERENCES leads(id) ON DELETE CASCADE,
+  id                  BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  lead_id             BIGINT NOT NULL REFERENCES leads(id) ON DELETE CASCADE,
   offer_name          TEXT NOT NULL,   -- one of the 5 growth offers
   value               NUMERIC(10,2),   -- deal value in INR
   stage               TEXT NOT NULL DEFAULT 'discovery',

@@ -3,6 +3,7 @@ import Script from "next/script"
 import "./globals.css"
 import CustomCursor from "@/components/CustomCursor"
 import ScrollProgress from "@/components/ScrollProgress"
+import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://buildwithkinetic.org"),
@@ -98,6 +99,7 @@ export default function RootLayout({
         <ScrollProgress />
         <CustomCursor />
         {children}
+        <Footer />
 
         {/* Google Analytics 4 */}
         <Script
