@@ -192,7 +192,7 @@ export default function AboutPageClient() {
                 overflow: 'hidden',
               }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/ayush.jpg" alt="Ayush Gupta" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={e => { e.currentTarget.style.display = 'none' }} />
+                <img src="/ayush.jpg" alt="Ayush Gupta — Founder of Kinetic, Growth Engineer based in Kolkata" width={80} height={80} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={e => { e.currentTarget.style.display = 'none' }} />
               </div>
               <div style={{ flex: 1 }}>
                 <p style={{

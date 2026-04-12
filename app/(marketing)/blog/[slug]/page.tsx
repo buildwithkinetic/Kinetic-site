@@ -170,7 +170,7 @@ export default async function BlogPostPage({ params }: Props) {
               className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#0F0E0C] text-[#F5F0E8] font-bold rounded-full hover:bg-[#3B82F6] transition-colors duration-300"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/icons/meet.svg" alt="" width={16} height={16} style={{ borderRadius: '3px', flexShrink: 0 }} />
+              <img src="/icons/meet.svg" alt="Video call icon" width={16} height={16} style={{ borderRadius: '3px', flexShrink: 0 }} />
               Book a Discovery Call
             </Link>
           </div>

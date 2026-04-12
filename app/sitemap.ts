@@ -37,6 +37,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
 
+    // ── Booking & conversion pages ─────────────────────────────────────────
+    {
+      url: `${baseUrl}/book-call`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/work-with-us`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+
     // ── Case studies / results ─────────────────────────────────────────────
     {
       url: `${baseUrl}/work/sheknowmics`,

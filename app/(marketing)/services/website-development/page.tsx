@@ -3,8 +3,19 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Website Development — Kinetic',
-  description: 'Conversion-focused websites built on Next.js. Fast, mobile-first, and engineered to turn visitors into leads and clients.',
+  description: 'Conversion-focused websites built on Next.js. Fast, mobile-first, and engineered to turn visitors into leads.',
   alternates: { canonical: 'https://buildwithkinetic.org/services/website-development' },
+  openGraph: {
+    title: 'Website Development | Kinetic',
+    description: 'Conversion-focused websites engineered to capture leads and grow revenue.',
+    url: 'https://buildwithkinetic.org/services/website-development',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Website Development | Kinetic',
+    description: 'Fast, mobile-first websites built on Next.js to turn visitors into leads.',
+    creator: '@buildwithkinetic',
+  },
 }
 
 export default function WebsiteDevelopmentPage() {

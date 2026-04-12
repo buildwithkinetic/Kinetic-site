@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import ResultsPageClient from "@/components/marketing/ResultsPageClient"
+import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Results | Kinetic",
+  title: "Results — Real Growth Metrics | Kinetic",
   description:
-    "Real results from real businesses. See how Kinetic's growth systems generate leads, increase visibility, and create measurable revenue growth.",
+    "Real results from real businesses. See how Kinetic's growth systems generate leads and create measurable revenue growth.",
   alternates: {
     canonical: "https://buildwithkinetic.org/results",
   },
@@ -14,8 +15,25 @@ export const metadata: Metadata = {
       "No stock photos. No fabricated metrics. Real results from Kinetic-installed growth systems.",
     url: "https://buildwithkinetic.org/results",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Results | Kinetic",
+    description:
+      "Real results from Kinetic-installed growth systems. No fabricated metrics.",
+    creator: "@buildwithkinetic",
+  },
 }
 
 export default function ResultsPage() {
-  return <ResultsPageClient />
+  return (
+    <>
+      <JsonLd
+        schema={breadcrumbSchema([
+          { name: "Home", url: "https://buildwithkinetic.org" },
+          { name: "Results", url: "https://buildwithkinetic.org/results" },
+        ])}
+      />
+      <ResultsPageClient />
+    </>
+  )
 }

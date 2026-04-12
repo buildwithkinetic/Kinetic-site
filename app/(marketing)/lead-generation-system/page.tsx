@@ -1,21 +1,39 @@
 import type { Metadata } from "next"
 import SystemPageClient from "@/components/marketing/SystemPageClient"
+import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "The Growth System | Kinetic",
+  title: "Industry Systems | Kinetic",
   description:
-    "Five interconnected layers: acquisition, conversion, management, automation, and retention. This is the system Kinetic builds and installs in your business.",
+    "Pre-built growth systems for your industry — installed end to end. Explore the Kinetic Systems Catalogue.",
   alternates: {
     canonical: "https://buildwithkinetic.org/lead-generation-system",
   },
   openGraph: {
-    title: "The Growth System | Kinetic",
+    title: "Industry Systems | Kinetic",
     description:
-      "Not marketing. Growth infrastructure. See how each layer works together to generate, capture, and convert leads automatically.",
+      "Not custom. Not generic. Pre-built for your industry, installed into your business — end to end.",
     url: "https://buildwithkinetic.org/lead-generation-system",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Industry Systems | Kinetic",
+    description:
+      "Pre-built growth systems for your industry, installed end to end.",
+    creator: "@buildwithkinetic",
   },
 }
 
 export default function SystemPage() {
-  return <SystemPageClient />
+  return (
+    <>
+      <JsonLd
+        schema={breadcrumbSchema([
+          { name: "Home", url: "https://buildwithkinetic.org" },
+          { name: "Industry Systems", url: "https://buildwithkinetic.org/lead-generation-system" },
+        ])}
+      />
+      <SystemPageClient />
+    </>
+  )
 }

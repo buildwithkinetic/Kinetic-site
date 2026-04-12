@@ -7,7 +7,7 @@ import { events } from '@/lib/analytics'
 
 const links = [
   { label: 'Services', href: '/services' },
-  { label: 'The System', href: '/lead-generation-system' },
+  { label: 'Systems', href: '/lead-generation-system' },
   { label: 'Results', href: '/results' },
   { label: 'About', href: '/about' },
 ]

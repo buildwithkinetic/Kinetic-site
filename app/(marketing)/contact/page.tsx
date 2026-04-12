@@ -5,7 +5,7 @@ import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/seo/
 export const metadata: Metadata = {
   title: "Book a Free Strategy Call | Kinetic — Growth Systems Kolkata",
   description:
-    "Book a free 30-minute strategy call with Ayush Gupta, founder of Kinetic. Tell me about your business and I'll show you exactly how to generate more leads. Response within 24 hours. Based in Kolkata.",
+    "Book a free 30-minute strategy call with Ayush Gupta, founder of Kinetic. No pitch, no retainer. Based in Kolkata, India.",
   keywords: [
     "book free strategy call Kinetic",
     "growth systems consultation Kolkata",

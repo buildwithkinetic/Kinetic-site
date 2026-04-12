@@ -3,8 +3,19 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'AI Agents — Kinetic',
-  description: 'Custom AI agents that handle enquiries, qualify leads, answer questions, and manage workflows — built for your specific business.',
+  description: 'Custom AI agents that handle enquiries, qualify leads, and manage workflows — built for your specific business.',
   alternates: { canonical: 'https://buildwithkinetic.org/services/ai-agents' },
+  openGraph: {
+    title: 'AI Agents | Kinetic',
+    description: 'Custom AI agents that qualify leads, answer questions, and manage workflows.',
+    url: 'https://buildwithkinetic.org/services/ai-agents',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Agents | Kinetic',
+    description: 'AI agents built for your business — lead qualification, support, and automation.',
+    creator: '@buildwithkinetic',
+  },
 }
 
 export default function AiAgentsPage() {

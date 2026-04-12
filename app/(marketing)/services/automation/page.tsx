@@ -5,6 +5,17 @@ export const metadata: Metadata = {
   title: 'Automation Systems — Kinetic',
   description: 'Follow-ups, review requests, renewals, and repeat bookings — running on autopilot. Built with n8n and handed over to you.',
   alternates: { canonical: 'https://buildwithkinetic.org/services/automation' },
+  openGraph: {
+    title: 'Automation Systems | Kinetic',
+    description: 'Business automation workflows — follow-ups, reviews, renewals — running on autopilot.',
+    url: 'https://buildwithkinetic.org/services/automation',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Automation Systems | Kinetic',
+    description: 'Follow-ups, review requests, and renewals — automated and running 24/7.',
+    creator: '@buildwithkinetic',
+  },
 }
 
 export default function AutomationPage() {

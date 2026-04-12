@@ -5,6 +5,17 @@ export const metadata: Metadata = {
   title: 'Lead Generation & CRM — Kinetic',
   description: 'End-to-end lead capture systems — forms, pipelines, auto-responses, and full visibility over every enquiry.',
   alternates: { canonical: 'https://buildwithkinetic.org/services/lead-generation' },
+  openGraph: {
+    title: 'Lead Generation & CRM | Kinetic',
+    description: 'Capture every lead with forms, CRM pipelines, and automated follow-ups.',
+    url: 'https://buildwithkinetic.org/services/lead-generation',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lead Generation & CRM | Kinetic',
+    description: 'End-to-end lead capture and CRM systems for businesses.',
+    creator: '@buildwithkinetic',
+  },
 }
 
 export default function LeadGenerationPage() {

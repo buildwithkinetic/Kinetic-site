@@ -373,7 +373,7 @@ function BookPageContent() {
                     href="/book-call"
                     className="inline-flex items-center gap-2 px-10 py-4 border-2 border-[#0F0F0E] text-[#0F0F0E] font-bold rounded-full text-lg hover:bg-[#0F0F0E] hover:text-white transition-colors duration-200 shadow-lg shadow-[#3B82F6]/20"
                   >
-                    <img src="/icons/meet.svg" alt="" width={17} height={17} style={{ borderRadius: '3px', flexShrink: 0 }} />
+                    <img src="/icons/meet.svg" alt="Video call icon" width={17} height={17} style={{ borderRadius: '3px', flexShrink: 0 }} />
                     Book Free Discovery Call
                   </Link>
                 ) : (

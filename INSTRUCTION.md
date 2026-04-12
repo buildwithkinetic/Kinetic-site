@@ -1,5 +1,4 @@
-# Kinetic — Cowork Instruction File
-# Paste this into your Cowork instruction.md so Claude understands your context instantly.
+# Kinetic — Project Instruction File
 
 ---
 
@@ -54,91 +53,162 @@ Always use these — never invent new CTA copy.
 
 | CTA | Copy | URL |
 |-----|------|-----|
-| Primary | Get My Free Website Audit | /free-website-audit |
-| Card CTA | Get This Built → | /free-website-audit |
-| Offers anchor | See our 5 growth offers → | /services#growth-offers |
-| Discovery | Book a Discovery Call | /contact |
+| Primary | Book a Free Strategy Call | /book-call |
+| Secondary | See how it works | scrolls to #system-details |
+| Mobile floating | Book a Free Call | /book-call |
+| Navbar CTA | Book a Strategy Call | /book-call |
 | Case study | Work → Sheknowmics | /work/sheknowmics |
 
-**Microcopy beneath primary CTA:** "No spam. No credit card. Just your audit."
-**Response commitment:** Audit delivered within 24 hours. Lead acknowledgement: within 60 seconds (automated).
+**Microcopy beneath primary CTA:** "30-minute call · No pitch · No retainer"
 
 ---
 
 ## Website Tech Stack
 
-- **Framework:** Next.js 14 App Router (TypeScript)
-- **Styling:** Tailwind CSS
-- **Animation:** Framer Motion (`motion.*`, `useInView`, `useScroll`, `useTransform`)
+- **Framework:** Next.js 16 (App Router, TypeScript)
+- **Styling:** Tailwind CSS v4
+- **Animation:** Framer Motion (`motion.*`, `useInView`, `Variants`) + GSAP (imported in some components)
+- **Smooth Scroll:** Lenis
+- **3D:** Three.js (HeroCanvas particle network)
 - **Database:** Supabase
 - **Automation:** n8n
 - **Hosting:** Vercel
-- **Font:** Playfair Display (serif, via `font-[family-name:var(--font-playfair)]`) + system sans
+- **Analytics:** Google Analytics 4 (G-B73G9G4SBL) + Vercel Analytics
+- **Font:** Inter (Google Fonts, weights 300–800) — used for both display and body
+- **UI Primitives:** Radix UI (Dialog, Select, Tabs, Toast, Checkbox, Dropdown Menu)
+- **Forms:** React Hook Form + Zod
 
-### Brand Colours (Tailwind hex classes)
-| Token | Hex | Usage |
-|-------|-----|-------|
-| Background | `#F5F0E8` | Page background, warm cream |
-| Accent | `#C8440A` | Orange — CTAs, highlights, checkmarks |
-| Text | `#0F0E0C` | Primary text, headings |
-| Muted | `#6B6560` | Body text, secondary copy |
-| Subtle | `#9E9890` | Microcopy, mono labels |
-| Dark BG | `#0F0E0C` | Dark sections (Problem, Comparison strip) |
+### Brand Colours (CSS custom properties defined in globals.css)
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--bg` | `#0A0A0A` | Page background, near-black |
+| `--bg-card` | `#111111` | Card backgrounds, elevated surfaces |
+| `--bg-card-2` | `#1A1A1A` | Secondary card / muted card bg |
+| `--bg-dark` | `#050505` | Deepest dark sections |
+| `--t1` | `#FFFFFF` | Primary text, headings |
+| `--t2` | `#E4E4E7` | Secondary text |
+| `--t3` | `#A1A1AA` | Muted body text |
+| `--t4` | `#52525B` | Subtle text, labels, microcopy |
+| `--blue` / `--accent` | `#3B82F6` | Primary accent — CTAs, highlights, glows |
+| `--purple` | `#8B5CF6` | Gradient endpoint |
+| `--gradient` | `linear-gradient(135deg, #3B82F6, #8B5CF6)` | Primary CTA gradient |
+| `--green` | `#22C55E` | Success / live indicators |
+| `--border` | `rgba(255,255,255,0.08)` | Default border color |
+| `--border-dark` | `rgba(255,255,255,0.12)` | Hover / active border |
+
+**Note:** The legacy `--orange` variable exists but is mapped to `#3B82F6` (blue). The site does NOT use orange anywhere.
 
 ---
 
 ## Project File Structure
 
 ```
-/sessions/nice-charming-newton/mnt/kinetic/
+Kinetic-website/
 ├── app/
-│   └── (marketing)/
-│       ├── page.tsx                    ← Homepage metadata
-│       ├── services/page.tsx           ← 5 Growth Offers page
-│       ├── about/page.tsx              ← Founder page (Ayush, first-person)
-│       ├── free-website-audit/page.tsx ← Audit form + "What Happens Next"
-│       ├── contact/page.tsx
-│       ├── blog/
-│       └── work/sheknowmics/           ← Only case study (replaces /portfolio)
+│   ├── globals.css                          ← Design system tokens (CSS custom props)
+│   ├── layout.tsx                           ← Root layout (Inter font, GA4, Footer, CustomCursor, ScrollProgress)
+│   ├── (marketing)/
+│   │   ├── layout.tsx                       ← Marketing layout (Navbar, LenisProvider, PageTransition)
+│   │   ├── page.tsx                         ← Homepage metadata + JSON-LD
+│   │   ├── services/page.tsx                ← 5 Growth Offers page
+│   │   ├── about/page.tsx                   ← Founder page (Ayush, first-person)
+│   │   ├── free-website-audit/page.tsx      ← Audit form
+│   │   ├── book-call/                       ← Strategy call booking page
+│   │   ├── contact/page.tsx
+│   │   ├── results/page.tsx                 ← Results / social proof page
+│   │   ├── lead-generation-system/page.tsx  ← Systems Catalogue (Industry Systems)
+│   │   ├── blog/
+│   │   ├── work-with-us/                    ← System tiers page
+│   │   ├── portfolio/                       ← Redirects to /work/sheknowmics (noindex)
+│   │   └── [programmatic SEO pages]/        ← website-development-kolkata, seo-agency-kolkata, etc.
+│   ├── work/                                ← Case studies
+│   ├── book/                                ← Booking routes
+│   ├── dashboard/                           ← Internal CRM dashboard
+│   └── api/                                 ← API routes
 ├── components/
+│   ├── Navbar.tsx                            ← Shared floating pill nav (used via marketing layout)
+│   ├── Footer.tsx                            ← Shared footer (rendered in root layout)
+│   ├── Reveal.tsx                            ← Scroll-reveal animation wrapper (Framer Motion)
+│   ├── CustomCursor.tsx                      ← Custom cursor (desktop only)
+│   ├── ScrollProgress.tsx                    ← Scroll progress indicator
+│   ├── HeroCanvas.tsx                        ← Three.js particle network (hero background)
+│   ├── LenisProvider.tsx                     ← Lenis smooth scroll wrapper
+│   ├── PageTransition.tsx                    ← Route transition wrapper
+│   ├── ServicePageLayout.tsx                 ← Template for programmatic SEO service pages
+│   ├── DiscoveryButton.tsx                   ← Animated CTA button component
 │   ├── marketing/
-│   │   └── HomepageClient.tsx          ← Main homepage (1300+ lines, "use client")
-│   └── forms/
-│       └── WebsiteAuditForm.tsx        ← 2-step form (Name/Email/URL → optional)
+│   │   ├── HomepageClient.tsx                ← Main homepage (~1200 lines, "use client")
+│   │   ├── SystemPageClient.tsx              ← Industry Systems catalogue page
+│   │   ├── ServicesPageClient.tsx            ← Growth Offers page client
+│   │   ├── AboutPageClient.tsx               ← About page client
+│   │   ├── ContactPageClient.tsx             ← Contact page client
+│   │   ├── ResultsPageClient.tsx             ← Results page client
+│   │   ├── WorkWithUsPageClient.tsx          ← Work With Us page client
+│   │   ├── SheknowmicsPageClient.tsx         ← Case study page
+│   │   ├── IndustryPageTemplate.tsx          ← Template for industry pages (gym, cafe, etc.)
+│   │   ├── ServicePageTemplate.tsx           ← Template for individual service pages
+│   │   └── StickyCtaBanner.tsx               ← Sticky CTA banner component
+│   ├── forms/
+│   │   └── ContactForm.tsx
+│   ├── seo/
+│   │   └── JsonLd.tsx                        ← Structured data (WebSite, Org, LocalBusiness, FAQ, Breadcrumbs)
+│   ├── ui/                                   ← Reusable UI primitives (Button, Card, Badge, SectionHeader)
+│   ├── dashboard/                            ← Internal CRM dashboard components
+│   ├── layout/                               ← Layout-level components
+│   └── lead/                                 ← Lead management components
+├── lib/
+│   ├── analytics.ts                          ← GA4 event tracking helpers
+│   ├── animations.ts                         ← Shared easing / animation config
+│   ├── blog.ts                               ← Blog content data
+│   ├── programmatic-seo.ts                   ← pSEO page data generation
+│   ├── types.ts                              ← Shared TypeScript types
+│   ├── utils.ts                              ← Utility functions
+│   ├── supabase/                             ← Supabase client config
+│   └── emails/                               ← Email templates (Resend)
 ├── public/
-│   └── ayush.jpg                       ← Founder headshot (must be placed here manually)
-└── INSTRUCTION.md                      ← This file
+│   ├── ayush.jpg                             ← Founder headshot
+│   ├── favicon.svg / icon.svg                ← Site favicons
+│   └── llms.txt                              ← LLM-friendly site description
+└── CLAUDE.md                                 ← This file
 ```
 
-### Key Component Map (HomepageClient.tsx)
-- `Navbar` — sticky, "Work" → `/work/sheknowmics`, CTA → `/free-website-audit`
-- `Hero` — headline, subheadline, primary + secondary CTAs, "See our 5 growth offers →" link
-- `TrustStrip` — "Trusted By" with Sheknowmics
-- `ProblemSection` — dark bg, before/after diagram
-- `HowItWorks` — id="how-it-works", 3 steps
-- `SolutionSection` — id="services", 6 service cards (no prices shown)
-- `Portfolio` — Sheknowmics case study + testimonial blockquote
-- `TechStack`
-- `WhyKinetic`
-- `FounderCard` — Ayush's photo (`/ayush.jpg`), bio, LinkedIn
-- `MidPageAuditCTA`
-- `CTASection`
-- `ContactForm`
-- `FloatingMobileCTA` — appears on scroll, mobile only
-- `ExitIntentPopup` — fires on mouse leave
+### Key Homepage Sections (HomepageClient.tsx)
+- `Hero` — full-viewport, Three.js particle bg, headline "Scale your revenue. Not your workload.", CTA → `/book-call`
+- `TrustBar` — horizontal strip: "Websites · Web Apps · AI Agents | Delivered in 2–4 weeks | B2B solutions..."
+- `ProblemSection` — "Most businesses don't have a system." + 3 pain-point cards
+- `SystemDetails` — id="system-details", 5-step flow bar (Traffic → Conversion), "The System Behind Predictable Growth"
+- `HowItWorks` — "Four steps to a system that runs itself." + numbered timeline
+- `WhatWeBuild` — 3×2 capability grid (6 cards: Conversion Website, Web App/SaaS, AI Agents, SEO, CRM, Automation)
+- `LeadMagnet` — Mid-page CTA card with gradient background
+- `Results` — id="results", metrics bar + Sheknowmics case study
+- `FAQ` — 5 accordion questions
+- `FinalCTA` — Bottom CTA section
+- `FloatingMobileCTA` — Fixed bottom CTA (mobile only, appears after 600px scroll)
+- `StickyCtaBanner` — Sticky banner component
+
+### Navbar Structure
+- Floating pill design, fixed top center, frosted glass backdrop
+- Links: Services, Systems, Results, About
+- CTA: "Book a Strategy Call" → `/book-call`
+- Mobile: hamburger menu with staggered link animation
+- Service dropdown links in mobile menu: Website Development, SEO Agency, Lead Generation, CRM & Automation, Web App Development
 
 ---
 
 ## Coding Conventions
 
 - **Always run TypeScript check** after edits: `node_modules/.bin/tsc --noEmit`
-- **Use Python `open().read()/write()`** for multi-line file patches — never bash heredocs for code (parenthesis escaping issues)
 - **"use client"** required on any component using Framer Motion, hooks, or event listeners
-- **Nav and footer are inlined** per page — there is no shared `<Navbar>` or `<Footer>` component
-- **Framer Motion pattern:** wrap sections in `<motion.div>` with `variants={fadeUp}` inside a `<Section>` component that uses `useInView`
+- **Shared Navbar and Footer** — Navbar is rendered via `(marketing)/layout.tsx`; Footer is rendered in root `layout.tsx`
+- **Reveal component** — use `<Reveal>` wrapper for scroll-triggered fade-up animations (supports `fadeUp`, `fadeIn`, `scaleIn` variants)
+- **Framer Motion pattern:** use `motion.*` elements with `Variants` objects (`fadeUp`, `stagger`, `cardFadeUp`) and `whileInView` for scroll-triggered animation
 - **Image tag:** use `{/* eslint-disable-next-line @next/next/no-img-element */}` before `<img>` tags; no `next/image` for the founder photo
-- **No prices** on the homepage SolutionSection cards — prices only appear on the `/services` page
+- **No prices** on the homepage capability cards — prices only appear on the `/services` page
 - **No fake testimonials** — only use real quotes from Sheknowmics
+- **Inline styles** are the dominant styling pattern in marketing pages (not Tailwind utility classes, despite Tailwind being available)
+- **CSS custom properties** (`var(--bg)`, `var(--t1)`, etc.) are used throughout for consistent theming
+- **Button patterns:** `btnPrimary` (gradient blue→purple, pill shape) and `btnGhost` (transparent, border, pill shape) as `React.CSSProperties` objects
+- **Hover effects:** implemented via `onMouseEnter`/`onMouseLeave` handlers that mutate `e.currentTarget.style`
 
 ---
 
@@ -146,7 +216,7 @@ Always use these — never invent new CTA copy.
 
 - Write in first-person where Ayush is speaking ("I build...", "I'll review personally...")
 - No "team", no "our team", no "we have X developers"
-- No fake social proof — don't invent clients, users, or stats beyond what's confirmed (Sheknowmics, 1,200+ users)
+- No fake social proof — don't invent clients, users, or stats beyond what's confirmed (Sheknowmics)
 - Avoid jargon in client-facing copy — plain English ("automatically follows up" not "orchestrates async webhook triggers")
 - Always include a guarantee line beneath CTAs on offer cards
 - Outcome statements should be **specific and measurable** — avoid vague claims like "grow your business"
@@ -157,6 +227,7 @@ Always use these — never invent new CTA copy.
 
 **Sheknowmics** — Women's health & hormone-testing platform
 - Route: `/work/sheknowmics`
+- Component: `SheknowmicsPageClient.tsx`
 - Testimonial: real quote approved for use on homepage
 - Stats: real metrics from the project (confirmed in case study)
 - URL: `/work/sheknowmics` (old `/portfolio` redirects here, noindex)
@@ -165,22 +236,42 @@ Always use these — never invent new CTA copy.
 
 ## Pages & SEO Titles
 
-| Page | Title |
-|------|-------|
-| Homepage | Kinetic — Automated Growth Engine for Small Businesses \| Kolkata |
-| Services | Growth Offers — Websites, CRM & Automation for Small Businesses \| Kinetic |
-| About | About Kinetic — Built by Ayush Gupta, Growth Engineer \| Kolkata |
-| Free Audit | Free Website Audit — Get Your Growth Diagnosis in 24 Hours \| Kinetic |
+| Page | Route | Title |
+|------|-------|-------|
+| Homepage | `/` | Kinetic — Automated Growth Systems for Businesses \| Kolkata |
+| Services | `/services` | Growth Offers — Websites, CRM & Automation for Businesses \| Kinetic |
+| Systems | `/lead-generation-system` | Industry Systems \| Kinetic |
+| About | `/about` | About Kinetic — Built by Ayush Gupta, Growth Engineer \| Kolkata |
+| Results | `/results` | Results \| Kinetic |
+| Free Audit | `/free-website-audit` | Free Website Audit |
+| Book Call | `/book-call` | Book a Strategy Call |
+| Work With Us | `/work-with-us` | Work With Us |
+| Blog | `/blog` | Blog |
+| Contact | `/contact` | Contact |
+
+---
+
+## Industry Systems (Systems Catalogue)
+
+The `/lead-generation-system` page is a **Systems Catalogue** — showcasing industry-specific growth systems.
+
+| System | Status | Industry |
+|--------|--------|----------|
+| Kinetic Gym OS | ● Live | Fitness & Gyms |
+| Kinetic Cafe OS | Coming Soon | Cafes & Restaurants |
+
+Cards are built with an expandable content area (`data-expandable-content`) ready for future detail views.
 
 ---
 
 ## Things Claude Should Never Do on This Project
 
-- Add prices to the homepage SolutionSection cards
+- Add prices to the homepage capability cards
 - Refer to Kinetic as having a "team" or multiple employees
 - Invent new service names outside the 5 listed offers
 - Use `git push` unless explicitly asked
 - Use `npx tsc` (times out — use `node_modules/.bin/tsc` instead)
-- Write bash heredocs for multi-line code patches (use Python file I/O)
-- Create a shared Nav/Footer component — the inline pattern is intentional
 - Add `next/image` for `/ayush.jpg` — use a plain `<img>` tag with the eslint disable comment
+- Use the old cream/orange color scheme (`#F5F0E8`, `#C8440A`) — the site is fully dark mode now
+- Reference `WebsiteAuditForm.tsx` — this component no longer exists
+- Reference fonts like Playfair Display or Syne — the site uses Inter exclusively

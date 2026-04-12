@@ -1,7 +1,9 @@
 'use client'
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
+import { useState } from 'react'
 
+/* ── Shared button styles ─────────────────────────────────────────────────── */
 const btnPrimary: React.CSSProperties = {
   display: 'inline-flex', alignItems: 'center', gap: '8px',
   padding: '14px 28px',
@@ -13,69 +15,226 @@ const btnPrimary: React.CSSProperties = {
   transition: 'opacity 0.2s, transform 0.2s, box-shadow 0.2s',
   boxShadow: '0 0 0 rgba(59,130,246,0)',
 }
-const btnSecondary: React.CSSProperties = {
-  display: 'inline-flex', alignItems: 'center',
-  padding: '14px 28px',
-  background: 'transparent', color: 'var(--t2)',
-  border: '1px solid rgba(255,255,255,0.12)',
-  borderRadius: '100px', fontSize: '15px', fontWeight: 500,
-  textDecoration: 'none', fontFamily: 'var(--font-body)',
-  cursor: 'pointer', transition: 'border-color 0.2s, color 0.2s, transform 0.2s',
-}
-const MeetIcon = () => (
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M15 9.5V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2.5l4 3V6.5l-4 3Z"/>
-  </svg>
-)
 
-const layers = [
+/* ── System data ──────────────────────────────────────────────────────────── */
+interface SystemCard {
+  name: string
+  slug: string
+  status: 'live' | 'coming-soon'
+  industry: string
+  oneLiner: string
+  /** Future: content for expanded view */
+  expandedContent?: string
+}
+
+const systems: SystemCard[] = [
   {
-    num: '01',
-    title: 'Acquisition Layer',
-    subtitle: 'How leads find you',
-    desc: 'Google Ads, Meta Ads, and SEO working in parallel. Paid channels fill the funnel immediately. SEO builds compounding organic traffic over time. Both feed the same system.',
-    components: ['Google Search Ads', 'Meta (Facebook/Instagram) Ads', 'Technical SEO', 'Google Business Profile', 'Local Search Optimization'],
-    color: '#3B82F6',
+    name: 'Kinetic Gym OS',
+    slug: 'gym-os',
+    status: 'live',
+    industry: 'Fitness & Gyms',
+    oneLiner:
+      'Complete growth infrastructure for gyms and fitness studios — memberships, leads, automations, retention.',
   },
   {
-    num: '02',
-    title: 'Conversion Layer',
-    subtitle: 'How visitors become leads',
-    desc: 'A high-performance website built with one goal: turn qualified visitors into leads. Every page, every headline, every CTA is engineered for conversion — not aesthetics.',
-    components: ['Conversion-Optimized Website', 'Landing Pages', 'Lead Capture Forms', 'Call Booking Integration', 'Mobile-First Design'],
-    color: '#6366F1',
-  },
-  {
-    num: '03',
-    title: 'Management Layer',
-    subtitle: 'How you track every lead',
-    desc: 'A custom CRM dashboard built on Supabase. Every lead is logged, scored, and visible. Pipeline stages, activity history, conversation threads — all in one place.',
-    components: ['Custom CRM Dashboard', 'Lead Pipeline (Kanban)', 'Lead Scoring', 'Activity Logging', 'Real-Time Notifications'],
-    color: '#8B5CF6',
-  },
-  {
-    num: '04',
-    title: 'Automation Layer',
-    subtitle: 'How follow-ups happen without you',
-    desc: 'n8n workflows that trigger the moment a lead enters the system. Instant acknowledgement. Scheduled follow-ups. WhatsApp and email sequences. Zero manual effort.',
-    components: ['Instant Lead Acknowledgement', 'WhatsApp Follow-Up Sequences', 'Email Drip Campaigns', 'Lead Routing Rules', 'Booking Confirmations'],
-    color: '#A855F7',
-  },
-  {
-    num: '05',
-    title: 'Retention Layer',
-    subtitle: 'How customers come back',
-    desc: 'Automated review requests, re-engagement campaigns, and loyalty flows. Your existing customers are your cheapest leads — this layer turns them into repeat revenue.',
-    components: ['Google Review Automation', 'Re-Engagement Campaigns', 'Customer Retention Flows', 'Referral Prompts', 'Upsell Sequences'],
-    color: '#C026D3',
+    name: 'Kinetic Cafe OS',
+    slug: 'cafe-os',
+    status: 'coming-soon',
+    industry: 'Cafes & Restaurants',
+    oneLiner:
+      'Reservations, WiFi capture, review automation, and re-engagement flows — built for hospitality.',
   },
 ]
 
+/* ── Pulsing Live Dot ─────────────────────────────────────────────────────── */
+function LiveDot() {
+  return (
+    <span style={{
+      position: 'relative',
+      display: 'inline-block',
+      width: '8px', height: '8px',
+      marginRight: '6px',
+      verticalAlign: 'middle',
+    }}>
+      {/* Ping ring */}
+      <span style={{
+        position: 'absolute', inset: '-3px',
+        borderRadius: '50%',
+        background: 'var(--green)',
+        opacity: 0.4,
+        animation: 'livePulse 2s ease-in-out infinite',
+      }} />
+      {/* Solid dot */}
+      <span style={{
+        position: 'absolute', inset: 0,
+        borderRadius: '50%',
+        background: 'var(--green)',
+        boxShadow: '0 0 6px var(--green)',
+      }} />
+    </span>
+  )
+}
+
+/* ── System Card Component ────────────────────────────────────────────────── */
+function SystemCardComponent({ system }: { system: SystemCard }) {
+  const [hovered, setHovered] = useState(false)
+  const isLive = system.status === 'live'
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: hovered ? 'rgba(17,17,17,1)' : 'rgba(17,17,17,0.7)',
+        border: `1px solid ${hovered ? 'rgba(59,130,246,0.2)' : 'rgba(255,255,255,0.07)'}`,
+        borderRadius: '20px',
+        padding: '40px',
+        transition: 'all 0.35s var(--ease-out)',
+        transform: hovered ? 'translateY(-2px)' : 'none',
+        boxShadow: hovered
+          ? '0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(59,130,246,0.08)'
+          : '0 2px 8px rgba(0,0,0,0.15)',
+        display: 'flex',
+        flexDirection: 'column' as const,
+        gap: '24px',
+      }}
+    >
+      {/* Top row: Status badge + Industry tag */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+        {/* Status badge */}
+        <span style={{
+          display: 'inline-flex', alignItems: 'center',
+          padding: '4px 12px',
+          borderRadius: '100px',
+          fontSize: '11px', fontWeight: 600,
+          letterSpacing: '0.5px',
+          fontFamily: 'var(--font-body)',
+          ...(isLive ? {
+            background: 'rgba(34,197,94,0.1)',
+            color: 'var(--green)',
+            border: '1px solid rgba(34,197,94,0.2)',
+          } : {
+            background: 'rgba(255,255,255,0.04)',
+            color: 'var(--t4)',
+            border: '1px solid rgba(255,255,255,0.06)',
+          }),
+        }}>
+          {isLive ? <LiveDot /> : null}
+          {isLive ? 'Live' : 'Coming Soon'}
+        </span>
+
+        {/* Industry tag */}
+        <span style={{
+          display: 'inline-flex', alignItems: 'center',
+          padding: '4px 12px',
+          borderRadius: '100px',
+          fontSize: '11px', fontWeight: 500,
+          letterSpacing: '0.3px',
+          fontFamily: 'var(--font-body)',
+          background: 'rgba(255,255,255,0.04)',
+          color: 'var(--t3)',
+          border: '1px solid rgba(255,255,255,0.06)',
+        }}>
+          {system.industry}
+        </span>
+      </div>
+
+      {/* System name */}
+      <h3 style={{
+        fontFamily: 'var(--font-display)',
+        fontSize: 'clamp(24px, 3vw, 32px)',
+        fontWeight: 500,
+        color: 'var(--t1)',
+        letterSpacing: '-0.5px',
+        margin: 0,
+        lineHeight: 1.2,
+      }}>
+        {system.name}
+      </h3>
+
+      {/* One-liner */}
+      <p style={{
+        fontFamily: 'var(--font-body)',
+        fontSize: '15px',
+        color: 'var(--t3)',
+        lineHeight: 1.65,
+        margin: 0,
+        maxWidth: '480px',
+      }}>
+        {system.oneLiner}
+      </p>
+
+      {/* CTA — only shown for live systems (disabled state) */}
+      {isLive && (
+        <div style={{ marginTop: '8px' }}>
+          <span style={{
+            display: 'inline-flex', alignItems: 'center', gap: '6px',
+            padding: '10px 20px',
+            borderRadius: '100px',
+            fontSize: '13px', fontWeight: 500,
+            fontFamily: 'var(--font-body)',
+            color: 'var(--t4)',
+            background: 'rgba(255,255,255,0.04)',
+            border: '1px solid rgba(255,255,255,0.06)',
+            cursor: 'default',
+            opacity: 0.6,
+          }}>
+            Learn More
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+          <span style={{
+            display: 'block',
+            fontSize: '11px',
+            color: 'var(--t4)',
+            fontFamily: 'var(--font-body)',
+            marginTop: '8px',
+            letterSpacing: '0.2px',
+          }}>
+            Content coming soon
+          </span>
+        </div>
+      )}
+
+      {/* Collapsed content area — ready for future expansion */}
+      <div
+        data-expandable-content
+        style={{
+          maxHeight: 0,
+          overflow: 'hidden',
+          transition: 'max-height 0.5s var(--ease-out), opacity 0.3s ease',
+          opacity: 0,
+        }}
+      >
+        {system.expandedContent && (
+          <div style={{ padding: '24px 0 0' }}>
+            <div style={{
+              borderTop: '1px solid rgba(255,255,255,0.06)',
+              paddingTop: '24px',
+            }}>
+              <p style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '14px',
+                color: 'var(--t3)',
+                lineHeight: 1.6,
+              }}>
+                {system.expandedContent}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+/* ── Main Page ────────────────────────────────────────────────────────────── */
 export default function SystemPageClient() {
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh' }}>
 
-      {/* HERO */}
+      {/* PAGE HEADER */}
       <section style={{
         padding: '160px 24px 80px',
         maxWidth: '900px', margin: '0 auto',
@@ -85,121 +244,52 @@ export default function SystemPageClient() {
             fontFamily: 'var(--font-body)', fontSize: '11px',
             letterSpacing: '3px', textTransform: 'uppercase',
             color: 'var(--t4)', marginBottom: '24px',
-          }}>The Growth System</p>
+          }}>Systems Catalogue</p>
           <h1 style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(36px, 6vw, 72px)',
+            fontSize: 'clamp(40px, 7vw, 80px)',
             fontWeight: 400, lineHeight: 1.05,
-            letterSpacing: '-2px', color: 'var(--t1)',
-            margin: '0 0 24px',
+            letterSpacing: '-2.5px', color: 'var(--t1)',
+            margin: '0 0 28px',
           }}>
-            The System Behind<br/>
+            Industry{' '}
             <span style={{
               backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-            }}>Predictable Growth</span>
+            }}>Systems.</span>
           </h1>
           <p style={{
             fontSize: '18px', color: 'var(--t3)', lineHeight: 1.6,
-            fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 0 40px',
+            fontFamily: 'var(--font-body)', maxWidth: '580px', margin: '0',
           }}>
-            Five interconnected layers. Each one solves a specific problem.
-            Together they create a business that generates, captures, and converts
-            leads without depending on you.
+            Not custom. Not generic. Pre-built for your industry, 
+            installed into your business — end to end.
           </p>
-        </Reveal>
-
-        {/* Flow */}
-        <Reveal>
-          <div style={{
-            display: 'flex', alignItems: 'center', gap: '8px',
-            flexWrap: 'wrap', padding: '20px 24px',
-            background: '#111111',
-            border: '1px solid rgba(255,255,255,0.07)',
-            borderRadius: '12px',
-            fontFamily: 'var(--font-body)', fontSize: '12px',
-          }}>
-            {['Ads / SEO', 'Website', 'Lead Captured', 'CRM', 'Automation', 'Conversion'].map((step, i, arr) => (
-              <span key={step} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ color: i < 2 ? '#3B82F6' : i > 3 ? '#8B5CF6' : 'var(--t2)' }}>{step}</span>
-                {i < arr.length - 1 && (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: 'var(--t4)', opacity: 0.4, flexShrink: 0 }}>
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                )}
-              </span>
-            ))}
-          </div>
         </Reveal>
       </section>
 
-      {/* LAYERS */}
+      {/* SYSTEMS CATALOGUE GRID */}
       <section style={{ padding: '0 24px 120px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gap: '24px' }}>
-          {layers.map((layer) => (
-            <Reveal key={layer.num}>
-              <div style={{
-                padding: '40px 48px',
-                background: '#111111',
-                border: '1px solid rgba(255,255,255,0.07)',
-                borderRadius: '20px',
-                borderLeft: `4px solid ${layer.color}`,
-              }}>
-                <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-                  <div style={{ flex: 1, minWidth: '280px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                      <span style={{
-                        fontFamily: 'var(--font-mono)', fontSize: '11px',
-                        color: layer.color, letterSpacing: '2px',
-                      }}>{layer.num}</span>
-                      <span style={{
-                        fontFamily: 'var(--font-body)', fontSize: '12px',
-                        color: 'var(--t4)',
-                      }}>{layer.subtitle}</span>
-                    </div>
-                    <h2 style={{
-                      fontFamily: 'var(--font-body)', fontSize: '22px',
-                      fontWeight: 600, color: 'var(--t1)',
-                      margin: '0 0 16px',
-                    }}>{layer.title}</h2>
-                    <p style={{
-                      fontFamily: 'var(--font-body)', fontSize: '15px',
-                      color: 'var(--t3)', lineHeight: 1.6, margin: 0,
-                    }}>{layer.desc}</p>
-                  </div>
-                  <div style={{ minWidth: '200px' }}>
-                    <p style={{
-                      fontFamily: 'var(--font-body)', fontSize: '11px',
-                      color: 'var(--t4)', letterSpacing: '2px',
-                      textTransform: 'uppercase', marginBottom: '12px',
-                    }}>Components</p>
-                    {layer.components.map(c => (
-                      <div key={c} style={{
-                        display: 'flex', alignItems: 'center', gap: '8px',
-                        marginBottom: '8px',
-                      }}>
-                        <div style={{
-                          width: '6px', height: '6px', borderRadius: '50%',
-                          background: layer.color, flexShrink: 0, opacity: 0.7,
-                        }} />
-                        <span style={{
-                          fontFamily: 'var(--font-body)', fontSize: '13px',
-                          color: 'var(--t2)',
-                        }}>{c}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+        <div style={{
+          maxWidth: '900px', margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '24px',
+        }} className="systems-grid">
+          {systems.map((system, i) => (
+            <Reveal key={system.slug} delay={i * 0.1}>
+              <SystemCardComponent system={system} />
             </Reveal>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
+      {/* BOTTOM CTA SECTION */}
       <section style={{
-        background: '#111111', padding: '100px 24px', textAlign: 'center',
+        background: '#111111',
+        padding: '100px 24px',
+        textAlign: 'center',
       }}>
         <div style={{ maxWidth: '600px', margin: '0 auto' }}>
           <Reveal>
@@ -210,44 +300,55 @@ export default function SystemPageClient() {
               letterSpacing: '-1.5px', color: 'var(--t1)',
               margin: '0 0 20px',
             }}>
-              Ready to Install This<br/>
+              Don&apos;t See Your{' '}
               <span style={{
                 backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>In Your Business?</span>
+              }}>Industry?</span>
             </h2>
             <p style={{
               fontSize: '17px', color: 'var(--t3)',
               fontFamily: 'var(--font-body)', lineHeight: 1.6,
               margin: '0 0 36px',
             }}>
-              Book a 30-minute strategy call. I'll map out your growth system
-              and show you exactly what we'd build.
+              Every system starts with an audit. Book a free 30-minute call and
+              we&apos;ll map out exactly what a system built for your business looks like.
             </p>
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/book-call"
-                style={btnPrimary}
-                onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)'; e.currentTarget.style.boxShadow = '0 10px 36px rgba(59,130,246,0.35)' }}
-                onMouseLeave={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)' }}
-              >
-                <MeetIcon /> Book a Strategy Call
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </Link>
-              <Link href="/work-with-us"
-                style={btnSecondary}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(59,130,246,0.4)'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'translateY(-2px)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = 'var(--t2)'; e.currentTarget.style.transform = 'none' }}
-              >
-                See System Tiers
-              </Link>
-            </div>
+            <Link href="/book-call"
+              style={btnPrimary}
+              onMouseEnter={e => {
+                e.currentTarget.style.opacity = '0.88'
+                e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)'
+                e.currentTarget.style.boxShadow = '0 10px 36px rgba(59,130,246,0.35)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.opacity = '1'
+                e.currentTarget.style.transform = 'none'
+                e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)'
+              }}
+            >
+              Book a Free Strategy Call
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </Link>
           </Reveal>
         </div>
       </section>
 
+      {/* Inline styles for pulse animation + responsive grid */}
+      <style>{`
+        @keyframes livePulse {
+          0%, 100% { transform: scale(1); opacity: 0.4; }
+          50%      { transform: scale(1.8); opacity: 0; }
+        }
+        @media (max-width: 768px) {
+          .systems-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </div>
   )
 }

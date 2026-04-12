@@ -285,7 +285,7 @@ export default function HomepageClient() {
             </span>
           </motion.div>
 
-          {/* Headline — automation / revenue authority */}
+          {/* Headline — single H1 for SEO */}
           <motion.h1 variants={fadeUp} style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(48px, 7.5vw, 92px)',
@@ -293,34 +293,38 @@ export default function HomepageClient() {
             lineHeight: 1.04,
             letterSpacing: '-3.5px',
             color: '#FFFFFF',
-            margin: '0 0 6px',
-          }}>
-            Scale your revenue.
-          </motion.h1>
-          <motion.h1 variants={fadeUp} style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(48px, 7.5vw, 92px)',
-            fontWeight: 700,
-            lineHeight: 1.04,
-            letterSpacing: '-3.5px',
-            color: 'rgba(255,255,255,0.28)',
             margin: '0 0 52px',
           }}>
-            Not your workload.
+            Stop running on effort.<br/>
+            <span style={{ color: 'rgba(255,255,255,0.28)' }}>Start running on systems.</span>
           </motion.h1>
 
-          {/* Sub — clean, outcome-focused, first-person */}
+          {/* Subheadline */}
+          <motion.p variants={fadeUp} style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(20px, 2.5vw, 28px)',
+            color: 'rgba(255,255,255,0.55)',
+            lineHeight: 1.4,
+            maxWidth: '600px',
+            margin: '0 auto 28px',
+            fontWeight: 500,
+            letterSpacing: '-0.5px',
+          }}>
+            Most businesses don&apos;t have a growth problem. They have a systems problem.
+          </motion.p>
+
+          {/* Supporting line */}
           <motion.p variants={fadeUp} style={{
             fontFamily: 'var(--font-body)',
-            fontSize: 'clamp(17px, 2vw, 20px)',
-            color: 'rgba(255,255,255,0.42)',
+            fontSize: 'clamp(15px, 1.8vw, 17px)',
+            color: 'rgba(255,255,255,0.35)',
             lineHeight: 1.7,
-            maxWidth: '520px',
+            maxWidth: '540px',
             margin: '0 auto 64px',
             fontWeight: 400,
-            letterSpacing: '-0.2px',
+            letterSpacing: '-0.1px',
           }}>
-            Stop chasing enquiries. We install a 'Growth Infrastructure' into your business&mdash;handling everything from first-click to closed-deal&mdash;so you can focus on scale while the system runs the pipeline.
+            Kinetic builds and installs your complete digital growth infrastructure &mdash; website, CRM, automations, and ads &mdash; so your business generates and converts leads without depending on you showing up every day.
           </motion.p>
 
           {/* Single primary CTA */}

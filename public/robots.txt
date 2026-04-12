@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://buildwithkinetic.org/sitemap.xml

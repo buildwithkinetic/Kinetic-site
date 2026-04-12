@@ -19,7 +19,7 @@ const footerLinks: Record<string, FooterLink[]> = {
     { label: 'Small Business Websites', href: '/small-business-website-development' },
     { label: 'Startup Growth Systems', href: '/startup-website-development' },
     { label: 'Lead Gen Websites', href: '/lead-generation-websites' },
-    { label: 'The Kinetic System', href: '/lead-generation-system' },
+    { label: 'Industry Systems', href: '/lead-generation-system' },
   ],
   Company: [
     { label: 'About', href: '/about' },

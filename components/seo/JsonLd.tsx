@@ -50,7 +50,7 @@ export function organizationSchema() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Sales",
-      email: "admin@buildwithkinetic.org",
+      email: "hello@buildwithkinetic.org",
       url: "https://buildwithkinetic.org/contact",
     },
   }
@@ -107,7 +107,7 @@ export function localBusinessSchema() {
       "@type": "ContactPoint",
       contactType: "customer service",
       url: "https://buildwithkinetic.org/contact",
-      email: "admin@buildwithkinetic.org",
+      email: "hello@buildwithkinetic.org",
       availableLanguage: ["English", "Hindi"],
     },
     sameAs: ["https://www.linkedin.com/in/21-ayushgupta"],

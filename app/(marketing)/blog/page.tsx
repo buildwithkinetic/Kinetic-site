@@ -17,6 +17,13 @@ export const metadata: Metadata = {
       "Practical guides on website development, conversion optimization, SEO, and digital growth from Kinetic.",
     url: "https://buildwithkinetic.org/blog",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kinetic Blog | Growth & SEO Insights",
+    description:
+      "Practical guides on website development, SEO, and digital growth for founders.",
+    creator: "@buildwithkinetic",
+  },
 }
 
 export default function BlogPage() {
@@ -133,7 +140,7 @@ export default function BlogPage() {
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#0F0E0C] text-[#F5F0E8] font-bold rounded-full text-lg hover:bg-[#3B82F6] transition-colors duration-300"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/icons/meet.svg" alt="" width={17} height={17} style={{ borderRadius: '3px', flexShrink: 0 }} />
+              <img src="/icons/meet.svg" alt="Video call icon" width={17} height={17} style={{ borderRadius: '3px', flexShrink: 0 }} />
               Book a Free Strategy Call
             </Link>
           </div>
