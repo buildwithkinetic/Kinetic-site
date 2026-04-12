@@ -5,6 +5,7 @@ import { motion, type Variants } from 'framer-motion'
 import Reveal from '@/components/Reveal'
 import dynamic from 'next/dynamic'
 const HeroCanvas = dynamic(() => import('@/components/HeroCanvas'), { ssr: false })
+const InfrastructureDiagram = dynamic(() => import('@/components/marketing/InfrastructureDiagram'), { ssr: false })
 import { events } from '@/lib/analytics'
 import { StickyCtaBanner } from '@/components/marketing/StickyCtaBanner'
 
@@ -242,7 +243,7 @@ export default function HomepageClient() {
       <section style={{
         minHeight: '100vh',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        padding: '160px 24px 140px',
+        padding: '140px 24px 100px',
         position: 'relative', overflow: 'hidden',
         background: '#0A0A0A',
       }}>
@@ -259,189 +260,177 @@ export default function HomepageClient() {
           filter: 'blur(60px)',
         }} />
 
-        <motion.div
-          initial="hidden" animate="visible" variants={stagger}
-          style={{ maxWidth: '880px', textAlign: 'center', position: 'relative', zIndex: 2 }}
+        {/* Split-layout container */}
+        <div
+          className="hero-split"
+          style={{
+            maxWidth: '1200px', width: '100%',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            alignItems: 'center',
+            gap: '40px',
+            position: 'relative', zIndex: 2,
+          }}
         >
-          {/* Eyebrow — earned, specific */}
-          <motion.div variants={fadeUp} style={{ marginBottom: '40px' }}>
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: '10px',
-              padding: '8px 18px',
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '100px',
-              fontFamily: 'var(--font-body)', fontSize: '12px',
-              color: 'rgba(255,255,255,0.45)', letterSpacing: '2px',
-              textTransform: 'uppercase',
-            }}>
+          {/* ─── Left column: Content ─────────────────────────────── */}
+          <motion.div
+            initial="hidden" animate="visible" variants={stagger}
+            className="hero-content"
+            style={{ display: 'flex', flexDirection: 'column' }}
+          >
+            {/* Eyebrow */}
+            <motion.div variants={fadeUp} style={{ marginBottom: '32px' }}>
               <span style={{
-                width: '5px', height: '5px', borderRadius: '50%',
-                background: '#3B82F6', boxShadow: '0 0 10px #3B82F6',
-                flexShrink: 0,
-                animation: 'pulse 2s ease-in-out infinite',
-              }} />
-              Growth Systems · Kolkata, India
-            </span>
-          </motion.div>
+                display: 'inline-flex', alignItems: 'center', gap: '10px',
+                padding: '8px 18px',
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '100px',
+                fontFamily: 'var(--font-body)', fontSize: '12px',
+                color: 'rgba(255,255,255,0.45)', letterSpacing: '2px',
+                textTransform: 'uppercase',
+              }}>
+                <span style={{
+                  width: '5px', height: '5px', borderRadius: '50%',
+                  background: '#3B82F6', boxShadow: '0 0 10px #3B82F6',
+                  flexShrink: 0,
+                  animation: 'pulse 2s ease-in-out infinite',
+                }} />
+                Growth Systems · Kolkata, India
+              </span>
+            </motion.div>
 
-          {/* Headline — single H1 for SEO */}
-          <motion.h1 variants={fadeUp} style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(48px, 7.5vw, 92px)',
-            fontWeight: 700,
-            lineHeight: 1.04,
-            letterSpacing: '-3.5px',
-            color: '#FFFFFF',
-            margin: '0 0 52px',
-          }}>
-            Stop running on effort.<br/>
-            <span style={{ color: 'rgba(255,255,255,0.28)' }}>Start running on systems.</span>
-          </motion.h1>
-
-          {/* Subheadline */}
-          <motion.p variants={fadeUp} style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(20px, 2.5vw, 28px)',
-            color: 'rgba(255,255,255,0.55)',
-            lineHeight: 1.4,
-            maxWidth: '600px',
-            margin: '0 auto 28px',
-            fontWeight: 500,
-            letterSpacing: '-0.5px',
-          }}>
-            Most businesses don&apos;t have a growth problem. They have a systems problem.
-          </motion.p>
-
-          {/* Supporting line */}
-          <motion.p variants={fadeUp} style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: 'clamp(15px, 1.8vw, 17px)',
-            color: 'rgba(255,255,255,0.35)',
-            lineHeight: 1.7,
-            maxWidth: '540px',
-            margin: '0 auto 64px',
-            fontWeight: 400,
-            letterSpacing: '-0.1px',
-          }}>
-            Kinetic builds and installs your complete digital growth infrastructure &mdash; website, CRM, automations, and ads &mdash; so your business generates and converts leads without depending on you showing up every day.
-          </motion.p>
-
-          {/* Single primary CTA */}
-          <motion.div variants={fadeUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <Link
-                href="/book-call"
-                onClick={() => events.bookCallClick('hero')}
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '10px',
-                  padding: '18px 36px',
-                  background: '#3B82F6',
-                  color: '#fff', borderRadius: '100px',
-                  fontSize: '16px', fontWeight: 600,
-                  textDecoration: 'none', fontFamily: 'var(--font-body)',
-                  border: 'none', cursor: 'pointer',
-                  transition: 'transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1), background 0.2s',
-                  boxShadow: '0 0 0 rgba(59,130,246,0)',
-                  letterSpacing: '-0.2px',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.transform = 'translateY(-4px) scale(1.04)'
-                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(59,130,246,0.5), 0 0 0 1px rgba(59,130,246,0.4)'
-                  e.currentTarget.style.background = '#2563EB'
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.transform = 'none'
-                  e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)'
-                  e.currentTarget.style.background = '#3B82F6'
-                }}
-              >
-                <MeetIcon />
-                Book a Free Strategy Call
-                <Arrow />
-              </Link>
-
-              <button
-                onClick={() => {
-                  const el = document.getElementById('system-details')
-                  if (el) el.scrollIntoView({ behavior: 'smooth' })
-                }}
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '8px',
-                  padding: '18px 32px',
-                  background: 'rgba(255,255,255,0.05)',
-                  color: 'rgba(255,255,255,0.7)', borderRadius: '100px',
-                  fontSize: '15px', fontWeight: 500,
-                  textDecoration: 'none', fontFamily: 'var(--font-body)',
-                  border: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  letterSpacing: '-0.1px',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
-                  e.currentTarget.style.color = '#fff'
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
-                  e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
-                }}
-              >
-                See how it works
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ opacity: 0.6 }}>
-                  <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-              </button>
-            </div>
-
-            {/* Trust line */}
-            <p style={{
-              fontFamily: 'var(--font-body)', fontSize: '13px',
-              color: 'rgba(255,255,255,0.25)', margin: 0,
-              letterSpacing: '0.2px',
+            {/* Headline — single H1 for SEO */}
+            <motion.h1 variants={fadeUp} style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(40px, 6vw, 76px)',
+              fontWeight: 700,
+              lineHeight: 1.06,
+              letterSpacing: '-3px',
+              color: '#FFFFFF',
+              margin: '0 0 32px',
             }}>
-              30-minute call &nbsp;·&nbsp; No pitch &nbsp;·&nbsp; No retainer
-            </p>
+              Stop running on effort.<br/>
+              <span style={{ color: 'rgba(255,255,255,0.28)' }}>Start running on systems.</span>
+            </motion.h1>
+
+            {/* Diagram — mobile only (shows between headline and subheadline) */}
+            <motion.div variants={fadeUp} className="hero-diagram-mobile" style={{ display: 'none' }}>
+              <InfrastructureDiagram />
+            </motion.div>
+
+            {/* Subheadline */}
+            <motion.p variants={fadeUp} style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'clamp(16px, 2vw, 20px)',
+              color: 'rgba(255,255,255,0.5)',
+              lineHeight: 1.55,
+              maxWidth: '480px',
+              margin: '0 0 48px',
+              fontWeight: 400,
+              letterSpacing: '-0.2px',
+            }}>
+              Most businesses don&apos;t have a growth problem.{' '}
+              They have a systems problem.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div variants={fadeUp} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div className="hero-cta-row" style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                <button
+                  onClick={() => {
+                    const el = document.getElementById('system-details')
+                    if (el) el.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '8px',
+                    padding: '16px 28px',
+                    background: 'rgba(255,255,255,0.05)',
+                    color: 'rgba(255,255,255,0.7)', borderRadius: '100px',
+                    fontSize: '14px', fontWeight: 500,
+                    textDecoration: 'none', fontFamily: 'var(--font-body)',
+                    border: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    letterSpacing: '-0.1px',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
+                    e.currentTarget.style.color = '#fff'
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
+                    e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
+                  }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ opacity: 0.6 }}>
+                    <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2"/>
+                  </svg>
+                  See how it works
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ opacity: 0.5 }}>
+                    <path d="M12 5v14M19 12l-7 7-7-7"/>
+                  </svg>
+                </button>
+
+                <Link
+                  href="/book-call"
+                  onClick={() => events.bookCallClick('hero')}
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '10px',
+                    padding: '16px 28px',
+                    background: '#3B82F6',
+                    color: '#fff', borderRadius: '100px',
+                    fontSize: '14px', fontWeight: 600,
+                    textDecoration: 'none', fontFamily: 'var(--font-body)',
+                    border: 'none', cursor: 'pointer',
+                    transition: 'transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1), background 0.2s',
+                    boxShadow: '0 0 0 rgba(59,130,246,0)',
+                    letterSpacing: '-0.2px',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.transform = 'translateY(-3px) scale(1.03)'
+                    e.currentTarget.style.boxShadow = '0 16px 48px rgba(59,130,246,0.45), 0 0 0 1px rgba(59,130,246,0.4)'
+                    e.currentTarget.style.background = '#2563EB'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.transform = 'none'
+                    e.currentTarget.style.boxShadow = '0 0 0 rgba(59,130,246,0)'
+                    e.currentTarget.style.background = '#3B82F6'
+                  }}
+                >
+                  <MeetIcon />
+                  Book Free Strategy Call
+                  <Arrow />
+                </Link>
+              </div>
+
+              {/* Trust line */}
+              <p style={{
+                fontFamily: 'var(--font-body)', fontSize: '12px',
+                color: 'rgba(255,255,255,0.22)', margin: 0,
+                letterSpacing: '0.2px',
+              }}>
+                30-minute call &nbsp;·&nbsp; No pitch &nbsp;·&nbsp; No retainer
+              </p>
+            </motion.div>
           </motion.div>
 
-          {/* Social proof strip */}
-          <motion.div variants={fadeUp} style={{
-            marginTop: '80px',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            gap: '40px', flexWrap: 'wrap',
-          }}>
-            {[
-              { value: '30', label: 'Day delivery' },
-              { value: '90', label: 'Day guarantee' },
-              { value: '100%', label: 'Done-for-you' },
-            ].map(({ value, label }) => (
-              <div key={label} style={{ textAlign: 'center' }}>
-                <div style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(28px, 3.5vw, 40px)',
-                  fontWeight: 400,
-                  color: '#FFFFFF',
-                  letterSpacing: '-1.5px',
-                  lineHeight: 1,
-                  marginBottom: '4px',
-                }}>
-                  {value}
-                </div>
-                <div style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '12px',
-                  color: 'rgba(255,255,255,0.3)',
-                  letterSpacing: '1.5px',
-                  textTransform: 'uppercase',
-                }}>
-                  {label}
-                </div>
-              </div>
-            ))}
+          {/* ─── Right column: Diagram (desktop/tablet) ─────────── */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="hero-diagram-desktop"
+            style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}
+          >
+            <InfrastructureDiagram />
           </motion.div>
-        </motion.div>
+        </div>
       </section>
+
 
 
       {/* ══ TRUST BAR ══════════════════════════════════════════════════ */}
@@ -1153,6 +1142,43 @@ export default function HomepageClient() {
         @keyframes pulse {
           0%, 100% { opacity: 1; box-shadow: 0 0 10px #3B82F6; }
           50% { opacity: 0.6; box-shadow: 0 0 20px #3B82F6; }
+        }
+
+        /* ── Hero split-layout responsive ──────────────────────── */
+
+        /* Desktop: diagram on right, hide mobile diagram */
+        .hero-diagram-mobile { display: none !important; }
+        .hero-diagram-desktop { display: flex !important; }
+
+        /* Tablet landscape (768–1023): stack vertically, show desktop diagram centered */
+        @media (max-width: 1023px) {
+          .hero-split {
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+            text-align: center;
+          }
+          .hero-content { align-items: center !important; }
+          .hero-cta-row { justify-content: center !important; }
+          .hero-diagram-desktop { justify-content: center !important; }
+        }
+
+        /* Mobile (≤640): hide desktop diagram, show inline mobile diagram */
+        @media (max-width: 640px) {
+          .hero-split {
+            grid-template-columns: 1fr !important;
+            gap: 0 !important;
+          }
+          .hero-content { align-items: flex-start !important; text-align: left !important; }
+          .hero-diagram-desktop { display: none !important; }
+          .hero-diagram-mobile { display: block !important; margin: 0 0 28px !important; }
+          .hero-cta-row {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+          .hero-cta-row > * {
+            justify-content: center !important;
+            text-align: center !important;
+          }
         }
 
         /* ── Mobile responsiveness ─────────────────────────────── */
