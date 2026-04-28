@@ -3,31 +3,26 @@ import HomepageClient from '@/components/marketing/HomepageClient'
 import { JsonLd, websiteSchema, organizationSchema, localBusinessSchema, faqSchema } from '@/components/seo/JsonLd'
 
 export const metadata: Metadata = {
-  title: 'Kinetic | Growth Systems for Businesses & Startups | Kolkata, India',
+  title: 'Kinetic — Automated Growth Systems for Businesses | Kolkata',
   description:
-    'Kinetic builds growth systems for businesses in India — websites, SEO, CRM, and automation — installed and running before handover.',
+    'Kinetic builds websites, full stack apps, custom software, AI-driven marketing, AI agents, and AI chatbots for businesses in India — production-grade and handed over running.',
   keywords: [
-    'growth systems for businesses India',
     'website development Kolkata',
-    'digital marketing agency Kolkata',
-    'SEO agency Kolkata',
-    'lead generation system India',
-    'CRM setup for businesses',
+    'full stack app development India',
+    'custom software development India',
+    'AI marketing automation India',
+    'AI agents for business India',
+    'AI chatbot development Kolkata',
+    'web app development India',
     'business automation Kolkata',
-    'automated lead capture system',
-    'conversion focused website India',
-    'website development agency India',
-    'business website development',
-    'startup website development India',
-    'Google Business Profile optimisation Kolkata',
-    'automated growth systems',
-    'Kinetic growth engineer',
+    'automated growth systems India',
+    'Kinetic Ayush Gupta Kolkata',
   ],
   alternates: { canonical: 'https://buildwithkinetic.org' },
   openGraph: {
     title: 'Kinetic — Automated Growth Systems for Businesses',
     description:
-      'Most agencies build you a website and disappear. Kinetic builds the system, installs it in your business, and makes sure it runs.',
+      'Most agencies build you a website and disappear. Kinetic builds the full system — websites, apps, software, AI marketing, AI agents, chatbots — and hands it over running.',
     url: 'https://buildwithkinetic.org',
     siteName: 'Kinetic',
     locale: 'en_IN',
@@ -37,18 +32,18 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Kinetic — Automated Growth Systems for Businesses',
     description:
-      'Websites, SEO, CRM, automation — built and handed over running. The system behind your growth.',
+      'Websites, apps, software, AI marketing, AI agents, chatbots — built to production standard and handed over running.',
     creator: '@buildwithkinetic',
   },
 }
 
 export default function HomePage() {
   const homeFaqs = [
-    { question: 'How is Kinetic different from a regular web agency?', answer: "Most agencies build a website and hand over the login details. Kinetic builds the complete growth system — website, CRM, automation, and SEO — and installs it running in your business before handover." },
-    { question: 'How long does it take to go live?', answer: 'Most systems are live in 2–3 weeks. The Quick Win Audit is delivered in 1 week. The Full Growth System takes up to 4 weeks given its scope.' },
-    { question: 'What if I already have a website?', answer: "We audit it, identify exactly what's leaking leads, and either rebuild it or layer the growth system on top — whichever makes more sense for your business." },
-    { question: 'Is there a guarantee?', answer: 'Yes. Every offer has a specific performance guarantee. The Visibility Fix: first-page Google ranking in 30 days or I keep working free. Lead Capture System: zero missed leads in 90 days or I fix it free. Full Growth System: 90-day performance guarantee.' },
-    { question: 'Do you work with businesses outside Kolkata?', answer: 'Yes — the entire process is remote. Strategy call, build, and handover all happen online. Kinetic works with founders and small businesses across India.' },
+    { question: 'What does Kinetic build?', answer: "Kinetic builds 6 things: conversion-focused websites and landing pages, full stack web applications, custom software, AI-driven marketing systems, AI agents, and AI chatbots. Everything is production-grade and handed over running." },
+    { question: 'How long does it take to go live?', answer: 'Websites and chatbots are typically live in 1–2 weeks. AI agents and marketing systems in 2–3 weeks. Full stack apps and custom software are scoped per project — typically 4–8 weeks.' },
+    { question: 'What if I already have a website?', answer: "We audit it, identify exactly what's leaking leads, and either rebuild it or layer the right system on top — whichever makes more sense for your business." },
+    { question: 'Is there a guarantee?', answer: 'Yes. Every service comes with a specific performance guarantee. Websites come with a 30-day Google ranking guarantee. AI agents and chatbots come with a 60–90 day failure guarantee — if the system fails its core function, we rebuild it free.' },
+    { question: 'Do you work with businesses outside Kolkata?', answer: 'Yes — the entire process is remote. Strategy call, build, and handover all happen online. Kinetic works with founders and businesses across India.' },
   ]
 
   return (

@@ -25,69 +25,102 @@ const btnPrimary: React.CSSProperties = {
   transition: 'opacity 0.2s, transform 0.2s, box-shadow 0.2s',
 }
 
-const offers = [
+const services = [
   {
-    num: '01', name: 'The Visibility Fix',
-    problem: 'Nobody can find you on Google.',
-    what: 'A conversion-focused local SEO website with Google Business Profile setup, on-page optimisation, and structured data — built to rank for the searches your customers are already making.',
-    outcomes: ['First page of Google in 30 days', 'Consistent inbound enquiries without paid ads', 'Website that works as your 24/7 salesperson'],
+    num: '01',
+    name: 'Websites & Landing Pages',
+    tagline: 'Your business deserves a website that converts, not just looks good.',
+    what: 'Conversion-focused websites and landing pages — built fast, designed to rank on Google, and wired up with lead capture, analytics, and automation from day one. No templates. No drag-and-drop.',
+    outcomes: [
+      'Live and ranking in 2 weeks',
+      'Lead capture forms, CTAs, and tracking built in',
+      'Optimised for Google and Core Web Vitals',
+      'Handed over with CMS access and full documentation',
+    ],
     timeline: 'Live in 2 weeks',
-    guarantee: "If you don't appear on the first page of Google for your primary keyword in 30 days, I'll keep working at no extra charge.",
-    badge: null, color: '#3B82F6',
+    guarantee: "If you don't appear on the first page of Google for your primary keyword in 30 days, we keep working at no extra charge.",
+    badge: null,
+    color: '#3B82F6',
   },
   {
-    num: '02', name: 'The Lead Capture System',
-    problem: 'Leads come in — and go cold before you even see them.',
-    what: 'Automated lead capture and response system: contact forms, WhatsApp triggers, email sequences, and a CRM pipeline — every inquiry acknowledged within 60 seconds, automatically.',
-    outcomes: ['Every lead acknowledged in 60 seconds', 'Automated follow-up sequences that nurture leads overnight', 'Full pipeline visibility — every lead, status, and next action'],
-    timeline: 'Live in 2–3 weeks',
-    guarantee: 'If you miss a single lead due to a system failure in the first 90 days, I fix it free.',
-    badge: 'Most Popular', color: '#6366F1',
-  },
-  {
-    num: '03', name: 'The Repeat Revenue Engine',
-    problem: 'You finish a job — and the client disappears.',
-    what: 'A post-project automation system: job-completion triggers, review request flows, re-engagement emails, and loyalty prompts — all running automatically after every completed job.',
-    outcomes: ['Turn every completed job into a repeat client on autopilot', '25–40% increase in repeat bookings within 90 days', 'Growing bank of 5-star reviews that compound your SEO'],
-    timeline: 'Live in 2 weeks',
-    guarantee: "If your Google review count doesn't increase within 60 days, I'll audit and rebuild the flow free.",
-    badge: null, color: '#8B5CF6',
-  },
-  {
-    num: '04', name: 'The Full Growth System',
-    problem: "You've tried a website. Maybe some ads. Nothing sticks.",
-    what: 'Your complete digital growth engine — visibility website, lead capture automation, CRM dashboard, post-sale revenue flows, and analytics — built as one integrated system.',
-    outcomes: ['Fully automated growth engine running 24/7', 'Leads captured, followed up, converted, and re-engaged — systematically', 'Complete data visibility: traffic, leads, conversions, and revenue in one dashboard'],
-    timeline: 'Live in 4 weeks',
-    guarantee: "90-day performance guarantee — if the system doesn't generate measurable lead growth, I keep working until it does.",
-    badge: 'Best Value', color: '#A855F7',
-  },
-  {
-    num: '05', name: 'The Quick Win Audit',
-    problem: "You know something is broken — you just don't know what to fix first.",
-    what: 'A deep-dive audit of your website, Google presence, and lead flow — followed by a written report with the top 3 problems costing you leads, and I fix all three in the same week.',
-    outcomes: ['Know exactly what is costing you leads — in plain English', 'Top 3 problems identified and fixed within one week', 'A prioritised roadmap for what to build next'],
-    timeline: 'Done in 1 week',
-    guarantee: "If you don't find the audit valuable, I'll refund it in full — no questions asked.",
-    badge: null, color: '#C026D3',
-  },
-  {
-    num: '06', name: 'Web App / SaaS Build',
-    problem: 'Your idea needs a real product — not just a landing page.',
-    what: 'End-to-end web application development: architecture, backend, frontend, and deployment. Built with modern stack (Next.js, Supabase, or your chosen tools) — ready for real users on day one.',
-    outcomes: ['Production-ready web app in 4–8 weeks', 'Auth, database, API, and UI — all handled', 'Clean codebase you own and can scale independently'],
+    num: '02',
+    name: 'Full Stack Apps',
+    tagline: 'Your idea deserves a real product — not a prototype nobody ships.',
+    what: 'End-to-end web application development: backend, frontend, database, auth, and deployment. Built with modern stack (Next.js, Supabase, Node) — production-ready on day one, with clean code you actually own.',
+    outcomes: [
+      'Production-ready app in 4–8 weeks',
+      'Auth, database, API, and UI — all handled end-to-end',
+      'Full handover: codebase, docs, and deployment pipeline',
+      'Built to scale — not to be rebuilt in 12 months',
+    ],
     timeline: 'Live in 4–8 weeks',
-    guarantee: 'I deliver a working, deployed application with full handover documentation — or I keep building.',
-    badge: 'New', color: '#06B6D4',
+    guarantee: 'We deliver a working, deployed application with full handover documentation — or we keep building.',
+    badge: null,
+    color: '#06B6D4',
   },
   {
-    num: '07', name: 'AI Agent System',
-    problem: 'Repetitive tasks are eating your time — and costing you money.',
-    what: 'Custom AI agents and automation workflows: lead qualification bots, AI-powered follow-up sequences, internal tools, and intelligent process automation — built on n8n, OpenAI, and your existing stack.',
-    outcomes: ['Leads qualified and followed up with automatically — 24/7', 'Hours of manual work eliminated every week', 'AI that understands your business context, not just generic responses'],
+    num: '03',
+    name: 'Custom Software',
+    tagline: 'Off-the-shelf software is someone else\'s fit. Build yours.',
+    what: 'Bespoke software solutions built around your exact workflow — internal tools, dashboards, CRMs, booking systems, or anything that doesn\'t exist yet. Scoped, built, and delivered with full ownership transferred to you.',
+    outcomes: [
+      'Software built to your exact process — not adapted from a SaaS template',
+      'Internal tools that save hours per week from day one',
+      'Full source code ownership with documentation',
+      'Maintenance and iteration support available post-handover',
+    ],
+    timeline: 'Scoped per project',
+    guarantee: "If the software doesn't perform its core function as specified, we fix it — no additional cost.",
+    badge: null,
+    color: '#8B5CF6',
+  },
+  {
+    num: '04',
+    name: 'AI-Driven Marketing',
+    tagline: 'Stop guessing what to post. Build a marketing system that runs itself.',
+    what: 'AI-powered content and marketing automation: SEO systems, automated content pipelines, personalised email sequences, lead nurturing flows, and performance dashboards — built on real data, running continuously.',
+    outcomes: [
+      'Consistent content and SEO output without manual effort',
+      'Automated email sequences that qualify and nurture leads overnight',
+      'Full attribution: know exactly which channel drives revenue',
+      'System compounds over time — gets better the longer it runs',
+    ],
     timeline: 'Live in 2–3 weeks',
-    guarantee: 'If the agent fails to perform its core function within 60 days, I rebuild it free.',
-    badge: 'New', color: '#10B981',
+    guarantee: "If the system doesn't generate measurable lead growth within 90 days, we rebuild and optimise it free.",
+    badge: 'Most Popular',
+    color: '#10B981',
+  },
+  {
+    num: '05',
+    name: 'AI Agents',
+    tagline: 'Repetitive tasks are eating your margin. Let an agent handle them.',
+    what: 'Custom AI agents that work inside your business: lead qualification agents, research bots, proposal generators, internal knowledge bases, and workflow automations — built on OpenAI, Claude, and n8n, wired into your existing stack.',
+    outcomes: [
+      'Leads qualified, scored, and routed automatically — 24/7',
+      'Hours of manual research and admin eliminated every week',
+      'AI that understands your business context, not generic responses',
+      'Scales without adding headcount',
+    ],
+    timeline: 'Live in 2–3 weeks',
+    guarantee: 'If the agent fails to perform its core function within 60 days, we rebuild it free.',
+    badge: null,
+    color: '#F59E0B',
+  },
+  {
+    num: '06',
+    name: 'AI Chatbots',
+    tagline: 'Your website gets visitors at 2am. Make sure something answers.',
+    what: 'Intelligent chatbots trained on your business — FAQ bots, lead qualification bots, booking assistants, and support agents — embedded on your site or WhatsApp, converting visitors around the clock without you lifting a finger.',
+    outcomes: [
+      'Qualified leads captured even when you\'re offline',
+      'Instant, accurate answers to customer questions 24/7',
+      'Seamlessly hands off to you when human input is needed',
+      'Integrated with your CRM and notification system',
+    ],
+    timeline: 'Live in 1–2 weeks',
+    guarantee: 'If the chatbot misses a qualified lead due to a system failure in the first 90 days, we fix it free.',
+    badge: null,
+    color: '#EC4899',
   },
 ]
 
@@ -98,80 +131,80 @@ export default function ServicesPageClient() {
       {/* HERO */}
       <section style={{ padding: '160px 24px 80px', maxWidth: '900px', margin: '0 auto' }}>
         <Reveal>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--t4)', marginBottom: '20px' }}>7 Growth Offers</p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--t4)', marginBottom: '20px' }}>6 Things We Build</p>
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(36px, 6vw, 72px)',
             fontWeight: 600, lineHeight: 1.05, letterSpacing: '-2px',
             color: 'var(--t1)', margin: '0 0 24px',
           }}>
-            Pick Your Problem.<br/>
-            <span style={{ backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>I Fix It.</span>
+            Tell us what you need.<br/>
+            <span style={{ backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>We build it.</span>
           </h1>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '18px', color: 'var(--t3)', lineHeight: 1.6, maxWidth: '600px', margin: 0 }}>
-            Websites, web apps, AI agents, and automation. Clear outcomes. Built and installed before handover.
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '18px', color: 'var(--t3)', lineHeight: 1.6, maxWidth: '640px', margin: 0 }}>
+            Websites, full stack apps, custom software, AI marketing, agents, and chatbots — built to production-grade standard and handed over running.
           </p>
         </Reveal>
       </section>
 
-      {/* OFFER CARDS */}
-      <section id="growth-offers" style={{ padding: '0 24px 80px' }}>
+      {/* SERVICE CARDS */}
+      <section id="services" style={{ padding: '0 24px 80px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gap: '24px' }}>
-          {offers.map(offer => (
-            <Reveal key={offer.num}>
+          {services.map(service => (
+            <Reveal key={service.num}>
               <motion.div
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.2 }}
-                className="offer-card"
+                className="service-card"
                 style={{
                   padding: '40px',
                   background: '#111111',
-                  border: `1px solid ${offer.badge ? offer.color + '30' : 'rgba(255,255,255,0.07)'}`,
+                  border: `1px solid ${service.badge ? service.color + '30' : 'rgba(255,255,255,0.07)'}`,
                   borderRadius: '20px',
                   position: 'relative', overflow: 'hidden',
                 }}
               >
-                {offer.badge && (
+                {service.badge && (
                   <span style={{
                     position: 'absolute', top: '20px', right: '20px',
                     padding: '4px 14px',
-                    background: offer.color + '18',
-                    border: `1px solid ${offer.color}40`,
+                    background: service.color + '18',
+                    border: `1px solid ${service.color}40`,
                     borderRadius: '100px',
-                    fontFamily: 'var(--font-body)', fontSize: '11px', color: offer.color,
-                  }}>{offer.badge}</span>
+                    fontFamily: 'var(--font-body)', fontSize: '11px', color: service.color,
+                  }}>{service.badge}</span>
                 )}
 
                 {/* Glow accent */}
                 <div style={{
                   position: 'absolute', top: 0, right: 0, width: '300px', height: '200px',
-                  background: `radial-gradient(ellipse at top right, ${offer.color}08, transparent 70%)`,
+                  background: `radial-gradient(ellipse at top right, ${service.color}08, transparent 70%)`,
                   pointerEvents: 'none',
                 }} />
 
                 <div style={{ position: 'relative' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: offer.color, letterSpacing: '2px' }}>{offer.num}</span>
-                    <div style={{ width: '24px', height: '1px', background: offer.color + '40' }} />
-                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: offer.color }}>{offer.name}</span>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: service.color, letterSpacing: '2px' }}>{service.num}</span>
+                    <div style={{ width: '24px', height: '1px', background: service.color + '40' }} />
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: service.color }}>{service.name}</span>
                   </div>
 
-                  <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 400, letterSpacing: '-1px', color: 'var(--t1)', margin: '0 0 20px' }}>
-                    {offer.problem}
+                  <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(20px, 2.8vw, 28px)', fontWeight: 400, letterSpacing: '-0.5px', color: 'var(--t1)', margin: '0 0 20px', lineHeight: 1.3 }}>
+                    {service.tagline}
                   </h2>
 
                   <div style={{
                     padding: '20px', background: 'var(--bg)',
                     borderRadius: '12px', marginBottom: '24px',
                   }}>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--t4)', marginBottom: '8px' }}>What I build</p>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'var(--t3)', lineHeight: 1.6, margin: 0 }}>{offer.what}</p>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--t4)', marginBottom: '8px' }}>What we build</p>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'var(--t3)', lineHeight: 1.6, margin: 0 }}>{service.what}</p>
                   </div>
 
                   <div style={{ marginBottom: '24px' }}>
-                    {offer.outcomes.map(o => (
+                    {service.outcomes.map(o => (
                       <div key={o} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '8px' }}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={offer.color} strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={service.color} strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
                           <path d="M20 6 9 17l-5-5"/>
                         </svg>
                         <span style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'var(--t2)', lineHeight: 1.5 }}>{o}</span>
@@ -183,13 +216,13 @@ export default function ServicesPageClient() {
                     padding: '16px', background: 'var(--bg)',
                     borderRadius: '10px', marginBottom: '24px',
                   }}>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: offer.color, margin: '0 0 4px' }}>{offer.timeline}</p>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'var(--t4)', lineHeight: 1.4, margin: 0 }}>{offer.guarantee}</p>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: service.color, margin: '0 0 4px' }}>{service.timeline}</p>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'var(--t4)', lineHeight: 1.4, margin: 0 }}>{service.guarantee}</p>
                   </div>
 
                   <Link href="/book-call"
-                    style={{ ...btnPrimary, background: `linear-gradient(135deg, ${offer.color}, ${offer.color === '#3B82F6' ? '#8B5CF6' : offer.color})` }}
-                    onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)'; e.currentTarget.style.boxShadow = `0 8px 28px ${offer.color}35` }}
+                    style={{ ...btnPrimary, background: `linear-gradient(135deg, ${service.color}, ${service.color === '#3B82F6' ? '#8B5CF6' : service.color}dd)` }}
+                    onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)'; e.currentTarget.style.boxShadow = `0 8px 28px ${service.color}35` }}
                     onMouseLeave={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}
                   >
                     <MeetIcon /> Get This Built
@@ -214,20 +247,20 @@ export default function ServicesPageClient() {
         }} />
         <div style={{ maxWidth: '600px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <Reveal>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--t4)', marginBottom: '16px' }}>Not sure which offer?</p>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--t4)', marginBottom: '16px' }}>Not sure where to start?</p>
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(28px, 4vw, 48px)',
               fontWeight: 600, lineHeight: 1.1, letterSpacing: '-1.5px',
               color: 'var(--t1)', margin: '0 0 20px',
             }}>
-              Start with the Free Audit.<br/>
+              Get a free audit first.<br/>
               <span style={{ backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                I'll tell you exactly what to fix.
+                We'll tell you exactly what to build.
               </span>
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '17px', color: 'var(--t3)', lineHeight: 1.6, margin: '0 0 36px' }}>
-              I personally review every submission and deliver a written diagnosis within 24 hours — free, no strings attached.
+              Submit your site and we'll personally review it — delivering a written diagnosis and priority action plan within 24 hours. Free, no strings attached.
             </p>
             <Link href="/free-website-audit"
               style={{
@@ -256,7 +289,7 @@ export default function ServicesPageClient() {
 
       <style>{`
         @media (max-width: 640px) {
-          .offer-card { padding: 28px 20px !important; }
+          .service-card { padding: 28px 20px !important; }
         }
       `}</style>
     </div>
