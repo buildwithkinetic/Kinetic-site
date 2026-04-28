@@ -140,8 +140,8 @@ const components = [
         <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
       </svg>
     ),
-    title: 'Conversion Website',
-    desc: 'Built to turn visitors into leads. Not a brochure — a lead-capture machine.',
+    title: 'Websites & Landing Pages',
+    desc: 'Conversion-first websites and high-performance landing pages built to capture leads and rank on Google.',
     color: '#3B82F6',
   },
   {
@@ -151,61 +151,61 @@ const components = [
         <path d="M7 8h2m2 0h2"/>
       </svg>
     ),
-    title: 'Web App / SaaS',
-    desc: 'Full-stack applications — dashboards, portals, SaaS products — built and deployed fast.',
+    title: 'Full Stack Apps',
+    desc: 'Custom web applications, SaaS products, and dashboards — designed, built, and deployed end-to-end.',
     color: '#06B6D4',
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12"/>
-        <path d="M12 6v6l4 2"/>
-        <path d="M2 12C2 6.48 6.48 2 12 2"/>
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+        <polyline points="10 9 9 9 8 9"/>
       </svg>
     ),
-    title: 'AI Agents',
-    desc: 'Intelligent agents that handle lead qualification, support, and follow-up — autonomously.',
+    title: 'Custom Software',
+    desc: 'Bespoke business software — CRMs, internal tools, workflow platforms — built precisely for how you operate.',
+    color: '#8B5CF6',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      </svg>
+    ),
+    title: 'AI-Driven Marketing',
+    desc: 'SEO, paid campaigns, and content — powered by AI to generate compounding, measurable growth.',
     color: '#10B981',
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12"/>
+        <path d="M8 12h.01M12 12h.01M16 12h.01"/>
       </svg>
     ),
-    title: 'SEO & Acquisition',
-    desc: 'Google finds you before competitors. Organic leads, compounding over time.',
-    color: '#4F7CF5',
+    title: 'AI Agents',
+    desc: 'Autonomous agents that qualify leads, run follow-ups, and handle operations — 24/7, without headcount.',
+    color: '#F59E0B',
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
       </svg>
     ),
-    title: 'CRM & Pipeline',
-    desc: 'Every lead logged, tracked, and visible. Never lose a prospect again.',
-    color: '#7B68EE',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-        <path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
-        <path d="M16 16h5v5"/>
-      </svg>
-    ),
-    title: 'Automation',
-    desc: 'Instant lead acknowledgement. Scheduled follow-ups. Zero manual effort.',
-    color: '#8B5CF6',
+    title: 'AI Chatbots',
+    desc: 'Intelligent chatbots trained on your business — answers questions, captures leads, books appointments automatically.',
+    color: '#EC4899',
   },
 ]
 
 const faqs = [
   {
     q: 'How is Kinetic different from a regular web agency?',
-    a: "Most agencies build a website and hand over the login details. Kinetic builds the complete growth system — website, CRM, automation, and SEO — and installs it running in your business before handover.",
+    a: "Most agencies build a website and hand over the login details. Kinetic designs and builds the entire product — website, app, software, or AI system — and installs it running in your business before handover. Not a template shop, not a freelancer marketplace. A focused build team.",
   },
   {
     q: 'How long does it take to go live?',
@@ -446,7 +446,7 @@ export default function HomepageClient() {
           gap: '0', flexWrap: 'wrap',
         }}>
           {[
-            'Websites · Web Apps · AI Agents',
+            'Websites · Apps · Software · AI Marketing · AI Agents · Chatbots',
             'Delivered in 2–4 weeks',
             'B2B solutions for founders across India',
           ].map((item, i) => (
@@ -704,11 +704,11 @@ export default function HomepageClient() {
                   fontWeight: 700, lineHeight: 1.06, letterSpacing: '-2.5px',
                   color: '#FFFFFF', margin: 0,
                 }}>
-                  Six capabilities.<br />One integrated system.
+                  Six things we<br />build exceptionally well.
                 </h2>
               </div>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', color: 'rgba(255,255,255,0.32)', lineHeight: 1.65, maxWidth: '360px', margin: 0 }}>
-                Not a menu of services — six integrated capabilities assembled into one system that fits your business.
+                Websites, apps, software, AI marketing, agents, and chatbots — built to production-grade standard and handed over running.
               </p>
             </div>
           </Reveal>
