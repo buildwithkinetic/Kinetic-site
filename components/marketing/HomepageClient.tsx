@@ -63,6 +63,39 @@ const cardFadeUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] } },
 }
 
+/* ─── Cycling word component ─────────────────────────────────────────── */
+const CYCLE_WORDS = ['Websites', 'Full-Stack Apps', 'AI Marketing', 'AI Agents', 'Custom Software', 'AI Chatbots']
+
+function CyclingWord() {
+  const [index, setIndex] = useState(0)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false)
+      setTimeout(() => {
+        setIndex(i => (i + 1) % CYCLE_WORDS.length)
+        setVisible(true)
+      }, 350)
+    }, 2400)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <span style={{
+      display: 'inline-block',
+      backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
+      WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+      opacity: visible ? 1 : 0,
+      transform: visible ? 'translateY(0)' : 'translateY(8px)',
+      transition: 'opacity 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+    }}>
+      {CYCLE_WORDS[index]}
+    </span>
+  )
+}
+
 /* ─── Count-up component ─────────────────────────────────────────────── */
 function MetricValue({ value }: { value: string }) {
   const [display, setDisplay] = useState(value)
@@ -217,11 +250,11 @@ const faqs = [
   },
   {
     q: 'Is there a guarantee?',
-    a: 'Yes. Every offer has a specific performance guarantee. The Visibility Fix: first-page Google ranking in 30 days or I keep working free. Lead Capture System: zero missed leads in 90 days or I fix it free. Full Growth System: 90-day performance guarantee.',
+    a: 'Yes. Every service has a specific performance guarantee. Websites: first-page Google ranking in 30 days or we keep working free. AI agents and chatbots: if the system fails its core function in 90 days, we rebuild it free.',
   },
   {
-    q: 'Do you work with businesses outside Kolkata?',
-    a: 'Yes — the entire process is remote. Strategy call, build, and handover all happen online. Kinetic works with founders and small businesses across India.',
+    q: 'Do you work with US-based or international clients?',
+    a: 'Yes — the entire process is remote. Strategy call, build, and handover all happen online. Kinetic works with founders, funded startups, and businesses across the US, UK, and India.',
   },
 ]
 
@@ -296,7 +329,7 @@ export default function HomepageClient() {
                   flexShrink: 0,
                   animation: 'pulse 2s ease-in-out infinite',
                 }} />
-                Growth Systems · Kolkata, India
+                Websites · Apps · AI Marketing · AI Agents
               </span>
             </motion.div>
 
@@ -310,8 +343,8 @@ export default function HomepageClient() {
               color: '#FFFFFF',
               margin: '0 0 32px',
             }}>
-              Stop running on effort.<br/>
-              <span style={{ color: 'rgba(255,255,255,0.28)' }}>Start running on systems.</span>
+              We build <CyclingWord /><br/>
+              <span style={{ color: 'rgba(255,255,255,0.28)' }}>that scale your revenue.</span>
             </motion.h1>
 
             {/* Diagram — mobile only (shows between headline and subheadline) */}
@@ -330,8 +363,7 @@ export default function HomepageClient() {
               fontWeight: 400,
               letterSpacing: '-0.2px',
             }}>
-              Most businesses don&apos;t have a growth problem.{' '}
-              They have a systems problem.
+              Websites, apps, custom software, AI marketing, agents, and chatbots — built to production grade and handed over running.
             </motion.p>
 
             {/* CTAs */}
@@ -435,31 +467,73 @@ export default function HomepageClient() {
 
       {/* ══ TRUST BAR ══════════════════════════════════════════════════ */}
       <div style={{
-        borderTop: '1px solid rgba(255,255,255,0.05)',
-        borderBottom: '1px solid rgba(255,255,255,0.05)',
-        padding: '20px 24px',
-        background: 'rgba(255,255,255,0.01)',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        padding: '0 24px',
+        background: 'rgba(255,255,255,0.015)',
+        overflow: 'hidden',
       }}>
         <div style={{
-          maxWidth: '800px', margin: '0 auto',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          gap: '0', flexWrap: 'wrap',
+          maxWidth: '1100px', margin: '0 auto',
+          display: 'flex', alignItems: 'stretch',
+          flexWrap: 'wrap',
         }}>
-          {[
-            'Websites · Apps · Software · AI Marketing · AI Agents · Chatbots',
-            'Delivered in 2–4 weeks',
-            'B2B solutions for founders across India',
-          ].map((item, i) => (
-            <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0' }}>
-              <span style={{
-                fontFamily: 'var(--font-body)', fontSize: '12px',
-                color: 'rgba(255,255,255,0.28)', letterSpacing: '0.5px',
-                padding: '0 28px',
-                whiteSpace: 'nowrap',
-              }}>{item}</span>
-              {i < 2 && <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.08)', flexShrink: 0 }} />}
-            </div>
-          ))}
+          {/* Service chips */}
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: '8px',
+            padding: '18px 28px 18px 0',
+            flexWrap: 'wrap', flex: 1,
+          }}>
+            {[
+              { label: 'Websites', color: '#3B82F6' },
+              { label: 'Full-Stack Apps', color: '#06B6D4' },
+              { label: 'Custom Software', color: '#8B5CF6' },
+              { label: 'AI Marketing', color: '#10B981' },
+              { label: 'AI Agents', color: '#F59E0B' },
+              { label: 'AI Chatbots', color: '#EC4899' },
+            ].map(({ label, color }) => (
+              <span key={label} style={{
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                padding: '5px 12px',
+                background: `${color}12`,
+                border: `1px solid ${color}25`,
+                borderRadius: '100px',
+                fontFamily: 'var(--font-body)', fontSize: '11px',
+                color: `${color}cc`,
+                letterSpacing: '0.2px', whiteSpace: 'nowrap',
+              }}>
+                <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: color, flexShrink: 0 }} />
+                {label}
+              </span>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div style={{ width: '1px', background: 'rgba(255,255,255,0.06)', flexShrink: 0, margin: '0' }} />
+
+          {/* Right meta */}
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: '20px',
+            padding: '18px 0 18px 28px', flexShrink: 0, flexWrap: 'wrap',
+          }}>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: '7px',
+              fontFamily: 'var(--font-body)', fontSize: '12px',
+              color: 'rgba(255,255,255,0.32)', whiteSpace: 'nowrap',
+            }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(34,197,94,0.7)" strokeWidth="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              2–4 week delivery
+            </span>
+            <span style={{ width: '1px', height: '14px', background: 'rgba(255,255,255,0.08)' }} />
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: '7px',
+              fontFamily: 'var(--font-body)', fontSize: '12px',
+              color: 'rgba(255,255,255,0.32)', whiteSpace: 'nowrap',
+            }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(59,130,246,0.7)" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Remote-first · Global
+            </span>
+          </div>
         </div>
       </div>
 
@@ -881,7 +955,7 @@ export default function HomepageClient() {
                     borderRadius: '100px', fontFamily: 'var(--font-body)', fontSize: '12px', color: '#60A5FA',
                   }}>Case Study</span>
                   <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'rgba(255,255,255,0.3)' }}>
-                    Women&apos;s Health Platform &middot; India
+                    Women&apos;s Health Platform &middot; Sheknowmics
                   </span>
                 </div>
                 <h3 style={{

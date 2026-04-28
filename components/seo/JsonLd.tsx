@@ -27,7 +27,7 @@ export function organizationSchema() {
       height: 512,
     },
     description:
-      "Kinetic builds automated growth systems for small businesses and startups — websites, SEO, CRM, lead capture, and automation — installed and running before handover.",
+      "Kinetic builds websites, full stack apps, custom software, AI-driven marketing systems, AI agents, and AI chatbots — production-grade and handed over running.",
     foundingDate: "2024",
     founder: {
       "@type": "Person",
@@ -36,15 +36,10 @@ export function organizationSchema() {
       url: "https://buildwithkinetic.org/about",
       sameAs: ["https://www.linkedin.com/in/21-ayushgupta"],
     },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Kolkata",
-      addressRegion: "West Bengal",
-      addressCountry: "IN",
-    },
     areaServed: [
       { "@type": "Country", name: "India" },
-      { "@type": "City", name: "Kolkata" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
     ],
     sameAs: ["https://www.linkedin.com/in/21-ayushgupta"],
     contactPoint: {
@@ -67,37 +62,24 @@ export function localBusinessSchema() {
     logo: "https://buildwithkinetic.org/favicon.svg",
     image: "https://buildwithkinetic.org/og-image.png",
     description:
-      "Kinetic builds automated growth systems for small businesses — websites, SEO, CRM, lead capture, and automation — all installed and running before handover. Based in Kolkata, serving businesses across India.",
+      "Kinetic builds websites, full stack apps, custom software, AI-driven marketing systems, AI agents, and AI chatbots — production-grade and handed over running.",
     founder: {
       "@type": "Person",
       name: "Ayush Gupta",
       url: "https://buildwithkinetic.org/about",
     },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Kolkata",
-      addressLocality: "Kolkata",
-      addressRegion: "West Bengal",
-      postalCode: "700001",
-      addressCountry: "IN",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 22.5726,
-      longitude: 88.3639,
-    },
     areaServed: [
       { "@type": "Country", name: "India" },
-      { "@type": "City", name: "Kolkata" },
-      { "@type": "State", name: "West Bengal" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
     ],
     serviceType: [
       "Website Development",
-      "SEO Services",
-      "Lead Generation Systems",
-      "Business Automation",
-      "CRM Development",
-      "Digital Marketing",
+      "Full Stack App Development",
+      "Custom Software Development",
+      "AI-Driven Marketing",
+      "AI Agents",
+      "AI Chatbots",
     ],
     priceRange: "\u20b9\u20b9",
     currenciesAccepted: "INR",
@@ -173,18 +155,12 @@ export function personSchema() {
       name: "Kinetic",
       url: "https://buildwithkinetic.org",
     },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Kolkata",
-      addressRegion: "West Bengal",
-      addressCountry: "IN",
-    },
     sameAs: [
       "https://www.linkedin.com/in/21-ayushgupta",
       "https://buildwithkinetic.org",
     ],
     description:
-      "Ayush Gupta is a growth engineer and founder of Kinetic — building automated growth systems for small businesses in India.",
+      "Ayush Gupta is the founder of Kinetic — building websites, apps, AI systems, and marketing automation for founders and funded companies globally.",
   }
 }
 
@@ -196,7 +172,7 @@ export function websiteSchema() {
     name: "Kinetic",
     url: "https://buildwithkinetic.org",
     description:
-      "Automated growth systems for small businesses — websites, SEO, CRM, lead capture, and automation. Built and handed over running.",
+      "Websites, apps, custom software, AI marketing, AI agents, and chatbots — built to production standard and handed over running.",
     publisher: {
       "@id": "https://buildwithkinetic.org/#organization",
     },
@@ -239,7 +215,8 @@ export function serviceSchema({
     },
     areaServed: [
       { "@type": "Country", name: "India" },
-      { "@type": "City", name: "Kolkata" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
     ],
     ...(price && {
       offers: {
