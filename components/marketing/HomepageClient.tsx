@@ -311,25 +311,36 @@ export default function HomepageClient() {
             className="hero-content"
             style={{ display: 'flex', flexDirection: 'column' }}
           >
-            {/* Eyebrow */}
+            {/* Eyebrow — urgency */}
             <motion.div variants={fadeUp} style={{ marginBottom: '32px' }}>
               <span style={{
                 display: 'inline-flex', alignItems: 'center', gap: '10px',
-                padding: '8px 18px',
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.1)',
+                padding: '9px 18px 9px 12px',
+                background: 'rgba(34,197,94,0.07)',
+                border: '1px solid rgba(34,197,94,0.25)',
                 borderRadius: '100px',
-                fontFamily: 'var(--font-body)', fontSize: '12px',
-                color: 'rgba(255,255,255,0.45)', letterSpacing: '2px',
-                textTransform: 'uppercase',
+                fontFamily: 'var(--font-body)', fontSize: '13px',
+                color: 'rgba(255,255,255,0.75)',
+                letterSpacing: '-0.1px',
               }}>
                 <span style={{
-                  width: '5px', height: '5px', borderRadius: '50%',
-                  background: '#3B82F6', boxShadow: '0 0 10px #3B82F6',
-                  flexShrink: 0,
-                  animation: 'pulse 2s ease-in-out infinite',
-                }} />
-                Websites · Apps · AI Marketing · AI Agents
+                  display: 'inline-flex', alignItems: 'center', gap: '6px',
+                  padding: '3px 10px',
+                  background: 'rgba(34,197,94,0.15)',
+                  border: '1px solid rgba(34,197,94,0.3)',
+                  borderRadius: '100px',
+                  fontSize: '11px', fontWeight: 600,
+                  color: '#22C55E', letterSpacing: '0.3px',
+                  textTransform: 'uppercase',
+                }}>
+                  <span style={{
+                    width: '5px', height: '5px', borderRadius: '50%',
+                    background: '#22C55E', boxShadow: '0 0 8px #22C55E',
+                    flexShrink: 0, animation: 'pulse 2s ease-in-out infinite',
+                  }} />
+                  Open
+                </span>
+                Now onboarding — <strong style={{ color: '#fff', fontWeight: 600 }}>3 spots left for May</strong>
               </span>
             </motion.div>
 
@@ -343,8 +354,13 @@ export default function HomepageClient() {
               color: '#FFFFFF',
               margin: '0 0 32px',
             }}>
-              We build <CyclingWord /><br/>
-              <span style={{ color: 'rgba(255,255,255,0.28)' }}>that scale your revenue.</span>
+              We build the digital<br />
+              presence your<br />
+              <span style={{
+                backgroundImage: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 60%, #EC4899 100%)',
+                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>competitors fear.</span>
             </motion.h1>
 
             {/* Diagram — mobile only (shows between headline and subheadline) */}
@@ -363,7 +379,7 @@ export default function HomepageClient() {
               fontWeight: 400,
               letterSpacing: '-0.2px',
             }}>
-              Websites, apps, custom software, AI marketing, agents, and chatbots — built to production grade and handed over running.
+              Marketing that converts. AI that runs your ops. Products that ship. One partner — no handoffs, no excuses, just results.
             </motion.p>
 
             {/* CTAs */}
@@ -471,69 +487,62 @@ export default function HomepageClient() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '0 24px',
         background: 'rgba(255,255,255,0.015)',
-        overflow: 'hidden',
       }}>
         <div style={{
           maxWidth: '1100px', margin: '0 auto',
-          display: 'flex', alignItems: 'stretch',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
           flexWrap: 'wrap',
         }}>
-          {/* Service chips */}
-          <div style={{
-            display: 'flex', alignItems: 'center', gap: '8px',
-            padding: '18px 28px 18px 0',
-            flexWrap: 'wrap', flex: 1,
-          }}>
-            {[
-              { label: 'Websites', color: '#3B82F6' },
-              { label: 'Full-Stack Apps', color: '#06B6D4' },
-              { label: 'Custom Software', color: '#8B5CF6' },
-              { label: 'AI Marketing', color: '#10B981' },
-              { label: 'AI Agents', color: '#F59E0B' },
-              { label: 'AI Chatbots', color: '#EC4899' },
-            ].map(({ label, color }) => (
-              <span key={label} style={{
-                display: 'inline-flex', alignItems: 'center', gap: '6px',
-                padding: '5px 12px',
-                background: `${color}12`,
-                border: `1px solid ${color}25`,
-                borderRadius: '100px',
-                fontFamily: 'var(--font-body)', fontSize: '11px',
-                color: `${color}cc`,
-                letterSpacing: '0.2px', whiteSpace: 'nowrap',
+          {[
+            {
+              icon: (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(34,197,94,0.8)" strokeWidth="2.5" strokeLinecap="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/>
+                </svg>
+              ),
+              text: 'Results guaranteed or we keep working — free',
+            },
+            {
+              icon: (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(59,130,246,0.8)" strokeWidth="2.5" strokeLinecap="round">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                </svg>
+              ),
+              text: 'Delivered in 2–4 weeks, every time',
+            },
+            {
+              icon: (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(139,92,246,0.8)" strokeWidth="2.5" strokeLinecap="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              ),
+              text: 'Trusted by founders & funded startups',
+            },
+            {
+              icon: (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.8)" strokeWidth="2.5" strokeLinecap="round">
+                  <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              ),
+              text: 'Remote-first · US, UK & India',
+            },
+          ].map((item, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: '8px',
+                padding: '18px 24px',
+                whiteSpace: 'nowrap',
               }}>
-                <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: color, flexShrink: 0 }} />
-                {label}
-              </span>
-            ))}
-          </div>
-
-          {/* Divider */}
-          <div style={{ width: '1px', background: 'rgba(255,255,255,0.06)', flexShrink: 0, margin: '0' }} />
-
-          {/* Right meta */}
-          <div style={{
-            display: 'flex', alignItems: 'center', gap: '20px',
-            padding: '18px 0 18px 28px', flexShrink: 0, flexWrap: 'wrap',
-          }}>
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: '7px',
-              fontFamily: 'var(--font-body)', fontSize: '12px',
-              color: 'rgba(255,255,255,0.32)', whiteSpace: 'nowrap',
-            }}>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(34,197,94,0.7)" strokeWidth="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              2–4 week delivery
-            </span>
-            <span style={{ width: '1px', height: '14px', background: 'rgba(255,255,255,0.08)' }} />
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: '7px',
-              fontFamily: 'var(--font-body)', fontSize: '12px',
-              color: 'rgba(255,255,255,0.32)', whiteSpace: 'nowrap',
-            }}>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(59,130,246,0.7)" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              Remote-first · Global
-            </span>
-          </div>
+                {item.icon}
+                <span style={{
+                  fontFamily: 'var(--font-body)', fontSize: '12px',
+                  color: 'rgba(255,255,255,0.38)',
+                  letterSpacing: '-0.1px',
+                }}>{item.text}</span>
+              </div>
+              {i < 3 && <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.07)', flexShrink: 0 }} />}
+            </div>
+          ))}
         </div>
       </div>
 
