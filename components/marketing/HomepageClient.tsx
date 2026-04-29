@@ -840,93 +840,155 @@ export default function HomepageClient() {
         </div>
       </section>
 
-      {/* ══ 5. WHAT WE BUILD ════════════════════════════════════════════ */}
+      {/* ══ 5. WHO WE WORK WITH ═════════════════════════════════════════ */}
       <section style={{ padding: '140px 24px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
-          {/* Section header */}
           <Reveal>
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px', marginBottom: '64px' }}>
-              <div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '16px' }}>
-                  What we build
-                </p>
-                <h2 style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(36px, 5vw, 58px)',
-                  fontWeight: 700, lineHeight: 1.06, letterSpacing: '-2.5px',
-                  color: '#FFFFFF', margin: 0,
-                }}>
-                  Six things we<br />build exceptionally well.
-                </h2>
-              </div>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', color: 'rgba(255,255,255,0.32)', lineHeight: 1.65, maxWidth: '360px', margin: 0 }}>
-                Websites, apps, software, AI marketing, agents, and chatbots — built to production-grade standard and handed over running.
+            <div style={{ marginBottom: '72px' }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '16px' }}>
+                Who we work with
+              </p>
+              <h2 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(36px, 5vw, 58px)',
+                fontWeight: 700, lineHeight: 1.06, letterSpacing: '-2.5px',
+                color: '#FFFFFF', margin: '0 0 20px',
+              }}>
+                Built for founders<br />
+                <span style={{ color: 'rgba(255,255,255,0.28)' }}>who need it done right.</span>
+              </h2>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '17px', color: 'rgba(255,255,255,0.32)', lineHeight: 1.65, maxWidth: '520px', margin: 0 }}>
+                We work with a specific kind of company — one that values execution over decks and outcomes over activity.
               </p>
             </div>
           </Reveal>
 
-          {/* 3×2 capability grid */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
-            className="components-grid"
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2px' }}
+            className="who-grid"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}
           >
-            {components.map((c, i) => (
+            {[
+              {
+                emoji: '🚀',
+                title: 'Startup founders with a validated idea',
+                desc: 'You have traction and need a real product shipped fast — not a mock-up from a freelancer. We scope, build, and hand it over production-ready in weeks.',
+                tags: ['MVP builds', 'AI products', 'Fast execution'],
+                color: '#3B82F6',
+              },
+              {
+                emoji: '📈',
+                title: 'Funded companies that need a build partner',
+                desc: 'You have runway and a roadmap. You need a technical partner who ships predictably and doesn\'t require hand-holding. We plug in and execute.',
+                tags: ['Web apps', 'AI agents', 'Ongoing builds'],
+                color: '#8B5CF6',
+              },
+              {
+                emoji: '🏢',
+                title: 'Business owners ready to automate and scale',
+                desc: 'You\'re stuck doing things manually that should run themselves. We map your bottlenecks and install automation that works in the background.',
+                tags: ['Lead automation', 'CRM systems', 'Digital marketing'],
+                color: '#10B981',
+              },
+              {
+                emoji: '⚡',
+                title: 'Companies that have outgrown their current setup',
+                desc: 'Your old website or system no longer reflects the business. You need a rebuild that performs — not a refresh. We start from outcomes, not templates.',
+                tags: ['Full rebuilds', 'Performance SEO', 'Conversion systems'],
+                color: '#F59E0B',
+              },
+            ].map((card, i) => (
               <motion.div
-                key={c.title}
-                variants={fadeUp}
+                key={card.title}
+                variants={cardFadeUp}
                 style={{
                   padding: '40px',
-                  background: '#0D0D0D',
-                  border: '1px solid rgba(255,255,255,0.06)',
-                  borderRadius: i === 0 ? '20px 0 0 0' : i === 2 ? '0 20px 0 0' : i === 3 ? '0 0 0 20px' : i === 5 ? '0 0 20px 0' : '0',
+                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: '20px',
                   position: 'relative',
                   overflow: 'hidden',
-                  transition: 'background 0.3s, border-color 0.3s',
+                  transition: 'background 0.3s, border-color 0.3s, transform 0.3s',
                   cursor: 'default',
                 }}
+                whileHover={{ y: -3 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.background = `${c.color}08`
-                  el.style.borderColor = `${c.color}28`
+                  el.style.background = `${card.color}06`
+                  el.style.borderColor = `${card.color}20`
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.background = '#0D0D0D'
-                  el.style.borderColor = 'rgba(255,255,255,0.06)'
+                  el.style.background = 'rgba(255,255,255,0.02)'
+                  el.style.borderColor = 'rgba(255,255,255,0.07)'
                 }}
               >
-                {/* Subtle top-edge accent */}
+                {/* Glow */}
                 <div style={{
-                  position: 'absolute', top: 0, left: '40px', right: '40px', height: '1px',
-                  background: `linear-gradient(90deg, transparent, ${c.color}40, transparent)`,
+                  position: 'absolute', top: 0, right: 0,
+                  width: '180px', height: '140px',
+                  background: `radial-gradient(ellipse at top right, ${card.color}0a, transparent 70%)`,
+                  pointerEvents: 'none',
                 }} />
 
-                {/* Icon */}
-                <div style={{
-                  width: '44px', height: '44px', borderRadius: '12px',
-                  background: `${c.color}12`,
-                  border: `1px solid ${c.color}22`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: c.color, marginBottom: '20px',
-                }}>
-                  {c.icon}
-                </div>
+                <p style={{ fontSize: '32px', margin: '0 0 20px', lineHeight: 1 }}>{card.emoji}</p>
 
-                <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '16px', fontWeight: 600, color: '#FFFFFF', margin: '0 0 10px', letterSpacing: '-0.3px' }}>
-                  {c.title}
-                </h3>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.32)', lineHeight: 1.65, margin: 0 }}>
-                  {c.desc}
-                </p>
+                <h3 style={{
+                  fontFamily: 'var(--font-body)', fontSize: '18px', fontWeight: 600,
+                  color: '#FFFFFF', margin: '0 0 12px', lineHeight: 1.3,
+                }}>{card.title}</h3>
+
+                <p style={{
+                  fontFamily: 'var(--font-body)', fontSize: '14px',
+                  color: 'rgba(255,255,255,0.38)', lineHeight: 1.7, margin: '0 0 24px',
+                }}>{card.desc}</p>
+
+                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                  {card.tags.map(tag => (
+                    <span key={tag} style={{
+                      fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 500,
+                      padding: '4px 10px', borderRadius: '100px',
+                      background: `${card.color}10`,
+                      color: card.color,
+                      border: `1px solid ${card.color}22`,
+                      letterSpacing: '0.2px',
+                    }}>{tag}</span>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </motion.div>
+
+          <Reveal>
+            <div style={{ marginTop: '40px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.22)', lineHeight: 1.65, margin: 0 }}>
+                Not sure if we&apos;re the right fit? Book a free call and we&apos;ll tell you honestly.
+              </p>
+              <Link href="/book-call" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
+                color: '#3B82F6', textDecoration: 'none', whiteSpace: 'nowrap',
+                flexShrink: 0,
+              }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#60A5FA' }}
+                onMouseLeave={e => { e.currentTarget.style.color = '#3B82F6' }}
+              >
+                Book free strategy call
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </Link>
+            </div>
+          </Reveal>
         </div>
+
+        <style>{`
+          @media (max-width: 640px) {
+            .who-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
       </section>
 
       {/* ══ LEAD MAGNET ══════════════════════════════════════════════════ */}
@@ -947,7 +1009,7 @@ export default function HomepageClient() {
 
           <Reveal>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: '#3B82F6', marginBottom: '24px', fontWeight: 600 }}>
-              Low friction entry
+              Free — no commitment
             </p>
             <h2 style={{
               fontFamily: 'var(--font-display)',
@@ -1267,7 +1329,7 @@ export default function HomepageClient() {
                 color: 'rgba(255,255,255,0.38)', lineHeight: 1.7,
                 margin: '0 auto 56px', maxWidth: '500px',
               }}>
-                30 minutes. I&apos;ll map out exactly what a system built for
+                30 minutes. We&apos;ll map out exactly what a system built for
                 your business would look like &mdash; no pitch, no pressure.
               </p>
               <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
