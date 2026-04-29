@@ -23,100 +23,96 @@ const MeetIcon = () => (
 const tiers = [
   {
     num: 'Tier 1',
-    name: 'Starter System',
-    tagline: "Get found. Start capturing leads.",
+    name: 'Website & Visibility',
+    tagline: "Get found. Convert visitors into leads.",
     priceLabel: 'Starting from',
     price: '₹25,000',
     timeline: 'Live in 2 weeks',
-    what: 'The foundation. A conversion-focused website + Google visibility + basic lead capture form. Ideal for businesses with no digital presence.',
+    what: 'A conversion-focused website built to rank on Google and capture leads from day one. Fast delivery, clean code, full handover — no templates, no drag-and-drop.',
     includes: [
       'Conversion-focused website (Next.js)',
-      'Google Business Profile setup & optimisation',
       'On-page SEO foundation',
-      'Lead capture form + Supabase logging',
-      'Basic email notification on new lead',
+      'Lead capture forms + CRM logging',
+      'Google Analytics + Core Web Vitals optimised',
+      'Full handover with CMS access and documentation',
     ],
-    guarantee: "If you don't appear on the first page of Google for your primary keyword in 30 days, I'll keep working at no extra charge.",
+    guarantee: "If you don't appear on the first page of Google for your primary keyword in 30 days, we keep working at no extra charge.",
     badge: null,
     color: '#3B82F6',
   },
   {
     num: 'Tier 2',
-    name: 'Lead Capture System',
-    tagline: "Never miss a lead again.",
+    name: 'AI-Driven Marketing',
+    tagline: "Build a marketing system that runs itself.",
     priceLabel: 'Starting from',
     price: '₹45,000',
     timeline: 'Live in 2–3 weeks',
-    what: 'Everything in Tier 1, plus a full CRM integration and automated follow-up workflows. Every lead is logged, tracked, and followed up — automatically.',
+    what: 'AI-powered SEO, automated content pipelines, email sequences, and performance dashboards — built on real data, running continuously without manual effort.',
     includes: [
-      'Everything in Tier 1',
-      'Custom CRM dashboard (Supabase)',
-      'n8n automation workflows',
-      'Instant WhatsApp/email lead acknowledgement',
-      'Lead pipeline management',
-      'Booking calendar integration',
+      'SEO system with AI content pipeline',
+      'Automated email sequences (lead nurture)',
+      'Paid ads setup — Google + Meta',
+      'Full attribution dashboard',
+      'Monthly performance reporting',
     ],
-    guarantee: "If you miss a single lead due to a system failure in the first 90 days, I fix it free.",
+    guarantee: "If the system doesn't generate measurable lead growth within 90 days, we rebuild and optimise it free.",
     badge: 'Most Popular',
-    color: '#6366F1',
+    color: '#10B981',
   },
   {
     num: 'Tier 3',
-    name: 'Growth System',
-    tagline: "The full engine, installed and running.",
+    name: 'AI Agents & Automation',
+    tagline: "Eliminate manual work. Let AI handle operations.",
     priceLabel: 'Starting from',
     price: '₹75,000',
-    timeline: 'Live in 4 weeks',
-    what: 'The complete system: traffic, conversion, automation, CRM, analytics, and retention. Built for businesses serious about predictable, measurable lead growth.',
+    timeline: 'Live in 2–3 weeks',
+    what: 'Custom AI agents and automation workflows wired into your business stack — lead qualification, follow-ups, proposal generation, and internal operations on autopilot.',
     includes: [
-      'Everything in Tier 2',
-      'Paid ads setup (Google + Meta)',
-      'Advanced funnel pages & landing pages',
-      'Full analytics & conversion tracking',
-      'Review automation & retention flows',
-      '90-day optimisation support',
+      'Custom AI agent (OpenAI / Claude)',
+      'Lead qualification + scoring workflows',
+      'n8n automation pipelines',
+      'CRM + WhatsApp / email integration',
+      '60-day post-launch support',
     ],
-    guarantee: "90-day performance guarantee — if the system doesn't generate measurable lead growth, I keep working until it does.",
+    guarantee: "If the agent fails to perform its core function within 60 days, we rebuild it free.",
     badge: 'Best Value',
     color: '#8B5CF6',
   },
   {
     num: 'Tier 4',
-    name: 'Advanced System',
-    tagline: "Enterprise-grade infrastructure.",
-    priceLabel: 'Custom pricing',
-    price: 'Scoped per project',
-    timeline: 'Scoped per project',
-    what: 'For businesses with complex requirements: multi-location, e-commerce, custom CRM workflows, AI integrations, or full-stack web application development.',
+    name: 'Mobile App (Android)',
+    tagline: "Ship a production-grade Android app your users will keep.",
+    priceLabel: 'Starting from',
+    price: '₹1,00,000',
+    timeline: 'Live in 4–6 weeks',
+    what: 'Native Android application — designed, built, and shipped to the Play Store. Full source code handover with documentation and a deployment pipeline you own.',
     includes: [
-      'Everything in Tier 3',
-      'Custom web application development',
-      'AI agents & intelligent automation',
-      'Multi-location system deployment',
-      'Custom integrations & API work',
-      'Dedicated support & SLA',
+      'Native Android app (Kotlin / React Native)',
+      'Backend API + authentication',
+      'Play Store deployment',
+      'Full source code + documentation handover',
+      'Post-launch iteration support',
     ],
-    guarantee: "Fully custom scope and guarantee — defined before project start.",
+    guarantee: "We deliver a working, deployed application or we keep building.",
     badge: null,
     color: '#A855F7',
   },
   {
     num: 'Tier 5',
-    name: 'Full-Stack AI System',
-    tagline: "Everything. AI-powered. Revenue on autopilot.",
-    priceLabel: 'Starting from',
-    price: '₹1,00,000',
-    timeline: 'Live in 6–10 weeks',
-    what: 'The complete Kinetic stack — web app or SaaS product, AI agents for lead qualification and follow-up, full CRM automation, analytics, and growth infrastructure — built as one integrated, revenue-generating system.',
+    name: 'Full-Stack Product',
+    tagline: "Website, marketing, AI, and app — one integrated build.",
+    priceLabel: 'Custom pricing',
+    price: 'Scoped per project',
+    timeline: 'Scoped per project',
+    what: 'The complete Kinetic stack — web product or SaaS, AI agents, marketing automation, and analytics — built as one integrated system and handed over running.',
     includes: [
-      'Everything in Tier 3',
-      'Custom web app or SaaS product (Next.js + Supabase)',
-      'AI agents for lead qualification, follow-up & support',
-      'Intelligent automation workflows (n8n + OpenAI)',
-      'Full API integrations & custom data pipelines',
-      'Dedicated build support for 90 days post-launch',
+      'Full-stack web app or SaaS (Next.js + Supabase)',
+      'AI agents for lead qualification and ops',
+      'AI-driven marketing system',
+      'Android app if required',
+      'Dedicated build + support for 90 days post-launch',
     ],
-    guarantee: "90-day performance guarantee — if the system doesn't generate measurable revenue growth, I keep working until it does.",
+    guarantee: "90-day performance guarantee — if the system doesn't generate measurable revenue growth, we keep working until it does.",
     badge: 'New',
     color: '#10B981',
   },
@@ -143,19 +139,19 @@ export default function WorkWithUsPageClient() {
             letterSpacing: '-2px', color: 'var(--t1)',
             margin: '0 0 24px',
           }}>
-            Install Your<br/>
+            Choose What<br/>
             <span style={{
               backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-            }}>Growth System</span>
+            }}>We Build Together</span>
           </h1>
           <p style={{
             fontSize: '18px', color: 'var(--t3)', lineHeight: 1.6,
             fontFamily: 'var(--font-body)', maxWidth: '560px', margin: 0,
           }}>
-            Not services. Not retainers. System capability levels — each one more
-            powerful than the last.
+            Websites, marketing systems, AI agents, or full product builds —
+            pick the capability you need, and we ship it.
           </p>
         </Reveal>
       </section>
@@ -191,10 +187,10 @@ export default function WorkWithUsPageClient() {
                 gap: '16px',
               }}>
                 {[
-                  { title: 'Service businesses', desc: 'Clinics, consultants, agencies, salons, contractors — any business where leads become clients.' },
-                  { title: 'Founders ready to scale', desc: "You've validated the business. Now you want growth that doesn't depend on you showing up every day." },
-                  { title: 'Businesses tired of manual work', desc: "Following up manually, losing leads, no visibility — you know there's a better way." },
-                  { title: 'Startups building for traction', desc: "You need the infrastructure to acquire users at scale — not just a website." },
+                  { title: 'Startup founders', desc: "You've validated the business. Now you need the digital infrastructure to acquire customers at scale." },
+                  { title: 'Funded companies', desc: 'You have budget and timelines. You need execution — clean code, real products, shipped without drama.' },
+                  { title: 'Businesses ready to automate', desc: "Manual follow-ups, no visibility, leads falling through the cracks — you know there's a better way." },
+                  { title: 'Builders who want to own their stack', desc: "Full source code, full documentation, full handover. No lock-in, no ongoing dependency on us." },
                 ].map(item => (
                   <div key={item.title} style={{
                     padding: '24px',
@@ -222,9 +218,9 @@ export default function WorkWithUsPageClient() {
               }}>
                 {[
                   { title: 'Businesses wanting a brochure site', desc: "If you want a website with no lead capture, no tracking, and no automation — this isn't for you." },
-                  { title: 'People looking for the cheapest option', desc: "Growth systems require investment. If you're comparing purely on price, we're probably not a fit." },
+                  { title: 'People looking for the cheapest option', desc: "Quality products require investment. If you're comparing purely on price, we're probably not a fit." },
                   { title: 'Businesses unwilling to track results', desc: "If you don't want to measure what's working, there's no point in building a system." },
-                  { title: 'No clear business model', desc: "I can't build a lead generation system for a business that doesn't have a clear offer or target customer." },
+                  { title: 'No clear business model', desc: "We can't build marketing or AI systems for a business that doesn't have a clear offer or target customer." },
                 ].map(item => (
                   <div key={item.title} style={{
                     padding: '24px',
@@ -253,14 +249,14 @@ export default function WorkWithUsPageClient() {
               fontFamily: 'var(--font-body)', fontSize: '11px',
               letterSpacing: '3px', textTransform: 'uppercase',
               color: 'var(--t4)', marginBottom: '12px',
-            }}>System Tiers</p>
+            }}>What We Build</p>
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(28px, 4vw, 48px)',
               fontWeight: 400, letterSpacing: '-1.5px', color: 'var(--t1)',
               margin: '0 0 48px',
             }}>
-              Levels of System Capability
+              Pick a Capability. We Ship It.
             </h2>
           </Reveal>
 
@@ -284,8 +280,8 @@ export default function WorkWithUsPageClient() {
                     <span style={{
                       position: 'absolute', top: '20px', right: '20px',
                       padding: '4px 12px',
-                      background: `rgba(${tier.color === '#3B82F6' ? '59,130,246' : tier.color === '#8B5CF6' ? '139,92,246' : '99,102,241'}, 0.15)`,
-                      border: `1px solid rgba(${tier.color === '#3B82F6' ? '59,130,246' : tier.color === '#8B5CF6' ? '139,92,246' : '99,102,241'}, 0.3)`,
+                      background: `rgba(${tier.color === '#3B82F6' ? '59,130,246' : tier.color === '#8B5CF6' ? '139,92,246' : tier.color === '#10B981' ? '16,185,129' : '168,85,247'}, 0.15)`,
+                      border: `1px solid rgba(${tier.color === '#3B82F6' ? '59,130,246' : tier.color === '#8B5CF6' ? '139,92,246' : tier.color === '#10B981' ? '16,185,129' : '168,85,247'}, 0.3)`,
                       borderRadius: '100px',
                       fontFamily: 'var(--font-body)', fontSize: '11px',
                       color: tier.color,
@@ -307,7 +303,7 @@ export default function WorkWithUsPageClient() {
                   <div style={{ marginBottom: '20px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', color: 'var(--t4)', letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 4px' }}>{tier.priceLabel}</p>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '20px', fontWeight: 600, color: 'var(--t1)', margin: 0 }}>{tier.price}</p>
-                    {tier.num !== 'Tier 4' && (
+                    {tier.num !== 'Tier 5' && (
                       <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', color: 'var(--t4)', margin: '4px 0 0', fontStyle: 'italic' }}>
                         Final price depends on scope — confirmed before project start.
                       </p>
@@ -350,7 +346,7 @@ export default function WorkWithUsPageClient() {
                   onMouseEnter={e => { e.currentTarget.style.background = `${tier.color}15` }}
                   onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
                   >
-                    Get This System Built →
+                    Get This Built →
                   </Link>
                 </div>
               </Reveal>
@@ -397,8 +393,8 @@ export default function WorkWithUsPageClient() {
                 color: 'var(--t3)', lineHeight: 1.6,
                 maxWidth: '520px', margin: '0 auto 36px',
               }}>
-                Let Kinetic audit your entire online presence and identify exactly
-                where you are losing leads, what is broken, and what needs to be fixed.
+                We'll audit your entire online presence and identify exactly
+                where you're losing leads, what's broken, and what needs to be fixed.
               </p>
               <Link href="/book-call" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
@@ -444,14 +440,14 @@ export default function WorkWithUsPageClient() {
               letterSpacing: '-1.5px', color: 'var(--t1)',
               margin: '0 0 20px',
             }}>
-              Let's Figure It Out Together
+              Let&apos;s Figure It Out Together
             </h2>
             <p style={{
               fontSize: '17px', color: 'var(--t3)',
               fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: '0 0 36px',
             }}>
-              Book a 30-minute strategy call. I'll ask the right questions,
-              understand your business, and recommend the exact system that fits.
+              Book a 30-minute strategy call. We'll ask the right questions,
+              understand your business, and recommend the exact build that fits.
             </p>
             <Link href="/book-call"
               style={btnPrimary}

@@ -95,7 +95,7 @@ export default function ResultsPageClient() {
                   <span style={{
                     fontFamily: 'var(--font-body)', fontSize: '12px',
                     color: 'var(--t4)',
-                  }}>Women's Health Platform · India</span>
+                  }}>Women's Health Platform · Sheknowmics</span>
                 </div>
                 <h2 style={{
                   fontFamily: 'var(--font-display)',
@@ -218,7 +218,7 @@ export default function ResultsPageClient() {
               },
               {
                 client: 'Professional Services Firm',
-                location: 'Kolkata',
+                location: 'India',
                 metric1: { value: 'Zero', label: 'Leads missed after install' },
                 metric2: { value: '4 weeks', label: 'Full system operational' },
                 quote: 'We went from zero tracking to full visibility on every enquiry.',
@@ -306,7 +306,7 @@ export default function ResultsPageClient() {
               fontSize: '17px', color: 'var(--t3)',
               fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: '0 0 36px',
             }}>
-              Book a 30-minute call. I'll show you exactly what a system built for
+              Book a 30-minute call and we'll show you exactly what a system built for
               your business would look like.
             </p>
             <Link href="/book-call"

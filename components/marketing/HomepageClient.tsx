@@ -63,39 +63,6 @@ const cardFadeUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] } },
 }
 
-/* ─── Cycling word component ─────────────────────────────────────────── */
-const CYCLE_WORDS = ['Websites', 'Full-Stack Apps', 'AI Marketing', 'AI Agents', 'Custom Software', 'AI Chatbots']
-
-function CyclingWord() {
-  const [index, setIndex] = useState(0)
-  const [visible, setVisible] = useState(true)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(false)
-      setTimeout(() => {
-        setIndex(i => (i + 1) % CYCLE_WORDS.length)
-        setVisible(true)
-      }, 350)
-    }, 2400)
-    return () => clearInterval(interval)
-  }, [])
-
-  return (
-    <span style={{
-      display: 'inline-block',
-      backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
-      WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-      backgroundClip: 'text',
-      opacity: visible ? 1 : 0,
-      transform: visible ? 'translateY(0)' : 'translateY(8px)',
-      transition: 'opacity 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.35s cubic-bezier(0.16,1,0.3,1)',
-    }}>
-      {CYCLE_WORDS[index]}
-    </span>
-  )
-}
-
 /* ─── Count-up component ─────────────────────────────────────────────── */
 function MetricValue({ value }: { value: string }) {
   const [display, setDisplay] = useState(value)
@@ -151,58 +118,19 @@ const problems = [
   },
 ]
 
-const servicePillars = [
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-      </svg>
-    ),
-    label: 'Digital Marketing',
-    sub: 'AI-powered growth',
-    color: '#10B981',
-    outcomes: ['SEO that compounds over time', 'Paid ads managed with AI', 'Content that drives conversions'],
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
-      </svg>
-    ),
-    label: 'Websites',
-    sub: 'Convert & capture',
-    color: '#3B82F6',
-    outcomes: ['Conversion-first design', 'Built to rank on Google', 'Handed over in 2 weeks'],
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <circle cx="12" cy="12" r="10"/><path d="M8 12h.01M12 12h.01M16 12h.01"/>
-      </svg>
-    ),
-    label: 'AI Agents',
-    sub: 'Automate & scale',
-    color: '#F59E0B',
-    outcomes: ['Leads qualified 24/7', 'Follow-ups on autopilot', 'Ops that run without you'],
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
-      </svg>
-    ),
-    label: 'Android Apps',
-    sub: 'Mobile presence',
-    color: '#8B5CF6',
-    outcomes: ['Native Android builds', 'Production-ready in 4–6 weeks', 'Full source code handover'],
-  },
+const flowSteps = [
+  { label: 'Traffic', sub: 'Ads & SEO', color: '#3B82F6' },
+  { label: 'Website', sub: 'Conversion', color: '#5B7FEF' },
+  { label: 'Lead Captured', sub: 'Forms & CRM', color: '#6B6BEE' },
+  { label: 'Automation', sub: 'Follow-ups', color: '#8B5CF6' },
+  { label: 'Conversion', sub: 'Revenue', color: '#A855F7' },
 ]
 
 const steps = [
-  { n: '01', title: 'Strategy Call', desc: 'We spend 30 minutes understanding your business, goals, and gaps. No pitch — just a clear map of what to build first and why.' },
-  { n: '02', title: 'Scope & Sprint', desc: 'We define exactly what gets built, lock the timeline, and start the sprint. You see progress within days, not weeks.' },
-  { n: '03', title: 'Build & Launch', desc: 'Your website, app, AI system, or marketing engine goes live — fully tested, connected to your stack, and ready for real users.' },
-  { n: '04', title: 'Measure & Compound', desc: 'We track what drives results and double down on it. Every system gets sharper over time. Revenue grows without adding headcount.' },
+  { n: '01', title: 'Audit & Blueprint', desc: 'We map your funnel, identify every leak, and design your complete growth system.' },
+  { n: '02', title: 'Build & Install', desc: 'We build and install everything — website, CRM, automations — directly into your business.' },
+  { n: '03', title: 'Launch & Measure', desc: 'Your system goes live. Real leads come in. Data shows exactly what is working.' },
+  { n: '04', title: 'Scale Predictably', desc: 'Double down on what works. Remove what does not. Grow without adding complexity.' },
 ]
 
 const components = [
@@ -212,8 +140,8 @@ const components = [
         <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
       </svg>
     ),
-    title: 'Websites & Landing Pages',
-    desc: 'Conversion-first websites and high-performance landing pages built to capture leads and rank on Google.',
+    title: 'Conversion Website',
+    desc: 'Built to turn visitors into leads. Not a brochure — a lead-capture machine.',
     color: '#3B82F6',
   },
   {
@@ -223,61 +151,61 @@ const components = [
         <path d="M7 8h2m2 0h2"/>
       </svg>
     ),
-    title: 'Full Stack Apps',
-    desc: 'Custom web applications, SaaS products, and dashboards — designed, built, and deployed end-to-end.',
+    title: 'Web App / SaaS',
+    desc: 'Full-stack applications — dashboards, portals, SaaS products — built and deployed fast.',
     color: '#06B6D4',
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="16" y1="13" x2="8" y2="13"/>
-        <line x1="16" y1="17" x2="8" y2="17"/>
-        <polyline points="10 9 9 9 8 9"/>
+        <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12"/>
+        <path d="M12 6v6l4 2"/>
+        <path d="M2 12C2 6.48 6.48 2 12 2"/>
       </svg>
     ),
-    title: 'Custom Software',
-    desc: 'Bespoke business software — CRMs, internal tools, workflow platforms — built precisely for how you operate.',
-    color: '#8B5CF6',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-      </svg>
-    ),
-    title: 'AI-Driven Marketing',
-    desc: 'SEO, paid campaigns, and content — powered by AI to generate compounding, measurable growth.',
+    title: 'AI Agents',
+    desc: 'Intelligent agents that handle lead qualification, support, and follow-up — autonomously.',
     color: '#10B981',
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12"/>
-        <path d="M8 12h.01M12 12h.01M16 12h.01"/>
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
       </svg>
     ),
-    title: 'AI Agents',
-    desc: 'Autonomous agents that qualify leads, run follow-ups, and handle operations — 24/7, without headcount.',
-    color: '#F59E0B',
+    title: 'SEO & Acquisition',
+    desc: 'Google finds you before competitors. Organic leads, compounding over time.',
+    color: '#4F7CF5',
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
       </svg>
     ),
-    title: 'AI Chatbots',
-    desc: 'Intelligent chatbots trained on your business — answers questions, captures leads, books appointments automatically.',
-    color: '#EC4899',
+    title: 'CRM & Pipeline',
+    desc: 'Every lead logged, tracked, and visible. Never lose a prospect again.',
+    color: '#7B68EE',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+        <path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+        <path d="M16 16h5v5"/>
+      </svg>
+    ),
+    title: 'Automation',
+    desc: 'Instant lead acknowledgement. Scheduled follow-ups. Zero manual effort.',
+    color: '#8B5CF6',
   },
 ]
 
 const faqs = [
   {
     q: 'How is Kinetic different from a regular web agency?',
-    a: "Most agencies build a website and hand over the login details. Kinetic designs and builds the entire product — website, app, software, or AI system — and installs it running in your business before handover. Not a template shop, not a freelancer marketplace. A focused build team.",
+    a: "Most agencies build a website and hand over the login details. Kinetic builds the complete growth system — website, CRM, automation, and SEO — and installs it running in your business before handover.",
   },
   {
     q: 'How long does it take to go live?',
@@ -289,11 +217,11 @@ const faqs = [
   },
   {
     q: 'Is there a guarantee?',
-    a: 'Yes. Every service has a specific performance guarantee. Websites: first-page Google ranking in 30 days or we keep working free. AI agents and chatbots: if the system fails its core function in 90 days, we rebuild it free.',
+    a: 'Yes. Every offer has a specific performance guarantee. The Visibility Fix: first-page Google ranking in 30 days or I keep working free. Lead Capture System: zero missed leads in 90 days or I fix it free. Full Growth System: 90-day performance guarantee.',
   },
   {
-    q: 'Do you work with US-based or international clients?',
-    a: 'Yes — the entire process is remote. Strategy call, build, and handover all happen online. Kinetic works with founders, funded startups, and businesses across the US, UK, and India.',
+    q: 'Do you work with businesses outside Kolkata?',
+    a: 'Yes — the entire process is remote. Strategy call, build, and handover all happen online. Kinetic works with founders and small businesses across India.',
   },
 ]
 
@@ -350,36 +278,25 @@ export default function HomepageClient() {
             className="hero-content"
             style={{ display: 'flex', flexDirection: 'column' }}
           >
-            {/* Eyebrow — urgency */}
+            {/* Eyebrow */}
             <motion.div variants={fadeUp} style={{ marginBottom: '32px' }}>
               <span style={{
                 display: 'inline-flex', alignItems: 'center', gap: '10px',
-                padding: '9px 18px 9px 12px',
-                background: 'rgba(34,197,94,0.07)',
-                border: '1px solid rgba(34,197,94,0.25)',
+                padding: '8px 18px',
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: '100px',
-                fontFamily: 'var(--font-body)', fontSize: '13px',
-                color: 'rgba(255,255,255,0.75)',
-                letterSpacing: '-0.1px',
+                fontFamily: 'var(--font-body)', fontSize: '12px',
+                color: 'rgba(255,255,255,0.45)', letterSpacing: '2px',
+                textTransform: 'uppercase',
               }}>
                 <span style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '6px',
-                  padding: '3px 10px',
-                  background: 'rgba(34,197,94,0.15)',
-                  border: '1px solid rgba(34,197,94,0.3)',
-                  borderRadius: '100px',
-                  fontSize: '11px', fontWeight: 600,
-                  color: '#22C55E', letterSpacing: '0.3px',
-                  textTransform: 'uppercase',
-                }}>
-                  <span style={{
-                    width: '5px', height: '5px', borderRadius: '50%',
-                    background: '#22C55E', boxShadow: '0 0 8px #22C55E',
-                    flexShrink: 0, animation: 'pulse 2s ease-in-out infinite',
-                  }} />
-                  Open
-                </span>
-                Now onboarding — <strong style={{ color: '#fff', fontWeight: 600 }}>3 spots left for May</strong>
+                  width: '5px', height: '5px', borderRadius: '50%',
+                  background: '#3B82F6', boxShadow: '0 0 10px #3B82F6',
+                  flexShrink: 0,
+                  animation: 'pulse 2s ease-in-out infinite',
+                }} />
+                Growth Systems · Kolkata, India
               </span>
             </motion.div>
 
@@ -393,13 +310,8 @@ export default function HomepageClient() {
               color: '#FFFFFF',
               margin: '0 0 32px',
             }}>
-              We build the digital<br />
-              presence your<br />
-              <span style={{
-                backgroundImage: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 60%, #EC4899 100%)',
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>competitors fear.</span>
+              Stop running on effort.<br/>
+              <span style={{ color: 'rgba(255,255,255,0.28)' }}>Start running on systems.</span>
             </motion.h1>
 
             {/* Diagram — mobile only (shows between headline and subheadline) */}
@@ -418,7 +330,8 @@ export default function HomepageClient() {
               fontWeight: 400,
               letterSpacing: '-0.2px',
             }}>
-              Marketing that converts. AI that runs your ops. Products that ship. One partner — no handoffs, no excuses, just results.
+              Most businesses don&apos;t have a growth problem.{' '}
+              They have a systems problem.
             </motion.p>
 
             {/* CTAs */}
@@ -522,64 +435,29 @@ export default function HomepageClient() {
 
       {/* ══ TRUST BAR ══════════════════════════════════════════════════ */}
       <div style={{
-        borderTop: '1px solid rgba(255,255,255,0.06)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        padding: '0 24px',
-        background: 'rgba(255,255,255,0.015)',
+        borderTop: '1px solid rgba(255,255,255,0.05)',
+        borderBottom: '1px solid rgba(255,255,255,0.05)',
+        padding: '20px 24px',
+        background: 'rgba(255,255,255,0.01)',
       }}>
         <div style={{
-          maxWidth: '1100px', margin: '0 auto',
+          maxWidth: '800px', margin: '0 auto',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          flexWrap: 'wrap',
+          gap: '0', flexWrap: 'wrap',
         }}>
           {[
-            {
-              icon: (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(34,197,94,0.8)" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/>
-                </svg>
-              ),
-              text: 'Results guaranteed or we keep working — free',
-            },
-            {
-              icon: (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(59,130,246,0.8)" strokeWidth="2.5" strokeLinecap="round">
-                  <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                </svg>
-              ),
-              text: 'Delivered in 2–4 weeks, every time',
-            },
-            {
-              icon: (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(139,92,246,0.8)" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-              ),
-              text: 'Trusted by founders & funded startups',
-            },
-            {
-              icon: (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.8)" strokeWidth="2.5" strokeLinecap="round">
-                  <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              ),
-              text: 'Remote-first · US, UK & India',
-            },
+            'Websites · Web Apps · AI Agents',
+            'Delivered in 2–4 weeks',
+            'B2B solutions for founders across India',
           ].map((item, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
-              <div style={{
-                display: 'flex', alignItems: 'center', gap: '8px',
-                padding: '18px 24px',
+            <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0' }}>
+              <span style={{
+                fontFamily: 'var(--font-body)', fontSize: '12px',
+                color: 'rgba(255,255,255,0.28)', letterSpacing: '0.5px',
+                padding: '0 28px',
                 whiteSpace: 'nowrap',
-              }}>
-                {item.icon}
-                <span style={{
-                  fontFamily: 'var(--font-body)', fontSize: '12px',
-                  color: 'rgba(255,255,255,0.38)',
-                  letterSpacing: '-0.1px',
-                }}>{item.text}</span>
-              </div>
-              {i < 3 && <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.07)', flexShrink: 0 }} />}
+              }}>{item}</span>
+              {i < 2 && <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.08)', flexShrink: 0 }} />}
             </div>
           ))}
         </div>
@@ -647,136 +525,105 @@ export default function HomepageClient() {
         </div>
       </section>
 
-      {/* ══ 3. FOUR PILLARS ══════════════════════════════════════════════ */}
+      {/* ══ 3. THE SYSTEM ════════════════════════════════════════════════ */}
       <section id="system-details" style={{ padding: '140px 24px', background: 'rgba(255,255,255,0.015)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
 
           <Reveal>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '24px' }}>
-              What we do
+              How your business scales without you
             </p>
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px', marginBottom: '72px' }}>
-              <h2 style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(34px, 5vw, 62px)',
-                fontWeight: 600, lineHeight: 1.06, letterSpacing: '-2px',
-                color: '#FFFFFF', margin: 0,
-              }}>
-                Four things we build.<br/>
-                <span style={{ color: 'rgba(255,255,255,0.28)' }}>One company to call.</span>
-              </h2>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, maxWidth: '380px', margin: 0 }}>
-                Each service delivers standalone. Together, they make your business impossible to compete with.
-              </p>
-            </div>
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(36px, 5vw, 66px)',
+              fontWeight: 600, lineHeight: 1.06, letterSpacing: '-2px',
+              color: '#FFFFFF', margin: '0 0 72px',
+            }}>
+              The System Behind<br/>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                Predictable Growth
+              </span>
+            </h2>
           </Reveal>
 
-          {/* 4 Pillar cards */}
+          {/* Flow bar with stagger */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: '2px',
-              borderRadius: '20px', overflow: 'hidden',
-              border: '1px solid rgba(255,255,255,0.06)',
+              display: 'flex', alignItems: 'stretch',
+              overflowX: 'auto', gap: '0',
+              borderRadius: '16px', overflow: 'hidden',
+              border: '1px solid rgba(255,255,255,0.07)',
             }}
-            className="pillars-grid"
           >
-            {servicePillars.map((pillar, i) => (
+            {flowSteps.map((step, i) => (
               <motion.div
-                key={pillar.label}
-                variants={cardFadeUp}
-                whileHover={{ scale: 1.02, zIndex: 2 }}
+                key={step.label}
+                variants={fadeUp}
+                whileHover={{ scale: 1.03, zIndex: 2 }}
                 transition={{ duration: 0.2 }}
                 style={{
-                  padding: '44px 32px',
-                  background: 'rgba(255,255,255,0.02)',
-                  borderRight: i < servicePillars.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
-                  cursor: 'default', position: 'relative', overflow: 'hidden',
-                  transition: 'background 0.3s ease',
+                  flex: 1, minWidth: '140px',
+                  padding: '36px 24px',
+                  background: i === 0
+                    ? 'rgba(59,130,246,0.08)'
+                    : i === flowSteps.length - 1
+                    ? 'rgba(168,85,247,0.08)'
+                    : `rgba(${59 + i * 18},${130 - i * 10},${246 - i * 20},0.04)`,
+                  borderRight: i < flowSteps.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center',
+                  textAlign: 'center', position: 'relative',
+                  cursor: 'default',
+                  transition: 'background 0.25s',
                 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = pillar.color + '0d' }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.02)' }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.background = step.color + '15'
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.background = i === 0
+                    ? 'rgba(59,130,246,0.08)'
+                    : i === flowSteps.length - 1
+                    ? 'rgba(168,85,247,0.08)'
+                    : `rgba(${59 + i * 18},${130 - i * 10},${246 - i * 20},0.04)`
+                }}
               >
-                {/* Glow */}
+                {i < flowSteps.length - 1 && (
+                  <div style={{
+                    position: 'absolute', right: '-8px', top: '50%', transform: 'translateY(-50%)',
+                    width: '16px', height: '16px', zIndex: 2,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                )}
                 <div style={{
-                  position: 'absolute', top: 0, right: 0,
-                  width: '200px', height: '160px',
-                  background: `radial-gradient(ellipse at top right, ${pillar.color}0a, transparent 70%)`,
-                  pointerEvents: 'none',
-                }} />
-
-                {/* Icon */}
-                <div style={{
-                  width: '52px', height: '52px', borderRadius: '14px',
-                  background: pillar.color + '14',
-                  border: `1px solid ${pillar.color}28`,
+                  width: '36px', height: '36px', borderRadius: '50%',
+                  background: step.color + '20',
+                  border: `1px solid ${step.color}40`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: pillar.color, marginBottom: '24px',
-                  boxShadow: `0 0 20px ${pillar.color}18`,
+                  marginBottom: '16px',
+                  boxShadow: `0 0 12px ${step.color}20`,
                 }}>
-                  {pillar.icon}
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: step.color }} />
                 </div>
-
-                {/* Label */}
-                <p style={{
-                  fontFamily: 'var(--font-body)', fontSize: '18px', fontWeight: 700,
-                  color: '#FFFFFF', margin: '0 0 6px', lineHeight: 1.2,
-                }}>{pillar.label}</p>
-                <p style={{
-                  fontFamily: 'var(--font-body)', fontSize: '12px',
-                  color: pillar.color, margin: '0 0 24px', letterSpacing: '0.3px',
-                  opacity: 0.85,
-                }}>{pillar.sub}</p>
-
-                {/* Outcomes */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {pillar.outcomes.map(o => (
-                    <div key={o} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={pillar.color} strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px', opacity: 0.8 }}>
-                        <path d="M20 6 9 17l-5-5"/>
-                      </svg>
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.45 }}>{o}</span>
-                    </div>
-                  ))}
-                </div>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600, color: '#FFFFFF', margin: '0 0 6px' }}>{step.label}</p>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'rgba(255,255,255,0.3)', margin: 0 }}>{step.sub}</p>
               </motion.div>
             ))}
           </motion.div>
 
           <Reveal>
-            <div style={{ marginTop: '40px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.22)', lineHeight: 1.65, margin: 0 }}>
-                Not sure which one you need? Book a free call — we&apos;ll map it out in 30 minutes.
-              </p>
-              <Link href="/book-call" style={{
-                display: 'inline-flex', alignItems: 'center', gap: '6px',
-                fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
-                color: '#3B82F6', textDecoration: 'none', whiteSpace: 'nowrap',
-                flexShrink: 0,
-              }}
-                onMouseEnter={e => { e.currentTarget.style.color = '#60A5FA' }}
-                onMouseLeave={e => { e.currentTarget.style.color = '#3B82F6' }}
-              >
-                Book free strategy call
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-            </div>
+            <p style={{ marginTop: '40px', fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.25)', lineHeight: 1.65, maxWidth: '600px' }}>
+              Five interconnected layers working together. Each one solves a specific problem.
+              Together they create a business that generates leads without depending on you.
+            </p>
           </Reveal>
         </div>
-
-        <style>{`
-          @media (max-width: 768px) {
-            .pillars-grid { grid-template-columns: 1fr 1fr !important; }
-          }
-          @media (max-width: 480px) {
-            .pillars-grid { grid-template-columns: 1fr !important; }
-          }
-        `}</style>
       </section>
 
       {/* ══ 4. HOW IT WORKS ═════════════════════════════════════════════ */}
@@ -793,8 +640,8 @@ export default function HomepageClient() {
               fontWeight: 600, lineHeight: 1.08, letterSpacing: '-2px',
               color: '#FFFFFF', margin: '0 0 80px',
             }}>
-              How we go from<br/>
-              <span style={{ color: 'rgba(255,255,255,0.3)' }}>idea to live in weeks.</span>
+              Four steps to a<br/>
+              <span style={{ color: 'rgba(255,255,255,0.3)' }}>system that runs itself.</span>
             </h2>
           </Reveal>
 
@@ -857,11 +704,11 @@ export default function HomepageClient() {
                   fontWeight: 700, lineHeight: 1.06, letterSpacing: '-2.5px',
                   color: '#FFFFFF', margin: 0,
                 }}>
-                  Six things we<br />build exceptionally well.
+                  Six capabilities.<br />One integrated system.
                 </h2>
               </div>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', color: 'rgba(255,255,255,0.32)', lineHeight: 1.65, maxWidth: '360px', margin: 0 }}>
-                Websites, apps, software, AI marketing, agents, and chatbots — built to production-grade standard and handed over running.
+                Not a menu of services — six integrated capabilities assembled into one system that fits your business.
               </p>
             </div>
           </Reveal>
@@ -1034,7 +881,7 @@ export default function HomepageClient() {
                     borderRadius: '100px', fontFamily: 'var(--font-body)', fontSize: '12px', color: '#60A5FA',
                   }}>Case Study</span>
                   <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'rgba(255,255,255,0.3)' }}>
-                    Women&apos;s Health Platform &middot; Sheknowmics
+                    Women&apos;s Health Platform &middot; India
                   </span>
                 </div>
                 <h3 style={{

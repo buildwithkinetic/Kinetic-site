@@ -22,19 +22,19 @@ const MeetIcon = () => (
 const principles = [
   {
     title: 'Systems over campaigns',
-    desc: 'A campaign runs for a few weeks. A system runs forever. We build infrastructure, not one-offs.',
+    desc: 'A campaign runs for a few weeks. A system runs forever. I build infrastructure, not one-offs.',
   },
   {
     title: 'Measurement over assumption',
-    desc: "If you can't measure it, you can't improve it. Every system we build has tracking wired in from day one.",
+    desc: "If you can't measure it, you can't improve it. Every system I build has tracking built in from day one.",
   },
   {
     title: 'Outcomes over deliverables',
-    desc: 'A website is not an outcome. Consistent inbound leads are. We stay focused on what actually moves the needle.',
+    desc: 'A website is not an outcome. Consistent inbound leads are. I stay focused on what actually matters.',
   },
   {
     title: 'Simplicity over complexity',
-    desc: "The best system is the one that works reliably. We don't add complexity for its own sake.",
+    desc: "The best system is the one that works reliably. I don't add complexity for its own sake.",
   },
 ]
 
@@ -57,12 +57,12 @@ export default function AboutPageClient() {
             letterSpacing: '-2px', color: 'var(--t1)',
             margin: '0 0 24px',
           }}>
-            Built for outcomes,<br/>
+            Built for Performance,<br/>
             <span style={{
               backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-            }}>not deliverables.</span>
+            }}>Not Vanity</span>
           </h1>
           <p style={{
             fontSize: '18px', color: 'var(--t3)', lineHeight: 1.6,
@@ -70,7 +70,7 @@ export default function AboutPageClient() {
           }}>
             Most agencies build you a website and disappear.
             Most platforms give you a tool and leave you to figure it out.
-            Kinetic does neither — we build the system, install it in your business, and make sure it runs.
+            Kinetic does neither — I build the system, install it in your business, and make sure it runs.
           </p>
         </Reveal>
       </section>
@@ -133,7 +133,7 @@ export default function AboutPageClient() {
               fontFamily: 'var(--font-body)', fontSize: '11px',
               letterSpacing: '3px', textTransform: 'uppercase',
               color: 'var(--t4)', marginBottom: '24px',
-            }}>How We Work</p>
+            }}>How I Work</p>
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(28px, 4vw, 48px)',
@@ -250,19 +250,19 @@ export default function AboutPageClient() {
               letterSpacing: '-1.5px', color: 'var(--t1)',
               margin: '0 0 20px',
             }}>
-              Let&apos;s build<br/>
+              Ready to Build<br/>
               <span style={{
                 backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>something that runs.</span>
+              }}>Your Growth System?</span>
             </h2>
             <p style={{
               fontSize: '17px', color: 'var(--t3)',
               fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: '0 0 36px',
             }}>
-              Book a 30-minute strategy call. No pitch. We&apos;ll map out exactly what to
-              build first and what it would take to get it live.
+              Book a 30-minute strategy call. No pitch. Just a clear map of what a
+              growth system would look like for your business.
             </p>
             <Link href="/book-call"
               style={btnPrimary}

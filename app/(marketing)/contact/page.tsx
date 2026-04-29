@@ -3,15 +3,15 @@ import ContactPageClient from "@/components/marketing/ContactPageClient"
 import { JsonLd, localBusinessSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Book a Free Strategy Call | Kinetic — Growth Systems",
+  title: "Book a Free Strategy Call | Kinetic — Growth Systems Kolkata",
   description:
-    "Book a free 30-minute strategy call with Ayush Gupta, founder of Kinetic. No pitch, no retainer.",
+    "Book a free 30-minute strategy call with Ayush Gupta, founder of Kinetic. No pitch, no retainer. Based in Kolkata, India.",
   keywords: [
     "book free strategy call Kinetic",
-    "growth systems consultation",
-    "free website audit",
-    "AI systems consultation",
-    "contact Kinetic",
+    "growth systems consultation Kolkata",
+    "free website audit India",
+    "digital marketing consultation Kolkata",
+    "contact Kinetic growth engineer",
   ],
   alternates: {
     canonical: "https://buildwithkinetic.org/contact",

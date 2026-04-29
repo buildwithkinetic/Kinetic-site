@@ -4,7 +4,6 @@ import "./globals.css"
 import CustomCursor from "@/components/CustomCursor"
 import ScrollProgress from "@/components/ScrollProgress"
 import Footer from "@/components/Footer"
-import SchemaMarkup from "@/components/SchemaMarkup"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://buildwithkinetic.org"),
@@ -13,19 +12,25 @@ export const metadata: Metadata = {
     default: "Kinetic | The System Behind Your Growth",
   },
   description:
-    "Kinetic builds websites, full stack apps, custom software, AI-driven marketing systems, AI agents, and AI chatbots — production-grade and handed over running.",
+    "Kinetic builds websites, runs SEO, deploys CRM systems, automates workflows, and builds AI agents — then hands it over running. Growth systems for businesses.",
   keywords: [
-    "website development agency",
-    "full stack app development",
-    "custom software development",
-    "AI-driven marketing",
-    "AI agents for business",
-    "AI chatbot development",
-    "web app development agency",
-    "business automation",
-    "automated growth systems",
-    "startup website development",
-    "Kinetic Ayush Gupta",
+    "growth systems for businesses India",
+    "website development Kolkata",
+    "digital marketing agency Kolkata",
+    "SEO agency Kolkata",
+    "lead generation system India",
+    "automated growth systems business",
+    "website development agency India",
+    "CRM setup business India",
+    "business automation Kolkata",
+    "web app development agency India",
+    "startup website development India",
+    "business website development",
+    "conversion focused website India",
+    "AI agents for business India",
+    "Google Business Profile optimisation Kolkata",
+    "automated lead capture system",
+    "Kinetic growth engineer Kolkata",
   ],
   authors: [{ name: "Kinetic", url: "https://buildwithkinetic.org" }],
   creator: "Kinetic",
@@ -48,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "Kinetic",
     title: "Kinetic | The System Behind Your Growth",
     description:
-      "Websites, full stack apps, custom software, AI marketing, AI agents, and chatbots — built to production standard and handed over running.",
+      "Automated growth systems for businesses and startups — websites, SEO, CRM, automation, and AI agents. Built and handed over running.",
   },
   twitter: {
     card: "summary_large_image",
@@ -86,7 +91,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-        <SchemaMarkup />
       </head>
       <body
         className="antialiased"

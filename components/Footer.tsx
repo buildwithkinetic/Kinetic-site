@@ -9,17 +9,17 @@ interface FooterLink {
 
 const footerLinks: Record<string, FooterLink[]> = {
   Services: [
-    { label: 'Website Development', href: '/website-development-kolkata' },
-    { label: 'SEO Agency Kolkata', href: '/seo-agency-kolkata' },
-    { label: 'Business Automation', href: '/automation-kolkata' },
-    { label: 'Web App Development', href: '/web-app-development' },
-    { label: 'Google Business Profile', href: '/google-business-profile-kolkata' },
+    { label: 'Websites & Landing Pages', href: '/services' },
+    { label: 'AI-Driven Marketing', href: '/services' },
+    { label: 'AI Agents', href: '/services' },
+    { label: 'Android Apps', href: '/services' },
+    { label: 'Custom Software', href: '/services' },
   ],
   Solutions: [
-    { label: 'Small Business Websites', href: '/small-business-website-development' },
-    { label: 'Startup Growth Systems', href: '/startup-website-development' },
-    { label: 'Lead Gen Websites', href: '/lead-generation-websites' },
     { label: 'Industry Systems', href: '/lead-generation-system' },
+    { label: 'Startup Growth', href: '/work-with-us' },
+    { label: 'Free Website Audit', href: '/free-website-audit' },
+    { label: 'Work With Us', href: '/work-with-us' },
   ],
   Company: [
     { label: 'About', href: '/about' },
@@ -62,8 +62,7 @@ export default function Footer() {
               }} />
             </Link>
             <p style={{ fontSize: '14px', lineHeight: 1.6, maxWidth: '240px' }}>
-              Building automated growth systems for businesses — websites, SEO, CRM, and AI agents.
-              Kolkata, India.
+              Websites, AI-driven marketing, AI agents, and mobile apps — built to production standard and handed over running.
             </p>
           </div>
 

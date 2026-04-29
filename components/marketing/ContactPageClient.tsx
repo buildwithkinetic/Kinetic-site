@@ -9,7 +9,7 @@ const MeetIcon = () => (
   </svg>
 )
 
-const revenueOptions = ['Under ₹5 lakh/month', '₹5–20 lakh/month', '₹20–50 lakh/month', '₹50 lakh+/month', 'Pre-revenue']
+const revenueOptions = ['Pre-revenue', 'Under $5k/month', '$5k–$20k/month', '$20k–$100k/month', '$100k+/month']
 const goalOptions = ['Generate more leads', 'Improve lead conversion', 'Automate follow-ups', 'Build a complete system', 'Not sure yet']
 
 export default function ContactPageClient() {
@@ -98,8 +98,8 @@ export default function ContactPageClient() {
             fontFamily: 'var(--font-body)', fontSize: '16px',
             color: 'var(--t3)', lineHeight: 1.6, margin: '0 0 32px',
           }}>
-            Thanks, {name}. I'll review your details and get back to you within 24 hours
-            to schedule our strategy call.
+            Thanks, {name}. We'll review your details and get back to you within 24 hours
+            to schedule your strategy call.
           </p>
           <a href="/" style={{
             fontFamily: 'var(--font-body)', fontSize: '14px',
@@ -147,15 +147,15 @@ export default function ContactPageClient() {
                 fontFamily: 'var(--font-body)', fontSize: '16px',
                 color: 'var(--t3)', lineHeight: 1.6, margin: '0 0 40px',
               }}>
-                Fill out the form and I'll get back to you within 24 hours.
-                We'll spend 30 minutes mapping out exactly what a growth system
-                would look like for your business.
+                Fill out the form and we'll get back to you within 24 hours.
+                We'll spend 30 minutes mapping out exactly what a system built
+                for your business would look like.
               </p>
 
               <div style={{ display: 'grid', gap: '16px' }}>
                 {[
                   { icon: '📋', title: 'No pitch deck', desc: 'Just a clear conversation about your business and what you need.' },
-                  { icon: '⚡', title: 'Response in 24h', desc: 'I review every submission personally before scheduling.' },
+                  { icon: '⚡', title: 'Response in 24h', desc: 'We review every submission personally before scheduling.' },
                   { icon: '🎯', title: 'System blueprint', desc: "You'll leave with a clear picture of what we'd build and why." },
                 ].map(item => (
                   <div key={item.title} style={{ display: 'flex', gap: '12px' }}>
@@ -177,7 +177,7 @@ export default function ContactPageClient() {
                 <label style={labelStyle}>Your name *</label>
                 <input
                   required value={name} onChange={e => setName(e.target.value)}
-                  placeholder="Rahul Kumar"
+                  placeholder="Alex Johnson"
                   style={inputStyle}
                   onFocus={e => { e.target.style.borderColor = 'rgba(59,130,246,0.5)' }}
                   onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.1)' }}
@@ -188,7 +188,7 @@ export default function ContactPageClient() {
                 <label style={labelStyle}>Email address *</label>
                 <input
                   required type="email" value={email} onChange={e => setEmail(e.target.value)}
-                  placeholder="rahul@company.com"
+                  placeholder="you@company.com"
                   style={inputStyle}
                   onFocus={e => { e.target.style.borderColor = 'rgba(59,130,246,0.5)' }}
                   onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.1)' }}
@@ -223,7 +223,7 @@ export default function ContactPageClient() {
                 <label style={labelStyle}>Current monthly ad spend <span style={{ color: 'var(--t4)' }}>(optional)</span></label>
                 <input
                   value={adSpend} onChange={e => setAdSpend(e.target.value)}
-                  placeholder="₹0 / ₹10,000 / ₹50,000..."
+                  placeholder="$0 / $500 / $2,000..."
                   style={inputStyle}
                   onFocus={e => { e.target.style.borderColor = 'rgba(59,130,246,0.5)' }}
                   onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.1)' }}
