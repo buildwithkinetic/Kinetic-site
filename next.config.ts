@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/portfolio",
+        destination: "/work/sheknowmics",
+        permanent: true, // 308 (Next.js) / treated as 301 by Google
+      },
+    ];
+  },
 };
 
 export default nextConfig;
