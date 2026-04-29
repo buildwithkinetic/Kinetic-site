@@ -151,19 +151,58 @@ const problems = [
   },
 ]
 
-const flowSteps = [
-  { label: 'Traffic', sub: 'Ads & SEO', color: '#3B82F6' },
-  { label: 'Website', sub: 'Conversion', color: '#5B7FEF' },
-  { label: 'Lead Captured', sub: 'Forms & CRM', color: '#6B6BEE' },
-  { label: 'Automation', sub: 'Follow-ups', color: '#8B5CF6' },
-  { label: 'Conversion', sub: 'Revenue', color: '#A855F7' },
+const servicePillars = [
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      </svg>
+    ),
+    label: 'Digital Marketing',
+    sub: 'AI-powered growth',
+    color: '#10B981',
+    outcomes: ['SEO that compounds over time', 'Paid ads managed with AI', 'Content that drives conversions'],
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+      </svg>
+    ),
+    label: 'Websites',
+    sub: 'Convert & capture',
+    color: '#3B82F6',
+    outcomes: ['Conversion-first design', 'Built to rank on Google', 'Handed over in 2 weeks'],
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12h.01M12 12h.01M16 12h.01"/>
+      </svg>
+    ),
+    label: 'AI Agents',
+    sub: 'Automate & scale',
+    color: '#F59E0B',
+    outcomes: ['Leads qualified 24/7', 'Follow-ups on autopilot', 'Ops that run without you'],
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+      </svg>
+    ),
+    label: 'Android Apps',
+    sub: 'Mobile presence',
+    color: '#8B5CF6',
+    outcomes: ['Native Android builds', 'Production-ready in 4–6 weeks', 'Full source code handover'],
+  },
 ]
 
 const steps = [
-  { n: '01', title: 'Audit & Blueprint', desc: 'We map your funnel, identify every leak, and design your complete growth system.' },
-  { n: '02', title: 'Build & Install', desc: 'We build and install everything — website, CRM, automations — directly into your business.' },
-  { n: '03', title: 'Launch & Measure', desc: 'Your system goes live. Real leads come in. Data shows exactly what is working.' },
-  { n: '04', title: 'Scale Predictably', desc: 'Double down on what works. Remove what does not. Grow without adding complexity.' },
+  { n: '01', title: 'Strategy Call', desc: 'We spend 30 minutes understanding your business, goals, and gaps. No pitch — just a clear map of what to build first and why.' },
+  { n: '02', title: 'Scope & Sprint', desc: 'We define exactly what gets built, lock the timeline, and start the sprint. You see progress within days, not weeks.' },
+  { n: '03', title: 'Build & Launch', desc: 'Your website, app, AI system, or marketing engine goes live — fully tested, connected to your stack, and ready for real users.' },
+  { n: '04', title: 'Measure & Compound', desc: 'We track what drives results and double down on it. Every system gets sharper over time. Revenue grows without adding headcount.' },
 ]
 
 const components = [
@@ -608,105 +647,136 @@ export default function HomepageClient() {
         </div>
       </section>
 
-      {/* ══ 3. THE SYSTEM ════════════════════════════════════════════════ */}
+      {/* ══ 3. FOUR PILLARS ══════════════════════════════════════════════ */}
       <section id="system-details" style={{ padding: '140px 24px', background: 'rgba(255,255,255,0.015)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
           <Reveal>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '24px' }}>
-              How your business scales without you
+              What we do
             </p>
-            <h2 style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(36px, 5vw, 66px)',
-              fontWeight: 600, lineHeight: 1.06, letterSpacing: '-2px',
-              color: '#FFFFFF', margin: '0 0 72px',
-            }}>
-              The System Behind<br/>
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                Predictable Growth
-              </span>
-            </h2>
+            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px', marginBottom: '72px' }}>
+              <h2 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(34px, 5vw, 62px)',
+                fontWeight: 600, lineHeight: 1.06, letterSpacing: '-2px',
+                color: '#FFFFFF', margin: 0,
+              }}>
+                Four things we build.<br/>
+                <span style={{ color: 'rgba(255,255,255,0.28)' }}>One company to call.</span>
+              </h2>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, maxWidth: '380px', margin: 0 }}>
+                Each service delivers standalone. Together, they make your business impossible to compete with.
+              </p>
+            </div>
           </Reveal>
 
-          {/* Flow bar with stagger */}
+          {/* 4 Pillar cards */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
             style={{
-              display: 'flex', alignItems: 'stretch',
-              overflowX: 'auto', gap: '0',
-              borderRadius: '16px', overflow: 'hidden',
-              border: '1px solid rgba(255,255,255,0.07)',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '2px',
+              borderRadius: '20px', overflow: 'hidden',
+              border: '1px solid rgba(255,255,255,0.06)',
             }}
+            className="pillars-grid"
           >
-            {flowSteps.map((step, i) => (
+            {servicePillars.map((pillar, i) => (
               <motion.div
-                key={step.label}
-                variants={fadeUp}
-                whileHover={{ scale: 1.03, zIndex: 2 }}
+                key={pillar.label}
+                variants={cardFadeUp}
+                whileHover={{ scale: 1.02, zIndex: 2 }}
                 transition={{ duration: 0.2 }}
                 style={{
-                  flex: 1, minWidth: '140px',
-                  padding: '36px 24px',
-                  background: i === 0
-                    ? 'rgba(59,130,246,0.08)'
-                    : i === flowSteps.length - 1
-                    ? 'rgba(168,85,247,0.08)'
-                    : `rgba(${59 + i * 18},${130 - i * 10},${246 - i * 20},0.04)`,
-                  borderRight: i < flowSteps.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
-                  display: 'flex', flexDirection: 'column', alignItems: 'center',
-                  textAlign: 'center', position: 'relative',
-                  cursor: 'default',
-                  transition: 'background 0.25s',
+                  padding: '44px 32px',
+                  background: 'rgba(255,255,255,0.02)',
+                  borderRight: i < servicePillars.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                  cursor: 'default', position: 'relative', overflow: 'hidden',
+                  transition: 'background 0.3s ease',
                 }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.background = step.color + '15'
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.background = i === 0
-                    ? 'rgba(59,130,246,0.08)'
-                    : i === flowSteps.length - 1
-                    ? 'rgba(168,85,247,0.08)'
-                    : `rgba(${59 + i * 18},${130 - i * 10},${246 - i * 20},0.04)`
-                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = pillar.color + '0d' }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.02)' }}
               >
-                {i < flowSteps.length - 1 && (
-                  <div style={{
-                    position: 'absolute', right: '-8px', top: '50%', transform: 'translateY(-50%)',
-                    width: '16px', height: '16px', zIndex: 2,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                )}
+                {/* Glow */}
                 <div style={{
-                  width: '36px', height: '36px', borderRadius: '50%',
-                  background: step.color + '20',
-                  border: `1px solid ${step.color}40`,
+                  position: 'absolute', top: 0, right: 0,
+                  width: '200px', height: '160px',
+                  background: `radial-gradient(ellipse at top right, ${pillar.color}0a, transparent 70%)`,
+                  pointerEvents: 'none',
+                }} />
+
+                {/* Icon */}
+                <div style={{
+                  width: '52px', height: '52px', borderRadius: '14px',
+                  background: pillar.color + '14',
+                  border: `1px solid ${pillar.color}28`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: '16px',
-                  boxShadow: `0 0 12px ${step.color}20`,
+                  color: pillar.color, marginBottom: '24px',
+                  boxShadow: `0 0 20px ${pillar.color}18`,
                 }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: step.color }} />
+                  {pillar.icon}
                 </div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600, color: '#FFFFFF', margin: '0 0 6px' }}>{step.label}</p>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'rgba(255,255,255,0.3)', margin: 0 }}>{step.sub}</p>
+
+                {/* Label */}
+                <p style={{
+                  fontFamily: 'var(--font-body)', fontSize: '18px', fontWeight: 700,
+                  color: '#FFFFFF', margin: '0 0 6px', lineHeight: 1.2,
+                }}>{pillar.label}</p>
+                <p style={{
+                  fontFamily: 'var(--font-body)', fontSize: '12px',
+                  color: pillar.color, margin: '0 0 24px', letterSpacing: '0.3px',
+                  opacity: 0.85,
+                }}>{pillar.sub}</p>
+
+                {/* Outcomes */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {pillar.outcomes.map(o => (
+                    <div key={o} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={pillar.color} strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px', opacity: 0.8 }}>
+                        <path d="M20 6 9 17l-5-5"/>
+                      </svg>
+                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.45 }}>{o}</span>
+                    </div>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </motion.div>
 
           <Reveal>
-            <p style={{ marginTop: '40px', fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.25)', lineHeight: 1.65, maxWidth: '600px' }}>
-              Five interconnected layers working together. Each one solves a specific problem.
-              Together they create a business that generates leads without depending on you.
-            </p>
+            <div style={{ marginTop: '40px', display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'rgba(255,255,255,0.22)', lineHeight: 1.65, margin: 0 }}>
+                Not sure which one you need? Book a free call — we&apos;ll map it out in 30 minutes.
+              </p>
+              <Link href="/book-call" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
+                color: '#3B82F6', textDecoration: 'none', whiteSpace: 'nowrap',
+                flexShrink: 0,
+              }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#60A5FA' }}
+                onMouseLeave={e => { e.currentTarget.style.color = '#3B82F6' }}
+              >
+                Book free strategy call
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </Link>
+            </div>
           </Reveal>
         </div>
+
+        <style>{`
+          @media (max-width: 768px) {
+            .pillars-grid { grid-template-columns: 1fr 1fr !important; }
+          }
+          @media (max-width: 480px) {
+            .pillars-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
       </section>
 
       {/* ══ 4. HOW IT WORKS ═════════════════════════════════════════════ */}
@@ -723,8 +793,8 @@ export default function HomepageClient() {
               fontWeight: 600, lineHeight: 1.08, letterSpacing: '-2px',
               color: '#FFFFFF', margin: '0 0 80px',
             }}>
-              Four steps to a<br/>
-              <span style={{ color: 'rgba(255,255,255,0.3)' }}>system that runs itself.</span>
+              How we go from<br/>
+              <span style={{ color: 'rgba(255,255,255,0.3)' }}>idea to live in weeks.</span>
             </h2>
           </Reveal>
 

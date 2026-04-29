@@ -76,7 +76,7 @@ const services = [
   },
   {
     num: '04',
-    name: 'AI-Driven Marketing',
+    name: 'AI-Driven Digital Marketing',
     tagline: 'Stop guessing what to post. Build a marketing system that runs itself.',
     what: 'AI-powered content and marketing automation: SEO systems, automated content pipelines, personalised email sequences, lead nurturing flows, and performance dashboards — built on real data, running continuously.',
     outcomes: [
