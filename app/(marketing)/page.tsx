@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Kinetic — Digital Growth Systems for Startups & Businesses",
   description:
     "Kinetic builds websites, web apps, AI agents, and growth systems for startups and businesses globally. Installed end to end, not just designed and delivered.",
+  openGraph: {
+    title: "Kinetic — Digital Growth Systems for Startups & Businesses",
+    description: "Websites, web apps, AI agents, and growth systems — installed end to end.",
+    url: "https://buildwithkinetic.org",
+    siteName: "Kinetic",
+    images: [{ url: "https://buildwithkinetic.org/og-image.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kinetic — Digital Growth Systems",
+    description: "Websites, web apps, AI agents, and growth systems — installed end to end.",
+    images: ["https://buildwithkinetic.org/og-image.png"],
+  },
 }
 
 export default function HomePage() {

@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   title: "Free Website Audit — Find Where You're Losing Leads | Kinetic",
   description:
     "We'll audit your website, SEO, and lead funnel. You get a PDF report showing exactly where you're leaking revenue — delivered in 24 hours.",
+  openGraph: {
+    title: "Free Website Audit — Find Where You're Losing Leads",
+    description: "PDF report delivered in 24 hours. No commitment.",
+    url: "https://buildwithkinetic.org/free-website-audit",
+    siteName: "Kinetic",
+    images: [{ url: "https://buildwithkinetic.org/og-image.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 }
 
 export default function FreeAuditPage() {

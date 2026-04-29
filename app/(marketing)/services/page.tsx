@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: "Services — Websites, AI Agents, SEO & Web Apps | Kinetic",
   description:
     "Four core services: conversion websites, full-stack web apps, AI agents & automation, and SEO. Built as systems, not one-off deliverables.",
+  openGraph: {
+    title: "Services — Websites, AI Agents, SEO & Web Apps",
+    description: "Four core services built as systems, not one-off deliverables.",
+    url: "https://buildwithkinetic.org/services",
+    siteName: "Kinetic",
+    images: [{ url: "https://buildwithkinetic.org/og-image.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 }
 
 const serviceFAQs = [
