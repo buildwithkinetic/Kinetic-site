@@ -76,7 +76,7 @@ export default function Footer() {
               }}>{title}</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '12px' }}>
                 {linksArray.map(link => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <Link href={link.href} style={{
                       color: 'inherit', textDecoration: 'none', fontSize: '14px',
                       transition: 'color 0.2s ease',
