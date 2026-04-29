@@ -1,12 +1,10 @@
-const localBusiness = {
+const organization = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://buildwithkinetic.org/#business",
+  "@type": "Organization",
   name: "Kinetic",
   description:
-    "Kinetic builds websites, full stack apps, custom software, AI-driven marketing systems, AI agents, and AI chatbots — production-grade and handed over running.",
+    "A digital systems studio that builds websites, web apps, AI agents, CRM automation, and SEO systems for startups and businesses globally.",
   url: "https://buildwithkinetic.org",
-  logo: "https://buildwithkinetic.org/favicon.svg",
   email: "hello@buildwithkinetic.org",
   foundingDate: "2024",
   founder: {
@@ -15,29 +13,27 @@ const localBusiness = {
     jobTitle: "Founder & Growth Engineer",
     sameAs: "https://linkedin.com/in/21-ayushgupta",
   },
-  areaServed: [
-    { "@type": "Country", name: "India" },
-    { "@type": "Country", name: "United States" },
-    { "@type": "Country", name: "United Kingdom" },
-  ],
+  areaServed: "Worldwide",
   knowsAbout: [
     "Website Development",
-    "Full Stack App Development",
+    "Web Application Development",
     "AI Agents",
-    "AI-Driven Marketing",
+    "SEO",
+    "CRM Automation",
     "Marketing Automation",
     "Lead Generation",
-    "n8n",
+    "SaaS Development",
     "Next.js",
     "Supabase",
+    "n8n",
   ],
+  sameAs: ["https://linkedin.com/in/21-ayushgupta"],
 };
 
 const professionalService = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://buildwithkinetic.org/#organization",
-  name: "Kinetic",
+  "@type": "ProfessionalService",
+  name: "Kinetic — Digital Growth Systems",
   url: "https://buildwithkinetic.org",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -47,29 +43,29 @@ const professionalService = {
         "@type": "Offer",
         name: "Website & Landing Page Development",
         description:
-          "Conversion-focused websites and landing pages built in Next.js — live in 1–2 weeks.",
-        url: "https://buildwithkinetic.org/services",
+          "Conversion-focused websites and landing pages in Next.js — live in 1–2 weeks.",
+        url: "https://buildwithkinetic.org/services/website-development",
       },
       {
         "@type": "Offer",
         name: "Full Stack Web App Development",
         description:
-          "End-to-end web applications with backend, database, and auth — built to production standard.",
-        url: "https://buildwithkinetic.org/services",
+          "End-to-end web applications with backend, database, and auth — production-grade and handed over running.",
+        url: "https://buildwithkinetic.org/services/full-stack",
       },
       {
         "@type": "Offer",
         name: "AI-Driven Digital Marketing",
         description:
           "SEO, content, email, and paid ads — orchestrated with AI to compound over time.",
-        url: "https://buildwithkinetic.org/services",
+        url: "https://buildwithkinetic.org/services/seo",
       },
       {
         "@type": "Offer",
         name: "AI Agents & Automation",
         description:
-          "Custom AI agents and n8n automation workflows that run your business operations automatically.",
-        url: "https://buildwithkinetic.org/services",
+          "Custom AI agents and n8n automation workflows that run business operations automatically.",
+        url: "https://buildwithkinetic.org/services/ai-agents",
       },
       {
         "@type": "Offer",
@@ -134,7 +130,7 @@ export default function SchemaMarkup() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
       />
       <script
         type="application/ld+json"
