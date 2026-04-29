@@ -23,6 +23,8 @@ interface SystemCard {
   status: 'live' | 'coming-soon'
   industry: string
   oneLiner: string
+  caseStudyUrl?: string
+  caseStudyClient?: string
   /** Future: content for expanded view */
   expandedContent?: string
 }
@@ -34,7 +36,9 @@ const systems: SystemCard[] = [
     status: 'live',
     industry: 'Fitness & Gyms',
     oneLiner:
-      'Complete growth infrastructure for gyms and fitness studios — memberships, leads, automations, retention.',
+      'A 5-layer member acquisition system — conversion website, lead pipeline dashboard, WhatsApp automation, dead lead reactivation, and an AI booking agent. Live in 4 weeks.',
+    caseStudyUrl: '/work/core-of-fitness',
+    caseStudyClient: 'Core of Fitness, Kolkata',
   },
   {
     name: 'Kinetic Cafe OS',
@@ -164,36 +168,57 @@ function SystemCardComponent({ system }: { system: SystemCard }) {
         {system.oneLiner}
       </p>
 
-      {/* CTA — only shown for live systems (disabled state) */}
+      {/* Metrics strip — live systems only */}
       {isLive && (
-        <div style={{ marginTop: '8px' }}>
-          <span style={{
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '0', borderTop: '1px solid rgba(255,255,255,0.06)',
+          borderRadius: '12px', overflow: 'hidden',
+          background: 'rgba(255,255,255,0.02)',
+          marginTop: '8px',
+        }}>
+          {[
+            { v: '4 weeks', l: 'Live' },
+            { v: '<30s', l: 'WhatsApp reply' },
+            { v: '₹5k/mo', l: 'Infra cost' },
+          ].map((m, i) => (
+            <div key={m.l} style={{
+              padding: '14px 16px',
+              borderRight: i < 2 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+            }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '15px', fontWeight: 600, color: 'var(--green)', margin: '0 0 2px' }}>{m.v}</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', color: 'var(--t4)', margin: 0 }}>{m.l}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Case study link — live systems with a real client */}
+      {isLive && system.caseStudyUrl && (
+        <div style={{ marginTop: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'var(--t4)', margin: 0, fontStyle: 'italic' }}>
+            Deployed for {system.caseStudyClient}
+          </p>
+          <Link href={system.caseStudyUrl} style={{
             display: 'inline-flex', alignItems: 'center', gap: '6px',
-            padding: '10px 20px',
+            padding: '8px 16px',
             borderRadius: '100px',
-            fontSize: '13px', fontWeight: 500,
+            fontSize: '12px', fontWeight: 600,
             fontFamily: 'var(--font-body)',
-            color: 'var(--t4)',
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.06)',
-            cursor: 'default',
-            opacity: 0.6,
-          }}>
-            Learn More
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            color: 'var(--green)',
+            background: 'rgba(34,197,94,0.08)',
+            border: '1px solid rgba(34,197,94,0.2)',
+            textDecoration: 'none',
+            transition: 'background 0.2s',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(34,197,94,0.14)' }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(34,197,94,0.08)' }}
+          >
+            View Case Study
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
-          </span>
-          <span style={{
-            display: 'block',
-            fontSize: '11px',
-            color: 'var(--t4)',
-            fontFamily: 'var(--font-body)',
-            marginTop: '8px',
-            letterSpacing: '0.2px',
-          }}>
-            Content coming soon
-          </span>
+          </Link>
         </div>
       )}
 

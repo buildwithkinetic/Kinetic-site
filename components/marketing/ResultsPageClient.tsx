@@ -19,13 +19,6 @@ const MeetIcon = () => (
   </svg>
 )
 
-const metrics = [
-  { value: '1,200+', label: 'Users reached via organic growth' },
-  { value: '#1', label: 'Google ranking for primary keyword' },
-  { value: '60s', label: 'Lead acknowledgement via automation' },
-  { value: '90-day', label: 'From brief to fully operational' },
-]
-
 export default function ResultsPageClient() {
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh' }}>
@@ -62,6 +55,167 @@ export default function ResultsPageClient() {
         </Reveal>
       </section>
 
+      {/* CASE STUDY — CORE OF FITNESS (latest) */}
+      <section style={{ padding: '0 24px 48px' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <Reveal>
+            <div style={{
+              padding: '48px',
+              background: '#111111',
+              border: '1px solid rgba(16,185,129,0.15)',
+              borderRadius: '24px',
+              overflow: 'hidden',
+              position: 'relative',
+            }}>
+              {/* Glow */}
+              <div style={{
+                position: 'absolute', top: 0, right: 0,
+                width: '300px', height: '300px',
+                background: 'radial-gradient(ellipse at top right, rgba(16,185,129,0.08), transparent 70%)',
+                pointerEvents: 'none',
+              }} />
+
+              <div style={{ marginBottom: '32px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                  <span style={{
+                    padding: '4px 12px',
+                    background: 'rgba(16,185,129,0.1)',
+                    border: '1px solid rgba(16,185,129,0.25)',
+                    borderRadius: '100px',
+                    fontFamily: 'var(--font-body)', fontSize: '12px',
+                    color: '#10B981',
+                  }}>Latest Project</span>
+                  <span style={{
+                    fontFamily: 'var(--font-body)', fontSize: '12px',
+                    color: 'var(--t4)',
+                  }}>Fitness & Gym · Member Acquisition System</span>
+                </div>
+                <h2 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(24px, 4vw, 40px)',
+                  fontWeight: 400, letterSpacing: '-1px',
+                  color: 'var(--t1)', margin: '0 0 8px',
+                }}>Core of Fitness</h2>
+                <p style={{
+                  fontFamily: 'var(--font-body)', fontSize: '15px',
+                  color: 'var(--t3)', margin: 0,
+                }}>
+                  Complete 5-layer member acquisition and retention system — conversion website, lead pipeline dashboard, WhatsApp automation, dead lead reactivation, and AI booking agent.
+                </p>
+              </div>
+
+              {/* Problem / System / Results */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: '32px', marginBottom: '40px',
+              }}>
+                <div>
+                  <p style={{
+                    fontFamily: 'var(--font-body)', fontSize: '11px',
+                    letterSpacing: '2px', textTransform: 'uppercase',
+                    color: 'var(--t4)', marginBottom: '12px',
+                  }}>The Problem</p>
+                  <p style={{
+                    fontFamily: 'var(--font-body)', fontSize: '14px',
+                    color: 'var(--t3)', lineHeight: 1.6, margin: 0,
+                  }}>
+                    No website, no lead capture, no CRM. Leads came in via Instagram DMs and disappeared. Manual follow-ups were inconsistent. Ad spend was generating interest but nothing to catch it.
+                  </p>
+                </div>
+                <div>
+                  <p style={{
+                    fontFamily: 'var(--font-body)', fontSize: '11px',
+                    letterSpacing: '2px', textTransform: 'uppercase',
+                    color: 'var(--t4)', marginBottom: '12px',
+                  }}>The System Built</p>
+                  <div style={{ display: 'grid', gap: '6px' }}>
+                    {[
+                      'Conversion website — free trial offer',
+                      'Kanban lead pipeline dashboard',
+                      'WhatsApp automation + follow-up sequences',
+                      'Dead lead reactivation engine',
+                      'AI tour booking agent (Claude API)',
+                    ].map(item => (
+                      <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#10B981', flexShrink: 0 }} />
+                        <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--t2)' }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Metrics */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+                gap: '24px',
+                padding: '32px',
+                background: 'var(--bg)',
+                borderRadius: '16px',
+                marginBottom: '32px',
+              }}>
+                {[
+                  { value: '4 weeks', label: 'Full system live' },
+                  { value: '5 layers', label: 'End-to-end build' },
+                  { value: '<30s', label: 'WhatsApp response time' },
+                  { value: '₹5k/mo', label: 'Infrastructure cost' },
+                ].map(m => (
+                  <div key={m.value}>
+                    <p style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(24px, 3vw, 36px)',
+                      fontWeight: 400, margin: '0 0 4px',
+                      backgroundImage: 'linear-gradient(135deg, #10B981, #3B82F6)',
+                      WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}>{m.value}</p>
+                    <p style={{
+                      fontFamily: 'var(--font-body)', fontSize: '13px',
+                      color: 'var(--t3)', margin: 0, lineHeight: 1.4,
+                    }}>{m.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Testimonial + CTA */}
+              <div style={{ display: 'flex', gap: '32px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+                <div style={{ flex: 1, minWidth: '240px', padding: '24px', borderLeft: '2px solid #10B981' }}>
+                  <p style={{
+                    fontFamily: 'var(--font-display)', fontSize: '17px',
+                    fontStyle: 'italic', color: 'var(--t2)',
+                    lineHeight: 1.5, margin: '0 0 12px',
+                  }}>
+                    &ldquo;Before Kinetic, we had no system. Leads came in and disappeared. Now every inquiry is tracked, followed up automatically, and we can actually see what&apos;s converting.&rdquo;
+                  </p>
+                  <p style={{
+                    fontFamily: 'var(--font-body)', fontSize: '13px',
+                    color: 'var(--t4)', margin: 0,
+                  }}>— Core of Fitness, Kolkata</p>
+                </div>
+                <Link href="/work/core-of-fitness" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '8px',
+                  padding: '12px 24px',
+                  background: 'transparent',
+                  border: '1px solid rgba(16,185,129,0.3)',
+                  borderRadius: '100px',
+                  fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
+                  color: '#10B981', textDecoration: 'none',
+                  whiteSpace: 'nowrap', alignSelf: 'flex-end',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(16,185,129,0.08)' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
+                >
+                  View full case study →
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* CASE STUDY — SHEKNOWMICS */}
       <section style={{ padding: '0 24px 80px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
@@ -95,7 +249,7 @@ export default function ResultsPageClient() {
                   <span style={{
                     fontFamily: 'var(--font-body)', fontSize: '12px',
                     color: 'var(--t4)',
-                  }}>Women's Health Platform · Sheknowmics</span>
+                  }}>Women&apos;s Health Platform · Sheknowmics</span>
                 </div>
                 <h2 style={{
                   fontFamily: 'var(--font-display)',
@@ -107,11 +261,11 @@ export default function ResultsPageClient() {
                   fontFamily: 'var(--font-body)', fontSize: '15px',
                   color: 'var(--t3)', margin: 0,
                 }}>
-                  Women's health & hormone-testing platform built for scale
+                  India&apos;s first AI-native women&apos;s health platform — cycle intelligence, home diagnostics, AI risk prediction, and doctor consultations, built end to end.
                 </p>
               </div>
 
-              {/* Problem / System / Results */}
+              {/* Problem / System */}
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
@@ -127,7 +281,7 @@ export default function ResultsPageClient() {
                     fontFamily: 'var(--font-body)', fontSize: '14px',
                     color: 'var(--t3)', lineHeight: 1.6, margin: 0,
                   }}>
-                    No digital presence. Potential users couldn't find the service.
+                    No digital presence. Potential users couldn&apos;t find the service.
                     Lead capture was entirely manual and inconsistent.
                   </p>
                 </div>
@@ -136,9 +290,9 @@ export default function ResultsPageClient() {
                     fontFamily: 'var(--font-body)', fontSize: '11px',
                     letterSpacing: '2px', textTransform: 'uppercase',
                     color: 'var(--t4)', marginBottom: '12px',
-                  }}>The System Built</p>
+                  }}>What We Built</p>
                   <div style={{ display: 'grid', gap: '6px' }}>
-                    {['Conversion-focused website', 'SEO & Google visibility', 'Lead capture automation', 'CRM integration', 'Email follow-up sequences'].map(item => (
+                    {['Full-stack health platform (5 modules)', 'Cycle intelligence dashboard', 'Home diagnostics e-commerce', 'Doctor consultation booking', 'AI health assistant (Claude API)'].map(item => (
                       <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#3B82F6', flexShrink: 0 }} />
                         <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--t2)' }}>{item}</span>
@@ -158,11 +312,16 @@ export default function ResultsPageClient() {
                 borderRadius: '16px',
                 marginBottom: '32px',
               }}>
-                {metrics.map(m => (
+                {[
+                  { value: '1,200+', label: 'Waitlist users, organic' },
+                  { value: '#1', label: 'Google rank, primary keyword' },
+                  { value: 'NPS 72', label: 'Pilot cohort satisfaction' },
+                  { value: '5', label: 'Platform modules built' },
+                ].map(m => (
                   <div key={m.value}>
                     <p style={{
                       fontFamily: 'var(--font-display)',
-                      fontSize: 'clamp(28px, 4vw, 44px)',
+                      fontSize: 'clamp(24px, 3vw, 36px)',
                       fontWeight: 400, margin: '0 0 4px',
                       backgroundImage: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
                       WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
@@ -176,111 +335,40 @@ export default function ResultsPageClient() {
                 ))}
               </div>
 
-              {/* Testimonial */}
-              <div style={{
-                padding: '24px',
-                borderLeft: '2px solid #3B82F6',
-              }}>
-                <p style={{
-                  fontFamily: 'var(--font-display)', fontSize: '18px',
-                  fontStyle: 'italic', color: 'var(--t2)',
-                  lineHeight: 1.5, margin: '0 0 12px',
-                }}>
-                  "Kinetic built the entire system — website, lead capture, automations — and handed it over running.
-                  We started getting consistent enquiries within weeks."
-                </p>
-                <p style={{
-                  fontFamily: 'var(--font-body)', fontSize: '13px',
-                  color: 'var(--t4)', margin: 0,
-                }}>— Sheknowmics Founder</p>
+              {/* Testimonial + CTA */}
+              <div style={{ display: 'flex', gap: '32px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+                <div style={{ flex: 1, minWidth: '240px', padding: '24px', borderLeft: '2px solid #3B82F6' }}>
+                  <p style={{
+                    fontFamily: 'var(--font-display)', fontSize: '17px',
+                    fontStyle: 'italic', color: 'var(--t2)',
+                    lineHeight: 1.5, margin: '0 0 12px',
+                  }}>
+                    &ldquo;Kinetic built the entire system — website, lead capture, automations — and handed it over running. We started getting consistent enquiries within weeks.&rdquo;
+                  </p>
+                  <p style={{
+                    fontFamily: 'var(--font-body)', fontSize: '13px',
+                    color: 'var(--t4)', margin: 0,
+                  }}>— Sheknowmics Founder</p>
+                </div>
+                <Link href="/work/sheknowmics" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '8px',
+                  padding: '12px 24px',
+                  background: 'transparent',
+                  border: '1px solid rgba(59,130,246,0.3)',
+                  borderRadius: '100px',
+                  fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
+                  color: '#3B82F6', textDecoration: 'none',
+                  whiteSpace: 'nowrap', alignSelf: 'flex-end',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(59,130,246,0.08)' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
+                >
+                  View full case study →
+                </Link>
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* MINI CASE STUDY CARDS */}
-      <section style={{ padding: '0 24px 80px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '20px',
-          }}>
-            {[
-              {
-                client: 'E-commerce Store',
-                location: 'India',
-                metric1: { value: '3x', label: 'Increase in qualified leads' },
-                metric2: { value: '18 days', label: 'System fully live' },
-                quote: 'The automated follow-up alone recovered leads we would have completely lost.',
-                color: '#3B82F6',
-              },
-              {
-                client: 'Professional Services Firm',
-                location: 'India',
-                metric1: { value: 'Zero', label: 'Leads missed after install' },
-                metric2: { value: '4 weeks', label: 'Full system operational' },
-                quote: 'We went from zero tracking to full visibility on every enquiry.',
-                color: '#6366F1',
-              },
-              {
-                client: 'Health & Wellness Brand',
-                location: 'India',
-                metric1: { value: '#2', label: 'Google rank, primary keyword' },
-                metric2: { value: '60 days', label: 'SEO results visible' },
-                quote: 'Organic enquiries started coming in consistently within 2 months.',
-                color: '#8B5CF6',
-              },
-            ].map(card => (
-              <Reveal key={card.client}>
-                <div style={{
-                  padding: '28px',
-                  background: '#111111',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: '16px',
-                  display: 'flex', flexDirection: 'column', height: '100%',
-                }}>
-                  <div style={{ marginBottom: '20px' }}>
-                    <p style={{
-                      fontFamily: 'var(--font-body)', fontSize: '11px',
-                      letterSpacing: '2px', textTransform: 'uppercase',
-                      color: 'var(--t4)', margin: '0 0 4px',
-                    }}>{card.client}</p>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'var(--t4)', margin: 0 }}>{card.location}</p>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '20px' }}>
-                    {[card.metric1, card.metric2].map(m => (
-                      <div key={m.label}>
-                        <p style={{
-                          fontFamily: 'var(--font-body)', fontSize: '22px', fontWeight: 600,
-                          color: card.color, margin: '0 0 2px',
-                        }}>{m.value}</p>
-                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '11px', color: 'var(--t3)', lineHeight: 1.4, margin: 0 }}>{m.label}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div style={{ borderLeft: `2px solid ${card.color}`, paddingLeft: '14px', marginTop: 'auto' }}>
-                    <p style={{
-                      fontFamily: 'var(--font-display)', fontSize: '14px',
-                      fontStyle: 'italic', color: 'var(--t2)',
-                      lineHeight: 1.5, margin: 0,
-                    }}>&ldquo;{card.quote}&rdquo;</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <p style={{
-            fontFamily: 'var(--font-body)', fontSize: '12px',
-            color: 'var(--t4)', fontStyle: 'italic',
-            textAlign: 'center', marginTop: '24px',
-          }}>
-            *Representative results from recent projects. Full case studies in progress.
-          </p>
         </div>
       </section>
 
@@ -306,7 +394,7 @@ export default function ResultsPageClient() {
               fontSize: '17px', color: 'var(--t3)',
               fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: '0 0 36px',
             }}>
-              Book a 30-minute call and we'll show you exactly what a system built for
+              Book a 30-minute call and we&apos;ll show you exactly what a system built for
               your business would look like.
             </p>
             <Link href="/book-call"
