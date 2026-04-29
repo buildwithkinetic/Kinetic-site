@@ -4,25 +4,9 @@ import CoreOfFitnessPageClient from '@/components/marketing/CoreOfFitnessPageCli
 import { JsonLd, breadcrumbSchema } from '@/components/seo/JsonLd'
 
 export const metadata: Metadata = {
-  title: "Core of Fitness Case Study | Kinetic",
+  title: "Core of Fitness — Gym Member Acquisition System | Kinetic",
   description:
-    "How Kinetic built a 5-layer member acquisition system for Core of Fitness — conversion website, lead pipeline, WhatsApp automation, dead lead reactivation, and an AI booking agent. Live in 4 weeks.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/work/core-of-fitness",
-  },
-  openGraph: {
-    title: "Core of Fitness Case Study | Kinetic",
-    description:
-      "How Kinetic built a complete gym member acquisition system — live in 4 weeks.",
-    url: "https://buildwithkinetic.org/work/core-of-fitness",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Core of Fitness Case Study | Kinetic",
-    description:
-      "5-layer gym member acquisition system — website, CRM, WhatsApp automation, AI agent. Live in 4 weeks.",
-    creator: "@buildwithkinetic",
-  },
+    "How Kinetic built a custom website, CRM, AI chatbot, and Meta Ads system for Core of Fitness gym. Full case study.",
 }
 
 export default function CoreOfFitnessCaseStudy() {

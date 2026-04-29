@@ -3,18 +3,9 @@ import { ServicePageTemplate } from "@/components/marketing/ServicePageTemplate"
 import type { ServicePageData } from "@/components/marketing/ServicePageTemplate"
 
 export const metadata: Metadata = {
-  title: "Website Development Services | Conversion-Focused Websites",
+  title: "Website Development Agency | Kinetic",
   description:
-    "Kinetic builds conversion-focused websites for startups, service businesses, and gyms. Engineered to capture leads and grow revenue — not just look good.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/website-development",
-  },
-  openGraph: {
-    title: "Website Development Services | Kinetic",
-    description:
-      "High-performance, conversion-focused websites engineered to capture leads and grow your business. Built on Next.js with Vercel hosting.",
-    url: "https://buildwithkinetic.org/website-development",
-  },
+    "Conversion-focused website development for startups and growing businesses. Next.js, fast, built to generate leads.",
 }
 
 const data: ServicePageData = {

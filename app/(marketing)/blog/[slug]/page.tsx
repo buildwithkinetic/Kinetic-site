@@ -17,19 +17,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getBlogPost(slug)
 
-  if (!post) return { title: "Post Not Found" }
+  if (!post) return { title: "Post Not Found | Kinetic" }
+
+  const description = post.description
+    ? post.description.slice(0, 155)
+    : (post.content ?? '').replace(/<[^>]+>/g, '').slice(0, 155)
 
   return {
-    title: post.title,
-    description: post.description,
+    title: `${post.title} | Kinetic`,
+    description,
     authors: [{ name: post.author }],
     alternates: {
       canonical: `https://buildwithkinetic.org/blog/${post.slug}`,
     },
     openGraph: {
       type: "article",
-      title: post.title,
-      description: post.description,
+      title: `${post.title} | Kinetic`,
+      description,
       url: `https://buildwithkinetic.org/blog/${post.slug}`,
       publishedTime: post.dateISO,
       authors: [post.author],
@@ -37,8 +41,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.description,
+      title: `${post.title} | Kinetic`,
+      description,
     },
   }
 }

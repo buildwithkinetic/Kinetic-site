@@ -3,18 +3,9 @@ import { IndustryPageTemplate } from "@/components/marketing/IndustryPageTemplat
 import type { IndustryPageData } from "@/components/marketing/IndustryPageTemplate"
 
 export const metadata: Metadata = {
-  title: "Startup Website Development | Attract Investors & Customers",
+  title: "Website Development for Startups | Kinetic",
   description:
-    "Kinetic builds startup websites that impress investors, capture early users, and tell a compelling product story. Built on Next.js with full SEO.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/startup-website-development",
-  },
-  openGraph: {
-    title: "Startup Website Development | Kinetic",
-    description:
-      "Startup websites built to attract investors, capture early users, and launch your product story to the world. Built on Next.js.",
-    url: "https://buildwithkinetic.org/startup-website-development",
-  },
+    "Startup websites built to convert early visitors into users and leads. Fast, conversion-focused, and ready in 2 weeks.",
 }
 
 const data: IndustryPageData = {

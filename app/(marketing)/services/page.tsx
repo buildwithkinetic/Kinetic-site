@@ -4,38 +4,9 @@ import ServicesPageClient from "@/components/marketing/ServicesPageClient"
 import { JsonLd, breadcrumbSchema, faqSchema, localBusinessSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "What We Build — Websites, Apps, Software & AI Systems | Kinetic",
+  title: "Services — Websites, AI Agents, SEO & Web Apps | Kinetic",
   description:
-    "6 things Kinetic builds exceptionally well: Websites & Landing Pages, Full Stack Apps, Custom Software, AI-Driven Marketing, AI Agents, and AI Chatbots. Production-grade. Handed over running.",
-  keywords: [
-    "website development India",
-    "full stack app development Kolkata",
-    "custom software development India",
-    "AI marketing automation India",
-    "AI agents for business India",
-    "AI chatbot development Kolkata",
-    "web app development India",
-    "business automation systems India",
-    "AI-driven digital marketing",
-    "custom software Kolkata",
-  ],
-  alternates: {
-    canonical: "https://buildwithkinetic.org/services",
-  },
-  openGraph: {
-    title: "What We Build — Websites, Apps, Software & AI Systems | Kinetic",
-    description:
-      "Websites, full stack apps, custom software, AI marketing, AI agents, and chatbots — built to production standard and handed over running.",
-    url: "https://buildwithkinetic.org/services",
-    locale: "en_IN",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "What We Build | Kinetic",
-    description:
-      "Websites, Apps, Custom Software, AI Marketing, AI Agents, AI Chatbots — production-grade and handed over running.",
-    creator: "@buildwithkinetic",
-  },
+    "Four core services: conversion websites, full-stack web apps, AI agents & automation, and SEO. Built as systems, not one-off deliverables.",
 }
 
 const serviceFAQs = [

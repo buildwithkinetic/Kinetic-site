@@ -3,19 +3,9 @@ import Link from "next/link"
 import { JsonLd, localBusinessSchema, serviceSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Gym Growth Systems — Automated Lead Generation for Gyms",
-  description: "Stop chasing gym memberships. Kinetic builds automated growth systems for gyms in India — websites, lead capture, and CRM automation. Delivered in 30 days.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/gym-growth-systems",
-  },
-  keywords: [
-    "gym website development India",
-    "lead generation for gyms",
-    "gym marketing agency Kolkata",
-    "automated gym growth system",
-    "fitness centre marketing India",
-    "gym CRM automation",
-  ],
+  title: "Automated Lead Generation for Gyms | Kinetic Gym OS",
+  description:
+    "A complete growth system for gyms — website, CRM, AI chatbot, and Meta Ads. Plug in and start generating members.",
 }
 
 export default function Page() {

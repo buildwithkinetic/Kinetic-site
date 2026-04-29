@@ -3,16 +3,9 @@ import Link from "next/link"
 import { JsonLd, localBusinessSchema, serviceSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Business Automation Agency in Kolkata — Kinetic",
-  description: "Automate the repetitive work in your Kolkata business. Kinetic builds automation systems and AI agents that save time, reduce errors, and let you focus on growth.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/automation-kolkata",
-  },
-  openGraph: {
-    title: "Business Automation Agency in Kolkata — Kinetic",
-    description: "Automate the repetitive work in your Kolkata business. Kinetic builds automation systems and AI agents that save time, reduce errors, and let you focus on growth.",
-    url: "https://buildwithkinetic.org/automation-systems-kolkata",
-  },
+  title: "Business Automation Agency in Kolkata | Kinetic",
+  description:
+    "Automation systems for Kolkata businesses. n8n workflows, WhatsApp follow-ups, and CRM integration — zero manual effort.",
 }
 
 export default function Page() {

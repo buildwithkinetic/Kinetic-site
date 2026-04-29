@@ -3,33 +3,9 @@ import Link from "next/link"
 import { JsonLd, localBusinessSchema, serviceSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Digital Marketing in Kolkata — Kinetic",
-  description: "SEO, lead generation, CRM and automation for Kolkata businesses. Kinetic builds the full digital growth system — not just a campaign.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/digital-marketing-kolkata",
-  },
-  openGraph: {
-    title: "Digital Marketing in Kolkata — Kinetic",
-    description: "SEO, lead generation, CRM and automation for Kolkata businesses. Kinetic builds the full digital growth system — not just a campaign.",
-    url: "https://buildwithkinetic.org/digital-marketing-kolkata",
-    locale: "en_IN",
-  },
-  keywords: [
-    "digital marketing agency Kolkata",
-    "digital marketing Kolkata",
-    "online marketing Kolkata",
-    "lead generation Kolkata",
-    "growth marketing agency India",
-    "digital marketing consultant Kolkata",
-    "performance marketing Kolkata",
-    "social media marketing Kolkata",
-  ],
-  twitter: {
-    card: "summary_large_image",
-    title: "Digital Marketing Agency in Kolkata",
-    description: "SEO, lead generation, CRM, and automation for Kolkata businesses. Kinetic builds the full digital growth system — not ju",
-    creator: "@buildwithkinetic",
-  },
+  title: "Digital Marketing Agency in Kolkata | Kinetic",
+  description:
+    "Full-stack digital marketing for Kolkata businesses. SEO, Google Ads, Meta Ads, and automation — built as one integrated system.",
 }
 
 export default function Page() {

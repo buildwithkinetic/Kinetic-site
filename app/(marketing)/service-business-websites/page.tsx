@@ -3,18 +3,9 @@ import { IndustryPageTemplate } from "@/components/marketing/IndustryPageTemplat
 import type { IndustryPageData } from "@/components/marketing/IndustryPageTemplate"
 
 export const metadata: Metadata = {
-  title: "Service Business Website Development | Get More Clients",
+  title: "Websites for Service Businesses | Kinetic",
   description:
-    "Kinetic builds websites for service businesses — consultants, agencies, law firms, and contractors. Generate inbound leads and close more clients.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/service-business-websites",
-  },
-  openGraph: {
-    title: "Service Business Website Development | Kinetic",
-    description:
-      "Websites for service businesses that build authority, generate leads, and close more clients. Built on Next.js with full SEO.",
-    url: "https://buildwithkinetic.org/service-business-websites",
-  },
+    "Websites built for service businesses that need to generate enquiries. Lead capture, booking, and follow-up built in.",
 }
 
 const data: IndustryPageData = {

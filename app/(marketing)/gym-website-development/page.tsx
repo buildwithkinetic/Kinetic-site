@@ -3,18 +3,9 @@ import { IndustryPageTemplate } from "@/components/marketing/IndustryPageTemplat
 import type { IndustryPageData } from "@/components/marketing/IndustryPageTemplate"
 
 export const metadata: Metadata = {
-  title: "Gym Website Development | Fitness Studio Websites",
+  title: "Gym & Fitness Studio Website Development | Kinetic",
   description:
-    "Kinetic builds conversion-focused websites for gyms, fitness studios, and personal trainers. Generate leads, showcase classes, and drive membership sign-ups.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/gym-website-development",
-  },
-  openGraph: {
-    title: "Gym & Fitness Website Development | Kinetic",
-    description:
-      "Gym and fitness studio websites that capture leads, showcase your brand, and drive membership sign-ups. Built for performance and conversion.",
-    url: "https://buildwithkinetic.org/gym-website-development",
-  },
+    "Websites for gyms and fitness studios built to convert visitors into members. Booking, lead capture, and CRM included.",
 }
 
 const data: IndustryPageData = {

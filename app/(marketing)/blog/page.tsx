@@ -5,25 +5,9 @@ import { getRecentPosts, getFeaturedPosts } from "@/lib/blog"
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Blog | Digital Growth, Website Development & SEO Insights",
+  title: "Blog — Growth, SEO & Systems Thinking | Kinetic",
   description:
-    "Insights on website development, SEO, lead generation, and digital growth from Kinetic. Practical guides for founders and business owners.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/blog",
-  },
-  openGraph: {
-    title: "Kinetic Blog | Digital Growth & Website Development Insights",
-    description:
-      "Practical guides on website development, conversion optimization, SEO, and digital growth from Kinetic.",
-    url: "https://buildwithkinetic.org/blog",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kinetic Blog | Growth & SEO Insights",
-    description:
-      "Practical guides on website development, SEO, and digital growth for founders.",
-    creator: "@buildwithkinetic",
-  },
+    "Practical articles on website development, SEO, automation, and building systems that grow your business without adding complexity.",
 }
 
 export default function BlogPage() {

@@ -3,18 +3,9 @@ import { IndustryPageTemplate } from "@/components/marketing/IndustryPageTemplat
 import type { IndustryPageData } from "@/components/marketing/IndustryPageTemplate"
 
 export const metadata: Metadata = {
-  title: "Small Business Website Development | Grow Your Revenue",
+  title: "Website Development for Small Businesses | Kinetic",
   description:
-    "Kinetic builds professional websites for small businesses. Capture more leads, rank on Google, and build credibility with a site that works hard.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/small-business-website-development",
-  },
-  openGraph: {
-    title: "Small Business Website Development | Kinetic",
-    description:
-      "Professional websites for small businesses that capture leads, rank on Google, and build credibility in your market.",
-    url: "https://buildwithkinetic.org/small-business-website-development",
-  },
+    "Professional websites for small businesses that actually generate leads. Built on Next.js, optimised for Google.",
 }
 
 const data: IndustryPageData = {

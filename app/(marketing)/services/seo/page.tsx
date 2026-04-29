@@ -2,20 +2,9 @@ import ServicePageLayout from '@/components/ServicePageLayout'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'SEO & Visibility — Kinetic',
-  description: 'Technical SEO, Google Business Profile, local search, and content strategy to help the right people find you online.',
-  alternates: { canonical: 'https://buildwithkinetic.org/services/seo' },
-  openGraph: {
-    title: 'SEO & Visibility | Kinetic',
-    description: 'Technical SEO, Google Business Profile, and content strategy for businesses.',
-    url: 'https://buildwithkinetic.org/services/seo',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'SEO & Visibility | Kinetic',
-    description: 'Technical SEO and local search strategy for businesses in India.',
-    creator: '@buildwithkinetic',
-  },
+  title: "SEO & Visibility Systems | Kinetic",
+  description:
+    "Organic search systems that compound over time. Technical SEO, content, and Google Business Profile — built to rank and stay ranked.",
 }
 
 export default function SeoPage() {

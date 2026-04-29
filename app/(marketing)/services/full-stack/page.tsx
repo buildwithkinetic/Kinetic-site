@@ -2,20 +2,9 @@ import ServicePageLayout from '@/components/ServicePageLayout'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Full Stack Web Apps — Kinetic',
-  description: 'Custom web apps, portals, dashboards, and SaaS products built on Next.js and Supabase — owned by you.',
-  alternates: { canonical: 'https://buildwithkinetic.org/services/full-stack' },
-  openGraph: {
-    title: 'Full Stack Web Apps | Kinetic',
-    description: 'Custom web applications, portals, and dashboards built on Next.js and Supabase.',
-    url: 'https://buildwithkinetic.org/services/full-stack',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Full Stack Web Apps | Kinetic',
-    description: 'Custom web apps and SaaS products — built to last, owned by you.',
-    creator: '@buildwithkinetic',
-  },
+  title: "Full Stack Web App Development | Kinetic",
+  description:
+    "End-to-end web applications — database, backend, dashboard, frontend. Production-grade and handed over running.",
 }
 
 export default function FullStackPage() {

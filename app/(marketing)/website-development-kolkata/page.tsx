@@ -3,33 +3,9 @@ import Link from "next/link"
 import { JsonLd, localBusinessSchema, serviceSchema, faqSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Website Development in Kolkata — Kinetic",
-  description: "Custom website development for Kolkata businesses. Fast, conversion-focused, built on Next.js. Book a free discovery call with Kinetic.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/website-development-kolkata",
-  },
-  keywords: [
-    "website development Kolkata",
-    "website developer Kolkata",
-    "Next.js website development Kolkata",
-    "custom website development Kolkata",
-    "business website Kolkata",
-    "lead generation website Kolkata",
-    "affordable website development India",
-    "conversion focused website Kolkata",
-  ],
-  openGraph: {
-    title: "Website Development in Kolkata — Kinetic",
-    description: "Custom website development for Kolkata businesses. Fast, conversion-focused, built on Next.js. Book a free discovery call with Kinetic.",
-    url: "https://buildwithkinetic.org/website-development-kolkata",
-    locale: "en_IN",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Website Development in Kolkata — Kinetic",
-    description: "Custom website development for Kolkata businesses. Fast, conversion-focused, built on Next.js.",
-    creator: "@buildwithkinetic",
-  },
+  title: "Website Development in Kolkata | Kinetic",
+  description:
+    "Professional website development in Kolkata for businesses that want leads, not just a presence. Built in Next.js, live in 2 weeks.",
 }
 
 const wdkFAQs = [

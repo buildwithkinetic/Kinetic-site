@@ -3,18 +3,9 @@ import { ServicePageTemplate } from "@/components/marketing/ServicePageTemplate"
 import type { ServicePageData } from "@/components/marketing/ServicePageTemplate"
 
 export const metadata: Metadata = {
-  title: "Lead Generation Website Design | Websites That Capture Leads",
+  title: "Lead Generation Website Design & Development | Kinetic",
   description:
-    "Kinetic builds lead generation websites that capture high-intent leads 24/7. Landing pages, lead magnets, and CRM integration for consistent inbound leads.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/lead-generation-websites",
-  },
-  openGraph: {
-    title: "Lead Generation Website Design | Kinetic",
-    description:
-      "Purpose-built lead generation websites with landing pages, lead capture forms, and CRM integration that keep your sales pipeline full.",
-    url: "https://buildwithkinetic.org/lead-generation-websites",
-  },
+    "Websites built specifically to capture and convert leads — not just look good. Forms, CTAs, and automation included.",
 }
 
 const data: ServicePageData = {

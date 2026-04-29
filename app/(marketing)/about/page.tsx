@@ -3,34 +3,9 @@ import AboutPageClient from "@/components/marketing/AboutPageClient"
 import { JsonLd, organizationSchema, personSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "About Kinetic — Built by Ayush Gupta, Founder",
+  title: "About Ayush Gupta — Founder & Growth Engineer | Kinetic",
   description:
-    "Ayush Gupta is the founder of Kinetic — a company that builds websites, full stack apps, custom software, AI marketing systems, AI agents, and AI chatbots for businesses in India.",
-  keywords: [
-    "Ayush Gupta Kinetic founder",
-    "Kinetic automated growth systems",
-    "website and app development",
-    "AI agents and chatbots for founders",
-    "custom software development",
-    "AI-driven marketing",
-  ],
-  alternates: {
-    canonical: "https://buildwithkinetic.org/about",
-  },
-  openGraph: {
-    title: "About Kinetic — Built by Ayush Gupta",
-    description:
-      "Websites, apps, custom software, AI marketing, AI agents, and chatbots — built to production standard and handed over running.",
-    url: "https://buildwithkinetic.org/about",
-    locale: "en_IN",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Kinetic — Built by Ayush Gupta",
-    description:
-      "Kinetic builds websites, apps, custom software, AI marketing, AI agents, and chatbots for businesses in India.",
-    creator: "@buildwithkinetic",
-  },
+    "Kinetic is built by Ayush Gupta — full-stack engineer and growth systems builder. No account managers, no juniors. You work directly with the founder.",
 }
 
 export default function AboutPage() {

@@ -3,18 +3,9 @@ import { ServicePageTemplate } from "@/components/marketing/ServicePageTemplate"
 import type { ServicePageData } from "@/components/marketing/ServicePageTemplate"
 
 export const metadata: Metadata = {
-  title: "CRM Dashboard Development | Custom CRM Systems",
+  title: "Custom CRM Dashboard Development | Kinetic",
   description:
-    "Kinetic builds custom CRM dashboards for businesses that outgrew off-the-shelf tools. Real-time pipelines, analytics, and role-based views — built to scale.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/crm-dashboard-development",
-  },
-  openGraph: {
-    title: "CRM Dashboard Development | Kinetic",
-    description:
-      "Custom CRM systems with real-time dashboards, lead pipelines, and automation — built exactly for how your business operates.",
-    url: "https://buildwithkinetic.org/crm-dashboard-development",
-  },
+    "Bespoke CRM dashboards built on Supabase. Every lead tracked, every pipeline visible, every follow-up automated.",
 }
 
 const data: ServicePageData = {

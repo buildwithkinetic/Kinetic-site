@@ -3,18 +3,9 @@ import { ServicePageTemplate } from "@/components/marketing/ServicePageTemplate"
 import type { ServicePageData } from "@/components/marketing/ServicePageTemplate"
 
 export const metadata: Metadata = {
-  title: "Web App Development Agency | Custom Web Applications",
+  title: "Web App Development Agency | Kinetic",
   description:
-    "Kinetic builds scalable web applications for startups and businesses. From SaaS platforms to internal tools — full-stack on Next.js and Supabase.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/web-app-development",
-  },
-  openGraph: {
-    title: "Web App Development Agency | Kinetic",
-    description:
-      "Full-stack web application development for startups and growing businesses. Built on Next.js, React, and Supabase.",
-    url: "https://buildwithkinetic.org/web-app-development",
-  },
+    "Full-stack web application development. Dashboards, portals, SaaS products — scoped, built, and deployed fast.",
 }
 
 const data: ServicePageData = {

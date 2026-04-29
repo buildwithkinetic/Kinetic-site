@@ -3,38 +3,9 @@ import HomepageClient from '@/components/marketing/HomepageClient'
 import { JsonLd, websiteSchema, organizationSchema, localBusinessSchema, faqSchema } from '@/components/seo/JsonLd'
 
 export const metadata: Metadata = {
-  title: 'Kinetic — Websites, Apps & AI Systems for Ambitious Founders',
+  title: "Kinetic — Digital Growth Systems for Startups & Businesses",
   description:
-    'Kinetic builds websites, full stack apps, custom software, AI-driven marketing, AI agents, and AI chatbots — production-grade and handed over running. Remote-first, serving founders globally.',
-  keywords: [
-    'website development agency',
-    'full stack app development',
-    'custom software development',
-    'AI marketing automation',
-    'AI agents for business',
-    'AI chatbot development',
-    'web app development',
-    'automated growth systems',
-    'startup website development',
-    'Kinetic Ayush Gupta',
-  ],
-  alternates: { canonical: 'https://buildwithkinetic.org' },
-  openGraph: {
-    title: 'Kinetic — Automated Growth Systems for Businesses',
-    description:
-      'Most agencies build you a website and disappear. Kinetic builds the full system — websites, apps, software, AI marketing, AI agents, chatbots — and hands it over running.',
-    url: 'https://buildwithkinetic.org',
-    siteName: 'Kinetic',
-    locale: 'en_IN',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Kinetic — Automated Growth Systems for Businesses',
-    description:
-      'Websites, apps, software, AI marketing, AI agents, chatbots — built to production standard and handed over running.',
-    creator: '@buildwithkinetic',
-  },
+    "Kinetic builds websites, web apps, AI agents, and growth systems for startups and businesses globally. Installed end to end, not just designed and delivered.",
 }
 
 export default function HomePage() {

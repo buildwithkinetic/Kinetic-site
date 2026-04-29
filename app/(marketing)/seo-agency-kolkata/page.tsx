@@ -3,34 +3,9 @@ import Link from "next/link"
 import { JsonLd, localBusinessSchema, serviceSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "SEO Agency in Kolkata — Kinetic",
-  description: "Technical SEO, local SEO and content strategy for Kolkata businesses. Kinetic builds SEO systems that compound — not traffic spikes that fade.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/seo-agency-kolkata",
-  },
-  openGraph: {
-    title: "SEO Agency in Kolkata — Kinetic",
-    description: "Technical SEO, local SEO and content strategy for Kolkata businesses. Kinetic builds SEO systems that compound — not traffic spikes that fade.",
-    url: "https://buildwithkinetic.org/seo-agency-kolkata",
-    locale: "en_IN",
-  },
-  keywords: [
-    "SEO agency Kolkata",
-    "SEO services Kolkata",
-    "local SEO Kolkata",
-    "technical SEO Kolkata",
-    "Google ranking Kolkata",
-    "search engine optimisation Kolkata",
-    "SEO consultant Kolkata India",
-    "best SEO agency Kolkata",
-    "small business SEO India",
-  ],
-  twitter: {
-    card: "summary_large_image",
-    title: "SEO Agency in Kolkata",
-    description: "Technical SEO, local SEO, and content strategy for Kolkata businesses. Kinetic builds SEO systems that compound — not tr",
-    creator: "@buildwithkinetic",
-  },
+  title: "SEO Agency in Kolkata | Kinetic",
+  description:
+    "Kolkata-based SEO agency that builds organic search systems. Technical SEO, content, and GBP — built to rank and stay ranked.",
 }
 
 export default function Page() {

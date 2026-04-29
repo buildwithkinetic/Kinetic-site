@@ -3,25 +3,9 @@ import SystemPageClient from "@/components/marketing/SystemPageClient"
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Industry Systems | Kinetic",
+  title: "Industry Systems — Gym OS, Cafe OS & More | Kinetic",
   description:
-    "Pre-built growth systems for your industry — installed end to end. Explore the Kinetic Systems Catalogue.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/lead-generation-system",
-  },
-  openGraph: {
-    title: "Industry Systems | Kinetic",
-    description:
-      "Not custom. Not generic. Pre-built for your industry, installed into your business — end to end.",
-    url: "https://buildwithkinetic.org/lead-generation-system",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Industry Systems | Kinetic",
-    description:
-      "Pre-built growth systems for your industry, installed end to end.",
-    creator: "@buildwithkinetic",
-  },
+    "Pre-built growth systems for specific industries. Kinetic Gym OS is live. Cafe OS coming soon. Plug in and run.",
 }
 
 export default function SystemPage() {

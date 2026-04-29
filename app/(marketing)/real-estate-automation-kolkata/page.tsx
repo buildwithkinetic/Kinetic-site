@@ -3,18 +3,9 @@ import Link from "next/link"
 import { JsonLd, localBusinessSchema, serviceSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Real Estate Automation Kolkata — Lead Generation Systems",
-  description: "Automated growth systems for real estate developers and agencies in Kolkata. Lead capture, CRM integration, and automated follow-ups.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/real-estate-automation-kolkata",
-  },
-  keywords: [
-    "real estate marketing Kolkata",
-    "lead generation for real estate India",
-    "real estate CRM automation",
-    "property marketing agency Kolkata",
-    "real estate website development Kolkata",
-  ],
+  title: "Real Estate Lead Generation & Automation in Kolkata | Kinetic",
+  description:
+    "Automated lead generation systems for Kolkata real estate businesses. CRM, WhatsApp follow-ups, and ad management.",
 }
 
 export default function Page() {

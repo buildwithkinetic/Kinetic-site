@@ -3,18 +3,9 @@ import { ServicePageTemplate } from "@/components/marketing/ServicePageTemplate"
 import type { ServicePageData } from "@/components/marketing/ServicePageTemplate"
 
 export const metadata: Metadata = {
-  title: "Business Automation Systems | Automate Your Operations",
+  title: "Business Automation Systems & Workflows | Kinetic",
   description:
-    "Kinetic builds automation systems that eliminate repetitive work and scale operations. Lead follow-up, onboarding, billing, and reporting — automated.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/business-automation-systems",
-  },
-  openGraph: {
-    title: "Business Automation Systems | Kinetic",
-    description:
-      "Custom automation systems that eliminate manual work and scale your business. Lead nurture, onboarding, billing, and ops — automated.",
-    url: "https://buildwithkinetic.org/business-automation-systems",
-  },
+    "Custom automation systems built on n8n. Follow-ups, notifications, lead routing, and reporting — running automatically.",
 }
 
 const data: ServicePageData = {

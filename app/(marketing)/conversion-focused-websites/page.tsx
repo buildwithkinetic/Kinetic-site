@@ -3,18 +3,9 @@ import { ServicePageTemplate } from "@/components/marketing/ServicePageTemplate"
 import type { ServicePageData } from "@/components/marketing/ServicePageTemplate"
 
 export const metadata: Metadata = {
-  title: "Conversion-Focused Website Design | Turn Visitors Into Leads",
+  title: "Conversion-Focused Website Design | Kinetic",
   description:
-    "Kinetic builds conversion-focused websites that turn visitors into leads. CRO best practices, persuasive copy, and high-intent landing pages — built to perform.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/conversion-focused-websites",
-  },
-  openGraph: {
-    title: "Conversion-Focused Website Design | Kinetic",
-    description:
-      "Websites engineered around conversion rate optimization — every element placed and tested to turn more visitors into paying customers.",
-    url: "https://buildwithkinetic.org/conversion-focused-websites",
-  },
+    "Every design decision made to maximise conversions. Fast load times, clear CTAs, and lead capture built in from day one.",
 }
 
 const data: ServicePageData = {

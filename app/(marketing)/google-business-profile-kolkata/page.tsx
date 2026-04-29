@@ -2,16 +2,9 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Google Business Profile Setup in Kolkata — Kinetic",
-  description: "Get your Kolkata business on Google Maps and search results. Kinetic sets up and optimises your Google Business Profile — properly.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/google-business-profile-kolkata",
-  },
-  openGraph: {
-    title: "Google Business Profile Setup in Kolkata — Kinetic",
-    description: "Get your Kolkata business on Google Maps and search results. Kinetic sets up and optimises your Google Business Profile — properly.",
-    url: "https://buildwithkinetic.org/google-business-profile-kolkata",
-  },
+  title: "Google Business Profile Setup & Optimisation in Kolkata | Kinetic",
+  description:
+    "Complete GBP setup and optimisation for Kolkata businesses. Get found on local search and Google Maps — done in 48 hours.",
 }
 
 export default function Page() {

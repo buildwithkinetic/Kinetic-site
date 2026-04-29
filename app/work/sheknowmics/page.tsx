@@ -4,25 +4,9 @@ import SheknowmicsPageClient from '@/components/marketing/SheknowmicsPageClient'
 import { JsonLd, breadcrumbSchema } from '@/components/seo/JsonLd'
 
 export const metadata: Metadata = {
-  title: "Sheknowmics Case Study | Kinetic",
+  title: "Sheknowmics — From Zero to #1 Google Rank in 60 Days | Kinetic",
   description:
-    "How Kinetic built India's first AI-native women's health platform — from zero to 1,200+ waitlist users.",
-  alternates: {
-    canonical: "https://buildwithkinetic.org/work/sheknowmics",
-  },
-  openGraph: {
-    title: "Sheknowmics Case Study | Kinetic",
-    description:
-      "How Kinetic built India's first AI-native women's health platform end to end.",
-    url: "https://buildwithkinetic.org/work/sheknowmics",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Sheknowmics Case Study | Kinetic",
-    description:
-      "How Kinetic built India's first AI-native women's health platform — zero to 1,200+ users.",
-    creator: "@buildwithkinetic",
-  },
+    "How Kinetic took Sheknowmics from zero digital presence to 1,200+ users, #1 Google ranking, and sub-60s lead response in 90 days.",
 }
 
 export default function SheknowmicsCaseStudy() {
