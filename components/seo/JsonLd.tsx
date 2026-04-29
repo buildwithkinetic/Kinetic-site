@@ -27,7 +27,7 @@ export function organizationSchema() {
       height: 512,
     },
     description:
-      "Kinetic builds automated growth systems for small businesses and startups — websites, SEO, CRM, lead capture, and automation — installed and running before handover.",
+      "Kinetic builds websites, full stack apps, custom software, AI-driven marketing systems, AI agents, and AI chatbots — production-grade and handed over running.",
     foundingDate: "2024",
     founder: {
       "@type": "Person",
@@ -36,15 +36,10 @@ export function organizationSchema() {
       url: "https://buildwithkinetic.org/about",
       sameAs: ["https://www.linkedin.com/in/21-ayushgupta"],
     },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Kolkata",
-      addressRegion: "West Bengal",
-      addressCountry: "IN",
-    },
     areaServed: [
       { "@type": "Country", name: "India" },
-      { "@type": "City", name: "Kolkata" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
     ],
     sameAs: ["https://www.linkedin.com/in/21-ayushgupta"],
     contactPoint: {
@@ -67,42 +62,25 @@ export function localBusinessSchema() {
     logo: "https://buildwithkinetic.org/favicon.svg",
     image: "https://buildwithkinetic.org/og-image.png",
     description:
-      "Kinetic builds automated growth systems for small businesses — websites, SEO, CRM, lead capture, and automation — all installed and running before handover. Based in Kolkata, serving businesses across India.",
+      "Kinetic builds websites, full stack apps, custom software, AI-driven marketing systems, AI agents, and AI chatbots — production-grade and handed over running.",
     founder: {
       "@type": "Person",
       name: "Ayush Gupta",
       url: "https://buildwithkinetic.org/about",
     },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Kolkata",
-      addressLocality: "Kolkata",
-      addressRegion: "West Bengal",
-      postalCode: "700001",
-      addressCountry: "IN",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 22.5726,
-      longitude: 88.3639,
-    },
     areaServed: [
       { "@type": "Country", name: "India" },
-      { "@type": "City", name: "Kolkata" },
-      { "@type": "State", name: "West Bengal" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
     ],
     serviceType: [
       "Website Development",
-      "SEO Services",
-      "Lead Generation Systems",
+      "Full Stack App Development",
+      "AI-Driven Digital Marketing",
+      "AI Agents",
       "Business Automation",
-      "CRM Development",
-      "Digital Marketing",
+      "Android App Development",
     ],
-    priceRange: "\u20b9\u20b9",
-    currenciesAccepted: "INR",
-    paymentAccepted: "Bank Transfer, UPI",
-    openingHours: "Mo-Fr 09:00-18:00",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -113,46 +91,36 @@ export function localBusinessSchema() {
     sameAs: ["https://www.linkedin.com/in/21-ayushgupta"],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Growth Offers",
+      name: "Kinetic Services",
       itemListElement: [
         {
           "@type": "Offer",
-          name: "The Visibility Fix",
-          description: "SEO + Google Business Profile optimisation. First-page Google ranking in 30 days or I keep working free.",
-          price: "25000",
-          priceCurrency: "INR",
-          url: "https://buildwithkinetic.org/services",
+          name: "Website & Landing Page Development",
+          description: "Conversion-focused websites and landing pages in Next.js — live in 1–2 weeks.",
+          url: "https://buildwithkinetic.org/services/website-development",
         },
         {
           "@type": "Offer",
-          name: "The Lead Capture System",
-          description: "Landing page, CRM, and automated follow-up — live in 2\u20133 weeks. No missed leads in 90 days or I fix it free.",
-          price: "40000",
-          priceCurrency: "INR",
-          url: "https://buildwithkinetic.org/services",
+          name: "Full Stack Web App Development",
+          description: "End-to-end web applications with backend, database, and auth — production-grade and handed over running.",
+          url: "https://buildwithkinetic.org/services/full-stack",
         },
         {
           "@type": "Offer",
-          name: "The Repeat Revenue Engine",
-          description: "Google review automation + retention flow. Review count grows in 60 days or I rebuild it free.",
-          price: "30000",
-          priceCurrency: "INR",
-          url: "https://buildwithkinetic.org/services",
+          name: "AI-Driven Digital Marketing",
+          description: "SEO, content, email, and paid ads — orchestrated with AI to compound over time.",
+          url: "https://buildwithkinetic.org/services/seo",
         },
         {
           "@type": "Offer",
-          name: "The Full Growth System",
-          description: "All five layers: visibility, lead capture, CRM, automation, and retention. 90-day performance guarantee.",
-          price: "75000",
-          priceCurrency: "INR",
-          url: "https://buildwithkinetic.org/services",
+          name: "AI Agents & Automation",
+          description: "Custom AI agents and n8n automation workflows that run business operations automatically.",
+          url: "https://buildwithkinetic.org/services/ai-agents",
         },
         {
           "@type": "Offer",
-          name: "The Quick Win Audit",
-          description: "A 1-week audit of your website, SEO, and lead flow — with a prioritised action plan. Full refund if not valuable.",
-          price: "8000",
-          priceCurrency: "INR",
+          name: "Android App Development",
+          description: "Native Android apps connected to your existing web infrastructure.",
           url: "https://buildwithkinetic.org/services",
         },
       ],
@@ -173,18 +141,12 @@ export function personSchema() {
       name: "Kinetic",
       url: "https://buildwithkinetic.org",
     },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Kolkata",
-      addressRegion: "West Bengal",
-      addressCountry: "IN",
-    },
     sameAs: [
       "https://www.linkedin.com/in/21-ayushgupta",
       "https://buildwithkinetic.org",
     ],
     description:
-      "Ayush Gupta is a growth engineer and founder of Kinetic — building automated growth systems for small businesses in India.",
+      "Ayush Gupta is the founder of Kinetic — building websites, apps, AI systems, and marketing automation for founders and funded companies globally.",
   }
 }
 
@@ -196,7 +158,7 @@ export function websiteSchema() {
     name: "Kinetic",
     url: "https://buildwithkinetic.org",
     description:
-      "Automated growth systems for small businesses — websites, SEO, CRM, lead capture, and automation. Built and handed over running.",
+      "Websites, apps, custom software, AI marketing, AI agents, and chatbots — built to production standard and handed over running.",
     publisher: {
       "@id": "https://buildwithkinetic.org/#organization",
     },
@@ -239,7 +201,8 @@ export function serviceSchema({
     },
     areaServed: [
       { "@type": "Country", name: "India" },
-      { "@type": "City", name: "Kolkata" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
     ],
     ...(price && {
       offers: {
