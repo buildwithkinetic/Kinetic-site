@@ -3,31 +3,32 @@ import AboutPageClient from "@/components/marketing/AboutPageClient"
 import { JsonLd, organizationSchema, personSchema, breadcrumbSchema } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "About Kinetic — Built by Ayush Gupta, Growth Engineer | Kolkata",
+  title: "About Kinetic — Built by Ayush Gupta, Founder",
   description:
-    "Ayush Gupta is a solo growth engineer based in Kolkata. Kinetic builds automated growth systems for businesses — websites, SEO, CRM, lead capture, and automation — installed and running before handover.",
+    "Ayush Gupta is the founder of Kinetic — a company that builds websites, full stack apps, custom software, AI marketing systems, AI agents, and AI chatbots for businesses in India.",
   keywords: [
-    "Ayush Gupta growth engineer Kolkata",
-    "Kinetic growth systems founder",
-    "digital growth engineer India",
-    "solo founder growth agency Kolkata",
-    "automated growth systems India",
+    "Ayush Gupta Kinetic founder",
+    "Kinetic automated growth systems",
+    "website and app development",
+    "AI agents and chatbots for founders",
+    "custom software development",
+    "AI-driven marketing",
   ],
   alternates: {
     canonical: "https://buildwithkinetic.org/about",
   },
   openGraph: {
-    title: "About Kinetic — Built by Ayush Gupta, Growth Engineer | Kolkata",
+    title: "About Kinetic — Built by Ayush Gupta",
     description:
-      "Solo growth engineer. Kinetic builds the full system — websites, SEO, CRM, automation — and hands it over running.",
+      "Websites, apps, custom software, AI marketing, AI agents, and chatbots — built to production standard and handed over running.",
     url: "https://buildwithkinetic.org/about",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Kinetic — Built by Ayush Gupta, Growth Engineer",
+    title: "About Kinetic — Built by Ayush Gupta",
     description:
-      "Solo growth engineer based in Kolkata. Kinetic installs automated growth systems in businesses.",
+      "Kinetic builds websites, apps, custom software, AI marketing, AI agents, and chatbots for businesses in India.",
     creator: "@buildwithkinetic",
   },
 }
