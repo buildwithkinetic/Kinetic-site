@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Custom website, CRM, AI chatbot, and Meta Ads system. Full case study.",
     url: "https://buildwithkinetic.org/work/core-of-fitness",
     siteName: "Kinetic",
-    images: [{ url: "https://buildwithkinetic.org/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "https://buildwithkinetic.org/og?title=Core+of+Fitness+%E2%80%94+Gym+Member+Acquisition&description=Custom+website%2C+CRM%2C+AI+chatbot%2C+and+Meta+Ads&type=case-study", width: 1200, height: 630 }],
     type: "article",
   },
   twitter: {

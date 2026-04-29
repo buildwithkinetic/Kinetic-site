@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: "PDF report delivered in 24 hours. No commitment.",
     url: "https://buildwithkinetic.org/free-website-audit",
     siteName: "Kinetic",
-    images: [{ url: "https://buildwithkinetic.org/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "https://buildwithkinetic.org/og?title=Free+Website+Audit&description=Find+where+you%27re+losing+leads+%E2%80%94+delivered+in+24+hours&type=page", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {

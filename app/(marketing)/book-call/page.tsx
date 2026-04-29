@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: "30 minutes. No pitch. Walk away with a clear growth plan.",
     url: "https://buildwithkinetic.org/book-call",
     siteName: "Kinetic",
-    images: [{ url: "https://buildwithkinetic.org/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "https://buildwithkinetic.org/og?title=Book+a+Strategy+Call&description=30+minutes.+No+pitch.+Clear+growth+plan.&type=page", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {

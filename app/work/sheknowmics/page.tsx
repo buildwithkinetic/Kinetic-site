@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "1,200+ users, #1 Google rank, sub-60s lead response. 90 days from zero to live.",
     url: "https://buildwithkinetic.org/work/sheknowmics",
     siteName: "Kinetic",
-    images: [{ url: "https://buildwithkinetic.org/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "https://buildwithkinetic.org/og?title=Sheknowmics+%E2%80%94+%231+Google+Rank+in+60+Days&description=1%2C200%2B+users%2C+%231+Google+rank%2C+sub-60s+lead+response&type=case-study", width: 1200, height: 630 }],
     type: "article",
   },
   twitter: {

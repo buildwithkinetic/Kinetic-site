@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Four core services built as systems, not one-off deliverables.",
     url: "https://buildwithkinetic.org/services",
     siteName: "Kinetic",
-    images: [{ url: "https://buildwithkinetic.org/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "https://buildwithkinetic.org/og?title=Services+%E2%80%94+Websites%2C+AI+Agents%2C+SEO+%26+Web+Apps&description=Four+core+services+built+as+systems&type=service", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {

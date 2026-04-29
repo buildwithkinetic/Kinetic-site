@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     description: "Websites, web apps, AI agents, and growth systems — installed end to end.",
     url: "https://buildwithkinetic.org",
     siteName: "Kinetic",
-    images: [{ url: "https://buildwithkinetic.org/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "https://buildwithkinetic.org/og?title=Kinetic+%E2%80%94+Digital+Growth+Systems&description=Websites%2C+web+apps%2C+AI+agents%2C+and+growth+systems&type=page", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Kinetic — Digital Growth Systems",
     description: "Websites, web apps, AI agents, and growth systems — installed end to end.",
-    images: ["https://buildwithkinetic.org/og-image.png"],
+    images: ["https://buildwithkinetic.org/og?title=Kinetic+%E2%80%94+Digital+Growth+Systems&description=Websites%2C+web+apps%2C+AI+agents%2C+and+growth+systems&type=page"],
   },
 }
 
