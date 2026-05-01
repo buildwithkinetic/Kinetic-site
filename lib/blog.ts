@@ -15,6 +15,125 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "sheknowmics-case-study",
+    title: "From Idea to Google Accelerator: How We Built Sheknowmics in 60 Days",
+    description: "Sheknowmics had nothing — no website, no product, no company. We built the entire platform in 60 days. Here's exactly what we built, how we built it, and what happened next.",
+    author: "Ayush Gupta",
+    authorRole: "Growth Engineer",
+    date: "May 1, 2026",
+    dateISO: "2026-05-01",
+    readTime: "8 min read",
+    category: "Case Study",
+    tags: ["case study", "startup", "MVP development", "web app", "AI", "health tech"],
+    featured: true,
+    content: `
+# From Idea to Google Accelerator: How We Built Sheknowmics in 60 Days
+
+Some projects start with a brief. This one started with a vision and a blank screen.
+
+When the founder of Sheknowmics came to Kinetic, there was no website, no product, no company infrastructure — just a clear idea: build the operating system for women's health in India.
+
+Sixty days later, Sheknowmics was live, serving 1,200+ users, and had been selected for support by **Google's Accelerator Program**.
+
+This is exactly how we built it.
+
+---
+
+## The starting point: nothing
+
+No landing page. No web app. No payment system. No brand presence online.
+
+Just a founder with deep domain expertise in women's health and a product vision that needed a technical partner to bring it to life.
+
+Kinetic became that partner.
+
+---
+
+## What we scoped in week one
+
+Before writing a single line of code, we mapped the complete system:
+
+- **Landing page** — conversion-focused, built to explain the product and capture early users
+- **Web application** — the core product: a full-stack platform for women's health tracking and management
+- **ML model for menstrual health tracking** — a custom machine learning model built specifically for Sheknowmics' health tracking methodology
+- **Payment gateway** — Razorpay integration for subscriptions and one-time purchases
+- **Delivery partner integration** — BlueDart API integration for physical product delivery
+- **Community section** — a built-in community layer allowing users to interact, share, and support each other
+
+This was not a website project. This was a company infrastructure build.
+
+---
+
+## The build sequence
+
+### Week 1–2: Landing page and brand foundation
+
+The first thing live was the landing page — built in Next.js, conversion-focused, designed to explain a complex health product simply and capture waitlist signups before the app was ready.
+
+This gave the founder something real to show investors, early users, and partners from day one.
+
+### Week 2–4: Core web application
+
+The web app was built on Next.js with a Supabase backend — handling user authentication, health data storage, personalised dashboards, and the core tracking features.
+
+Every architectural decision was made with scale in mind. The system needed to handle sensitive health data securely, respond fast, and be extensible as the product evolved.
+
+### Week 3–5: ML model for menstrual health tracking
+
+This was the most technically complex piece of the build.
+
+We developed a custom machine learning model trained on menstrual health data — designed to surface personalised insights for each user based on their tracked cycles, symptoms, and patterns.
+
+This is what separates Sheknowmics from a generic health app. The intelligence is proprietary.
+
+### Week 4–6: Razorpay + BlueDart integration
+
+Sheknowmics isn't just a digital platform — it ships physical products to users.
+
+We integrated Razorpay as the payment gateway, handling subscriptions and one-time purchases, and connected BlueDart as the delivery partner for physical fulfilment — with order tracking built directly into the user dashboard.
+
+### Week 5–8: Community section
+
+The final layer was community — a built-in space where Sheknowmics users can interact, ask questions, share experiences, and support each other through their health journeys.
+
+This was built as a core product feature, not an afterthought. Community retention is a growth lever — users who engage with the community stay longer and refer more.
+
+---
+
+## The result: 60 days from nothing to live
+
+**1,200+ users** on the platform within weeks of launch.
+
+**Selected by Google for their Accelerator Program** — a recognition of both the technical quality and the market potential of what was built.
+
+**Android app** currently in development — the next layer of the Sheknowmics system.
+
+The platform is live at [sheknowmics.com](https://sheknowmics.com).
+
+---
+
+## What made this possible
+
+**Speed without shortcuts.** Two months is fast for what was built. It was possible because every architectural decision was made upfront — we did not rebuild anything twice.
+
+**Systems thinking from day one.** The landing page, app, payments, delivery, and community are not five separate things. They are one system. Each layer feeds the next.
+
+**The right tech stack.** Next.js for performance and SEO. Supabase for a scalable, secure backend. Razorpay and BlueDart for proven, reliable integrations. Nothing exotic — just the right tools used correctly.
+
+---
+
+## What Kinetic builds
+
+Sheknowmics is one example of what Kinetic does — build complete digital systems for founders and businesses who need more than a website.
+
+If you are building a product, a platform, or a growth system, [book a 30-minute strategy call](https://buildwithkinetic.org/book-call). We will map out exactly what needs to be built and how long it will take.
+
+---
+
+*Kinetic is the official technology partner of Sheknowmics.*
+`,
+  },
+  {
     slug: "conversion-focused-website-design-guide",
     title: "The Complete Guide to Conversion-Focused Website Design in 2025",
     description:
