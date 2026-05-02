@@ -12,12 +12,12 @@ interface CardProps extends ComponentPropsWithoutRef<"div"> {
 }
 
 const variantClasses: Record<CardVariant, string> = {
-  default: "bg-white border border-black/[0.08]",
+  default: "bg-[#111111] border border-[#1a1a1a]",
   elevated:
-    "bg-white border border-[#3B82F6]/10 shadow-xl shadow-black/10",
-  outline: "border border-black/[0.08] bg-transparent",
+    "bg-[#111111] border border-[#3B82F6]/10 shadow-xl shadow-black/40",
+  outline: "border border-[#1a1a1a] bg-transparent",
   accent:
-    "bg-white border border-[#3B82F6]/20 shadow-lg shadow-[#3B82F6]/5",
+    "bg-[#111111] border border-[#3B82F6]/20 shadow-lg shadow-[#3B82F6]/5",
 }
 
 /**

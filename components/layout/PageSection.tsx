@@ -10,8 +10,8 @@ interface PageSectionProps extends ComponentPropsWithoutRef<"section"> {
 
 const variantClasses: Record<SectionVariant, string> = {
   default: "",
-  surface: "bg-white/60 border-y border-black/[0.06]",
-  dark: "bg-[#0F0E0C]/[0.04] border-y border-black/[0.06]",
+  surface: "bg-[#111111]/40 border-y border-[#1a1a1a]",
+  dark: "bg-[#0F0E0C] border-y border-[#1a1a1a]",
 }
 
 const paddingClasses: Record<SectionPadding, string> = {

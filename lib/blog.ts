@@ -134,6 +134,126 @@ If you are building a product, a platform, or a growth system, [book a 30-minute
 `,
   },
   {
+    slug: "why-your-website-is-not-getting-leads",
+    title: "Why Your Website Isn't Getting Leads (And Exactly How to Fix It)",
+    description: "Most business websites look decent but generate nothing. Here are the three real reasons your website isn't converting — and what a proper lead system actually looks like.",
+    author: "Ayush Gupta",
+    authorRole: "Growth Engineer",
+    date: "May 2, 2026",
+    dateISO: "2026-05-02",
+    readTime: "7 min read",
+    category: "Lead Generation",
+    tags: ["lead generation", "website conversion", "CRM", "automation", "small business"],
+    featured: true,
+    content: `
+# Why Your Website Isn't Getting Leads (And Exactly How to Fix It)
+
+You have a website. It looks reasonable. But the enquiries aren't coming in — or when they do, they go cold before you can close them.
+
+This is the most common problem I see when I audit small business websites in India. And after building lead systems for businesses across industries, I can tell you the cause is almost never what owners think it is.
+
+It is not your logo. It is not your color scheme. It is not that you need more pages.
+
+It is one of three things — and most businesses have all three.
+
+---
+
+## Problem 1: Nobody is finding you
+
+Before your website can convert anyone, people need to find it.
+
+Most small business websites are essentially invisible. No Google Business Profile. No SEO. No content. The owner built the site, shared it on WhatsApp, got a few visits from family — and then nothing.
+
+Meanwhile, the businesses ranking above you on Google are capturing every high-intent search in your category. Someone searches "gym in Salt Lake" or "women's health clinic near me" and your competitors show up. You don't.
+
+**What discovery actually requires:**
+- A fully optimised Google Business Profile with real photos, services, and regular posts
+- On-page SEO — your pages need to target the exact phrases your customers search
+- Local search signals — consistent business name, address, and phone number across the web
+- Content that answers the questions your customers are already asking Google
+
+Discovery is not a one-time task. It is a system that compounds. Every optimised page, every review, every GBP post increases your surface area on Google.
+
+---
+
+## Problem 2: Your website has no funnel
+
+Most small business websites are brochures. They tell you what the business does. They have a phone number in the footer. And that is it.
+
+A brochure does not convert. A funnel does.
+
+Here is the difference: a brochure presents information and waits. A funnel guides a visitor from "I just landed here" to "I want to talk to these people" — actively, step by step.
+
+**What a conversion funnel on a website looks like:**
+
+A visitor lands on your page. They immediately see a headline that speaks to their specific problem — not "Welcome to our gym" but "Join Kolkata's fastest growing fitness community — first class free."
+
+Below the headline: a single clear CTA. Not five options. One. Book a free trial. Get a free audit. Claim your free consultation. One action, prominently placed.
+
+Then: proof. Testimonials, case studies, before and after, specific numbers. Not "we have been in business since 2010" but "127 members joined in the last 90 days."
+
+Then: another CTA. And another at the bottom.
+
+Every section has one job — move the visitor one step closer to the action you want them to take.
+
+**The test:** open your website right now. Can a visitor figure out exactly what to do next within 5 seconds of landing? If not, you have a funnel problem.
+
+---
+
+## Problem 3: Your follow-up is broken
+
+This is the most expensive problem and the least visible one.
+
+A lead comes in. Someone fills out your contact form, sends a WhatsApp message, or clicks your ad. And then — nothing happens for 4 hours. Or 24 hours. Or until you happen to check your phone.
+
+By then, they have already contacted three of your competitors.
+
+Research is consistent on this: the odds of reaching a lead drop by over 80% after the first 5 minutes. Every minute you wait, the lead gets colder. Most small businesses are following up in hours or days — by which point the lead has made their decision elsewhere.
+
+**What instant follow-up looks like in practice:**
+
+When Core of Fitness came to Kinetic, they were running Meta Ads with no website — just a phone number. Leads were coming in through ad enquiries and going cold because there was no system to handle them instantly.
+
+We built them a complete system:
+
+A conversion-focused website that captured leads with a form connected directly to a CRM. The moment someone submitted the form, three things happened automatically: the lead was logged in the CRM with full details, the prospect received an instant WhatsApp message from the gym acknowledging their enquiry and answering their most common questions, and the sales team received a notification with the lead's details and a one-tap option to call them.
+
+We deployed an AI chatbot on their WhatsApp business number — trained specifically on Core of Fitness, their membership options, pricing, class schedules, and objections. The bot handles every incoming enquiry instantly, 24 hours a day. It knows how to handle price objections, how to book trial class appointments, and when to hand off to a human.
+
+The result: the time between a lead's first click on an ad and their first real conversation with someone from the gym dropped from hours to under 60 seconds.
+
+That is not a marginal improvement. That is the difference between a lead that converts and a lead that goes to your competitor.
+
+---
+
+## What a complete lead system looks like
+
+These three problems — discovery, conversion, and follow-up — are not three separate issues. They are three layers of one system.
+
+**Layer 1 — Discovery:** SEO, Google Business Profile, and targeted ads that put you in front of people actively looking for what you offer.
+
+**Layer 2 — Conversion:** A website built as a funnel, not a brochure. Every page has one job: move the visitor to the next step.
+
+**Layer 3 — Automation:** The moment a lead arrives, the system responds. Instant acknowledgement, automated follow-up sequences, a CRM that tracks every interaction, and an AI agent that handles enquiries around the clock.
+
+When all three layers work together, leads do not fall through the cracks. They cannot — the system catches them automatically.
+
+---
+
+## Where to start
+
+If you are reading this and recognising your business in one or more of these problems, start with a diagnosis before you start spending.
+
+The most common mistake is jumping straight to running more ads without fixing the funnel and follow-up first. You can spend ₹50,000 a month on Meta Ads and lose most of it if the leads land on a page with no clear CTA and go cold because nobody followed up within the first 5 minutes.
+
+Fix the system first. Then pour fuel on it.
+
+If you want an honest audit of where your business is leaking leads right now — [get a free website audit from Kinetic](https://buildwithkinetic.org/free-website-audit). We will look at your current setup across discovery, conversion, and follow-up and tell you exactly what is broken and what to fix first.
+
+No pitch. No commitment. Just a clear diagnosis.
+  `,
+  },
+  {
     slug: "conversion-focused-website-design-guide",
     title: "The Complete Guide to Conversion-Focused Website Design in 2025",
     description:

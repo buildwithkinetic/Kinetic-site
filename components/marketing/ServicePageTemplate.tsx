@@ -69,36 +69,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
 
       <main className="bg-[#0A0A0A] min-h-screen text-white">
 
-        {/* ── Nav ─────────────────────────────────────────────────────── */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-white/[0.07]">
-          <PageContainer>
-            <div className="py-4 flex items-center justify-between">
-              <Link href="/" className="text-xl font-black tracking-tight text-white">
-                KINETIC<span className="text-[#3B82F6]">.</span>
-              </Link>
-              <div className="hidden md:flex items-center gap-8">
-                <Link href="/website-development" className="text-sm font-medium text-white/50 hover:text-white transition-colors relative group">
-                  Services
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#3B82F6] group-hover:w-full transition-all duration-300" />
-                </Link>
-                <Link href="/blog" className="text-sm font-medium text-white/50 hover:text-white transition-colors relative group">
-                  Blog
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#3B82F6] group-hover:w-full transition-all duration-300" />
-                </Link>
-                <Link href="/book-call" className="text-sm font-medium text-white/50 hover:text-white transition-colors relative group">
-                  Contact
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#3B82F6] group-hover:w-full transition-all duration-300" />
-                </Link>
-              </div>
-              <Link
-                href="/free-website-audit"
-                className="px-5 py-2.5 bg-[#3B82F6] text-white font-semibold rounded-full text-sm hover:bg-[#6366F1] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]/50"
-              >
-                Get a Free Audit
-              </Link>
-            </div>
-          </PageContainer>
-        </nav>
+
 
         {/* ── Breadcrumb ──────────────────────────────────────────────── */}
         <div className="pt-24 pb-0">

@@ -62,14 +62,14 @@ export function PageHero({
           </div>
         )}
 
-        <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-none mb-6 max-w-4xl text-[#0F0E0C]">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-none mb-6 max-w-4xl text-white">
           {headline}{" "}
           {accentWord && (
             <span className="text-[#3B82F6]">{accentWord}</span>
           )}
         </h1>
 
-        <p className="text-[#6B6560] text-xl leading-relaxed max-w-2xl mb-10">
+        <p className="text-[#a1a1aa] text-xl leading-relaxed max-w-2xl mb-10">
           {description}
         </p>
 
@@ -78,7 +78,7 @@ export function PageHero({
             {primaryCta && (
               <Link
                 href={primaryCta.href}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0F0E0C] text-[#F5F0E8] font-bold rounded-full text-lg hover:bg-[#3B82F6] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]/60"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#111111] text-white font-bold rounded-full text-lg hover:bg-[#3B82F6] hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]/60"
               >
                 {primaryCta.label} →
               </Link>
@@ -86,7 +86,7 @@ export function PageHero({
             {secondaryCta && (
               <Link
                 href={secondaryCta.href}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-black/[0.15] text-[#0F0E0C] font-semibold rounded-full text-lg hover:border-[#3B82F6]/40 hover:text-[#3B82F6] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]/30"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/15 text-white font-semibold rounded-full text-lg hover:border-[#3B82F6]/40 hover:text-[#3B82F6] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]/30"
               >
                 {secondaryCta.label}
               </Link>
