@@ -55,18 +55,21 @@ export default function Navbar() {
         className="nav-pill"
       >
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', marginRight: '8px' }}>
-          <span style={{
-            fontFamily: 'var(--font-body)',
-            fontWeight: 700, fontSize: '13px',
-            letterSpacing: '2.5px', textTransform: 'uppercase',
-            color: '#FFFFFF',
-          }}>KINETIC</span>
-          <span style={{
-            width: '6px', height: '6px', borderRadius: '50%',
-            background: '#3B82F6', display: 'inline-block',
-            boxShadow: '0 0 8px rgba(59,130,246,0.8)',
-          }} />
+        <Link href="/" style={{ 
+          textDecoration: 'none', 
+          display: 'flex', 
+          alignItems: 'center', 
+          marginRight: '8px' 
+        }}>
+          <img 
+            src="/logo-dark.png" 
+            alt="Kinetic" 
+            style={{ 
+              height: '28px', 
+              width: 'auto',
+              display: 'block',
+            }} 
+          />
         </Link>
 
         {/* Nav links — desktop */}

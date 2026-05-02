@@ -49,6 +49,14 @@ export const metadata: Metadata = {
     title: "Kinetic | The System Behind Your Growth",
     description:
       "Websites, full stack apps, custom software, AI marketing, AI agents, and chatbots — built to production standard and handed over running.",
+    images: [
+      {
+        url: "https://buildwithkinetic.org/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kinetic — The System Behind Your Growth",
+      }
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -56,6 +64,7 @@ export const metadata: Metadata = {
     description:
       "Websites, SEO, CRM, automation, full stack apps, and AI agents — built for growth, handed over running.",
     creator: "@buildwithkinetic",
+    images: ["https://buildwithkinetic.org/og-image.png"],
   },
   verification: {
     google: "8kwBF9qJeR_0rOQYtenKoBkqNFPM0pCqq3h2h1k5q3M",
@@ -65,13 +74,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
     ],
     apple: [
-      { url: "/apple-icon.svg", type: "image/svg+xml" },
+      { url: "/apple-icon.png", type: "image/png", sizes: "180x180" },
     ],
-    shortcut: "/favicon.svg",
+    shortcut: "/favicon.png",
   },
 }
 
